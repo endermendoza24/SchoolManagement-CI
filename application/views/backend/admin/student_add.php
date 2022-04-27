@@ -22,7 +22,7 @@
 				<!-- esta es la vista en donde se carga la pantalla que es para agregar un estudiante -->
 
 				<div class="form-group">
-						<label for="field-1" class="col-sm-3 control-label">Is it an adult?</label>
+						<label for="field-1" class="col-sm-3 control-label">Under - age?</label>
                         
 						<div class="col-sm-5 form-check">
 							

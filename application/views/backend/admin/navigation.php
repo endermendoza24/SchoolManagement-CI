@@ -115,11 +115,12 @@
             <ul>
                 <!-- STUDENT ADMISSION -->
                 
-                 <li class="<?php if ($page_name == 'acd_session') echo 'active'; ?> ">
+                <!-- Academic section -->
+                 <!-- <li class="<?php if ($page_name == 'acd_session') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/acd_session">
                         <span><i class="entypo-dot"></i> <?php echo ('Academic Session'); ?></span>
                     </a>
-                </li>
+                </li> -->
                 
                    
                  
@@ -130,11 +131,11 @@
                 </li>
 
                 <!-- STUDENT BULK ADMISSION -->
-                <li class="<?php if ($page_name == 'student_bulk_add') echo 'active'; ?> ">
+                <!-- <li class="<?php if ($page_name == 'student_bulk_add') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/student_bulk_add">
                         <span><i class="entypo-dot"></i> <?php echo ('Admit Bulk Student'); ?></span>
                     </a>
-                </li>
+                </li> -->
 
                 <!-- STUDENT INFORMATION -->
                 <li class="<?php if ($page_name == 'student_information') echo 'opened active'; ?> ">
@@ -222,11 +223,12 @@
                         <span><i class="entypo-dot"></i> <?php echo ('Manage Marks'); ?></span>
                     </a>
                 </li>
-                <li class="<?php if ($page_name == 'exam_marks_sms') echo 'active'; ?> ">
+                <!-- Send marks by sms -->
+                <!-- <li class="<?php if ($page_name == 'exam_marks_sms') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/exam_marks_sms">
                         <span><i class="entypo-dot"></i> <?php echo ('Send marks by sms'); ?></span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </li>
 
