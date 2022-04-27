@@ -205,7 +205,7 @@
         ?> ">
             <a href="#">
                 <i class="entypo-graduation-cap"></i>
-                <span><?php echo ('Exam Section'); ?></span>
+                <span><?php echo ('Notes Section'); ?></span>
             </a>
             <ul>
                 <li class="<?php if ($page_name == 'exam') echo 'active'; ?> ">

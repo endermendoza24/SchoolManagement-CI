@@ -3,18 +3,22 @@
     
 	<div class="col-md-12">
 		<div class="row">
-            <div class="col-md-4">
             
-                <div class="tile-stats tile-cyan">
-                    <div class="icon"><i class="entypo-credit-card"></i></div>
-                    <div class="num" data-start="0" data-end="<?php $query = $this->db->query('SELECT SUM(amount_paid)as total FROM invoice WHERE status = "paid"')->row(); echo floatval($query->total);?>" 
-                    		data-postfix="" data-duration="500" data-delay="0">0</div>
+        <a href="index.php?admin/invoice">
+
+                <div class="col-md-4">
                     
-                    <h3><?php echo ('Earns Collected');?></h3>
-                   
+                    <div class="tile-stats tile-cyan">
+                        <div class="icon"><i class="entypo-credit-card"></i></div>
+                        <div class="num" data-start="0" data-end="<?php $query = $this->db->query('SELECT SUM(amount_paid)as total FROM invoice WHERE status = "paid"')->row(); echo floatval($query->total);?>" 
+                                data-postfix="" data-duration="500" data-delay="0">0</div>
+                        
+                        <h3><?php echo ('Earns Collected');?></h3>
+                    
+                    </div>
+                    
                 </div>
-                
-            </div>
+        </a>
 
             <div class="col-md-4">
             
@@ -24,20 +28,21 @@
                     		data-postfix="" data-duration="1500" data-delay="0">0</div>
                     
                     <h3><?php echo ('Students');?></h3>
-                   
+                    
                 </div>
                 
             </div>
             <div class="col-md-4">
             
-                <div class="tile-stats tile-blue">
-                    <div class="icon"><i class="entypo-users"></i></div>
-                    <div class="num" data-start="0" data-end="<?php echo $this->db->count_all('teacher');?>" 
-                    		data-postfix="" data-duration="800" data-delay="0">0</div>
-                    
-                    <h3><?php echo ('Teacher');?></h3>
-                   
-                </div>
+                <a href="index.php?admin/teacher">
+                    <div class="tile-stats tile-blue">
+                        <div class="icon"><i class="entypo-users"></i></div>
+                        <div class="num" data-start="0" data-end="<?php echo $this->db->count_all('teacher');?>" 
+                                data-postfix="" data-duration="800" data-delay="0">0</div>
+                        
+                        <h3><?php echo ('Teacher');?></h3>
+                    </div>
+                </a>
                 
             </div>
 
