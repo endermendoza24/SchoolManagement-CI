@@ -311,33 +311,12 @@
         </li> -->
 
         <!-- SETTINGS -->
-        <li class="<?php
-        if ($page_name == 'system_settings' ||
-                $page_name == 'manage_language' ||
-                    $page_name == 'sms_settings')
-                        echo 'opened active';
-        ?> ">
-            <a href="#">
+        
+        <li class="<?php if ($page_name == 'settings') echo 'active'; ?> ">
+            <a href="<?php echo base_url(); ?>index.php?admin/system_settings">
                 <i class="entypo-lifebuoy"></i>
                 <span><?php echo ('Settings'); ?></span>
             </a>
-            <ul>
-                <li class="<?php if ($page_name == 'system_settings') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?admin/system_settings">
-                        <span><i class="entypo-dot"></i> <?php echo ('General Settings'); ?></span>
-                    </a>
-                </li>
-                <!-- <li class="<?php if ($page_name == 'sms_settings') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?admin/sms_settings">
-                        <span><i class="entypo-dot"></i> <?php echo ('SMS Settings'); ?></span>
-                    </a>
-                </li> -->
-                <!-- <li class="<?php if ($page_name == 'manage_language') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?admin/manage_language">
-                        <span><i class="entypo-dot"></i> <?php echo ('Language Settings'); ?></span>
-                    </a>
-                </li> -->
-            </ul>
         </li>
 
         <!-- ACCOUNT -->

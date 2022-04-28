@@ -47,21 +47,21 @@
                       </div>
                   </div>
                     
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                       <label  class="col-sm-3 control-label"><?php echo ('Paypal email');?></label>
                       <div class="col-sm-9">
                           <input type="text" class="form-control" name="paypal_email" 
                               value="<?php echo $this->db->get_where('settings' , array('type' =>'paypal_email'))->row()->description;?>">
                       </div>
-                  </div>
+                  </div> -->
                     
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                       <label  class="col-sm-3 control-label"><?php echo ('Currency');?></label>
                       <div class="col-sm-9">
                           <input type="text" class="form-control" name="currency" 
                               value="<?php echo $this->db->get_where('settings' , array('type' =>'currency'))->row()->description;?>">
                       </div>
-                  </div>
+                  </div> -->
                     
                   <div class="form-group">
                       <label  class="col-sm-3 control-label"><?php echo ('System Email');?></label>
@@ -71,7 +71,7 @@
                       </div>
                   </div>
                     
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                       <label  class="col-sm-3 control-label"><?php echo ('Language');?></label>
                       <div class="col-sm-9">
                           <select name="language" class="form-control">
@@ -90,7 +90,7 @@
 									?>
                            </select>
                       </div>
-                  </div>
+                  </div> -->
                     
                   <div class="form-group">
                       <label  class="col-sm-3 control-label"><?php echo ('Text align');?></label>
