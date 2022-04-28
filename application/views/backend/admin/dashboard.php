@@ -104,18 +104,19 @@
                 
             </div>
 
-            <!-- <div class="col-md-4">
+             <div class="col-md-4">
             
-                <div class="tile-stats tile-pink">
-                    <div class="icon"><i class="entypo-comment"></i></div>
-                    <div class="num" data-start="0" data-end="<?php $query = $this->db->query('SELECT * FROM message WHERE sender = "admin-1" && read_status="0"'); echo $query->num_rows();?>" 
-                    		data-postfix="" data-duration="500" data-delay="0">0</div>
+             <div class="tile-stats tile-cyan">
+                        <div class="icon"><i class="entypo-credit-card"></i></div>
+                        <div class="num" data-start="0" data-end="<?php $query = $this->db->query('SELECT SUM(amount_paid)as total FROM invoice WHERE status = "paid"')->row(); echo floatval($query->total);?>" 
+                                data-postfix="" data-duration="500" data-delay="0">0</div>
+                        
+                        <h3><?php echo ('Expenses today');?></h3>
                     
-                    <h3><?php echo ('Inbox');?></h3>
-                   
-                </div>
+                    </div>
                 
             </div>
+
 
             <div class="col-md-4">
             
@@ -128,7 +129,7 @@
                    
                 </div>
                 
-            </div> -->
+            </div> 
             
     	</div>
     </div>

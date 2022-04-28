@@ -327,16 +327,16 @@
                         <span><i class="entypo-dot"></i> <?php echo ('General Settings'); ?></span>
                     </a>
                 </li>
-                <li class="<?php if ($page_name == 'sms_settings') echo 'active'; ?> ">
+                <!-- <li class="<?php if ($page_name == 'sms_settings') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/sms_settings">
                         <span><i class="entypo-dot"></i> <?php echo ('SMS Settings'); ?></span>
                     </a>
-                </li>
-                <li class="<?php if ($page_name == 'manage_language') echo 'active'; ?> ">
+                </li> -->
+                <!-- <li class="<?php if ($page_name == 'manage_language') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/manage_language">
                         <span><i class="entypo-dot"></i> <?php echo ('Language Settings'); ?></span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </li>
 

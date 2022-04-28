@@ -307,7 +307,7 @@ class Admin extends CI_Controller
             $data['address']    = $this->input->post('address');
             $data['phone']      = $this->input->post('phone');
             $data['email']      = $this->input->post('email');
-            $data['password']   = $this->input->post('password');
+            // $data['password']   = $this->input->post('password');
             $data['class_id']   = $this->input->post('class_id');
             if ($this->input->post('section_id') != '') {
                 $data['section_id'] = $this->input->post('section_id');
