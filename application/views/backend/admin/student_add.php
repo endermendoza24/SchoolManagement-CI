@@ -138,13 +138,13 @@
 						</div>
 					</div>
 					
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Password');?></label>
                         
 						<div class="col-sm-5">
 							<input type="password" class="form-control" name="password" value="" >
 						</div> 
-					</div>
+					</div> -->
 	
 					<!-- <div class="form-group">
 						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Photo');?></label>

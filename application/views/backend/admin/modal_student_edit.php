@@ -4,6 +4,7 @@ foreach ( $edit_data as $row):
 ?>
 <div class="row">
 	<div class="col-md-12">
+		
 		<div class="panel panel-primary" data-collapsed="0">
         	<div class="panel-heading">
             	<div class="panel-title" >
@@ -50,7 +51,7 @@ foreach ( $edit_data as $row):
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Parent');?></label>
                         
 						<div class="col-sm-5">
-							<select name="parent_id" class="form-control" data-validate="required" data-message-required="<?php echo ('Value Required');?>">
+							<select name="parent_id" class="form-control" >  <!-- data-validate="required" data-message-required="<?php echo ('Value Required');?>" -->
                               <option value=""><?php echo ('Select');?></option>
                               <?php 
 									$parents = $this->db->get('parent')->result_array();

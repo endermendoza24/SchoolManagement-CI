@@ -274,7 +274,7 @@
         <li class="<?php if ($page_name == 'book') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/book">
                 <i class="entypo-book"></i>
-                <span><?php echo ('Warehouse'); ?></span>
+                <span><?php echo ('Library'); ?></span>
             </a>
         </li>
 
