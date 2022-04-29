@@ -59,7 +59,7 @@
                     
                     <div class="form-group">
 						<div class="col-sm-offset-3 col-sm-5">
-							<button type="submit" class="btn btn-default"><?php echo ('Update');?></button>
+							<button type="submit" class="btn btn-success"><?php echo ('Update');?></button>
 						</div>
 					</div>
                 <?php echo form_close();?>

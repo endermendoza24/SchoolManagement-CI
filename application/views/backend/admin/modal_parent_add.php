@@ -37,18 +37,18 @@
 					</div> -->
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Phone');?></label>
+						<label for="field-2"  class="col-sm-3 control-label"><?php echo ('Phone');?></label>
                         
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="phone" value="">
+							<input type="text" data-validate="required" data-message-required="<?php echo ('Value Required');?>" class="form-control" name="phone" value="">
 						</div>
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Address');?></label>
+						<label for="field-2"  class="col-sm-3 control-label"><?php echo ('Address');?></label>
                         
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="address" value="">
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="address" value="">
 						</div>
 					</div>
 					
@@ -62,7 +62,7 @@
                     
                     <div class="form-group">
 						<div class="col-sm-offset-3 col-sm-5">
-							<button type="submit" class="btn btn-primary"><?php echo ('Add Parent');?></button>
+							<button type="submit" class="btn btn-success"><?php echo ('Add Parent');?></button>
 						</div>
 					</div>
                 <?php echo form_close();?>
