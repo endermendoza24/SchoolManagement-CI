@@ -22,7 +22,7 @@
                         <?php echo form_open(base_url() . 'index.php?teacher/manage_profile/update_profile_info' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top' , 'enctype' => 'multipart/form-data'));?>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo ('Name');?></label>
-                                <div class="col-sm-5">
+                                <div class="col-sm-5">                            
                                     <input type="text" class="form-control" name="name" value="<?php echo $row['name'];?>"/>
                                 </div>
                             </div>

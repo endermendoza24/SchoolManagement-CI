@@ -1,7 +1,7 @@
 <hr />
     <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-hover table-striped">
         <thead>
-            <tr>
+            <tr>                
                 <th><?php echo ('Select date');?></th>
                 <th><?php echo ('Select month');?></th>
                 <th><?php echo ('Select year');?></th>
@@ -149,6 +149,14 @@
                               <span class="badge badge-danger"><?php echo ('Absent');?></span>  
                             </td>
                         <?php endif;?>
+
+                        <?php if ($status == 3):?>
+                            <td align="center">
+                              <span class="badge badge-warning"><?php echo ('Justify');?></span>  
+                            </td>
+                        <?php endif;?>
+                            <!-- esto se añadio para los justificados -->
+
                         <?php if ($status == 0):?>
                             <td></td>
                         <?php endif;?>
@@ -207,6 +215,7 @@
                                         <option value="0" <?php if($status == 0)echo 'selected="selected"';?>></option>
                                         <option value="1" <?php if($status == 1)echo 'selected="selected"';?>>Present</option>
                                         <option value="2" <?php if($status == 2)echo 'selected="selected"';?>>Absent</option>
+                                        <option value="3" <?php if($status == 3)echo 'selected="selected"';?>>Justify</option>
                                     </select>
                                 
                             </td>

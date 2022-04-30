@@ -133,12 +133,12 @@ foreach ($classes as $row):
         </li>
         
 		<!-- STUDY MATERIAL -->
-        <li class="<?php if ($page_name == 'study_material') echo 'active'; ?> ">
+        <!-- <li class="<?php if ($page_name == 'study_material') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/study_material">
                 <i class="entypo-book-open"></i>
                 <span><?php echo ('Study Material'); ?></span>
             </a>
-        </li>
+        </li> -->
 
         <!-- DAILY ATTENDANCE -->
         <li class="<?php if ($page_name == 'manage_attendance') echo 'active'; ?> ">
@@ -180,20 +180,20 @@ if ($page_name == 'exam' ||
         </li>
 
         <!-- TRANSPORT -->
-        <li class="<?php if ($page_name == 'transport') echo 'active'; ?> ">
+        <!-- <li class="<?php if ($page_name == 'transport') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/transport">
                 <i class="entypo-location"></i>
                 <span><?php echo ('Transport'); ?></span>
             </a>
-        </li>
+        </li> -->
 
         <!-- NOTICEBOARD -->
-        <li class="<?php if ($page_name == 'noticeboard') echo 'active'; ?> ">
+        <!-- <li class="<?php if ($page_name == 'noticeboard') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/noticeboard">
                 <i class="entypo-doc-text-inv"></i>
                 <span><?php echo ('Noticeboard'); ?></span>
             </a>
-        </li>
+        </li> -->
 
         <!-- MESSAGE -->
         <li class="<?php if ($page_name == 'message') echo 'active'; ?> ">

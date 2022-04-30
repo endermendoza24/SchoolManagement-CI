@@ -1,15 +1,19 @@
 <div class="row">
+
 	<div class="col-md-12 col-sm-12 clearfix" style="text-align:center;">
-		<h2 style="font-weight:200; margin:0px;"><?php echo $system_name;?></h2>
+	<h2 style="font-weight:200; margin:0px;"><?php  echo $system_name;?></h2> <h3> <?php foreach($edit_data as $row):  echo $row['name']; endforeach ?></h3>
+		
     </div>
+
+
 	<!-- Raw Links -->
 	<div class="col-md-12 col-sm-12 clearfix ">
 		
         <ul class="list-inline links-list pull-left">
         <!-- Language Selector -->			
-           <li class="dropdown language-selector">
+           <li class="dropdown language-selector">			   
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-close-others="true">
-                        	<i class="entypo-user"></i> <?php echo $this->session->userdata('login_type');?>
+                        	<i class="entypo-user"></i> <?php echo $this->session->userdata('login_type'); echo ' - '; echo $this->session->userdata('name');  ?>  </h2>  <!--esto imprimer el rol y el nombre del usuario-->
                     </a>
 
 				<?php if ($account_type != 'parent'):?>
@@ -69,6 +73,7 @@
 												 <span><?php echo $field;?></span>
                                         </a>
                                     </li>
+									
                                 <?php
                             }
                             ?>

@@ -36,7 +36,7 @@
                 </div>
                 
             </div>
-            <div class="col-md-12">
+            <!-- <div class="col-md-12">
             
                 <div class="tile-stats tile-green">
                     <div class="icon"><i class="entypo-users"></i></div>
@@ -47,7 +47,7 @@
                    <p>Total teachers</p>
                 </div>
                 
-            </div>
+            </div> -->
             <div class="col-md-12">
             
                 <div class="tile-stats tile-aqua">
