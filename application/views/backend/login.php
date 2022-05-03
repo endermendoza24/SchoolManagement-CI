@@ -49,10 +49,10 @@ var baseurl = '<?php echo base_url();?>';
 	<div class="login-header login-caret">
 		
 		<div class="login-content" style="width:100%;">
-			
-			<A href="<?php echo base_url();?>" class="logo">
-				<img src="uploads/logo.png" height="60" alt="" />
-			</A>
+		
+			<a href="<?php echo base_url();?>" class="logo">
+				<img src="uploads/logo.png" height="60" alt="" />				
+			</a>
 			
 			<p class="description">
             	<h2 style="color:#cacaca; font-weight:100;">
@@ -120,9 +120,9 @@ var baseurl = '<?php echo base_url();?>';
 			
 			
 			<div class="login-bottom-links">
-				<A href="<?php echo base_url();?>index.php?login/forgot_password" class="link">
+				<a href="<?php echo base_url();?>index.php?login/forgot_password" class="link">
 					<?php echo get_phrase('forgot_your_password');?> ?
-				</A>
+				</a>
 			</div>
 			
 
