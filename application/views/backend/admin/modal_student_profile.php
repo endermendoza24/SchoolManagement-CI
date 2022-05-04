@@ -107,6 +107,7 @@ foreach($student_info as $row):?>
                     <?php endif;?>
                     
                 </table>
+                <i class="print"><button class="btn btn-success btn-block btn-login">Report</button></i>
 			</div>
 		</div>		
 	</section>

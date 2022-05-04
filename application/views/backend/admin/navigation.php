@@ -101,6 +101,7 @@
         <!-- STUDENT -->
         <li class="<?php
         if ($page_name == 'student_add' ||
+                $page_name == 'student_adddos' ||
 		        $page_name == 'acd_session' ||
 		        $page_name == 'online_admission' ||
                 $page_name == 'student_bulk_add' ||
@@ -129,6 +130,14 @@
                         <span><i class="entypo-dot"></i> <?php echo ('Admit Student'); ?></span>
                     </a>
                 </li>
+
+
+                <li class="<?php if ($page_name == 'student_adddos') echo 'active'; ?> ">
+                    <a href="<?php echo base_url(); ?>index.php?admin/student_adddos">
+                        <span><i class="entypo-dot"></i> <?php echo ('Matricular estudiante'); ?></span>
+                    </a>
+                </li>
+
 
                 <!-- STUDENT BULK ADMISSION -->
                 <!-- <li class="<?php if ($page_name == 'student_bulk_add') echo 'active'; ?> ">
