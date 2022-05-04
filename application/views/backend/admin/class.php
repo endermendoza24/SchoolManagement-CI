@@ -13,6 +13,7 @@
                     	</a></li>
 		</ul>
     	<!------CONTROL TABS END------>
+      
         
 		<div class="tab-content">
             <!----TABLE LISTING STARTS-->
@@ -81,7 +82,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Name Numeric');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Level name');?></label>
                                 <div class="col-sm-5">
                                     <input type="text" class="form-control" name="name_numeric"/>
                                 </div>

@@ -37,7 +37,7 @@
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Phone');?></label>
                         
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="phone" value="<?php echo $row['phone'];?>">
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="phone" value="<?php echo $row['phone'];?>">
 						</div>
 					</div>
 					
@@ -45,7 +45,7 @@
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Address');?></label>
                         
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="address" value="<?php echo $row['address'];?>">
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="address" value="<?php echo $row['address'];?>">
 						</div>
 					</div>
 					

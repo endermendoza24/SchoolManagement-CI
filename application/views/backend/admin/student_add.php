@@ -38,7 +38,7 @@
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Parent');?></label>
                         
 						<div class="col-sm-5">
-							<select disabled name="parent_id" class="form-control">
+							<select data-validate="required" data-message-required="<?php echo ('Value Required');?>" disabled name="parent_id" class="form-control">
                               <option value=""><?php echo ('Select');?></option>
                               <?php 
 								$parents = $this->db->get('parent')->result_array();
@@ -80,7 +80,7 @@
 					<div class="form-group">
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Section');?></label>
 		                    <div class="col-sm-5">
-		                        <select name="section_id" class="form-control" id="section_selector_holder">
+		                        <select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="section_id" class="form-control" id="section_selector_holder">
 		                            <option value=""><?php echo ('Select class first');?></option>
 			                        
 			                    </select>
@@ -91,7 +91,7 @@
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Roll');?></label>
                         
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="roll" value="" >
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="roll" value="" >
 						</div> 
 					</div>
 					
@@ -99,7 +99,7 @@
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Birthday');?></label>
                         
 						<div class="col-sm-5">
-							<input type="text" class="form-control datepicker" name="birthday" value="" data-start-view="2">
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control datepicker" name="birthday" value="" data-start-view="2">
 						</div> 
 					</div>
 					
@@ -107,7 +107,7 @@
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Gender');?></label>
                         
 						<div class="col-sm-5">
-							<select name="sex" class="form-control">
+							<select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="sex" class="form-control">
                               <option value=""><?php echo ('Select');?></option>
                               <option value="Male"><?php echo ('Male');?></option>
                               <option value="Female"><?php echo ('Female');?></option>
@@ -119,22 +119,22 @@
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Address');?></label>
                         
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="address" value="" >
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="address" value="" >
 						</div> 
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Phone');?></label>
+						<label  for="field-2" class="col-sm-3 control-label"><?php echo ('Phone');?></label>
                         
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="phone" value="" >
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="phone" value="" >
 						</div> 
 					</div>
                     
 					<div class="form-group">
 						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Email');?></label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="email" value="">
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="email" value="">
 						</div>
 					</div>
 					
@@ -146,7 +146,7 @@
 						</div> 
 					</div> -->
 	
-					<!-- <div class="form-group">
+					<div class="form-group">
 						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Photo');?></label>
                         
 						<div class="col-sm-5">
@@ -165,7 +165,7 @@
 								</div>
 							</div>
 						</div>
-					</div> -->
+					</div>
                     
                     <div class="form-group">
 						<div class="col-sm-offset-3 col-sm-5">

@@ -16,7 +16,7 @@ foreach ( $edit_data as $row):
                 <div class="form-group">
                     <label class="col-sm-3 control-label"><?php echo ('Name');?></label>
                     <div class="col-sm-5 controls">
-                        <input type="text" class="form-control" name="name" value="<?php echo $row['name'];?>"/>
+                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="name" value="<?php echo $row['name'];?>"/>
                     </div>
                 </div>
                 <div class="form-group">

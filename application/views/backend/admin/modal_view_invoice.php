@@ -12,13 +12,14 @@ foreach ($edit_data as $row):
     <br><br>
 
     <div id="invoice_print">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjVFV9N_wDckwxARrhqJNd_fDuhQOdC5BZnxFwRu84Z8f3zKfePZHSjt--SesFIXDQvu8&usqp=CAU" alt="Imagen de Talk"  style="width:10%; border-radius:10px;"/>
         <table width="100%" border="0">
             <tr>
                 <td align="right">
-                    <h5><?php echo ('Creation date'); ?> : <?php echo date('d M,Y', $row['creation_timestamp']);?></h5>
-                    <h5><?php echo ('Title'); ?> : <?php echo $row['title'];?></h5>
-                    <h5><?php echo ('Description'); ?> : <?php echo $row['description'];?></h5>
-                    <h5><?php echo ('Status'); ?> : <?php echo $row['status']; ?></h5>
+                    <h5 style="text-transform:capitalize;"><?php echo ('Creation date'); ?> : <?php echo date('d M,Y', $row['creation_timestamp']);?></h5>
+                    <h5 style="text-transform:capitalize;"><?php echo ('Title'); ?> : <?php echo $row['title'];?></h5>
+                    <h5 style="text-transform:capitalize;"><?php echo ('Description'); ?> : <?php echo $row['description'];?></h5>
+                    <h5 style="text-transform:capitalize;"><?php echo ('Status'); ?> : <?php echo $row['status']; ?></h5>
                 </td>
             </tr>
         </table>
@@ -33,7 +34,8 @@ foreach ($edit_data as $row):
                 <td align="left" valign="top">
                     <?php echo $this->db->get_where('settings', array('type' => 'system_name'))->row()->description; ?><br>
                     <?php echo $this->db->get_where('settings', array('type' => 'address'))->row()->description; ?><br>
-                    <?php echo $this->db->get_where('settings', array('type' => 'phone'))->row()->description; ?><br>            
+                    <?php echo $this->db->get_where('settings', array('type' => 'phone'))->row()->description; ?><br> 
+                    <p>RUC: 78456932</p>           
                 </td>
                 <td align="right" valign="top">
                     <?php echo $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->name; ?><br>

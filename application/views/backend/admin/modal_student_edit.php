@@ -40,10 +40,10 @@ foreach ( $edit_data as $row):
 					</div>
 	
 					<div class="form-group">
-						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Name');?></label>
+						<label  for="field-1" class="col-sm-3 control-label"><?php echo ('Name');?></label>
                         
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="<?php echo $row['name'];?>">
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="<?php echo $row['name'];?>">
 						</div>
 					</div>
 
@@ -51,7 +51,7 @@ foreach ( $edit_data as $row):
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Parent');?></label>
                         
 						<div class="col-sm-5">
-							<select name="parent_id" class="form-control" >  <!-- data-validate="required" data-message-required="<?php echo ('Value Required');?>" -->
+							<select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="parent_id" class="form-control" >  <!-- data-validate="required" data-message-required="<?php echo ('Value Required');?>" -->
                               <option value=""><?php echo ('Select');?></option>
                               <?php 
 									$parents = $this->db->get('parent')->result_array();
@@ -72,7 +72,7 @@ foreach ( $edit_data as $row):
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Class');?></label>
                         
 						<div class="col-sm-5">
-							<select name="class_id" class="form-control" data-validate="required" id="class_id" 
+							<select data-message-required="<?php echo ('Value Required');?>" name="class_id" class="form-control" data-validate="required" id="class_id" 
 								data-message-required="<?php echo ('Value Required');?>"
 									onchange="return get_class_sections(this.value)">
                               <option value=""><?php echo ('Select');?></option>
@@ -95,7 +95,7 @@ foreach ( $edit_data as $row):
 						<div class="form-group">
 							<label for="field-2" class="col-sm-3 control-label"><?php echo ('Section');?></label>
 			                    <div class="col-sm-5">
-			                        <select name="section_id" class="form-control" id="section_selector_holder">
+			                        <select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="section_id" class="form-control" id="section_selector_holder">
 			                            <option value=""><?php echo ('Select class first');?></option>
 				                        
 				                    </select>
@@ -107,7 +107,7 @@ foreach ( $edit_data as $row):
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Roll');?></label>
                         
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="roll" value="<?php echo $row['roll'];?>" >
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="roll" value="<?php echo $row['roll'];?>" >
 						</div> 
 					</div>
 					
@@ -115,7 +115,7 @@ foreach ( $edit_data as $row):
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Birthday');?></label>
                         
 						<div class="col-sm-5">
-							<input type="text" class="form-control datepicker" name="birthday" value="<?php echo $row['birthday'];?>" data-start-view="2">
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control datepicker" name="birthday" value="<?php echo $row['birthday'];?>" data-start-view="2">
 						</div> 
 					</div>
 					
@@ -123,7 +123,7 @@ foreach ( $edit_data as $row):
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Gender');?></label>
                         
 						<div class="col-sm-5">
-							<select name="sex" class="form-control">
+							<select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="sex" class="form-control">
                               <option value=""><?php echo ('Select');?></option>
                               <option value="Male" <?php if($row['sex'] == 'Male')echo 'selected';?>><?php echo ('Male');?></option>
                               <option value="Female"<?php if($row['sex'] == 'Female')echo 'selected';?>><?php echo ('Female');?></option>
@@ -135,7 +135,7 @@ foreach ( $edit_data as $row):
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Address');?></label>
                         
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="address" value="<?php echo $row['address'];?>" >
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="address" value="<?php echo $row['address'];?>" >
 						</div> 
 					</div>
 					
@@ -143,14 +143,14 @@ foreach ( $edit_data as $row):
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Phone');?></label>
                         
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="phone" value="<?php echo $row['phone'];?>" >
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="phone" value="<?php echo $row['phone'];?>" >
 						</div> 
 					</div>
                     
 					<div class="form-group">
 						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Email');?></label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="email" value="<?php echo $row['email'];?>">
+							<input  type="text" class="form-control" name="email" value="<?php echo $row['email'];?>">
 						</div>
 					</div>
                     

@@ -1,3 +1,4 @@
+
 <div class="row">
 	<div class="col-md-12">
     
@@ -110,6 +111,8 @@
                                     <div class="col-sm-9">
                                         <select name="student_id" class="form-control" style="" >
                                             <?php 
+                                            date_default_timezone_set("America/Costa_Rica");
+                                            echo date_default_timezone_get();
                                             $this->db->order_by('class_id','asc');
                                             $students = $this->db->get('student')->result_array();
                                             foreach($students as $row):
@@ -129,20 +132,20 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Title');?></label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="title"/>
+                                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" require class="form-control" name="title"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Description');?></label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="description"/>
+                                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="description"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Date');?></label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="datepicker form-control" name="date"/>
+                                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" value="<?php echo date("m-d-Y h:i:s");?>" class="datepicker form-control" name="date"/>
                                     </div>
                                 </div>
                                 
@@ -159,7 +162,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Total');?></label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="amount"
+                                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="amount"
                                             placeholder="<?php echo ('Enter Total Amount');?>"/>
                                     </div>
                                 </div>
@@ -167,7 +170,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Payment');?></label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="amount_paid"
+                                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="amount_paid"
                                             placeholder="<?php echo ('Enter Payment Amount');?>"/>
                                     </div>
                                 </div>
@@ -176,7 +179,7 @@
                                     <label class="col-sm-3 control-label"><?php echo ('Status');?></label>
                                     <div class="col-sm-9">
                                         <select name="status" class="form-control">
-                                            <option value="paid"><?php echo ('Paid');?></option>
+                                            <option data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="paid"><?php echo ('Paid');?></option>
                                             <option value="unpaid"><?php echo ('Unpaid');?></option>
                                         </select>
                                     </div>
@@ -187,8 +190,8 @@
                                     <div class="col-sm-9">
                                         <select name="method" class="form-control">
                                             <option value="1"><?php echo ('Cash');?></option>
-                                            <option value="2"><?php echo ('Cheque');?></option>
-                                            <option value="3"><?php echo ('Card');?></option>
+                                            <option value="2"><?php echo ('Bank deposit');?></option>
+                                            <!-- <option value="3"><?php echo ('Card');?></option> -->
                                         </select>
                                     </div>
                                 </div>
