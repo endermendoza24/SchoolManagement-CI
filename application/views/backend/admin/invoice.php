@@ -111,7 +111,7 @@
                                     <div class="col-sm-9">
                                         <select name="student_id" class="form-control" style="" >
                                             <?php 
-                                            date_default_timezone_set("America/Costa_Rica");
+                                            date_default_timezone_set("America/El_Salvador");
                                             echo date_default_timezone_get();
                                             $this->db->order_by('class_id','asc');
                                             $students = $this->db->get('student')->result_array();
@@ -145,7 +145,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Date');?></label>
                                     <div class="col-sm-9">
-                                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" value="<?php echo date("m-d-Y h:i:s");?>" class="datepicker form-control" name="date"/>
+                                        <input disabled data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" value="<?php echo date("m-d-Y h:i:s");?>" class="datepicker form-control" name="date"/>
                                     </div>
                                 </div>
                                 

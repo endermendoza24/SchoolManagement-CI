@@ -11,39 +11,52 @@ foreach ($edit_data as $row):
 
     <br><br>
 
-    <div id="invoice_print">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjVFV9N_wDckwxARrhqJNd_fDuhQOdC5BZnxFwRu84Z8f3zKfePZHSjt--SesFIXDQvu8&usqp=CAU" alt="Imagen de Talk"  style="width:10%; border-radius:10px;"/>
+    <div id="invoice_print">        
         <table width="100%" border="0">
             <tr>
-                <td align="right">
-                    <h5 style="text-transform:capitalize;"><?php echo ('Creation date'); ?> : <?php echo date('d M,Y', $row['creation_timestamp']);?></h5>
-                    <h5 style="text-transform:capitalize;"><?php echo ('Title'); ?> : <?php echo $row['title'];?></h5>
-                    <h5 style="text-transform:capitalize;"><?php echo ('Description'); ?> : <?php echo $row['description'];?></h5>
-                    <h5 style="text-transform:capitalize;"><?php echo ('Status'); ?> : <?php echo $row['status']; ?></h5>
+                <td align="center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjVFV9N_wDckwxARrhqJNd_fDuhQOdC5BZnxFwRu84Z8f3zKfePZHSjt--SesFIXDQvu8&usqp=CAU" alt="Imagen de Talk"  style="width:20%;"/>
+                    <h4><b>Talk academia de idiomas <br> ¡Una alternativa diferente!</b></h4>
+                    <h4>Al lado del MEFFCA, Jinotepe</h4>
+                    <h4>Autorización DGI: <?php $d=rand(1000,9999); echo $d; ?> - 7</h4>
+                    <h4> N° <?php $d=rand(1000,9999); echo $d; ?> </h4>
+
+                    <h4>RUC: 0012305950022</h4>
+                    <h4>Email: quierosaberdetalk@gmail.com</h4>
+                    <h6>Cualquier retraso en pago reportar dentro del <br> periodo de pago 10% de mora por cada 10 días de retraso</h6>
+                    <h5 style="text-transform:capitalize;"><?php echo ('Fecha de recibo'); ?> : <?php echo date('d M,Y', $row['creation_timestamp']);?></h5>
+                    <h5 style="text-transform:capitalize;"><?php echo ('Titulo'); ?> : <?php echo $row['title'];?></h5>
+                    <h5 style="text-transform:capitalize;"><?php echo ('Descripción'); ?> : <?php echo $row['description'];?></h5>
+                    <!-- <h5 style="text-transform:capitalize;"><?php echo ('Estado'); ?> : <?php echo $row['status']; ?></h5> -->
                 </td>
             </tr>
         </table>
-        <hr>
+        <hr style="border: 1px dashed #000;">
         <table width="100%" border="0">    
             <tr>
-                <td align="left"><h4><?php echo ('Payment to'); ?> </h4></td>
-                <td align="right"><h4><?php echo ('Bill to'); ?> </h4></td>
+                <td align="left"><h4><?php echo ('Paguese a:'); ?> </h4></td>
+                <!-- <td align="center"><h4><?php echo ('De parte de: '); ?> </h4></td> -->
             </tr>
 
             <tr>
+                <!-- Esto es la información de facturación del sistema -->
                 <td align="left" valign="top">
                     <?php echo $this->db->get_where('settings', array('type' => 'system_name'))->row()->description; ?><br>
                     <?php echo $this->db->get_where('settings', array('type' => 'address'))->row()->description; ?><br>
-                    <?php echo $this->db->get_where('settings', array('type' => 'phone'))->row()->description; ?><br> 
-                    <p>RUC: 78456932</p>           
-                </td>
-                <td align="right" valign="top">
+                    <?php echo $this->db->get_where('settings', array('type' => 'phone'))->row()->description; ?><br>                         
+
+
+                    <h4><?php echo ('De parte de: '); ?> </h4>
                     <?php echo $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->name; ?><br>
                     <?php 
                         $class_id = $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->class_id;
                         echo ('Class') . ' ' . $this->db->get_where('class', array('class_id' => $class_id))->row()->name;
                     ?><br>
-                    <?php echo 'roll - ' .  $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->roll; ?><br>
+                    <?php echo 'Direccion ' .  $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->address; ?><br>
+                </td>
+                <!-- Esto es la información de facturación del estudiante -->
+                <td align="center" valign="top">
+                    <!-- aqui estaba la informacion del estudiante antes de que la pasara a arriba -->
                 </td>
             </tr>
         </table>
@@ -51,26 +64,23 @@ foreach ($edit_data as $row):
 
         <table width="100%" border="0">    
             <tr>
-                <td align="right" width="80%"><?php echo ('Total Amount'); ?> :</td>
-                <td align="right">$<?php echo $row['amount']; ?></td>
+                <td align="left" width="80%"><?php echo ('Monto'); ?> : $<?php echo $row['amount']; ?></td>                
             </tr>
             <tr>
-                <td align="right" width="80%"><h4><?php echo ('Paid Amount'); ?> :</h4></td>
-                <td align="right"><h4>$<?php echo $row['amount_paid']; ?></h4></td>
+                <td align="left" width="80%"><h4><?php echo ('Monto total'); ?> : $<?php echo $row['amount_paid']; ?></h4></td>                
             </tr>
             <?php if ($row['due'] != 0):?>
             <tr>
-                <td align="right" width="80%"><h4><?php echo ('Due'); ?> :</h4></td>
-                <td align="right"><h4>$<?php echo $row['due']; ?></h4></td>
+                <td align="left" width="80%"><h4><?php echo ('Due'); ?> : $<?php echo $row['due']; ?></h4></td>                
             </tr>
             <?php endif;?>
         </table>
 
-        <hr>
+        <hr style="border: 1px dashed #000;">
 
         <!-- payment history -->
-        <h4><?php echo ('Payment History'); ?></h4>
-        <table class="table table-bordered table-hover" width="100%" border="1" style="border-collapse:collapse;">
+        <!-- <h4><?php echo ('Payment History'); ?></h4> -->
+        <!-- <table class="table table-bordered table-hover" width="100%" border="1" style="border-collapse:collapse;">
             <thead>
                 <tr>
                     <th><?php echo ('Date'); ?></th>
@@ -102,7 +112,7 @@ foreach ($edit_data as $row):
                 <?php endforeach; ?>
             </tbody>
             <tbody>
-        </table>
+        </table> -->
     </div>
 <?php endforeach; ?>
 
