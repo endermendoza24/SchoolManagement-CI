@@ -145,7 +145,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Date');?></label>
                                     <div class="col-sm-9">
-                                        <input disabled data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" value="<?php echo date("m-d-Y h:i:s");?>" class="datepicker form-control" name="date"/>
+                                        <input  data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="datetime-local" value="<?php echo date("m-d-Y h:i:s");?>" class=" form-control" name="date"/>
                                     </div>
                                 </div>
                                 

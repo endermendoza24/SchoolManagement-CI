@@ -48,8 +48,8 @@ foreach ($student_info as $row1):
                                             <th>Subject</th>
                                             <th>Obtained marks</th>
                                             <th>Highest mark</th>
-                                            <th>Grade</th>
-                                            <th>Comment</th>
+                                            <!-- <th>Grade</th> -->
+                                            <!-- <th>Comment</th> -->
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -91,13 +91,13 @@ foreach ($student_info as $row1):
                                                     endforeach;
                                                     ?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php
                                                     $grade = $this->crud_model->get_grade($row3['mark_obtained']);
                                                     echo $grade['name'];
                                                     $total_grade_point += $grade['grade_point'];
                                                     ?>
-                                                </td>
+                                                </td> -->
                                                 <td></td>
                                             </tr>
                                         <?php endforeach; ?>
