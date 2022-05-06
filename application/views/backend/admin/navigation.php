@@ -129,14 +129,7 @@
                     <a href="<?php echo base_url(); ?>index.php?admin/student_add">
                         <span><i class="entypo-dot"></i> <?php echo ('Admit Student'); ?></span>
                     </a>
-                </li>
-
-
-                <li class="<?php if ($page_name == 'student_adddos') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?admin/student_adddos">
-                        <span><i class="entypo-dot"></i> <?php echo ('Matricular estudiante'); ?></span>
-                    </a>
-                </li>
+                </li>            
 
 
                 <!-- STUDENT BULK ADMISSION -->
@@ -207,7 +200,7 @@
         <!-- EXAMS -->
         <li class="<?php
         if ($page_name == 'exam' ||
-                $page_name == 'grade' ||
+                // $page_name == 'grade' ||
                 $page_name == 'marks' ||
                     $page_name == 'exam_marks_sms')
                         echo 'opened active';
@@ -222,11 +215,11 @@
                         <span><i class="entypo-dot"></i> <?php echo ('Exam List'); ?></span>
                     </a>
                 </li>
-                <li class="<?php if ($page_name == 'grade') echo 'active'; ?> ">
+                <!-- <li class="<?php if ($page_name == 'grade') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/grade">
                         <span><i class="entypo-dot"></i> <?php echo ('Exam Grades'); ?></span>
                     </a>
-                </li>
+                </li> -->
                 <li class="<?php if ($page_name == 'marks') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/marks">
                         <span><i class="entypo-dot"></i> <?php echo ('Manage Marks'); ?></span>
