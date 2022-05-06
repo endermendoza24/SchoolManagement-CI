@@ -15,7 +15,7 @@ foreach ($edit_data as $row):
         <table width="100%" border="0">
             <tr>
                 <td align="center">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjVFV9N_wDckwxARrhqJNd_fDuhQOdC5BZnxFwRu84Z8f3zKfePZHSjt--SesFIXDQvu8&usqp=CAU" alt="Imagen de Talk"  style="width:20%;"/>
+                <img src="assets/images/talk.png" alt="Logo de Talk"  style="width:15%;"/>
                     <h4><b>Talk academia de idiomas <br> ¡Una alternativa diferente!</b></h4>
                     <h4>Al lado del MEFFCA, Jinotepe</h4>
                     <h4>Autorización DGI: <?php $d=rand(1000,9999); echo $d; ?> - 7</h4>
@@ -24,13 +24,14 @@ foreach ($edit_data as $row):
                     <h4>RUC: 0012305950022</h4>
                     <h4>Email: quierosaberdetalk@gmail.com</h4>
                     <h6>Cualquier retraso en pago reportar dentro del <br> periodo de pago 10% de mora por cada 10 días de retraso</h6>
-                    <h5 style="text-transform:capitalize;"><?php echo ('Fecha de recibo'); ?> : <?php echo date('d M,Y', $row['creation_timestamp']);?></h5>
-                    <h5 style="text-transform:capitalize;"><?php echo ('Titulo'); ?> : <?php echo $row['title'];?></h5>
-                    <h5 style="text-transform:capitalize;"><?php echo ('Descripción'); ?> : <?php echo $row['description'];?></h5>
+                    <h5 style="text-transform:capitalize;"><?php echo ('Fecha de recibo'); ?> : <?php echo date('d M,Y H:i', $row['creation_timestamp']);?></h5>
+                    <!-- <h5 style="text-transform:capitalize;"><?php echo ('Titulo'); ?> : <?php echo $row['title'];?></h5>
+                    <h5 style="text-transform:capitalize;"><?php echo ('Descripción'); ?> : <?php echo $row['description'];?></h5> -->
                     <!-- <h5 style="text-transform:capitalize;"><?php echo ('Estado'); ?> : <?php echo $row['status']; ?></h5> -->
                 </td>
             </tr>
         </table>
+        <hr style="border: 1px dashed #000;">
         <hr style="border: 1px dashed #000;">
         <table width="100%" border="0">    
             <tr>
@@ -53,6 +54,12 @@ foreach ($edit_data as $row):
                         echo ('Class') . ' ' . $this->db->get_where('class', array('class_id' => $class_id))->row()->name;
                     ?><br>
                     <?php echo 'Direccion ' .  $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->address; ?><br>
+
+                    <h4> <?php echo ('En concepto de: '); ?></h4>
+                                    
+                    
+                    <h5 style="text-transform:capitalize; color:grey;"><?php echo ('Titulo'); ?> : <?php echo $row['title'];?></h5>
+                    <h5 style="text-transform:capitalize; color:grey;"><?php echo ('Descripción'); ?> : <?php echo $row['description'];?></h5>
                 </td>
                 <!-- Esto es la información de facturación del estudiante -->
                 <td align="center" valign="top">
@@ -60,7 +67,8 @@ foreach ($edit_data as $row):
                 </td>
             </tr>
         </table>
-        <hr>
+        <hr style="border: 1px dashed #000;">
+        <hr style="border: 1px dashed #000;">
 
         <table width="100%" border="0">    
             <tr>
@@ -77,7 +85,7 @@ foreach ($edit_data as $row):
         </table>
 
         <hr style="border: 1px dashed #000;">
-
+        <hr style="border: 1px dashed #000;">
         <!-- payment history -->
         <!-- <h4><?php echo ('Payment History'); ?></h4> -->
         <!-- <table class="table table-bordered table-hover" width="100%" border="1" style="border-collapse:collapse;">

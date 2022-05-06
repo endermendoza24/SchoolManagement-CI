@@ -112,7 +112,7 @@
                                         <select name="student_id" class="form-control" style="" >
                                             <?php 
                                             date_default_timezone_set("America/El_Salvador");
-                                            echo date_default_timezone_get();
+                                            // echo date_default_timezone_get();
                                             $this->db->order_by('class_id','asc');
                                             $students = $this->db->get('student')->result_array();
                                             foreach($students as $row):

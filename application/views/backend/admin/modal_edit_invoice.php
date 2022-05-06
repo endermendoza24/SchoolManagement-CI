@@ -57,8 +57,8 @@ $edit_data		=	$this->db->get_where('invoice' , array('invoice_id' => $param2) )-
                 <div class="form-group">
                     <label class="col-sm-3 control-label"><?php echo ('Date');?></label>
                     <div class="col-sm-5">
-                        <input type="text" class="datepicker form-control" name="date" 
-                            value="<?php echo date('m/d/Y', $row['creation_timestamp']);?>"/>
+                        <input type="datetime-local" class="form-control" name="date" 
+                            value="<?php echo date('m/d/Y H:i', $row['creation_timestamp']);?>"/>
                     </div>
 
                 </div>
