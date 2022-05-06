@@ -10,31 +10,31 @@ $edit_data		=	$this->db->get_where('book' , array('book_id' => $param2) )->resul
                 <div class="form-group">
                     <label class="col-sm-3 control-label"><?php echo ('Name');?></label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="name" value="<?php echo $row['name'];?>"/>
+                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="name" value="<?php echo $row['name'];?>"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label"><?php echo ('Author');?></label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="author" value="<?php echo $row['author'];?>"/>
+                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="author" value="<?php echo $row['author'];?>"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label"><?php echo ('Description');?></label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="description" value="<?php echo $row['description'];?>"/>
+                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="description" value="<?php echo $row['description'];?>"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label"><?php echo ('Price');?></label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="price" value="<?php echo $row['price'];?>"/>
+                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="price" value="<?php echo $row['price'];?>"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label"><?php echo ('Class');?></label>
                     <div class="col-sm-5">
-                        <select name="class_id" class="form-control">
+                        <select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="class_id" class="form-control">
                             <?php 
                             $classes = $this->db->get('class')->result_array();
                             foreach($classes as $row2):

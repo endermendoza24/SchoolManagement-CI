@@ -50,7 +50,7 @@
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Description');?></label>
                         
 						<div class="col-sm-6">
-							<input type="text" class="form-control" name="description" value="<?php echo $row['description'];?>" >
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="description" value="<?php echo $row['description'];?>" >
 						</div> 
 					</div>
 					
@@ -58,17 +58,17 @@
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Amount');?></label>
                         
 						<div class="col-sm-6">
-							<input type="text" class="form-control" name="amount" value="<?php echo $row['amount'];?>" >
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="amount" value="<?php echo $row['amount'];?>" >
 						</div> 
 					</div>
 
 					<div class="form-group">
                         <label class="col-sm-3 control-label"><?php echo ('Method');?></label>
                         <div class="col-sm-6">
-                            <select name="method" class="form-control">
+                            <select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="method" class="form-control">
                                 <option value="1" <?php if ($row['method'] == 1) echo 'selected';?>><?php echo ('Cash');?></option>
-                                <option value="2" <?php if ($row['method'] == 2) echo 'selected';?>><?php echo ('Cheque');?></option>
-                                <option value="3" <?php if ($row['method'] == 3) echo 'selected';?>><?php echo ('Card');?></option>
+                                <option value="2" <?php if ($row['method'] == 2) echo 'selected';?>><?php echo ('Bank transfer');?></option>
+                                <!-- <option value="3" <?php if ($row['method'] == 3) echo 'selected';?>><?php echo ('Card');?></option> -->
                             </select>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label"><?php echo ('Date');?></label>
                         <div class="col-sm-6">
-                            <input type="text" class="datepicker form-control" name="timestamp"
+                            <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="datepicker form-control" name="timestamp"
                             value="<?php echo date('d M,Y', $row['timestamp']);?>" />
                         </div>
                     </div>

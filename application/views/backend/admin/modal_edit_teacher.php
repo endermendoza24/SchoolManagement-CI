@@ -6,19 +6,19 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo ('Name');?></label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="validate[required]" name="name" value="<?php echo $row['name'];?>"/>
+                                    <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="validate[required]" name="name" value="<?php echo $row['name'];?>"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo ('Birthday');?></label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="datepicker fill-up" name="birthday" value="<?php echo $row['birthday'];?>"/>
+                                    <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="datepicker fill-up" name="birthday" value="<?php echo $row['birthday'];?>"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo ('Sex');?></label>
                                 <div class="col-sm-5">
-                                    <select name="sex" class="uniform" style="width:100%;">
+                                    <select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="sex" class="uniform" style="width:100%;">
                                     	<option value="male" <?php if($row['sex'] == 'male')echo 'selected';?>><?php echo ('Male');?></option>
                                     	<option value="female" <?php if($row['sex'] == 'female')echo 'selected';?>><?php echo ('Female');?></option>
                                     </select>
@@ -27,22 +27,23 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo ('Address');?></label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="" name="address" value="<?php echo $row['address'];?>"/>
+                                    <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="" name="address" value="<?php echo $row['address'];?>"/>
                                 </div>
                             </div>
+                            
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo ('Phone');?></label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="" name="phone" value="<?php echo $row['phone'];?>"/>
+                                    <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="" name="phone" value="<?php echo $row['phone'];?>"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo ('Email');?></label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="" name="email" value="<?php echo $row['email'];?>"/>
+                                    <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="" name="email" value="<?php echo $row['email'];?>"/>
                                 </div>
                             </div>
-                            
+                      
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo ('Photo');?></label>
                                 <div class="controls" style="width:210px;">

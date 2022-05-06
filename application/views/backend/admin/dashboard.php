@@ -106,12 +106,12 @@
 
              <div class="col-md-4">
             
-             <div class="tile-stats tile-cyan">
+             <div class="tile-stats tile-yellow">
                         <div class="icon"><i class="entypo-credit-card"></i></div>
-                        <div class="num" data-start="0" data-end="<?php $query = $this->db->query('SELECT SUM(amount_paid)as total FROM invoice WHERE status = "paid"')->row(); echo floatval($query->total);?>" 
+                        <div class="num" data-start="0" data-end="<?php $query = $this->db->query('SELECT SUM(amount)as total FROM payment WHERE payment_type = "expense"')->row(); echo floatval($query->total);?>" 
                                 data-postfix="" data-duration="500" data-delay="0">0</div>
                         
-                        <h3><?php echo ('Expenses today');?></h3>
+                        <h3><?php echo ('Expenses ');?></h3>
                     
                     </div>
                 
@@ -120,14 +120,14 @@
 
             <div class="col-md-4">
             
-                <div class="tile-stats tile-aqua">
+                <!-- <div class="tile-stats tile-aqua">
                     <div class="icon"><i class="entypo-alert"></i></div>
                     <div class="num" data-start="0" data-end="<?php echo $this->db->count_all('noticeboard');?>" 
                     		data-postfix="" data-duration="500" data-delay="0">0</div>
                     
                     <h3><?php echo ('Notice');?></h3>
                    
-                </div>
+                </div> -->
                 
             </div> 
             

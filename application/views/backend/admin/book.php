@@ -84,25 +84,25 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo ('Name');?></label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" name="name"/>
+                                    <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="name"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo ('Author');?></label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" name="author"/>
+                                    <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="author"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo ('Description');?></label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" name="description"/>
+                                    <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="description"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo ('Price');?></label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" name="price"/>
+                                    <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="price"/>
                                 </div>
                             </div>
                             <div class="form-group">

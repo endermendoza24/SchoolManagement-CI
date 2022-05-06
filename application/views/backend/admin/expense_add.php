@@ -25,6 +25,7 @@
                             <select name="expense_category_id" class="form-control" required>
                                 <option value=""><?php echo ('Select Expense Category');?></option>
                                 <?php 
+								date_default_timezone_set("America/El_Salvador");
                                 	$categories = $this->db->get('expense_category')->result_array();
                                 	foreach ($categories as $row):
                                 ?>
@@ -46,7 +47,7 @@
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Amount');?></label>
                         
 						<div class="col-sm-6">
-							<input type="text" class="form-control" name="amount" value="" >
+							<input type="number" min="0" data-validate="required" data-message-required="<?php echo('Valor requerido');?>" class="form-control" name="amount" value="" >
 						</div> 
 					</div>
 
@@ -55,8 +56,8 @@
                         <div class="col-sm-6">
                             <select name="method" class="form-control">
                                 <option value="1"><?php echo ('Cash');?></option>
-                                <option value="2"><?php echo ('Cheque');?></option>
-                                <option value="3"><?php echo ('Card');?></option>
+                                <option value="2"><?php echo ('Bank transfer');?></option>
+                                <!-- <option value="3"><?php echo ('Card');?></option> -->
                             </select>
                         </div>
                     </div>
@@ -64,7 +65,7 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label"><?php echo ('Date');?></label>
                         <div class="col-sm-6">
-                            <input type="text" class="datepicker form-control" name="timestamp"/>
+                            <input type="datetime-local" value="<?php echo date("m-d-Y h:i:s");?>" class="form-control" name="timestamp"/>
                         </div>
                     </div>
                     

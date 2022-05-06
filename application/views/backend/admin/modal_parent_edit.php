@@ -28,7 +28,7 @@
 					<div class="form-group">
 						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Email');?></label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="email" 
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="email" 
                             	value="<?php echo $row['email'];?>">
 						</div>
 					</div>

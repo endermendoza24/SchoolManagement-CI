@@ -50,7 +50,7 @@
                     </td>
                     <td>
                     	<select name="year" class="form-control">
-                        	<?php for($i=2030;$i>=2010;$i--):?>
+                        	<?php for($i=2025;$i>=2020;$i--):?>
                             	<option value="<?php echo $i;?>"
                                 	<?php if(isset($year) && $year==$i)echo 'selected="selected"';?>>
 										<?php echo $i;?>
@@ -149,6 +149,11 @@
                               <span class="badge badge-danger"><?php echo ('Absent');?></span>  
                             </td>
                         <?php endif;?>
+                        <?php if ($status == 3):?>
+                            <td align="center">
+                              <span style="color: #000; font-weight:bold;" class="badge badge-warning"><?php echo ('Justify');?></span>  
+                            </td>
+                        <?php endif;?>
                         <?php if ($status == 0):?>
                             <td></td>
                         <?php endif;?>
@@ -207,6 +212,7 @@
                                         <option value="0" <?php if($status == 0)echo 'selected="selected"';?>></option>
                                         <option value="1" <?php if($status == 1)echo 'selected="selected"';?>>Present</option>
                                         <option value="2" <?php if($status == 2)echo 'selected="selected"';?>>Absent</option>
+                                        <option value="3" <?php if($status == 3)echo 'selected="selected"';?>>Justify</option>
                                     </select>
                                 
                             </td>

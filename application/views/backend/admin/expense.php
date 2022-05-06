@@ -39,13 +39,13 @@ class="btn btn-primary pull-right">
             		if ($row['method'] == 1)
             			echo ('Cash');
             		if ($row['method'] == 2)
-            			echo ('Cheque');
+            			echo ('Bank transfer');
             		if ($row['method'] == 3)
             			echo ('Card');
             	?>
             </td>
             <td><?php echo $row['amount'];?></td>
-            <td><?php echo date('d M,Y', $row['timestamp']);?></td>
+            <td><?php echo date('d M,Y, H:i', $row['timestamp']);?></td>
             <td>
                 
                 <div class="btn-group">
