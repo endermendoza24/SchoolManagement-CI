@@ -74,12 +74,15 @@ class="btn btn-primary pull-right">
                 </div>
                 
             </td>
+			
         </tr>
+	
         <?php endforeach;?>
     </tbody>
+	
 </table>
-
-
+<!-- esto e spara mostrar el total de la sumatoria de la tabla de gastos -->
+<h2 style="color:red; font-weight:bold"> Total amount: <?php $query = $this->db->query('SELECT SUM(amount)as total FROM payment WHERE payment_type = "expense"')->row(); echo floatval($query->total);?></h2>
 
 <!-----  DATA TABLE EXPORT CONFIGURATIONS ---->                      
 <script type="text/javascript">
