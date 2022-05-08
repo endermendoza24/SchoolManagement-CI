@@ -325,15 +325,8 @@ class Admin extends CI_Controller
             $data['address']     = $this->input->post('address');
             $data['parentesco']     = $this->input->post('parentesco');
             $data['phone']       = $this->input->post('phone');
-            $data['emergencyphone']     = $this->input->post('emergencyphone');
-            
-            
-        
-            
-        
-            
+            $data['emergencyphone']     = $this->input->post('emergencyphone');                    
             $data['diamatricula']     = time() - 30000;
-
             $data['email']       = $this->input->post('email');
             $data['class_id']    = $this->input->post('class_id');
             $data['section_id']  = $this->input->post('section_id');

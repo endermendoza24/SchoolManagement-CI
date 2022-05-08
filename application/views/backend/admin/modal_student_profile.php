@@ -2,7 +2,14 @@
 $student_info	=	$this->crud_model->get_student_info($param2);
 foreach($student_info as $row):?>
 
-<div class="profile-env">
+<center>
+    <a onClick="PrintElem('#printArea')" class="btn btn-default btn-icon icon-left hidden-print pull-right">
+        Print Invoice
+        <i class="entypo-print"></i>
+    </a>
+</center>
+
+<div id="profile" class="profile-env">
 	
 	<header class="row">
 		
@@ -108,7 +115,12 @@ foreach($student_info as $row):?>
                     <?php endif;?>
                     
                 </table>
-                <i class="print"><button class="btn btn-success btn-block btn-login">Report</button></i>
+                <i class="print">
+                <a class="btn btn-success btn-block" href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_view_invoice/<?php echo $row['invoice_id'];?>');">
+                                            <i class="entypo-credit-card"></i>
+                                                <?php echo ('Report');?>
+                                            </a>
+                </i>
 			</div>
 		</div>		
 	</section>
@@ -118,4 +130,115 @@ foreach($student_info as $row):?>
 </div>
 
 
+<div class="printArea" id="printArea">
+    <div class="containerarea">
+    
+    <table width="100%" border="0">
+        <tr>
+            <td align="center">
+            <img src="assets/images/talk.png" alt="Logo de Talk"  style="width:40%;"/>
+    
+
+    <h4><b>Talk academia de idiomas <br> ¡Una alternativa diferente!</b></h4>
+                    <h4>Al lado del MEFFCA, Jinotepe</h4>
+                    <h4>Reporte de matricula</h4>
+
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+            <div id="studentSection" class="student-section">
+                <h3 style="text-transform:capitalize">Nombre: <?php echo $row['name'];?></h3>
+                <h3 style="text-transform:capitalize">Apellido: <?php echo $row['lastname'];?></h3>
+                <h3>Teléfono <?php echo $row['phone'];?></h3>
+                <h3 >Dirección <?php echo $row['address'];?></h3>
+                <h4> Clase: <?php echo $this->crud_model->get_class_name($row['class_id']);?></h4>
+                <h4><?php  echo 'Fecha de matricula:  ' . date('d M, Y H:i', $row['diamatricula']);?></h4>
+            </div>            
+            </td>
+            </tr>
+        
+    </table>
+    <!-- <div class="tablainformacion">
+                    <div>Wave</div>
+                    <div>Horario</div>
+                    <div>Nivel</div>
+                    <div>Fecha de inicio</div>
+                    <div>Docente a cargo</div>
+                    <div>Firma de quien recibe</div>
+    </div> -->
+
+
+    <table class="demo" border="1px solid #000">
+	
+	
+	<tbody>
+	<tr>
+		<td>1</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tbody>
+</table>
+    
+    
+
+    </div>
+</div>
+
+<style>
+   
+   .tablainformacion{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        margin:0 auto;
+    }
+    .tablainformacion div{
+        width:100%; 
+        color:#000;       
+        border:1px solid #000;
+        padding-bottom:20px;
+    }
+    
+</style>
+
+
 <?php endforeach;?>
+
+
+<script type="text/javascript">
+
+
+    // print invoice function
+    function PrintElem(elem)
+    {
+        Popup($(elem).html());
+    }
+
+    function Popup(data)
+    {
+        var mywindow = window.open('', 'Profile', 'height=400,width=600');
+        mywindow.document.write('<html><head><title>Profile</title>');
+        mywindow.document.write('<link rel="stylesheet" href="assets/css/neon-theme.css" type="text/css" />');
+        mywindow.document.write('<link rel="stylesheet" href="assets/js/datatables/responsive/css/datatables.responsive.css" type="text/css" />');
+        mywindow.document.write('</head><body >');
+        mywindow.document.write(data);
+        mywindow.document.write('</body></html>');
+
+        mywindow.print();
+        mywindow.close();
+
+        return true;
+    }
+
+</script>
