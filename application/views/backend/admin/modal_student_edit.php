@@ -48,6 +48,14 @@ foreach ( $edit_data as $row):
 					</div>
 
 					<div class="form-group">
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Lastname');?></label>
+                        
+						<div class="col-sm-5">
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="lastname" value="<?php echo $row['lastname'];?>" >
+						</div> 
+					</div>
+
+					<div class="form-group">
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Parent');?></label>
                         
 						<div class="col-sm-5">
@@ -103,11 +111,19 @@ foreach ( $edit_data as $row):
 						</div>
 					
 					
-					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Roll');?></label>
+						<div class="form-group">
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Nationality');?></label>
                         
 						<div class="col-sm-5">
-							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="roll" value="<?php echo $row['roll'];?>" >
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="nationality" value="<?php echo $row['nationality'];?>" >
+						</div> 
+					</div>
+
+					<div class="form-group">
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Identity document');?></label>
+                        
+						<div class="col-sm-5">
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="identdocument" value="<?php echo $row['identdocument'];?>" >
 						</div> 
 					</div>
 					

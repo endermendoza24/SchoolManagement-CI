@@ -305,17 +305,40 @@ class Admin extends CI_Controller
 		$this->load->view('backend/index', $page_data);
 	}
 	
+    
+
+
     function student($param1 = '', $param2 = '', $param3 = '')
     {
+       
+        
         if ($this->session->userdata('admin_login') != 1)
             redirect('login', 'refresh');
+            
         if ($param1 == 'create') {
-            $data['name']       = $this->input->post('name');
-            $data['birthday']   = $this->input->post('birthday');
-            $data['sex']        = $this->input->post('sex');
-            $data['address']    = $this->input->post('address');
-            $data['phone']      = $this->input->post('phone');
-            $data['email']      = $this->input->post('email');
+            $data['name']        = $this->input->post('name');
+            $data['lastname']     = $this->input->post('lastname');
+            $data['identdocument']     = $this->input->post('identdocument');
+            $data['nationality']     = $this->input->post('nationality');
+            $data['birthday']    = $this->input->post('birthday');
+            $data['sex']         = $this->input->post('sex');
+            $data['address']     = $this->input->post('address');
+            $data['parentesco']     = $this->input->post('parentesco');
+            $data['phone']       = $this->input->post('phone');
+            $data['emergencyphone']     = $this->input->post('emergencyphone');
+            
+            
+        
+            
+        
+            
+            $data['diamatricula']     = time() - 30000;
+
+            $data['email']       = $this->input->post('email');
+            $data['class_id']    = $this->input->post('class_id');
+            $data['section_id']  = $this->input->post('section_id');
+            $data['parent_id']   = $this->input->post('parent_id');
+            $data['roll']        = $this->input->post('roll');
             // $data['password']   = $this->input->post('password');
             $data['class_id']   = $this->input->post('class_id');
             if ($this->input->post('section_id') != '') {
@@ -332,10 +355,15 @@ class Admin extends CI_Controller
         }
         if ($param2 == 'do_update') {
             $data['name']        = $this->input->post('name');
+            $data['lastname']     = $this->input->post('lastname');
+            $data['identdocument']     = $this->input->post('identdocument');
+            $data['nationality']     = $this->input->post('nationality');
             $data['birthday']    = $this->input->post('birthday');
             $data['sex']         = $this->input->post('sex');
             $data['address']     = $this->input->post('address');
+            $data['parentesco']     = $this->input->post('parentesco');
             $data['phone']       = $this->input->post('phone');
+            $data['emergencyphone']     = $this->input->post('emergencyphone');
             $data['email']       = $this->input->post('email');
             $data['class_id']    = $this->input->post('class_id');
             $data['section_id']  = $this->input->post('section_id');

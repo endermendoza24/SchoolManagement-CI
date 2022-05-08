@@ -52,10 +52,11 @@ foreach($student_info as $row):?>
                     </tr>
                     <?php endif;?>
                 
-                    <?php if($row['roll'] != ''):?>
+                    <?php if($row['diamatricula'] != ''):?>
                     <tr>
-                        <td>Roll</td>
-                        <td><b><?php echo $row['roll'];?></b></td>
+                        <td>Dia matricula</td>
+                        <!-- <td><b><?php echo $row['diamatricula'];?></b></td> -->
+                        <td><b><?php echo date('d M,Y H:i', $row['diamatricula']);?></b></td>
                     </tr>
                     <?php endif;?>
                 

@@ -75,7 +75,7 @@
                         
 						<div class="col-sm-8 form-check">
 							
-							<input class="form-check-input" onclick="parent_id.disabled = !this.checked" type="checkbox" data-validate="required" data-message-required="<?php echo('Valor requerido');?>" value="true"/> 
+							<input id="chkdis" class="form-check-input" onclick="parent_id.disabled = !this.checked"  type="checkbox" data-validate="required" data-message-required="<?php echo('Valor requerido');?>" value="true"/> 
 						</div>
 						</div>
 
@@ -84,7 +84,7 @@
 						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Parent');?></label>
                         
 						<div class="col-sm-8">
-							<select data-validate="required" data-message-required="<?php echo ('Value Required');?>" disabled name="parent_id" class="form-control">
+							<select onchange="if(this.value != '') document.getElementById('emergencyphone').disabled = false"  data-validate="required" data-message-required="<?php echo ('Value Required');?>" disabled name="parent_id" class="form-control">
                               <option value=""><?php echo ('Select');?></option>
                               <?php 
 								$parents = $this->db->get('parent')->result_array();
@@ -104,7 +104,7 @@
 						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Parentesco');?></label>
                         
 						<div class="col-sm-8">
-							<select  name="parentesco" class="form-control">
+							<select   name="parentesco" class="form-control">
                               <option value=""><?php echo ('Select');?></option>
                               <?php 
 								$parents = $this->db->get('parent')->result_array();
@@ -135,7 +135,7 @@
                         
 						<div class="col-sm-8">
 							
-						<input placeholder="Eg. +505 22334455" type="tel" class="form-control" name="contactphone" value="" >
+						<input disabled placeholder="Eg. +505 22334455" type="tel" class="form-control" id="emergencyphone" name="emergencyphone" value="" >
 						</div>
 						</div>
 				</div>
@@ -301,6 +301,8 @@
 
 
 <script type="text/javascript">
+
+	//  desactivas selects
 
 // funcion para ponerle guiones de manera automatica al input de cedula
 $(document).ready(Principal);
