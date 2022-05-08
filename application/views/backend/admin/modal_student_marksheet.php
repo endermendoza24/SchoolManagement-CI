@@ -10,8 +10,15 @@
 $student_info = $this->crud_model->get_student_info($param2);
 foreach ($student_info as $row1):
     ?>
+<div id="printarea">
+    <center >
+    <a onClick="PrintElem('#printarea')" class="btn btn-default btn-icon icon-left hidden-print pull-right">
+        Print marksheet
+        <i class="entypo-print"></i>
+    </a>
+</center>
     <center>
-        <div style="font-size: 20px;font-weight: 200;margin: 10px;"><?php echo $row1['name']; ?></div>
+        <div  style="font-size: 20px;font-weight: 200;margin: 10px;"><?php echo $row1['name']; ?></div>
 
         <div class="panel-group joined" id="accordion-test-2">
 
@@ -25,7 +32,7 @@ foreach ($student_info as $row1):
                 $total_marks = 0;
                 $total_subjects = 0;
             ?>
-                <div class="panel panel-default">
+                <div  class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapse<?php echo $row0['exam_id']; ?>">
@@ -42,7 +49,9 @@ foreach ($student_info as $row1):
                     ?>" >
                         <div class="panel-body">
                             <center>
-                                <table class="table table-bordered table-hover table-striped " >
+                            <div  style="text-transform:capitalize;font-size: 20px;font-weight: 200;margin: 10px;"><?php echo $row1['name']; ?></div>                           
+                                <table  class="table table-bordered table-hover table-striped " >
+                                    
                                     <thead>
                                         <tr>
                                             <th>Subject</th>
@@ -113,7 +122,7 @@ foreach ($student_info as $row1):
                               
                                 Level average : <?php echo round($total_marks / $total_subjects, 2); ?>
 
-                                
+                                                </div>                                                                           
 
                                 <script>
                                     setTimeout(function() {
@@ -177,6 +186,30 @@ foreach ($student_info as $row1):
             <?php endforeach; ?>
         </div>
     </center>
+    <script type="text/javascript">
 
+// print invoice function
+function PrintElem(elem)
+{
+    Popup($(elem).html());
+}
+
+function Popup(data)
+{
+    var mywindow = window.open('', 'Marksheet', 'height=400,width=600');
+    mywindow.document.write('<html><head><title>Student marksheet</title>');
+    mywindow.document.write('<link rel="stylesheet" href="assets/css/neon-theme.css" type="text/css" />');
+    mywindow.document.write('<link rel="stylesheet" href="assets/js/datatables/responsive/css/datatables.responsive.css" type="text/css" />');
+    mywindow.document.write('</head><body >');
+    mywindow.document.write(data);
+    mywindow.document.write('</body></html>');
+
+    mywindow.print();
+    mywindow.close();
+
+    return true;
+}
+
+</script>
        
 <?php endforeach; ?>

@@ -5,6 +5,8 @@ class="btn btn-primary pull-right">
 <?php echo ('Add new expense');?>
 </a> 
 <br><br>
+
+<div class="printarea">
 <table class="table table-bordered table-hover table-striped datatable" id="table_export">
     <thead>
         <tr>
@@ -80,10 +82,10 @@ class="btn btn-primary pull-right">
         <?php endforeach;?>
     </tbody>
 	
-</table>
+	</table>
 <!-- esto e spara mostrar el total de la sumatoria de la tabla de gastos -->
-<h2 style="color:red; font-weight:bold"> Total amount: <?php $query = $this->db->query('SELECT SUM(amount)as total FROM payment WHERE payment_type = "expense"')->row(); echo floatval($query->total);?></h2>
-
+	<h2 style="color:red; font-weight:bold"> Total amount: <?php $query = $this->db->query('SELECT SUM(amount)as total FROM payment WHERE payment_type = "expense"')->row(); echo round(floatval($query->total),2); ?> </h2>
+</div>|
 <!-----  DATA TABLE EXPORT CONFIGURATIONS ---->                      
 <script type="text/javascript">
 

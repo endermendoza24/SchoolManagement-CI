@@ -41,7 +41,7 @@
         <?php endforeach;?>
     </tbody>
 </table>
-<h2 style="color:red; font-weight:bold"> Total amount: <?php $query = $this->db->query('SELECT SUM(amount)as total FROM payment WHERE payment_type = "income"')->row(); echo floatval($query->total);?></h2>
+<h2 style="color:red; font-weight:bold"> Total amount: $<?php $query = $this->db->query('SELECT SUM(amount)as total FROM payment WHERE payment_type = "income"')->row(); echo round(floatval($query->total),2);?></h2>
 
 
 <!-----  DATA TABLE EXPORT CONFIGURATIONS ---->                      

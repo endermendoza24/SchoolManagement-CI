@@ -66,6 +66,125 @@
 </div>
 				<!-- esta es la vista en donde se carga la pantalla que es para agregar un estudiante -->
 <!-- contact form  -->
+				
+
+
+					<!-- Esto hace quecuando se seleccione u checkbox se active algun control 
+					onclick="btTutorial.disabled = !this.checked" -->
+
+					
+					<!-- Class section -->
+					<div class="form-group">
+						<h4 style="text-align:center; font-weight:bold; font-size:1.5rem; color:#000; padding:1.2rem">Academic section</h4>
+					<div class="col-md-6 mb-3">
+						
+					<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Class');?></label>
+                        
+						<div class="col-sm-8">
+							<select name="class_id" class="form-control" data-validate="" id="class_id" 
+								data-message-required="<?php echo ('Value ');?>"
+									onchange="return get_class_sections(this.value)"> 
+									<!--en esta parte elimine la restricción de requerido en la parte de los parents-->
+                              <option value=""><?php echo ('Select');?></option>
+                              <?php 
+								$classes = $this->db->get('class')->result_array();
+								foreach($classes as $row):
+									?>
+                            		<option value="<?php echo $row['class_id'];?>">
+											<?php echo $row['name'];?>
+                                            </option>
+                                <?php
+								endforeach;
+							  ?>
+                          </select>
+						</div>						
+							
+						</div>
+								<!-- classroom -->
+						<div class="col-md-6 mb-3">
+						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Classroom');?></label>
+		                    <div class="col-sm-8">
+		                        <select  name="section_id" class="form-control" id="section_selector_holder">
+		                            <option value=""><?php echo ('Select class first');?></option>
+			                        
+			                    </select>
+			                </div>
+						</div>
+	
+						<!-- Rol -->
+						<!-- <div class="col-md-6 mb-3">
+						
+						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Roll');?></label>
+                        
+						<div class="col-sm-8">
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="roll" value="" >
+						</div> 
+						
+						</div> -->
+	
+						<!-- natonality -->
+	
+						
+					</div>
+
+				
+					
+					<!-- Birthday -->
+					<div class="form-group">
+
+					<h4 style="text-align:center; font-weight:bold; font-size:1.5rem; color:#000; padding:1.2rem">Other dates section</h4>
+						<div class="col-md-6 mb-3">
+							
+						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Birthday');?></label>
+							
+							<div class="col-sm-8">
+								<input onkeyup="this.value = mascara(this.value)" maxlength="10" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="birthday" placeholder="dd-mm-yyyy" value="" data-start-view="2">
+							</div> 
+						</div>
+
+						<div class="col-md-6 mb-3">
+							
+						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Gender');?></label>
+                        
+						<div class="col-sm-8">
+							<select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="sex" class="form-control">
+                              <option value=""><?php echo ('Select');?></option>
+                              <option value="Male"><?php echo ('Male');?></option>
+                              <option value="Female"><?php echo ('Female');?></option>
+                          </select>
+						</div> 
+						</div>
+
+						<div class="col-md-6 mb-3">
+							
+						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Address');?></label>
+                        
+						<div class="col-sm-8">
+							<input placeholder="Eg. Jinotepe, Carazo" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="address" value="" >
+						</div> 
+						</div>
+
+						<div class="col-md-6 mb-3">
+							
+						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Phone');?></label>
+                        
+						<div class="col-sm-8">
+							<input placeholder="Eg. +505 22334455" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="phone" value="" >
+						</div> 
+					</div>
+					<br>
+					<div class="col-md-6 mb-3">
+							
+					<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label"><?php echo ('Email');?></label>
+						<div class="col-sm-8">
+							<input placeholder="Eg. example@talk.com" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="email" class="form-control" name="email" value="">
+						</div>
+					</div>
+				</div>
+					
+
+
+				<!-- emergency contact  -->
 				<div class="form-group">
 
 				<h4 style="text-align:center; font-weight:bold; font-size:1.5rem; color:#000; padding:1.2rem">Contact section</h4>
@@ -139,121 +258,6 @@
 						</div>
 						</div>
 				</div>
-
-
-					<!-- Esto hace quecuando se seleccione u checkbox se active algun control 
-					onclick="btTutorial.disabled = !this.checked" -->
-
-					
-					<!-- Class section -->
-					<div class="form-group">
-						<h4 style="text-align:center; font-weight:bold; font-size:1.5rem; color:#000; padding:1.2rem">Academic section</h4>
-					<div class="col-md-6 mb-3">
-						
-					<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Class');?></label>
-                        
-						<div class="col-sm-8">
-							<select name="class_id" class="form-control" data-validate="" id="class_id" 
-								data-message-required="<?php echo ('Value ');?>"
-									onchange="return get_class_sections(this.value)"> 
-									<!--en esta parte elimine la restricción de requerido en la parte de los parents-->
-                              <option value=""><?php echo ('Select');?></option>
-                              <?php 
-								$classes = $this->db->get('class')->result_array();
-								foreach($classes as $row):
-									?>
-                            		<option value="<?php echo $row['class_id'];?>">
-											<?php echo $row['name'];?>
-                                            </option>
-                                <?php
-								endforeach;
-							  ?>
-                          </select>
-						</div>						
-							
-						</div>
-								<!-- classroom -->
-						<div class="col-md-6 mb-3">
-						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Classroom');?></label>
-		                    <div class="col-sm-8">
-		                        <select  name="section_id" class="form-control" id="section_selector_holder">
-		                            <option value=""><?php echo ('Select class first');?></option>
-			                        
-			                    </select>
-			                </div>
-						</div>
-	
-						<!-- Rol -->
-						<div class="col-md-6 mb-3">
-						
-						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Roll');?></label>
-                        
-						<div class="col-sm-8">
-							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="roll" value="" >
-						</div> 
-						
-						</div>
-	
-						<!-- natonality -->
-	
-						
-					</div>
-
-				
-					
-					<!-- Birthday -->
-					<div class="form-group">
-
-					<h4 style="text-align:center; font-weight:bold; font-size:1.5rem; color:#000; padding:1.2rem">Other dates section</h4>
-						<div class="col-md-6 mb-3">
-							
-						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Birthday');?></label>
-							
-							<div class="col-sm-8">
-								<input onkeyup="this.value = mascara(this.value)" maxlength="10" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="birthday" placeholder="dd-mm-yyyy" value="" data-start-view="2">
-							</div> 
-						</div>
-
-						<div class="col-md-6 mb-3">
-							
-						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Gender');?></label>
-                        
-						<div class="col-sm-8">
-							<select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="sex" class="form-control">
-                              <option value=""><?php echo ('Select');?></option>
-                              <option value="Male"><?php echo ('Male');?></option>
-                              <option value="Female"><?php echo ('Female');?></option>
-                          </select>
-						</div> 
-						</div>
-
-						<div class="col-md-6 mb-3">
-							
-						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Address');?></label>
-                        
-						<div class="col-sm-8">
-							<input placeholder="Eg. Jinotepe, Carazo" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="address" value="" >
-						</div> 
-						</div>
-
-						<div class="col-md-6 mb-3">
-							
-						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Phone');?></label>
-                        
-						<div class="col-sm-8">
-							<input placeholder="Eg. +505 22334455" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="phone" value="" >
-						</div> 
-					</div>
-					<br>
-					<div class="col-md-6 mb-3">
-							
-					<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label"><?php echo ('Email');?></label>
-						<div class="col-sm-8">
-							<input placeholder="Eg. example@talk.com" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="email" class="form-control" name="email" value="">
-						</div>
-					</div>
-				</div>
-					
 					
 
 					

@@ -38,7 +38,7 @@
 							<td><?php echo $row['amount'];?></td>
                             <td><?php echo $row['amount_paid'];?></td>
 							<td>
-								<span class="label label-<?php if($row['status']=='paid')echo 'success';else echo 'secondary';?>"><?php echo $row['status'];?></span>
+								<span class="label label-<?php if($row['status']=='paid')echo 'success';else echo 'danger';?>"><?php echo $row['status'];?></span>
 							</td>
 							<td><?php echo date('d M,Y', $row['creation_timestamp']);?></td>
 							<td>
@@ -213,3 +213,55 @@
 	</div>
 </div>
 
+<!-----  DATA TABLE EXPORT CONFIGURATIONS ---->                      
+<script type="text/javascript">
+
+	jQuery(document).ready(function($)
+	{
+		
+
+		var datatable = $("#table_export").dataTable({
+			"sPaginationType": "bootstrap",
+			"sDom": "<'row'<'col-xs-3 col-left'l><'col-xs-9 col-right'<'export-data'T>f>r>t<'row'<'col-xs-3 col-left'i><'col-xs-9 col-right'p>>",
+			"oTableTools": {
+				"aButtons": [
+					
+					{
+						"sExtends": "xls",
+						"mColumns": [1,2,3,4,5]
+					},
+					{
+						"sExtends": "pdf",
+						"mColumns": [1,2,3,4,5]
+					},
+					{
+						"sExtends": "print",
+						"fnSetText"	   : "Press 'esc' to return",
+						"fnClick": function (nButton, oConfig) {
+							datatable.fnSetColumnVis(0, false);
+							datatable.fnSetColumnVis(6, false);
+							
+							this.fnPrint( true, oConfig );
+							
+							window.print();
+							
+							$(window).keyup(function(e) {
+								  if (e.which == 27) {
+									  datatable.fnSetColumnVis(0, true);
+									  datatable.fnSetColumnVis(6, true);
+								  }
+							});
+						},
+						
+					},
+				]
+			},
+			
+		});
+		
+		$(".dataTables_wrapper select").select2({
+			minimumResultsForSearch: -1
+		});
+	});
+		
+</script>

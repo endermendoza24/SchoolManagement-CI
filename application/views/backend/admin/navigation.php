@@ -212,7 +212,7 @@
             <ul>
                 <li class="<?php if ($page_name == 'exam') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/exam">
-                        <span><i class="entypo-dot"></i> <?php echo ('Exam List'); ?></span>
+                        <span><i class="entypo-dot"></i> <?php echo ('Evaluation List'); ?></span>
                     </a>
                 </li>
                 <!-- <li class="<?php if ($page_name == 'grade') echo 'active'; ?> ">

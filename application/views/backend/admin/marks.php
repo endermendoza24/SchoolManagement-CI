@@ -139,14 +139,14 @@
                             <?php echo form_open(base_url() . 'index.php?admin/marks');?>
 							<tr>
 								<td>
-									<?php echo $row['name'];?>
+									<b style="color:#000"><?php echo $row['name'];?></b>
 								</td>
 								<td>
-									 <input type="number" value="<?php echo $row2['mark_obtained'];?>" name="mark_obtained" class="form-control"  />
+									 <input min="0" max="100" maxlength="3" type="number" value="<?php echo $row2['mark_obtained'];?>" name="mark_obtained" class="form-control"  />
 												
 								</td>
 								<td>
-									<textarea name="comment" class="form-control"><?php echo $row2['comment'];?></textarea>
+									<textarea maxlength="240" name="comment" class="form-control"><?php echo $row2['comment'];?></textarea>
 								</td>
                                 <td>
                                 	<input type="hidden" name="mark_id" value="<?php echo $row2['mark_id'];?>" />

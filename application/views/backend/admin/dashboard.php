@@ -64,6 +64,26 @@
                 
             </div>
 
+            <!-- ausentes -->
+
+            <div class="col-md-4">
+            
+            <div class="tile-stats tile-pink">
+                <div class="icon"><i class="entypo-calendar"></i></div>
+                <?php 
+                        $check	=	array(	'date' => date('Y-m-d') , 'status' => '2' );
+                        $query = $this->db->get_where('attendance' , $check);
+                        $present_today		=	$query->num_rows();
+                    ?>
+                <div class="num" data-start="0" data-end="<?php echo $present_today;?>" 
+                        data-postfix="" data-duration="500" data-delay="0">0</div>
+                
+                <h3><?php echo ('Todays unattedance');?></h3>
+               
+            </div>
+            
+        </div>
+
 
             <div class="col-md-4">
             
