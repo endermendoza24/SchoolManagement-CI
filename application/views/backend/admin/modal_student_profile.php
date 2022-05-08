@@ -63,7 +63,7 @@ foreach($student_info as $row):?>
                     <tr>
                         <td>Dia matricula</td>
                         <!-- <td><b><?php echo $row['diamatricula'];?></b></td> -->
-                        <td><b><?php echo date('d M,Y H:i', $row['diamatricula']);?></b></td>
+                        <td><b><?php echo date('d M,Y', $row['diamatricula']);?></b></td>
                     </tr>
                     <?php endif;?>
                 

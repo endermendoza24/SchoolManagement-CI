@@ -33,7 +33,7 @@
                 <table class="table table-bordered table-hover table-striped datatable" id="table_export">
                     <thead>
                         <tr>
-                            <th><div><?php echo ('Roll');?></div></th>
+                            <th><div><?php echo ('Admit date');?></div></th>
                             <th><div><?php echo ('Photo');?></div></th>
                             <th><div><?php echo ('Name');?></div></th>
                             <th><div><?php echo ('Options');?></div></th>
@@ -44,7 +44,7 @@
                                 $students   =   $this->db->get_where('student' , array('class_id'=>$class_id))->result_array();
                                 foreach($students as $row):?>
                         <tr>
-                            <td><?php echo $row['roll'];?></td>
+                            <td><?php echo date('d M,Y', $row['diamatricula']);?></td>
                             <td align="center"><img src="<?php echo $this->crud_model->get_image_url('student',$row['student_id']);?>" class="img-circle" width="30" /></td>
                             <td><?php echo $row['name'];?></td>
                             <td>
@@ -72,7 +72,7 @@
                 <table class="table table-bordered table-hover table-striped">
                     <thead>
                         <tr>
-                            <th><div><?php echo ('Roll');?></div></th>
+                            <th><div><?php echo ('Admit date');?></div></th>
                             <th><div><?php echo ('Photo');?></div></th>
                             <th><div><?php echo ('Name');?></div></th>
                             <th><div><?php echo ('Options');?></div></th>
@@ -85,7 +85,7 @@
                                 ))->result_array();
                                 foreach($students as $row):?>
                         <tr>
-                            <td><?php echo $row['roll'];?></td>
+                            <td><?php echo $row['diamatricula'];?></td>
                             <td align="center"><img src="<?php echo $this->crud_model->get_image_url('student',$row['student_id']);?>" class="img-circle" width="30" /></td>
                             <td><?php echo $row['name'];?></td>
                             <td>

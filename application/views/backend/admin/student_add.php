@@ -174,9 +174,9 @@
 						</div>
 								<!-- classroom -->
 						<div class="col-md-6 mb-3">
-						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Section');?></label>
+						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Classroom');?></label>
 		                    <div class="col-sm-8">
-		                        <select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="section_id" class="form-control" id="section_selector_holder">
+		                        <select  name="section_id" class="form-control" id="section_selector_holder">
 		                            <option value=""><?php echo ('Select class first');?></option>
 			                        
 			                    </select>

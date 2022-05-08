@@ -70,10 +70,13 @@ foreach ($student_info as $row1):
 
                                                     $query = $this->db->get_where('mark', $verify_data);
                                                     $marks = $query->result_array();
+                                                    
                                                     foreach ($marks as $row3):
                                                         echo $row3['mark_obtained'];
                                                         $mark_obtained[] = $row3['mark_obtained'];
                                                         $total_marks += $row3['mark_obtained'];
+                                                        // $marcaexamen = $query = $this->db->query('SELECT COUNT(subject_id) FROM subject')->row(); echo floatval($query->prom);
+                                                        
                                                     endforeach;
                                                     ?>
                                                 </td>
@@ -104,10 +107,14 @@ foreach ($student_info as $row1):
                                     </tbody>
                                 </table>
                                 <hr />
-                                Total Marks : <?php echo $total_marks; ?>
-                                <hr />
-                                GPA(grade point average) : <?php echo round($total_grade_point / $total_subjects, 2); ?>
-                                <div id="chartdiv"></div>
+                                Total Marks : <?php echo $total_marks; ?>                                
+                                <hr style="border:dashed 1px #000"/>
+                                <!-- GPA(grade point average) : <?php echo round($total_grade_point / $total_subjects, 2); ?> -->
+                              
+                                Level average : <?php echo round($total_marks / $total_subjects, 2); ?>
+
+                                
+
                                 <script>
                                     setTimeout(function() {
                                         var chart = AmCharts.makeChart("chartdiv", {
@@ -170,4 +177,6 @@ foreach ($student_info as $row1):
             <?php endforeach; ?>
         </div>
     </center>
+
+       
 <?php endforeach; ?>
