@@ -1,5 +1,5 @@
 <!-- Footer -->
 <footer class="main">
-	&copy; <?php echo date('Y')?> | School Management System for "Talk academy" |
-    <strong>Developed by Endersson and Omar</strong>
+	&copy; <?php echo date('Y')?> | "Talk" Management System |
+    <strong>"Talk - academia de idiomas" - All rights reserved &copy;</strong>
 </footer>

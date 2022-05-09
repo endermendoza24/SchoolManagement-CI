@@ -4,7 +4,7 @@ foreach($student_info as $row):?>
 
 <center>
     <a onClick="PrintElem('#printArea')" class="btn btn-default btn-icon icon-left hidden-print pull-right">
-        Print Invoice
+        Print profile
         <i class="entypo-print"></i>
     </a>
 </center>
@@ -116,11 +116,7 @@ foreach($student_info as $row):?>
                     
                 </table>
                 <i class="print">
-                <a class="btn btn-success btn-block" href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_view_invoice/<?php echo $row['invoice_id'];?>');">
-                                            <i class="entypo-credit-card"></i>
-                                                <?php echo ('Report');?>
-                                            </a>
-                </i>
+                
 			</div>
 		</div>		
 	</section>

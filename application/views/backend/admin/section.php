@@ -2,7 +2,7 @@
 <a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/section_add/');" 
 	class="btn btn-primary pull-right">
     	<i class="entypo-plus-circled"></i>
-			<?php echo ('Add New Section');?>
+			<?php echo ('Add New classroom');?>
 </a> 
 <br><br><br>
 

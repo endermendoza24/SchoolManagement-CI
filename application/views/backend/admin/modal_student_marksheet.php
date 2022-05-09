@@ -11,12 +11,12 @@ $student_info = $this->crud_model->get_student_info($param2);
 foreach ($student_info as $row1):
     ?>
 <div id="printarea">
-    <center >
+    <!-- <center >
     <a onClick="PrintElem('#printarea')" class="btn btn-default btn-icon icon-left hidden-print pull-right">
         Print marksheet
         <i class="entypo-print"></i>
     </a>
-</center>
+</center> -->
     <center>
         <div  style="font-size: 20px;font-weight: 200;margin: 10px;"><?php echo $row1['name']; ?></div>
 

@@ -12,7 +12,7 @@
 	<meta name="description" content="Neon Admin Panel" />
 	<meta name="author" content="" />
 	
-	<title><?php echo ('Login');?> | <?php echo $system_title;?></title>
+	<title translate="false" ><?php echo ('Login');?> |  <?php echo $system_title;?></title>
 	
 
 	<link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
@@ -51,7 +51,7 @@ var baseurl = '<?php echo base_url();?>';
 		<div class="login-content" style="width:100%;">
 		
 			<a href="<?php echo base_url();?>" class="logo">
-				<img src="uploads/logo.png" height="60" alt="" />				
+				<img src="uploads/logo.png" width="10%" alt="logo de talk" />				
 			</a>
 			
 			<p class="description">
@@ -120,9 +120,10 @@ var baseurl = '<?php echo base_url();?>';
 			
 			
 			<div class="login-bottom-links">
-				<a href="<?php echo base_url();?>index.php?login/forgot_password" class="link">
+				<!-- <a href="<?php echo base_url();?>index.php?login/forgot_password" class="link">
 					<?php echo get_phrase('forgot_your_password');?> ?
-				</a>
+				</a> -->
+				<p>"Talk" Management System | <?php echo date('Y')?> "Talk" academia de idiomas - All rights reserved &copy;</p>
 			</div>
 			
 
