@@ -19,7 +19,25 @@
                             	value="">
 						</div>
 					</div>
+
+					<div class="form-group">
+						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Lastname');?></label>
+                        
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="lastname" data-validate="required" data-message-required="<?php echo ('Value Required');?>"  autofocus
+                            	value="">
+						</div>
+					</div>
                     
+					<div class="form-group">
+						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Cédula');?></label>
+                        
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="identdocument" data-validate="required" data-message-required="<?php echo ('Value Required');?>"  autofocus
+                            	value="">
+						</div>
+					</div>
+
 					<div class="form-group">
 						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Email');?></label>
 						<div class="col-sm-5">
@@ -53,10 +71,10 @@
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Profession');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Nationality');?></label>
                         
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="profession" value="">
+							<input type="text" class="form-control" name="nationality" value="">
 						</div>
 					</div>
                     

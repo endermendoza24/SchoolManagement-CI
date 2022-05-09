@@ -421,10 +421,12 @@ CREATE TABLE `osad_student` (
 CREATE TABLE `parent` (
   `parent_id` int(11) NOT NULL,
   `name` longtext COLLATE utf8_unicode_ci NOT NULL,
+    `lastname` longtext COLLATE utf8_unicode_ci NOT NULL,
   `email` longtext COLLATE utf8_unicode_ci,
   `password` longtext COLLATE utf8_unicode_ci,
   `phone` longtext COLLATE utf8_unicode_ci NOT NULL,
   `address` longtext COLLATE utf8_unicode_ci NOT NULL,
+    `nationality` longtext COLLATE utf8_unicode_ci,
   `identdocument` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -538,6 +540,8 @@ CREATE TABLE `student` (
   `parent_id` int(11) DEFAULT NULL,
   `diamatricula` longtext COLLATE utf8_unicode_ci,
   `roll` longtext COLLATE utf8_unicode_ci,
+    `level` longtext COLLATE utf8_unicode_ci,
+      `horario` longtext COLLATE utf8_unicode_ci,
   `transport_id` int(11) NOT NULL,
   `dormitory_id` int(11) NOT NULL,
   `dormitory_room_number` longtext COLLATE utf8_unicode_ci NOT NULL
@@ -547,8 +551,7 @@ CREATE TABLE `student` (
 -- Volcado de datos para la tabla `student`
 --
 
-INSERT INTO `student` (`student_id`, `name`, `birthday`, `lastname`, `identdocument`, `sex`, `nationality`, `blood_group`, `address`, `phone`, `emergencyphone`, `email`, `password`, `father_name`, `parentesco`, `mother_name`, `class_id`, `section_id`, `parent_id`, `diamatricula`, `roll`, `transport_id`, `dormitory_id`, `dormitory_room_number`) VALUES
-(1, 'Endersson ', '24-05-2000', 'Mendoza Muñoz', '041-240500-1004p', 'Male', 'Nicaraguan', '', 'Juzgado 1/2 cuadra al este', '82072291', NULL, 'endermendoza12@gmail.com', '', '', 0, '', '1', 1, NULL, '1652022136', NULL, 0, 0, '');
+
 
 -- --------------------------------------------------------
 

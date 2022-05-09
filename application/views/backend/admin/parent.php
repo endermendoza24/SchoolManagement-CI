@@ -10,9 +10,11 @@
                         <tr>
                             <th>#</th>
                             <th><div><?php echo ('Name');?></div></th>
+                            <th><div><?php echo ('lastname');?></div></th>
+                            <th><div><?php echo ('Cedula');?></div></th>
                             <th><div><?php echo ('Email');?></div></th>
-                            <th><div><?php echo ('Phone');?></div></th>
-                            <th><div><?php echo ('Profession');?></div></th>
+                            <th><div><?php echo ('Phone');?></div></th>                            
+                            <th><div><?php echo ('Nationality');?></div></th>
                             <th><div><?php echo ('Options');?></div></th>
                         </tr>
                     </thead>
@@ -24,9 +26,12 @@
                         <tr>
                             <td><?php echo $count++;?></td>
                             <td><?php echo $row['name'];?></td>
+                            <td><?php echo $row['lastname'];?></td>
+                            <td><?php echo $row['identdocument'];?></td>
                             <td><?php echo $row['email'];?></td>
                             <td><?php echo $row['phone'];?></td>
-                            <td><?php echo $row['profession'];?></td>
+                            
+                            <td><?php echo $row['nationality'];?></td>
                             <td>
                                 
                                 <div class="btn-group">

@@ -2,7 +2,7 @@
 <a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/section_add/');" 
 	class="btn btn-primary pull-right">
     	<i class="entypo-plus-circled"></i>
-			<?php echo ('Add New classroom');?>
+			<?php echo ('Add New Wave');?>
 </a> 
 <br><br><br>
 
@@ -32,7 +32,7 @@
 						<thead>
 							<tr>
 								<th>#</th>
-								<th><?php echo ('Section Name');?></th>
+								<th><?php echo ('Wave Name');?></th>
 								<th><?php echo ('Nick Name');?></th>
 								<th><?php echo ('Teacher');?></th>
 								<th><?php echo ('Options');?></th>

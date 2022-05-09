@@ -43,9 +43,23 @@
 								
 							<input  placeholder="00-000000-0000A" style="text-transform:uppercase;" maxlength="20" id="identdocument" type="text" class="form-control" name="identdocument" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="" autofocus>
 							
+							<fieldset class="col-sm-8">
+							
+							<label>
+								<input type="radio" name="tipo" value="1"> Cédula
+							</label>
+							<label>
+								<input type="radio" name="tipo" value="2"> Pasaporte
+							</label>
+							<label>
+								<input type="radio" name="tipo" value="3"> Otro
+							</label>							
+    					</fieldset>
 							</div>
 						
 						</div>
+
+
 	
 						<!-- natonality -->
 	
@@ -81,7 +95,7 @@
 					<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Class');?></label>
                         
 						<div class="col-sm-8">
-							<select name="class_id" class="form-control" data-validate="" id="class_id" 
+							<select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="class_id" class="form-control" data-validate="" id="class_id" 
 								data-message-required="<?php echo ('Value ');?>"
 									onchange="return get_class_sections(this.value)"> 
 									<!--en esta parte elimine la restricción de requerido en la parte de los parents-->
@@ -100,27 +114,71 @@
 						</div>						
 							
 						</div>
-								<!-- classroom -->
+								<!-- Horario -->
 						<div class="col-md-6 mb-3">
-						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Classroom');?></label>
+						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Horario');?></label>
 		                    <div class="col-sm-8">
-		                        <select  name="section_id" class="form-control" id="section_selector_holder">
-		                            <option value=""><?php echo ('Select class first');?></option>
+		                        <select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="horario" class="form-control" id="">
+		                            <option  value="0"><?php echo ('Select wave first');?></option>
+									<option value="1"><?php echo ('Early morning');?></option>
+									<option value="2"><?php echo ('Late morning');?></option>
+									<option value="3"><?php echo ('Early afternoon');?></option>
+									<option value="4"><?php echo ('Late afternoon');?></option>
+									<option value="5"><?php echo ('Night shift');?></option>
+									<option  disabled style="color:#000;" value="0"><b><?php echo ('--- WEEKEND ---');?></b></option>
+									<option value="6"><?php echo ('Saturday morning');?></option>
+									<option value="7"><?php echo ('Saturday afternoon');?></option>
+									<option value="8"><?php echo ('Sunday morning');?></option>
+									<option value="9"><?php echo ('Sunday afternoon');?></option>
+
 			                        
+			                    </select>
+			                </div>
+						</div>
+
+
+								<!-- Nivel -->
+								<div class="col-md-6 mb-3">
+						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Level');?></label>
+		                    <div class="col-sm-8">
+		                        <select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="level" class="form-control" id="">
+		                            <option readonly value="0"><?php echo ('Select level first');?></option>
+									<option value="1"><?php echo ('A1-');?></option>
+									<option value="1"><?php echo ('A1+');?></option>
+									<option value="1"><?php echo ('A2-');?></option>
+			                        <option value="1"><?php echo ('A2+');?></option>
+									<option value="1"><?php echo ('B1');?></option>
+									<option value="1"><?php echo ('B2');?></option>
 			                    </select>
 			                </div>
 						</div>
 	
 						<!-- Rol -->
-						<!-- <div class="col-md-6 mb-3">
+						<div class="col-md-6 mb-3">
 						
-						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Roll');?></label>
-                        
+						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Wave');?></label>
+                        						
+
 						<div class="col-sm-8">
-							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="roll" value="" >
-						</div> 
+							<select name="section_id" class="form-control" data-validate="" id="section_selector_holder">
+								data-message-required="<?php echo ('Value ');?>"
+									onchange="return get_class_sections(this.value)"> 
+									<!--en esta parte elimine la restricción de requerido en la parte de los parents-->
+                              <option value=""><?php echo ('Select');?></option>
+                              <?php 
+								$classes = $this->db->get('section')->result_array();
+								foreach($classes as $row):
+									?>
+                            		<option value="<?php echo $row['section_id'];?>">
+											<?php echo $row['name'];?>
+                                            </option>
+                                <?php
+								endforeach;
+							  ?>
+                          </select>
+						</div>	
 						
-						</div> -->
+						</div>
 	
 						<!-- natonality -->
 	
@@ -187,10 +245,10 @@
 				<!-- emergency contact  -->
 				<div class="form-group">
 
-				<h4 style="text-align:center; font-weight:bold; font-size:1.5rem; color:#000; padding:1.2rem">Contact section</h4>
+				<h4 style="text-align:center; font-weight:bold; font-size:1.5rem; color:#000; padding:1.2rem">Sección de contacto familiar</h4>
 
 						<div class="col-md-6 mb-3">
-						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label">Under - age?</label>
+						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label">¿Menor de edad?</label>
                         
 						<div class="col-sm-8 form-check">
 							
@@ -348,5 +406,22 @@ $(document).ready(Principal);
         });
 
     }
+	
+
+	let radios = document.querySelectorAll("[type='radio']");
+   radios.forEach((x)=>{
+     x.dataset.val = x.checked; // guardamos el estado del radio button dentro del elemento
+     x.addEventListener('click',(e)=>{
+       let element = e.target;
+       if(element.dataset.val == 'false'){
+         element.dataset.val = 'true';
+         element.checked = true;
+       }else{
+         element.dataset.val = 'false';
+         element.checked = false;
+       }
+     },true);
+   });
+
 
 </script>

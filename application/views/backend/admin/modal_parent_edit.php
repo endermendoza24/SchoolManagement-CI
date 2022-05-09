@@ -24,7 +24,25 @@
                             	value="<?php echo $row['name'];?>">
 						</div>
 					</div>
+
+					<div class="form-group">
+						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Lastname');?></label>
+                        
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Value Required');?>"
+                            	value="<?php echo $row['lastname'];?>">
+						</div>
+					</div>
                     
+					<div class="form-group">
+						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Cédula');?></label>
+                        
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="identdocument" data-validate="required" data-message-required="<?php echo ('Value Required');?>"
+                            	value="<?php echo $row['identdocument'];?>">
+						</div>
+					</div>
+
 					<div class="form-group">
 						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Email');?></label>
 						<div class="col-sm-5">
@@ -50,10 +68,10 @@
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Profession');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Nationality');?></label>
                         
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="profession" value="<?php echo $row['profession'];?>">
+							<input type="text" class="form-control" name="nationality" value="<?php echo $row['nationality'];?>">
 						</div>
 					</div>
                     

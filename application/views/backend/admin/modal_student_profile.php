@@ -54,8 +54,15 @@ foreach($student_info as $row):?>
 
                     <?php if($row['section_id'] != '' && $row['section_id'] != 0):?>
                     <tr>
-                        <td>Section</td>
+                        <td>Wave</td>
                         <td><b><?php echo $this->db->get_where('section' , array('section_id' => $row['section_id']))->row()->name;?></b></td>
+                    </tr>
+                    <?php endif;?>
+
+                    <?php if($row['level'] != ''):?>
+                    <tr>
+                        <td>Level</td>
+                        <td><b><?php echo $row['level'];?></b></td>
                     </tr>
                     <?php endif;?>
                 

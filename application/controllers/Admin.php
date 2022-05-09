@@ -332,6 +332,9 @@ class Admin extends CI_Controller
             $data['section_id']  = $this->input->post('section_id');
             $data['parent_id']   = $this->input->post('parent_id');
             $data['roll']        = $this->input->post('roll');
+            
+            $data['level']        = $this->input->post('level');
+            $data['horario']        = $this->input->post('horario');
             // $data['password']   = $this->input->post('password');
             $data['class_id']   = $this->input->post('class_id');
             if ($this->input->post('section_id') != '') {
@@ -440,11 +443,13 @@ class Admin extends CI_Controller
             redirect('login', 'refresh');
         if ($param1 == 'create') {
             $data['name']        			= $this->input->post('name');
+            $data['lastname']        			= $this->input->post('lastname');
             $data['email']       			= $this->input->post('email');
             $data['password']    			= $this->input->post('password');
             $data['phone']       			= $this->input->post('phone');
             $data['address']     			= $this->input->post('address');
-            $data['profession']  			= $this->input->post('profession');
+            $data['identdocument']     			= $this->input->post('identdocument');
+            $data['nationality']  			= $this->input->post('nationality');
             $this->db->insert('parent', $data);
             $this->session->set_flashdata('flash_message' , get_phrase('data_added_successfully'));
             $this->email_model->account_opening_email('parent', $data['email']); //SEND EMAIL ACCOUNT OPENING EMAIL
@@ -452,10 +457,12 @@ class Admin extends CI_Controller
         }
         if ($param1 == 'edit') {
             $data['name']                   = $this->input->post('name');
+            $data['lastname']        			= $this->input->post('lastname');
             $data['email']                  = $this->input->post('email');
             $data['phone']                  = $this->input->post('phone');
             $data['address']                = $this->input->post('address');
-            $data['profession']             = $this->input->post('profession');
+            $data['identdocument']     			= $this->input->post('identdocument');
+            $data['nationality']  			= $this->input->post('nationality');
             $this->db->where('parent_id' , $param2);
             $this->db->update('parent' , $data);
             $this->session->set_flashdata('flash_message' , get_phrase('data_updated'));

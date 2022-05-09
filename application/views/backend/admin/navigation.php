@@ -56,7 +56,7 @@
                 </li>
                 <li class="<?php if ($page_name == 'section') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/section">
-                        <span><i class="entypo-dot"></i> <?php echo ('Manage classroom'); ?></span>
+                        <span><i class="entypo-dot"></i> <?php echo ('Manage Waves'); ?></span>
                     </a>
                 </li>
             </ul>
