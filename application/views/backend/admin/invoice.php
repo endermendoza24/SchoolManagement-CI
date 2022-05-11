@@ -10,7 +10,7 @@
                     	</a></li>
 			<li>
             	<a href="#add" data-toggle="tab"><i class="entypo-plus-circled"></i>
-					<?php echo ('Add Invoice/Payment');?>
+					<?php echo ('Facturar / Pagar');?>
                     	</a></li>
 		</ul>
     	<!------CONTROL TABS END------>
@@ -102,7 +102,7 @@
                     <div class="col-md-6">
                         <div class="panel panel-default panel-shadow" data-collapsed="0">
                             <div class="panel-heading">
-                                <div class="panel-title"><?php echo ('Invoice Informations');?></div>
+                                <div style="color:#000; text-transform:bold; font-size:20px" class="panel-title"><?php echo ('Información de factura');?></div>
                             </div>
                             <div class="panel-body">
                                 
@@ -145,7 +145,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Date');?></label>
                                     <div class="col-sm-9">
-                                        <input  data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="datetime-local" value="<?php echo date("m-d-Y h:i:s");?>" class=" form-control" name="date"/>
+                                        <input  data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="datetime-local"  class="form-control" name="date"/>
                                     </div>
                                 </div>
                                 
@@ -155,7 +155,7 @@
                     <div class="col-md-6">
                         <div class="panel panel-default panel-shadow" data-collapsed="0">
                             <div class="panel-heading">
-                                <div class="panel-title"><?php echo ('Payment Information');?></div>
+                                <div style="color:#000; text-transform:bold: font-size:20px" class="panel-title"><?php echo ('Información de pago');?></div>
                             </div>
                             <div class="panel-body">
                                 
@@ -186,13 +186,22 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label"><?php echo ('Method');?></label>
+                                    <label class="col-sm-3 control-label"><?php echo ('Método');?></label>
                                     <div class="col-sm-9">
-                                        <select name="method" class="form-control">
+                                        <select onchange="if(this.value == 2) document.getElementById('baucher').disabled = false" name="method" id="method" class="form-control">
                                             <option value="1"><?php echo ('Cash');?></option>
                                             <option value="2"><?php echo ('Bank deposit');?></option>
                                             <!-- <option value="3"><?php echo ('Card');?></option> -->
                                         </select>
+                                    </div>
+                                </div>
+
+                                <!-- numero de baucher -->
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><?php echo ('N° de Baucher');?></label>
+                                    <div class="col-sm-9">
+                                       <input type="text" maxlength="20" disabled id="baucher" name="baucher" class="form-control">
                                     </div>
                                 </div>
                                 
@@ -200,7 +209,8 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-5">
-                                <button type="submit" class="btn btn-info"><?php echo ('Add Invoice');?></button>
+                                
+                                <button style="font-size:20px; color:#000" type="submit" class="btn btn-info btn-lg"><i class="entypo-credit-card"><?php echo ('Facturar');?></i></button>
                             </div>
                         </div>
                     </div>
@@ -215,6 +225,8 @@
 
 <!-----  DATA TABLE EXPORT CONFIGURATIONS ---->                      
 <script type="text/javascript">
+
+
 
 	jQuery(document).ready(function($)
 	{

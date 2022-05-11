@@ -143,12 +143,18 @@
 		                    <div class="col-sm-8">
 		                        <select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="level" class="form-control" id="">
 		                            <option readonly value="0"><?php echo ('Select level first');?></option>
-									<option value="1"><?php echo ('A1-');?></option>
-									<option value="1"><?php echo ('A1+');?></option>
-									<option value="1"><?php echo ('A2-');?></option>
-			                        <option value="1"><?php echo ('A2+');?></option>
-									<option value="1"><?php echo ('B1');?></option>
-									<option value="1"><?php echo ('B2');?></option>
+									<option value="A1-"><?php echo ('A1-');?></option>
+									<option value="A1+"><?php echo ('A1+');?></option>
+									<option value="A2-"><?php echo ('A2-');?></option>
+			                        <option value="A2+"><?php echo ('A2+');?></option>
+									<option value="B1-"><?php echo ('B1');?></option>
+									<option value="B1+"><?php echo ('B1+');?></option>
+									<option value="B2-"><?php echo ('B2-');?></option>
+									<option value="B2+"><?php echo ('B2+');?></option>
+									<option value="C1-"><?php echo ('C1-');?></option>
+									<option value="C1+"><?php echo ('C1+');?></option>
+									<option value="C2-"><?php echo ('C2-');?></option>
+									<option value="C2+"><?php echo ('C2+');?></option>
 			                    </select>
 			                </div>
 						</div>

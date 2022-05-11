@@ -941,7 +941,9 @@ class Admin extends CI_Controller
             $data['amount_paid']        = $this->input->post('amount_paid');
             $data['due']                = $data['amount'] - $data['amount_paid'];
             $data['status']             = $this->input->post('status');
-            $data['creation_timestamp'] = strtotime($this->input->post('date'));
+            $data['baucher']             = $this->input->post('baucher');
+            
+            $data['creation_timestamp'] = strtotime($this->input->post('date'));                        
             
             $this->db->insert('invoice', $data);
             $invoice_id = $this->db->insert_id();
@@ -951,9 +953,9 @@ class Admin extends CI_Controller
             $data2['title']             =   $this->input->post('title');
             $data2['description']       =   $this->input->post('description');
             $data2['payment_type']      =  'income';
-            $data2['method']            =   $this->input->post('method');
-            $data2['amount']            =   $this->input->post('amount_paid');
-            $data2['timestamp']         =   strtotime($this->input->post('date'));
+            
+            $data2['amount']            =   $this->input->post('amount_paid');            
+            $data2['timestamp']         =   strtotime($this->input->post('date'));            
 
             $this->db->insert('payment' , $data2);
 
@@ -965,7 +967,7 @@ class Admin extends CI_Controller
             $data['title']              = $this->input->post('title');
             $data['description']        = $this->input->post('description');
             $data['amount']             = $this->input->post('amount');
-            $data['status']             = $this->input->post('status');
+            $data['status']             = $this->input->post('status');                        
             $data['creation_timestamp'] = strtotime($this->input->post('date'));
             
             $this->db->where('invoice_id', $param2);
@@ -983,8 +985,8 @@ class Admin extends CI_Controller
             $data['title']        =   $this->input->post('title');
             $data['description']  =   $this->input->post('description');
             $data['payment_type'] =   'income';
-            $data['method']       =   $this->input->post('method');
-            $data['amount']       =   $this->input->post('amount');
+            
+            $data['amount']       =   $this->input->post('amount');            
             $data['timestamp']    =   strtotime($this->input->post('timestamp'));
             $this->db->insert('payment' , $data);
 
