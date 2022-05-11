@@ -166,21 +166,13 @@
                         						
 
 						<div class="col-sm-8">
-							<select name="section_id" class="form-control" data-validate="" id="section_selector_holder">
-								data-message-required="<?php echo ('Value ');?>"
-									onchange="return get_class_sections(this.value)"> 
-									<!--en esta parte elimine la restricción de requerido en la parte de los parents-->
-                              <option value=""><?php echo ('Select');?></option>
-                              <?php 
-								$classes = $this->db->get('section')->result_array();
-								foreach($classes as $row):
-									?>
-                            		<option value="<?php echo $row['section_id'];?>">
-											<?php echo $row['name'];?>
-                                            </option>
-                                <?php
-								endforeach;
-							  ?>
+							<select name="wave" class="form-control" data-validate="" id="wave">
+								<option value="Wave 1">Wave 1</option>
+								<option value="Wave 2">Wave 2</option>
+								<option value="Wave 3">Wave 3</option>
+								<option value="Wave 4">Wave 4</option>
+								<option value="Wave 5">Wave 5</option>
+								<option value="Wave 6">Wave 6</option>
                           </select>
 						</div>	
 						

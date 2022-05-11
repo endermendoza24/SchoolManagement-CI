@@ -306,7 +306,7 @@ class Admin extends CI_Controller
 	}
 	
     
-
+// Agregar estudiante
 
     function student($param1 = '', $param2 = '', $param3 = '')
     {
@@ -331,7 +331,7 @@ class Admin extends CI_Controller
             $data['class_id']    = $this->input->post('class_id');
             $data['section_id']  = $this->input->post('section_id');
             $data['parent_id']   = $this->input->post('parent_id');
-            $data['roll']        = $this->input->post('roll');
+            $data['wave']        = $this->input->post('wave'); // es el antiguo roll
             
             $data['level']        = $this->input->post('level');
             $data['horario']        = $this->input->post('horario');
@@ -341,7 +341,7 @@ class Admin extends CI_Controller
                 $data['section_id'] = $this->input->post('section_id');
             }
             $data['parent_id']  = $this->input->post('parent_id');
-            $data['roll']       = $this->input->post('roll');
+            $data['wave']       = $this->input->post('wave');
             $this->db->insert('student', $data);
             $student_id = $this->db->insert_id();
             move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/student_image/' . $student_id . '.jpg');
@@ -364,7 +364,7 @@ class Admin extends CI_Controller
             $data['class_id']    = $this->input->post('class_id');
             $data['section_id']  = $this->input->post('section_id');
             $data['parent_id']   = $this->input->post('parent_id');
-            $data['roll']        = $this->input->post('roll');
+            $data['wave']        = $this->input->post('wave');
             
             $this->db->where('student_id', $param3);
             $this->db->update('student', $data);

@@ -56,21 +56,15 @@ foreach ($edit_data as $row):
 
                     </div>
 
-                    <h4><?php echo ('De parte de: '); ?> </h4>
-                    <?php echo $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->name; ?><br>
+                    <h4><?php echo ('De parte de: '); ?> </h4>                    
                     <div style="text-transform:capitalize">
                     
                     <!-- DATOS PERSONALES -->
-                    <?php echo 'Nombre: ' .  $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->name; ?><br>
-                    <?php echo 'Apellido: ' .  $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->lastname; ?><br>
-                    <?php echo 'Nivel y wave: ' .  $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->level; ?> <br>
-                  
-
-
-                    
-
-
-                    <?php echo 'Direccion ' .  $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->address; ?><br>
+                    <?php echo $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->name; ?><br>
+                    <?php echo '' .  $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->lastname; ?><br>
+                    <?php echo 'Nivel: ' .  $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->level; ?> 
+                    <?php echo ' ' .  $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->wave; ?><br>
+                    <?php echo 'Direccion: ' .  $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->address; ?><br>
                     </div>
 
                     <!-- FIN DE DATOS PERSONALES -->
@@ -98,7 +92,7 @@ foreach ($edit_data as $row):
             </tr>
 
             <tr>
-                <td align="left" width="80%"><h4><?php echo ('Monto pagado '); ?> : $<?php echo $row['amount_paid']; ?></h4>
+                <td align="left" width="80%"><h4><?php echo ('Monto pagado '); ?> : $ <?php echo $row['amount_paid']; ?></h4>
          <h4>  
          <div style="text-transform:capitalize">     
         <?php
@@ -106,12 +100,12 @@ foreach ($edit_data as $row):
             $n =  $row['amount_paid'];
             $izquierda = intval(floor($n));
             $derecha = intval(($n - floor($n)) * 100);
-            echo 'Monto pagado en letras: ' . $formatterES->format($izquierda) . " Dólares ";
+            echo 'Monto en letras: ' . $formatterES->format($izquierda) . " Dólares ";
             // ciento veintitrés coma cuarenta y cinco
             
         
         ?>
-       <?php if ($row['baucher'] != 0):?>
+       <?php if ($row['baucher'] != 0):?> <!--solo si el baucher existe se mostrara-->
             <tr>
                 <td align="left" width="80%"><h4><?php echo ('Baucher N°'); ?> : <?php echo $row['baucher']; ?></h4></td>                
             </tr>

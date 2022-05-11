@@ -114,7 +114,8 @@
         <table class="table table-bordered table-hover table-striped">
             <thead>
                 <tr>
-                    <td><?php echo ('Roll');?></td>
+                    <td><?php echo ('Wave');?></td>
+                    <td><?php echo ('Level');?></td>
                     <td><?php echo ('Name');?></td>
                     <td><?php echo ('Status');?></td>
                 </tr>
@@ -125,7 +126,8 @@
                     $students   =   $this->db->get_where('student' , array('class_id'=>$class_id))->result_array();
                         foreach($students as $row):?>
                         <tr class="gradeA">
-                            <td><?php echo $row['roll'];?></td>
+                            <td><?php echo $row['wave'];?></td>
+                            <td><?php echo $row['level'];?></td>
                             <td><?php echo $row['name'];?></td>
                             <?php 
                                 //inserting blank data for students attendance if unavailable

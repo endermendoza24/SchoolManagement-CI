@@ -119,7 +119,7 @@
                                             ?>
                                                 <option value="<?php echo $row['student_id'];?>">
                                                     class <?php echo $this->crud_model->get_class_name($row['class_id']);?> -
-                                                    roll <?php echo $row['roll'];?> -
+                                                     <?php echo $row['wave'];?> -
                                                     <?php echo $row['name'];?>
                                                 </option>
                                             <?php
@@ -145,7 +145,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Date');?></label>
                                     <div class="col-sm-9">
-                                        <input  data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="datetime-local"  class="form-control" name="date"/>
+                                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="datetime-local"  class="form-control" name="date"/>
                                     </div>
                                 </div>
                                 
