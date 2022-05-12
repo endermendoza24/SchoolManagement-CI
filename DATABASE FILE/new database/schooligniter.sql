@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2022 a las 02:05:11
--- Versión del servidor: 10.1.19-MariaDB
--- Versión de PHP: 5.6.28
+-- Servidor: localhost
+-- Tiempo de generación: 12-05-2022 a las 23:54:39
+-- Versión del servidor: 10.1.38-MariaDB
+-- Versión de PHP: 5.6.40
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -129,13 +131,6 @@ CREATE TABLE `class` (
   `teacher_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Volcado de datos para la tabla `class`
---
-
-INSERT INTO `class` (`class_id`, `name`, `name_numeric`, `teacher_id`) VALUES
-(1, 'English a1-', 'A1-', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -194,6 +189,15 @@ CREATE TABLE `exam` (
   `comment` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `exam`
+--
+
+INSERT INTO `exam` (`exam_id`, `name`, `date`, `comment`) VALUES
+(1, 'Evalucación 1', '05/09/2022', 'This examen would be write'),
+(2, 'Evaluación 2', '05/12/2022', 'This exam is fatal'),
+(3, 'Evaluación 3', '05/12/2022', 'Good exam');
+
 -- --------------------------------------------------------
 
 --
@@ -204,6 +208,15 @@ CREATE TABLE `expense_category` (
   `expense_category_id` int(11) NOT NULL,
   `name` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `expense_category`
+--
+
+INSERT INTO `expense_category` (`expense_category_id`, `name`) VALUES
+(1, 'Classroom equipment'),
+(2, 'Teachers salary'),
+(3, 'Other');
 
 -- --------------------------------------------------------
 
@@ -238,15 +251,10 @@ CREATE TABLE `invoice` (
   `payment_timestamp` longtext COLLATE utf8_unicode_ci NOT NULL,
   `payment_method` longtext COLLATE utf8_unicode_ci NOT NULL,
   `payment_details` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `status` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT 'paid or unpaid'
+  `status` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT 'paid or unpaid',
+  `baucher` longtext COLLATE utf8_unicode_ci,
+  `metodopago` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `invoice`
---
-
-INSERT INTO `invoice` (`invoice_id`, `student_id`, `title`, `description`, `amount`, `amount_paid`, `due`, `creation_timestamp`, `payment_timestamp`, `payment_method`, `payment_details`, `status`) VALUES
-(1, 1, 'Mensualidad de mayo', 'El estudiante acaba de pagar la mensualidad del mes de mayo', 20, '20', '0', 1652023620, '', '', '', 'paid');
 
 -- --------------------------------------------------------
 
@@ -279,19 +287,6 @@ CREATE TABLE `language` (
   `japanese` longtext COLLATE utf8_unicode_ci NOT NULL,
   `korean` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `language`
---
-
-INSERT INTO `language` (`phrase_id`, `phrase`, `english`, `bengali`, `spanish`, `arabic`, `dutch`, `russian`, `chinese`, `turkish`, `portuguese`, `hungarian`, `french`, `greek`, `german`, `italian`, `thai`, `urdu`, `hindi`, `latin`, `indonesian`, `japanese`, `korean`) VALUES
-(1, 'event_schedule', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(2, 'add_new_teacher', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(3, 'forgot_your_password', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(4, 'data_added_successfully', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(5, 'value_required', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(6, 'class', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(7, 'data_updated', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -421,12 +416,12 @@ CREATE TABLE `osad_student` (
 CREATE TABLE `parent` (
   `parent_id` int(11) NOT NULL,
   `name` longtext COLLATE utf8_unicode_ci NOT NULL,
-    `lastname` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `lastname` longtext COLLATE utf8_unicode_ci NOT NULL,
   `email` longtext COLLATE utf8_unicode_ci,
   `password` longtext COLLATE utf8_unicode_ci,
   `phone` longtext COLLATE utf8_unicode_ci NOT NULL,
   `address` longtext COLLATE utf8_unicode_ci NOT NULL,
-    `nationality` longtext COLLATE utf8_unicode_ci,
+  `nationality` longtext COLLATE utf8_unicode_ci,
   `identdocument` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -449,13 +444,6 @@ CREATE TABLE `payment` (
   `timestamp` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Volcado de datos para la tabla `payment`
---
-
-INSERT INTO `payment` (`payment_id`, `expense_category_id`, `title`, `payment_type`, `invoice_id`, `student_id`, `method`, `description`, `amount`, `timestamp`) VALUES
-(1, 0, 'Mensualidad de mayo', 'income', 1, 1, '1', 'El estudiante acaba de pagar la mensualidad del mes de mayo', '20', '1652023620');
-
 -- --------------------------------------------------------
 
 --
@@ -469,13 +457,6 @@ CREATE TABLE `section` (
   `class_id` int(11) NOT NULL,
   `teacher_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `section`
---
-
-INSERT INTO `section` (`section_id`, `name`, `nick_name`, `class_id`, `teacher_id`) VALUES
-(1, 'T-1', 'Sala grande', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -495,9 +476,9 @@ CREATE TABLE `settings` (
 
 INSERT INTO `settings` (`settings_id`, `type`, `description`) VALUES
 (1, 'system_name', 'Talk academia de idiomas'),
-(2, 'system_title', 'Talk Management System'),
-(3, 'address', 'Antiguo hotel Casa Mateo 1 1/2 cuadra al oeste.'),
-(4, 'phone', '+505 8997 1090|'),
+(2, 'system_title', 'Talk academia de idiomas'),
+(3, 'address', 'Del Am/Pm 3 1/2 cuadras al oeste. Jinotepe, Carazo'),
+(4, 'phone', '+505 8997 1090'),
 (5, 'paypal_email', ''),
 (6, 'currency', ''),
 (7, 'system_email', 'quierosaberdetalk@gmail.com'),
@@ -539,19 +520,14 @@ CREATE TABLE `student` (
   `section_id` int(11) DEFAULT NULL,
   `parent_id` int(11) DEFAULT NULL,
   `diamatricula` longtext COLLATE utf8_unicode_ci,
-  `roll` longtext COLLATE utf8_unicode_ci,
-    `level` longtext COLLATE utf8_unicode_ci,
-      `horario` longtext COLLATE utf8_unicode_ci,
+  `wave` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `level` longtext COLLATE utf8_unicode_ci,
+  `horario` longtext COLLATE utf8_unicode_ci,
   `transport_id` int(11) NOT NULL,
   `dormitory_id` int(11) NOT NULL,
-  `dormitory_room_number` longtext COLLATE utf8_unicode_ci NOT NULL
+  `dormitory_room_number` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `tipo_documento` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `student`
---
-
-
 
 -- --------------------------------------------------------
 
@@ -587,13 +563,6 @@ CREATE TABLE `teacher` (
   `password` longtext COLLATE utf8_unicode_ci,
   `primerdia` longtext COLLATE utf8_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `teacher`
---
-
-INSERT INTO `teacher` (`teacher_id`, `name`, `lastname`, `identdocument`, `birthday`, `sex`, `nationality`, `blood_group`, `address`, `phone`, `email`, `password`, `primerdia`) VALUES
-(1, 'Katherine Cruz', '', '', '06/03/1997', 'Female', '', '', 'Jinotepe, barrio San Juan', '4545454', 'kat@narvaez.com', 'password', NULL);
 
 -- --------------------------------------------------------
 
@@ -792,136 +761,163 @@ ALTER TABLE `transport`
 --
 ALTER TABLE `acd_session`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `admin`
 --
 ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT de la tabla `attendance`
 --
 ALTER TABLE `attendance`
   MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `book`
 --
 ALTER TABLE `book`
   MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `class`
 --
 ALTER TABLE `class`
-  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `class_routine`
 --
 ALTER TABLE `class_routine`
   MODIFY `class_routine_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `document`
 --
 ALTER TABLE `document`
   MODIFY `document_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `dormitory`
 --
 ALTER TABLE `dormitory`
   MODIFY `dormitory_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `exam`
 --
 ALTER TABLE `exam`
-  MODIFY `exam_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `exam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT de la tabla `expense_category`
 --
 ALTER TABLE `expense_category`
-  MODIFY `expense_category_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `expense_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT de la tabla `grade`
 --
 ALTER TABLE `grade`
   MODIFY `grade_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `invoice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `invoice_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `language`
 --
 ALTER TABLE `language`
-  MODIFY `phrase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `phrase_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `mark`
 --
 ALTER TABLE `mark`
   MODIFY `mark_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `message`
 --
 ALTER TABLE `message`
   MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `message_thread`
 --
 ALTER TABLE `message_thread`
   MODIFY `message_thread_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `noticeboard`
 --
 ALTER TABLE `noticeboard`
   MODIFY `notice_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `osad_acd_history`
 --
 ALTER TABLE `osad_acd_history`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `osad_student`
 --
 ALTER TABLE `osad_student`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `parent`
 --
 ALTER TABLE `parent`
   MODIFY `parent_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `section`
 --
 ALTER TABLE `section`
-  MODIFY `section_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `section_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `settings`
 --
 ALTER TABLE `settings`
   MODIFY `settings_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 --
 -- AUTO_INCREMENT de la tabla `student`
 --
 ALTER TABLE `student`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `subject`
 --
 ALTER TABLE `subject`
   MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `transport`
 --
 ALTER TABLE `transport`
   MODIFY `transport_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- Restricciones para tablas volcadas
 --
@@ -931,6 +927,7 @@ ALTER TABLE `transport`
 --
 ALTER TABLE `osad_student`
   ADD CONSTRAINT `osad_student_ibfk_1` FOREIGN KEY (`acd_session_id`) REFERENCES `acd_session` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
