@@ -96,12 +96,12 @@
                  ?>
                 <h2><?php echo ucwords($day);?></h2>
                 
-                <h3>Attendance for the class</h3>
+                <h3>Asistencia de la clase</h3>
                 <p><?php echo $date.'-'.$month.'-'.$year;?></p>
             </div>
             <a href="#" id="update_attendance_button" onclick="return update_attendance()" 
                 class="btn btn-info">
-                    Update Attendance
+                    Actualizar asistencia
             </a>
         </div>
 
@@ -114,9 +114,9 @@
         <table class="table table-bordered table-hover table-striped">
             <thead>
                 <tr>
-                    <td><?php echo ('Admit date');?></td>
-                    <td><?php echo ('Name');?></td>
-                    <td><?php echo ('Status');?></td>
+                    <td><?php echo ('Día de matricula');?></td>
+                    <td><?php echo ('Nombre');?></td>
+                    <td><?php echo ('Estado');?></td>
                 </tr>
             </thead>
             <tbody>
@@ -176,9 +176,9 @@
             <table  class="table table-bordered table-hover table-striped">
         		<thead>
         			<tr class="gradeA">
-                    	<th><?php echo ('Roll');?></th>
-                    	<th><?php echo ('Name');?></th>
-                    	<th><?php echo ('Status');?></th>
+                    	<th><?php echo ('Wave');?></th>
+                    	<th><?php echo ('Nombre');?></th>
+                    	<th><?php echo ('Estado');?></th>
         			</tr>
                 </thead>
                 <tbody>
@@ -191,7 +191,7 @@
         			{
         				?>
         				<tr class="gradeA">
-        					<td><?php echo $row['roll'];?></td>
+        					<td><?php echo $row['wave'];?></td>
         					<td><?php echo $row['name'];?></td>
         					<td align="center">
         						<?php 
@@ -224,7 +224,7 @@
             </table>
             <input type="hidden" name="date" value="<?php echo $full_date;?>" />
             <center>
-                <input type="submit" class="btn btn-info" value="save changes">
+                <input type="submit" class="btn btn-info" value="Guardar cambios">
             </center>
         </div>
     

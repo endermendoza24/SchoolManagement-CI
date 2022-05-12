@@ -9,7 +9,7 @@ foreach ( $edit_data as $row):
         	<div class="panel-heading">
             	<div class="panel-title" >
             		<i class="entypo-plus-circled"></i>
-					<?php echo ('Edit Student');?>
+					<?php echo ('Editar estudiante');?>
             	</div>
             </div>
 			<div class="panel-body">
@@ -40,7 +40,7 @@ foreach ( $edit_data as $row):
 					</div>
 	
 					<div class="form-group">
-						<label  for="field-1" class="col-sm-3 control-label"><?php echo ('Name');?></label>
+						<label  for="field-1" class="col-sm-3 control-label"><?php echo ('Nombre');?></label>
                         
 						<div class="col-sm-5">
 							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="<?php echo $row['name'];?>">
@@ -48,7 +48,7 @@ foreach ( $edit_data as $row):
 					</div>
 
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Lastname');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Apellido');?></label>
                         
 						<div class="col-sm-5">
 							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="lastname" value="<?php echo $row['lastname'];?>" >
@@ -56,10 +56,10 @@ foreach ( $edit_data as $row):
 					</div>
 
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Parent');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Tutor');?></label>
                         
 						<div class="col-sm-5">
-							<select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="parent_id" class="form-control" >  <!-- data-validate="required" data-message-required="<?php echo ('Value Required');?>" -->
+							<select  name="parent_id" class="form-control" >  <!-- data-validate="required" data-message-required="<?php echo ('Value Required');?>" -->
                               <option value=""><?php echo ('Select');?></option>
                               <?php 
 									$parents = $this->db->get('parent')->result_array();
@@ -101,7 +101,7 @@ foreach ( $edit_data as $row):
 
 					
 						<div class="form-group">
-							<label for="field-2" class="col-sm-3 control-label"><?php echo ('Section');?></label>
+							<label for="field-2" class="col-sm-3 control-label"><?php echo ('Wave');?></label>
 			                    <div class="col-sm-5">
 			                        <select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="section_id" class="form-control" id="section_selector_holder">
 			                            <option value=""><?php echo ('Select class first');?></option>
@@ -112,7 +112,7 @@ foreach ( $edit_data as $row):
 					
 					
 						<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Nationality');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Nacionalidad');?></label>
                         
 						<div class="col-sm-5">
 							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="nationality" value="<?php echo $row['nationality'];?>" >
@@ -120,15 +120,30 @@ foreach ( $edit_data as $row):
 					</div>
 
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Identity document');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Documento de identidad');?></label>
                         
 						<div class="col-sm-5">
 							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="identdocument" value="<?php echo $row['identdocument'];?>" >
 						</div> 
 					</div>
+
+					<!-- Tipi de documento de identidad -->
+					<div class="form-group">
+						
+						<label style="color:#000; font-weight:bold;" for="identdocument" class="col-sm-3 control-label">Tipo de documento de identidad</label>							
+							<div class="col-sm-5">								
+							<select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="tipodocumento" class="form-control" id="tipodocumento">
+								<option value="Cedula">Cédula</option>
+								<option value="CedulaResidencia">Cédula de residencia</option>
+								<option value="Pasaporte">Pasaporte</option>
+								<option value="Otro">Otro</option>
+							</select>
+
+							</div>						
+						</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Birthday');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Fecha Nac');?></label>
                         
 						<div class="col-sm-5">
 							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control datepicker" name="birthday" value="<?php echo $row['birthday'];?>" data-start-view="2">
@@ -136,19 +151,19 @@ foreach ( $edit_data as $row):
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Gender');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Sexo');?></label>
                         
 						<div class="col-sm-5">
 							<select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="sex" class="form-control">
                               <option value=""><?php echo ('Select');?></option>
-                              <option value="Male" <?php if($row['sex'] == 'Male')echo 'selected';?>><?php echo ('Male');?></option>
-                              <option value="Female"<?php if($row['sex'] == 'Female')echo 'selected';?>><?php echo ('Female');?></option>
+                              <option value="Male" <?php if($row['sex'] == 'Male')echo 'selected';?>><?php echo ('Masculino');?></option>
+                              <option value="Female"<?php if($row['sex'] == 'Female')echo 'selected';?>><?php echo ('Femenino');?></option>
                           </select>
 						</div> 
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Address');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Dirección');?></label>
                         
 						<div class="col-sm-5">
 							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="address" value="<?php echo $row['address'];?>" >
@@ -156,7 +171,7 @@ foreach ( $edit_data as $row):
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Phone');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('teléfono');?></label>
                         
 						<div class="col-sm-5">
 							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="phone" value="<?php echo $row['phone'];?>" >
@@ -172,7 +187,7 @@ foreach ( $edit_data as $row):
                     
                     <div class="form-group">
 						<div class="col-sm-offset-3 col-sm-5">
-							<button type="submit" class="btn btn-info"><?php echo ('Edit Student');?></button>
+							<button type="submit" class="btn btn-info"><?php echo ('Editar estudiante');?></button>
 						</div>
 					</div>
                 <?php echo form_close();?>

@@ -4,12 +4,12 @@ foreach ($edit_data as $row):
 ?>
 <style>
   #invoice_print{
-      font-family:consolas;
+      font-family:"Courier New";
   }
 </style>
 
     <a onClick="PrintElem('#invoice_print')" class="btn btn-default btn-icon icon-left hidden-print pull-right">
-        Print Invoice
+        Imprimir factura
         <i class="entypo-print"></i>
     </a>
 </center>
@@ -20,7 +20,7 @@ foreach ($edit_data as $row):
         <table class="tabla1" width="100%" border="0">
             <tr>
                 <td style="color:red" align="center">
-                <img src="assets/images/talk.png" alt="Logo de Talk"  style="width:15%;"/>
+                <img src="assets/images/talk.png" alt="Logo de Talk"  style="width:15%; filter:sepia(1,5,2);"/>
                     <h4><b>Talk academia de idiomas <br> ¡Una alternativa diferente!</b></h4>
                     <h4>Del Am/Pm 3 1/2 cuadras al oeste. Jinotepe, Carazo</h4>
                     <!-- <h4>Autorización DGI: <?php $d=rand(1000,9999); echo $d; ?> - 7</h4> -->
@@ -31,7 +31,7 @@ foreach ($edit_data as $row):
                     <h4>Email: quierosaberdetalk@gmail.com</h4>
                     <h5>Tipo de cambio: C$ 36.00</h5>
                     <h5>Cualquier retraso en pago reportar dentro del <br> periodo de pago 10% de mora por cada 10 días de retraso</h5>
-                    <h5 style="text-transform:capitalize;"><?php echo ('Fecha de recibo'); ?> : <?php echo date('d M, Y H:i', $row['creation_timestamp']);?></h5>
+                    <h5 ><?php echo ('Fecha de recibo'); ?> : <?php echo date('d M, Y H:i a', $row['creation_timestamp']);?></h5>
                     <!-- <h5 style="text-transform:capitalize;"><?php echo ('Titulo'); ?> : <?php echo $row['title'];?></h5>
                     <h5 style="text-transform:capitalize;"><?php echo ('Descripción'); ?> : <?php echo $row['description'];?></h5> -->
                     <!-- <h5 style="text-transform:capitalize;"><?php echo ('Estado'); ?> : <?php echo $row['status']; ?></h5> -->
@@ -39,7 +39,7 @@ foreach ($edit_data as $row):
             </tr>
         </table>
         <hr style="border: 1px dashed grey;">
-        <hr style="border: 1px dashed grey;">
+        
         <table class="tabla1" width="100%" border="0">    
             <tr>
                 <td align="left"><h4><?php echo ('Paguese a:'); ?> </h4></td>
@@ -70,11 +70,8 @@ foreach ($edit_data as $row):
                     <!-- FIN DE DATOS PERSONALES -->
                     <hr style="border:1px dashed grey">
 
-                    <h4> <?php echo ('En concepto de: '); ?></h4>
-                                    
-                    
-                    <h4 style="text-transform:capitalize; color:grey;"><?php echo ('Titulo'); ?> : <?php echo $row['title'];?></h4>
-                    <h4 style="text-transform:capitalize; color:grey;"><?php echo ('Descripción'); ?> : <?php echo $row['description'];?></h4>
+                    <h4> <?php echo ('En concepto de: '); ?></h4>                                                        
+                    <h4 style="text-transform:capitalize; color:grey;font-size:15px"><?php echo $row['title'];?> <?php echo $row['description'];?></h4>                    
                 </td>
                 <!-- Esto es la información de facturación del estudiante -->
                 <td align="center" valign="top">
@@ -83,16 +80,16 @@ foreach ($edit_data as $row):
             </tr>
         </table>
         <hr style="border: 1px dashed grey;">
-        <hr style="border: 1px dashed grey;">
+        
 
         <table class="tabla3" width="100%" border="0">    
         
             <tr>
-                <td align="left" width="80%"><h4><?php echo ('Monto total en números: '); ?> : $<?php echo $row['amount']; ?></h4></td>               
+                <td align="left" width="80%"><h4><?php echo ('Monto total en números: '); ?>: $<?php echo $row['amount']; ?></h4></td>               
             </tr>
 
             <tr>
-                <td align="left" width="80%"><h4><?php echo ('Monto pagado '); ?> : $ <?php echo $row['amount_paid']; ?></h4>
+                <td align="left" width="80%"><h4><?php echo ('Monto pagado '); ?>: $ <?php echo $row['amount_paid']; ?></h4>
          <h4>  
          <div style="text-transform:capitalize">     
         <?php
@@ -107,7 +104,7 @@ foreach ($edit_data as $row):
         ?>
        <?php if ($row['baucher'] != 0):?> <!--solo si el baucher existe se mostrara-->
             <tr>
-                <td align="left" width="80%"><h4><?php echo ('Baucher N°'); ?> : <?php echo $row['baucher']; ?></h4></td>                
+                <td align="left" width="80%"><h4><?php echo ('Baucher N°'); ?>: <?php echo $row['baucher']; ?></h4></td>                
             </tr>
             <?php endif;?>  
     </h4>
@@ -117,16 +114,33 @@ foreach ($edit_data as $row):
             <h4>
             <?php if ($row['due'] != 0):?>
             <tr>
-                <td align="left" width="80%"><h4><?php echo ('Deuda'); ?> : $ <?php echo $row['due']; ?></h4></td>                
+                <td align="left" width="80%"><h4><?php echo ('Saldo pendiente'); ?>: $ <?php echo $row['due']; ?></h4></td>                
             </tr>
             <?php endif;?>
             </h4>
+
+
+            <h4>
+            <?php if ($row['metodopago'] == 1):?>
+            <tr>
+                <td align="left" width="80%"><h4><?php echo ('Método pago: Efectivo'); ?></h4></td>                
+            </tr>
+            <?php endif;?>
+            </h4>
+            <h4>
+            <?php if ($row['metodopago'] == 2):?>
+            <tr>
+                <td align="left" width="80%"><h4><?php echo ('Método pago: Transferencia bancaria'); ?></h4></td>                
+            </tr>
+            <?php endif;?>
+            </h4>
+           
            
 
         </table>
 
         <hr style="border: 1px dashed grey;">
-        <hr style="border: 1px dashed grey;">
+        
         <!-- payment history -->
         <!-- <h4><?php echo ('Payment History'); ?></h4> -->
         <!-- <table class="table table-bordered table-hover" width="100%" border="1" style="border-collapse:collapse;">

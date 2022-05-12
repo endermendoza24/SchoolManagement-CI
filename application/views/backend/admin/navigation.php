@@ -90,6 +90,44 @@
             </a>
         </li>
 
+          <!-- PAYMENT -->
+          <li class="<?php if ($page_name == 'invoice') echo 'active'; ?> ">
+            <a href="<?php echo base_url(); ?>index.php?admin/invoice">
+                <i class="entypo-credit-card"></i>
+                <span><?php echo ('Payment and Invoice'); ?></span>
+            </a>
+        </li>
+
+        <!-- ACCOUNTING -->
+        <li class="<?php
+        if ($page_name == 'income' ||
+                $page_name == 'expense' ||
+                    $page_name == 'expense_category')
+                        echo 'opened active';
+        ?> ">
+            <a href="#">
+                <i class="entypo-suitcase"></i>
+                <span><?php echo ('Accounting Section'); ?></span>
+            </a>
+            <ul>
+                <li class="<?php if ($page_name == 'income') echo 'active'; ?> ">
+                    <a href="<?php echo base_url(); ?>index.php?admin/income">
+                        <span><i class="entypo-dot"></i> <?php echo ('Income'); ?></span>
+                    </a>
+                </li>
+                <li class="<?php if ($page_name == 'expense') echo 'active'; ?> ">
+                    <a href="<?php echo base_url(); ?>index.php?admin/expense">
+                        <span><i class="entypo-dot"></i> <?php echo ('Expense'); ?></span>
+                    </a>
+                </li>
+                <li class="<?php if ($page_name == 'expense_category') echo 'active'; ?> ">
+                    <a href="<?php echo base_url(); ?>index.php?admin/expense_category">
+                        <span><i class="entypo-dot"></i> <?php echo ('Expense category'); ?></span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
          <!-- PARENTS -->
          <li class="<?php if ($page_name == 'parent') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/parent">
@@ -234,43 +272,7 @@
             </ul>
         </li>
 
-        <!-- PAYMENT -->
-        <li class="<?php if ($page_name == 'invoice') echo 'active'; ?> ">
-            <a href="<?php echo base_url(); ?>index.php?admin/invoice">
-                <i class="entypo-credit-card"></i>
-                <span><?php echo ('Payment and Invoice'); ?></span>
-            </a>
-        </li>
-
-        <!-- ACCOUNTING -->
-        <li class="<?php
-        if ($page_name == 'income' ||
-                $page_name == 'expense' ||
-                    $page_name == 'expense_category')
-                        echo 'opened active';
-        ?> ">
-            <a href="#">
-                <i class="entypo-suitcase"></i>
-                <span><?php echo ('Accounting Section'); ?></span>
-            </a>
-            <ul>
-                <li class="<?php if ($page_name == 'income') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?admin/income">
-                        <span><i class="entypo-dot"></i> <?php echo ('Income'); ?></span>
-                    </a>
-                </li>
-                <li class="<?php if ($page_name == 'expense') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?admin/expense">
-                        <span><i class="entypo-dot"></i> <?php echo ('Expense'); ?></span>
-                    </a>
-                </li>
-                <li class="<?php if ($page_name == 'expense_category') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?admin/expense_category">
-                        <span><i class="entypo-dot"></i> <?php echo ('Expense category'); ?></span>
-                    </a>
-                </li>
-            </ul>
-        </li>
+      
 
         <!-- LIBRARY -->
         <li class="<?php if ($page_name == 'book') echo 'active'; ?> ">

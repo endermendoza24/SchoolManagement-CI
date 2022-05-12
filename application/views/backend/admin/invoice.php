@@ -107,7 +107,7 @@
                             <div class="panel-body">
                                 
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label"><?php echo ('Student');?></label>
+                                    <label class="col-sm-3 control-label"><?php echo ('Estudiante');?></label>
                                     <div class="col-sm-9">
                                         <select name="student_id" class="form-control" style="" >
                                             <?php 
@@ -130,20 +130,28 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label"><?php echo ('Title');?></label>
+                                    <label class="col-sm-3 control-label"><?php echo ('Titulo');?></label>
                                     <div class="col-sm-9">
-                                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" require class="form-control" name="title"/>
+                                        <!-- <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" require class="form-control" name="title"/> -->
+                                            
+                                        <select name="title" id="title" class="form-control">
+                                            <option value="Cancelacion">Cancelación</option>
+                                            <option value="Abono">Abono</option>
+                                            <option value="Anticipo">Anticipo</option>
+                                            <option value="Otro">Otro</option>
+                                        </select>
+
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label"><?php echo ('Description');?></label>
+                                    <label class="col-sm-3 control-label"><?php echo ('Concepto');?></label>
                                     <div class="col-sm-9">
                                         <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="description"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label"><?php echo ('Date');?></label>
+                                    <label class="col-sm-3 control-label"><?php echo ('Fecha de pago');?></label>
                                     <div class="col-sm-9">
                                         <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="datetime-local"  class="form-control" name="date"/>
                                     </div>
@@ -160,37 +168,37 @@
                             <div class="panel-body">
                                 
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label"><?php echo ('Total');?></label>
+                                    <label class="col-sm-3 control-label"><?php echo ('Valor total a pagar: ');?></label>
                                     <div class="col-sm-9">
                                         <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="amount"
-                                            placeholder="<?php echo ('Enter Total Amount');?>"/>
+                                            placeholder="<?php echo ('Introduce el valor total de pago');?>"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label"><?php echo ('Payment');?></label>
+                                    <label class="col-sm-3 control-label"><?php echo ('Valor que paga: ');?></label>
                                     <div class="col-sm-9">
                                         <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="amount_paid"
-                                            placeholder="<?php echo ('Enter Payment Amount');?>"/>
+                                            placeholder="<?php echo ('Introduce el valor a pagar');?>"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label"><?php echo ('Status');?></label>
+                                    <label class="col-sm-3 control-label"><?php echo ('Estado de pago');?></label>
                                     <div class="col-sm-9">
                                         <select name="status" class="form-control">
-                                            <option data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="paid"><?php echo ('Paid');?></option>
-                                            <option value="unpaid"><?php echo ('Unpaid');?></option>
+                                            <option data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="paid"><?php echo ('Pagado');?></option>
+                                            <option value="unpaid"><?php echo ('No pagado');?></option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label"><?php echo ('Método');?></label>
+                                    <label class="col-sm-3 control-label"><?php echo ('Método de pago');?></label>
                                     <div class="col-sm-9">
-                                        <select onchange="if(this.value == 2) document.getElementById('baucher').disabled = false" name="method" id="method" class="form-control">
-                                            <option value="1"><?php echo ('Cash');?></option>
-                                            <option value="2"><?php echo ('Bank deposit');?></option>
+                                        <select onchange="if(this.value == 2) document.getElementById('baucher').disabled = false" name="metodo" id="metodo" class="form-control">
+                                            <option value="1"><?php echo ('Efectivo');?></option>
+                                            <option value="2"><?php echo ('Transferencia');?></option>
                                             <!-- <option value="3"><?php echo ('Card');?></option> -->
                                         </select>
                                     </div>

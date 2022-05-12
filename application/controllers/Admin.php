@@ -333,6 +333,7 @@ class Admin extends CI_Controller
             $data['parent_id']   = $this->input->post('parent_id');
             $data['wave']        = $this->input->post('wave'); // es el antiguo roll
             
+            $data['tipo_documento']        = $this->input->post('tipodocumento'); // tipo de documnto de identidad
             $data['level']        = $this->input->post('level');
             $data['horario']        = $this->input->post('horario');
             // $data['password']   = $this->input->post('password');
@@ -365,6 +366,7 @@ class Admin extends CI_Controller
             $data['section_id']  = $this->input->post('section_id');
             $data['parent_id']   = $this->input->post('parent_id');
             $data['wave']        = $this->input->post('wave');
+            $data['tipo_documento']        = $this->input->post('tipodocumento'); // tipo de documnto de identidad
             
             $this->db->where('student_id', $param3);
             $this->db->update('student', $data);
@@ -382,59 +384,7 @@ class Admin extends CI_Controller
         }
     }
 
-    // function studentdos($param1 = '', $param2 = '', $param3 = '')
-    // {
-    //     if ($this->session->userdata('admin_login') != 1)
-    //         redirect('login', 'refresh');
-    //     if ($param1 == 'create') {
-    //         $data['name']       = $this->input->post('name');
-    //         $data['birthday']   = $this->input->post('birthday');
-    //         $data['sex']        = $this->input->post('sex');
-    //         $data['address']    = $this->input->post('address');
-    //         $data['phone']      = $this->input->post('phone');
-    //         $data['email']      = $this->input->post('email');
-    //         // $data['password']   = $this->input->post('password');
-    //         $data['class_id']   = $this->input->post('class_id');
-    //         if ($this->input->post('section_id') != '') {
-    //             $data['section_id'] = $this->input->post('section_id');
-    //         }
-    //         $data['parent_id']  = $this->input->post('parent_id');
-    //         $data['roll']       = $this->input->post('roll');
-    //         $this->db->insert('student', $data);
-    //         $student_id = $this->db->insert_id();
-    //         move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/student_image/' . $student_id . '.jpg');
-    //         $this->session->set_flashdata('flash_message' , get_phrase('data_added_successfully'));
-    //         $this->email_model->account_opening_email('student', $data['email']); //SEND EMAIL ACCOUNT OPENING EMAIL
-    //         redirect(base_url() . 'index.php?admin/student_adddos/' . $data['class_id'], 'refresh');
-    //     }
-    //     if ($param2 == 'do_update') {
-    //         $data['name']        = $this->input->post('name');
-    //         $data['birthday']    = $this->input->post('birthday');
-    //         $data['sex']         = $this->input->post('sex');
-    //         $data['address']     = $this->input->post('address');
-    //         $data['phone']       = $this->input->post('phone');
-    //         $data['email']       = $this->input->post('email');
-    //         $data['class_id']    = $this->input->post('class_id');
-    //         $data['section_id']  = $this->input->post('section_id');
-    //         $data['parent_id']   = $this->input->post('parent_id');
-    //         $data['roll']        = $this->input->post('roll');
-            
-    //         $this->db->where('student_id', $param3);
-    //         $this->db->update('student', $data);
-    //         move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/student_image/' . $param3 . '.jpg');
-    //         $this->crud_model->clear_cache();
-    //         $this->session->set_flashdata('flash_message' , get_phrase('data_updated'));
-    //         redirect(base_url() . 'index.php?admin/student_information/' . $param1, 'refresh');
-    //     } 
-		
-    //     if ($param2 == 'delete') {
-    //         $this->db->where('student_id', $param3);
-    //         $this->db->delete('student');
-    //         $this->session->set_flashdata('flash_message' , get_phrase('data_deleted'));
-    //         redirect(base_url() . 'index.php?admin/student_information/' . $param1, 'refresh');
-    //     }
-    // }
-
+  
 
      /****MANAGE PARENTS CLASSWISE*****/
     function parent($param1 = '', $param2 = '', $param3 = '')
@@ -942,6 +892,7 @@ class Admin extends CI_Controller
             $data['due']                = $data['amount'] - $data['amount_paid'];
             $data['status']             = $this->input->post('status');
             $data['baucher']             = $this->input->post('baucher');
+            $data['metodopago']             = $this->input->post('metodo');
             
             $data['creation_timestamp'] = strtotime($this->input->post('date'));                        
             

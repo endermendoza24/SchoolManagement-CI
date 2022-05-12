@@ -14,10 +14,10 @@
 				<!-- area de datos personales	 -->
 		<div class="form-group">
 
-		<h4 style="text-align:center; font-weight:bold; font-size:1.5rem; color:#000; padding:1.2rem">Personal section</h4>
+		<h4 style="text-align:center; font-weight:bold; font-size:1.5rem; color:#000; padding:1.2rem">Información del cursante</h4>
 			<div class="col-md-6 mb-3">
 						
-						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label"><?php echo ('Name');?></label>
+						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label"><?php echo ('Nombres');?></label>
 							<div class="col-sm-8">
 							
 								<input placeholder="Eg. Juan" style="text-transform:capitalize;" type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="" autofocus>
@@ -26,7 +26,7 @@
 						</div>
 	
 						<div class="col-md-6 mb-3">
-						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label"><?php echo ('Lastname');?></label>
+						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label"><?php echo ('Apellidos');?></label>
 							
 							<div class="col-sm-8">
 								
@@ -37,27 +37,27 @@
 						<!-- cedula de identidad -->
 						<div class="col-md-6 mb-3">
 						
-						<label style="color:#000; font-weight:bold;" for="identdocument" class="col-sm-3 control-label">Identity document</label>
-							
-							<div class="col-sm-8">
-								
-							<input  placeholder="00-000000-0000A" style="text-transform:uppercase;" maxlength="20" id="identdocument" type="text" class="form-control" name="identdocument" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="" autofocus>
-							
-							<fieldset class="col-sm-8">
-							
-							<label>
-								<input type="radio" name="tipo" value="1"> Cédula
-							</label>
-							<label>
-								<input type="radio" name="tipo" value="2"> Pasaporte
-							</label>
-							<label>
-								<input type="radio" name="tipo" value="3"> Otro
-							</label>							
-    					</fieldset>
-							</div>
-						
+						<label style="color:#000; font-weight:bold;" for="identdocument" class="col-sm-3 control-label">Documento de identidad</label>							
+							<div class="col-sm-8">								
+							<input  placeholder="00-000000-0000A" style="text-transform:uppercase;" maxlength="20" id="identdocument" type="text" class="form-control" name="identdocument" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="" autofocus>		
+							</div>						
 						</div>
+
+						<!-- Tipi de documento de identidad -->
+						<div class="col-md-6 mb-3">
+						
+						<label style="color:#000; font-weight:bold;" for="identdocument" class="col-sm-3 control-label">Tipo de documento de identidad</label>							
+							<div class="col-sm-8">								
+							<select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="tipodocumento" class="form-control" id="tipodocumento">
+								<option value="Cedula">Cédula</option>
+								<option value="CedulaResidencia">Cédula de residencia</option>
+								<option value="Pasaporte">Pasaporte</option>
+								<option value="Otro">Otro</option>
+							</select>
+
+							</div>						
+						</div>
+
 
 
 	
@@ -65,7 +65,7 @@
 	
 						<div class="col-md-6 mb-3">
 						
-						<label style="color:#000; font-weight:bold;" for="txtnationality" class="col-sm-3 control-label">Nationality</label>
+						<label style="color:#000; font-weight:bold;" for="txtnationality" class="col-sm-3 control-label">Nacionalidad</label>
 							
 							<div class="col-sm-8">
 								
@@ -89,7 +89,7 @@
 					
 					<!-- Class section -->
 					<div class="form-group">
-						<h4 style="text-align:center; font-weight:bold; font-size:1.5rem; color:#000; padding:1.2rem">Academic section</h4>
+						<h4 style="text-align:center; font-weight:bold; font-size:1.5rem; color:#000; padding:1.2rem">Sección acádemica</h4>
 					<div class="col-md-6 mb-3">
 						
 					<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Class');?></label>
@@ -118,8 +118,7 @@
 						<div class="col-md-6 mb-3">
 						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Horario');?></label>
 		                    <div class="col-sm-8">
-		                        <select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="horario" class="form-control" id="">
-		                            <option  value="0"><?php echo ('Select wave first');?></option>
+		                        <select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="horario" class="form-control" id="">		                            
 									<option value="1"><?php echo ('Early morning');?></option>
 									<option value="2"><?php echo ('Late morning');?></option>
 									<option value="3"><?php echo ('Early afternoon');?></option>
