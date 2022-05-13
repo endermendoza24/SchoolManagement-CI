@@ -132,7 +132,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label"><?php echo ('Titulo');?></label>
+                                    <label class="col-sm-3 control-label"><?php echo ('Tipo');?></label>
                                     <div class="col-sm-9">
                                         <!-- <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" require class="form-control" name="title"/> -->
                                             

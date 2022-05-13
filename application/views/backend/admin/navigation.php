@@ -74,7 +74,7 @@ direccion -->
         <li class="<?php if ($page_name == 'subject') echo 'opened active'; ?> ">
             <a href="#">
                 <i class="entypo-docs"></i>
-                <span><?php echo ('Subject'); ?></span>
+                <span><?php echo ('Unidades'); ?></span>
             </a>
             <ul>
                 <?php
@@ -246,7 +246,7 @@ direccion -->
         <!-- EXAMS -->
         <li class="<?php
         if ($page_name == 'exam' ||
-                // $page_name == 'grade' ||
+                $page_name == 'grade' ||
                 $page_name == 'marks' ||
                     $page_name == 'exam_marks_sms')
                         echo 'opened active';
@@ -261,11 +261,11 @@ direccion -->
                         <span><i class="entypo-dot"></i> <?php echo ('Evaluation List'); ?></span>
                     </a>
                 </li>
-                <!-- <li class="<?php if ($page_name == 'grade') echo 'active'; ?> ">
+                <li class="<?php if ($page_name == 'grade') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/grade">
                         <span><i class="entypo-dot"></i> <?php echo ('Exam Grades'); ?></span>
                     </a>
-                </li> -->
+                </li>
                 <li class="<?php if ($page_name == 'marks') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/marks">
                         <span><i class="entypo-dot"></i> <?php echo ('Manage Marks'); ?></span>
