@@ -23,6 +23,7 @@
                 		<tr>
                     		<th><div><?php echo ('Student');?></div></th>
                     		<th><div><?php echo ('Title');?></div></th>
+                            <th><div><?php echo ('Concepto');?></div></th>
                             <th><div><?php echo ('Total');?></div></th>
                             <th><div><?php echo ('Paid');?></div></th>
                     		<th><div><?php echo ('Status');?></div></th>
@@ -35,6 +36,7 @@
                         <tr>
 							<td><?php echo $this->crud_model->get_type_name_by_id('student',$row['student_id']);?></td>
 							<td><?php echo $row['title'];?></td>
+                            <td><?php echo $row['description'];?></td>
 							<td><?php echo $row['amount'];?></td>
                             <td><?php echo $row['amount_paid'];?></td>
 							<td>
@@ -143,6 +145,23 @@
 
                                     </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><?php echo ('Descripcion');?></label>
+                                    <div class="col-sm-9">
+                                        <!-- <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" require class="form-control" name="title"/> -->
+                                            
+                                        <select name="title" id="title" class="form-control">
+                                            <option value="Cancelacion">Mensualidad</option>
+                                            <option value="Abono">Libro</option>
+                                            <option value="Anticipo">Examinación CFR</option>
+                                            <option value="Otro">Certificación CFR</option>
+                                            <option value="Otro">Matricula</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Concepto');?></label>
                                     <div class="col-sm-9">

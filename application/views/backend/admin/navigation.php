@@ -56,12 +56,20 @@
                 </li>
                 <li class="<?php if ($page_name == 'section') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/section">
-                        <span><i class="entypo-dot"></i> <?php echo ('Manage Waves'); ?></span>
+                        <span><i class="entypo-dot"></i> <?php echo ('Manage classroom'); ?></span>
                     </a>
                 </li>
             </ul>
         </li>
 
+        <!-- 80 - 100 es <A>A</A>
+        0-79 es Ao -->
+        perdido es Missed
+<!-- añadir contactos de emergencia
+nombre completo d ela persona
+forma de contactosrelacion 
+parentesco
+direccion -->
         <!-- SUBJECT -->
         <li class="<?php if ($page_name == 'subject') echo 'opened active'; ?> ">
             <a href="#">

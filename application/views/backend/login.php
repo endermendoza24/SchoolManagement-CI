@@ -51,11 +51,11 @@ var baseurl = '<?php echo base_url();?>';
 		<div class="login-content" style="width:100%;">
 		
 			<a href="<?php echo base_url();?>" class="logo">
-				<img src="uploads/logo.png" width="10%" alt="logo de talk" />				
+				<img src="uploads/logo.png" width="5%" alt="logo de talk" />				
 			</a>
 			
 			<p class="description">
-            	<h2 style="color:#cacaca; font-weight:100;">
+            	<h2 translate="no" style="color:#cacaca; font-weight:100;">
 					<?php echo $system_name;?>
               </h2>
            </p>

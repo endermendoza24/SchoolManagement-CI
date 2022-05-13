@@ -112,9 +112,9 @@ foreach ($classes as $row):
                 <span><?php echo ('Subject'); ?></span>
             </a>
             <ul>
-<?php $classes = $this->db->get('class')->result_array();
-foreach ($classes as $row):
-    ?>
+            <?php $classes = $this->db->get('class')->result_array();
+            foreach ($classes as $row):
+                ?>
                     <li class="<?php if ($page_name == 'subject' && $class_id == $row['class_id']) echo 'active'; ?>">
                         <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/subject/<?php echo $row['class_id']; ?>">
                             <span><?php echo ('Class'); ?> <?php echo $row['name']; ?></span>
@@ -196,12 +196,12 @@ if ($page_name == 'exam' ||
         </li> -->
 
         <!-- MESSAGE -->
-        <li class="<?php if ($page_name == 'message') echo 'active'; ?> ">
+        <!-- <li class="<?php if ($page_name == 'message') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/message">
                 <i class="entypo-mail"></i>
                 <span><?php echo ('Message'); ?></span>
             </a>
-        </li>
+        </li> -->
 
         <!-- ACCOUNT -->
         <li class="<?php if ($page_name == 'manage_profile') echo 'active'; ?> ">

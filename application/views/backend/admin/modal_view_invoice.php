@@ -143,7 +143,7 @@ foreach ($edit_data as $row):
         
         <!-- payment history -->
         <!-- <h4><?php echo ('Payment History'); ?></h4> -->
-        <!-- <table class="table table-bordered table-hover" width="100%" border="1" style="border-collapse:collapse;">
+      <!-- <table class="table table-bordered table-hover" width="100%" border="1" style="border-collapse:collapse;">
             <thead>
                 <tr>
                     <th><?php echo ('Date'); ?></th>
@@ -175,10 +175,10 @@ foreach ($edit_data as $row):
                 <?php endforeach; ?>
             </tbody>
             <tbody>
-        </table> -->
+        </table> 
     </div>
 <?php endforeach; ?>
-
+ -->
 
 <script type="text/javascript">
 
