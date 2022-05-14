@@ -151,12 +151,13 @@
                                     <div class="col-sm-9">
                                         <!-- <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" require class="form-control" name="title"/> -->
                                             
-                                        <select name="title" id="title" class="form-control">
-                                            <option value="Cancelacion">Mensualidad</option>
-                                            <option value="Abono">Libro</option>
-                                            <option value="Anticipo">Examinación CFR</option>
-                                            <option value="Otro">Certificación CFR</option>
-                                            <option value="Otro">Matricula</option>
+                                        <select name="tipopago" id="motel" class="form-control">
+                                        <option value="0" selected>Selecciona una opción...</option>
+                                        <option value="Mensualidad">Mensualidad</option> 
+                                        <option value="Matricula" >Matrícula</option> 
+                                        <option value="Libro" >Libro</option> 
+                                        <option value="examen" >Examinación CEFR</option> 
+                                        <option value="certificado" >Certificación CEFR</option> 
                                         </select>
 
                                     </div>
@@ -165,7 +166,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Concepto');?></label>
                                     <div class="col-sm-9">
-                                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="description"/>
+                                        <select name="description" id="Habitacion" class="form-control"></select>
                                     </div>
                                 </div>
 
@@ -254,6 +255,37 @@
 <script type="text/javascript">
 
 
+        $(document).on("change","#motel",function(){
+
+        var mensualidad = "<option value='0' selected>Selecciona una mes...</option><option value='Enero'>Enero</option><option value='Febrero'>Febrero</option><option value='Marzo'>Marzo</option><option value='Abril'>Abril</option><option value='Mayo'>Mayo</option><option value='Junio'>Junio</option><option value='Julio'>Julio</option><option value='Agosto'>Agosto</option><option value='Septiembre'>Septiembre</option><option value='Octubre'>Octubre</option><option value='Noviembre'>Noviembre</option><option value='Diciembre'>Diciembre</option>"
+
+
+        var matricula = "<option value='0' selected>Selecciona una opción...</option><option value='Matricula nuevo ingreso'>Matrícula de nuevo ingreso</option><option value='Matricula continuidad'>Matrícula de continuidad</option>"
+
+        var examinacion = "<option value='0' selected>Selecciona un examen...</option><option value='Examen CEFR A1-'>Examen CEFR A1-</option><option value='Examen CEFR A1+'>Examen CEFR A1+</option><option value='Examen CEFR A2-'>Examen CEFR A2-</option><option value='Examen CEFR A2+'>Examen CEFR A2+</option><option value='Examen CEFR B1-'>Examen CEFR B1-</option><option value='Examen CEFR B1+'>Examen CEFR B1+</option><option value='Examen CEFR B2-'>Examen CEFR B2-</option>"
+
+        var certificacion = "<option value='0' selected>Selecciona un certificado...</option><option value='Certificado CEFR A1-'>Certificado CEFR A1-</option><option value='Certificado CEFR A1+'>Certificado CEFR A1+</option><option value='Certificado CEFR A2-'>Certificado CEFR A2-</option><option value='Certificado CEFR A2+'>Certificado CEFR A2+</option><option value='Certificado CEFR B1-'>Certificado CEFR B1-</option><option value='Certificado CEFR B1+'>Certificado CEFR B1+</option><option value='Certificado CEFR B2-'>Certificado CEFR B2-</option>"
+
+        var libros = "<option value='0' selected>Selecciona un libro...</option><option value='American English File Starter A'>  American English File Starter A</option><option value='American English File Starter B'>  American English File Starter B</option><option value='  American English File Starter 1A'>  American English File Starter 1A</option><option value='  American English File Starter 1B'>  American English File Starter 1B</option><option value='  American English File Starter 2A'>  American EnglishFile Starter 2A</option><option value='  American English File Starter 2B'>  American English File Starter 2B</option><option value='  American English File Starter 3A'>  American English File Starter 3A</option><option value='  American English File Starter 3B'>  American English File Starter 3B</option><option value='  American English File Starter 4A'>  American English File Starter 4A</option><option value='  American English File Starter 4B'>  American English File Starter 4B</option><option value='  American English File Starter 5A'>  American English File Starter 5A</option><option value='  American English File Starter 5B'>  American English File Starter 5B</option><option disabled value='0'>Libros de niños</option><option value='  PACK Story Central 1 (SB WB, RB)'>  PACK Story Central 1 (SB WB, RB)</option><option value='  PACK Story Central 2 (SB, WB, RB)'>  PACK Story Central 2 (SB, WB, RB)</option><option value='  PACK Story Central 3 (SB, WB, RB)'>  PACK Story Central 3 (SB, WB, RB)</option><option value='  PACK Story Central 4 (SB, WB, RB)'>  PACK Story Central 4 (SB, WB, RB)</option><option value='  PACK Story Central 5 (SB, WB, RB)'>  PACK Story Central 5 (SB, WB, RB)</option><option value='  PACK Story Central 1 (SB, WB, RB)'>  PACK Story Central 1 (SB, WB, RB)</option><option disabled  value='0'>Libros de francés</option><option value='  Défi 1'>  Défi 1</option><option value='  Défi 2'>  Défi 2</option><option value='  Défi 3'>  Défi 3</option><option value='  Défi 4'>  Défi 4</option>"
+
+        var idMotel = $("#motel option:selected").val();
+
+        if(idMotel == "Mensualidad")
+            $("#Habitacion").html(mensualidad);
+        else if(idMotel =="Matricula")
+            $("#Habitacion").html(matricula);
+        else if(idMotel =="Libro")
+            $("#Habitacion").html(libros);
+        else if(idMotel =="examen")
+            $("#Habitacion").html(examinacion);
+        else if(idMotel =="certificado")
+            $("#Habitacion").html(certificacion);
+        });
+
+
+
+
+
 
 	jQuery(document).ready(function($)
 	{
@@ -304,3 +336,68 @@
 	});
 		
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

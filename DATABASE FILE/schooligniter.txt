@@ -1718,3 +1718,78 @@ ALTER TABLE `osad_student`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE `seleccionadores` (
+  `seleccion_id` int(11) AUTO_INCREMENT NOT NULL,
+  `Mensualidad` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `Matriucla` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `Libro` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `ExaminacionCEFR` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `CertificacionCEFR` longtext COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+
+
+
+INSERT INTO `seleccionadores` ( `Mensualidad`, `Matricula`, `Libro`, `ExaminacionCEFR`, `CertificacionCEFR`) VALUES ( 'Enero', 'Matricula primer ingreso', 'American English File Starter A', 'Examen CEFR A1-', 'Certificado A1-');
+INSERT INTO `seleccionadores` (`Libro`) VALUES ('American English File Starter B');
+
+INSERT INTO `seleccionadores` ( `Mensualidad`, `Matricula`, `Libro`, `ExaminacionCEFR`, `CertificacionCEFR`) VALUES ( 'Febrero', 'Matricula de continuidad', 'American English File Starter 1A', 'Examen CEFR A1+', 'Certificado A1+');
+
+INSERT INTO `seleccionadores` ( `Mensualidad`, `Libro`, `ExaminacionCEFR`, `CertificacionCEFR`) VALUES ( 'Marzo', 'American English File Starter 1B', 'Examen CEFR A2-', 'Certificado A2-');
+
+INSERT INTO `seleccionadores` ( `Mensualidad`,  `Libro`, `ExaminacionCEFR`, `CertificacionCEFR`) VALUES ( 'Abril', 'American English File Starter 2A', 'Examen CEFR A2+', 'Certificado A2+');
+
+INSERT INTO `seleccionadores` ( `Mensualidad`, `Libro`, `ExaminacionCEFR`, `CertificacionCEFR`) VALUES ( 'Mayo', 'American English File Starter 2B', 'Examen CEFR B1-', 'Certificado B1-');
+
+INSERT INTO `seleccionadores` ( `Mensualidad`, `Libro`, `ExaminacionCEFR`, `CertificacionCEFR`) VALUES ( 'Junio', 'American English File Starter 3A', 'Examen CEFR B1+', 'Certificado B1+');
+
+INSERT INTO `seleccionadores` ( `Mensualidad`,`Libro`, `ExaminacionCEFR`, `CertificacionCEFR`) VALUES ( 'Julio', 'American English File Starter 3B', 'Examen CEFR B2-', 'Certificado B2-');
+
+INSERT INTO `seleccionadores` ( `Mensualidad`, `Libro`) VALUES ( 'Agosto', 'American English File Starter 4A');
+
+
+INSERT INTO `seleccionadores` ( `Mensualidad`, `Libro`) VALUES ( 'Septiembre', 'American English File Starter 4B');
+
+INSERT INTO `seleccionadores` ( `Mensualidad`, `Libro`) VALUES ( 'Octubre', 'American English File Starter 5A');
+
+INSERT INTO `seleccionadores` ( `Mensualidad`, `Libro`) VALUES ( 'Noviembre', 'American English File Starter 5B');
+
+INSERT INTO `seleccionadores` ( `Mensualidad`, `Libro`) VALUES ( 'Diciembre', 'PACK Story Central 1 (SB, WB, RB)');
+
+INSERT INTO `seleccionadores` (`Libro`) VALUES ( 'PACK Story Central 1 (SB, WB, RB)');
+INSERT INTO `seleccionadores` (`Libro`) VALUES ( 'PACK Story Central 2 (SB, WB, RB)');
+INSERT INTO `seleccionadores` (`Libro`) VALUES ( 'PACK Story Central 3 (SB, WB, RB)');
+INSERT INTO `seleccionadores` (`Libro`) VALUES ( 'PACK Story Central 4 (SB, WB, RB)');
+INSERT INTO `seleccionadores` (`Libro`) VALUES ( 'PACK Story Central 5 (SB, WB, RB)');
+INSERT INTO `seleccionadores` (`Libro`) VALUES ( 'PACK Story Central 6 (SB, WB, RB)');
+
+INSERT INTO `seleccionadores` (`Libro`) VALUES ( 'Défi 1');
+INSERT INTO `seleccionadores` (`Libro`) VALUES ( 'Défi 2');
+INSERT INTO `seleccionadores` (`Libro`) VALUES ( 'Défi 3');
+INSERT INTO `seleccionadores` (`Libro`) VALUES ( 'Défi 4');
+
+

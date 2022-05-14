@@ -893,6 +893,7 @@ class Admin extends CI_Controller
             $data['status']             = $this->input->post('status');
             $data['baucher']             = $this->input->post('baucher');
             $data['metodopago']             = $this->input->post('metodo');
+            $data['tipopago']             = $this->input->post('tipopago');
             
             $data['creation_timestamp'] = strtotime($this->input->post('date'));                        
             
