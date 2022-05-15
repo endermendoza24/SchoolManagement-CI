@@ -877,9 +877,11 @@ class Admin extends CI_Controller
 						$this->input->post('year').'/'.
 							$this->input->post('class_id') , 'refresh');
 	}
+    
     /******MANAGE BILLING / INVOICES WITH STATUS*****/
     function invoice($param1 = '', $param2 = '', $param3 = '')
     {
+       
         if ($this->session->userdata('admin_login') != 1)
             redirect(base_url(), 'refresh');
         
@@ -894,6 +896,10 @@ class Admin extends CI_Controller
             $data['baucher']             = $this->input->post('baucher');
             $data['metodopago']             = $this->input->post('metodo');
             $data['tipopago']             = $this->input->post('tipopago');
+            $data['corte']             = $this->input->post('corte');
+            //  se supone que este va a ser el numero de factura
+           
+
             
             $data['creation_timestamp'] = strtotime($this->input->post('date'));                        
             
@@ -907,7 +913,8 @@ class Admin extends CI_Controller
             $data2['payment_type']      =  'income';
             
             $data2['amount']            =   $this->input->post('amount_paid');            
-            $data2['timestamp']         =   strtotime($this->input->post('date'));            
+            $data2['timestamp']         =   strtotime($this->input->post('date'));   
+            // $data2['corte']             = $this->input->post('corte');         
 
             $this->db->insert('payment' , $data2);
 
@@ -921,6 +928,7 @@ class Admin extends CI_Controller
             $data['amount']             = $this->input->post('amount');
             $data['status']             = $this->input->post('status');                        
             $data['creation_timestamp'] = strtotime($this->input->post('date'));
+            $data['corte']             = $this->input->post('corte');
             
             $this->db->where('invoice_id', $param2);
             $this->db->update('invoice', $data);
