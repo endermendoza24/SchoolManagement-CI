@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 12-05-2022 a las 23:54:39
+-- Tiempo de generación: 15-05-2022 a las 23:07:58
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 5.6.40
 
@@ -54,6 +54,13 @@ CREATE TABLE `acd_session` (
   `strt_dt` date DEFAULT NULL,
   `end_dt` longtext COLLATE utf8_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `acd_session`
+--
+
+INSERT INTO `acd_session` (`id`, `name`, `is_dt`, `is_open`, `strt_dt`, `end_dt`) VALUES
+(1, 'Endersson Mendoza', NULL, 1, '2022-05-13', '2022-05-13');
 
 -- --------------------------------------------------------
 
@@ -117,6 +124,15 @@ CREATE TABLE `ci_sessions` (
   `timestamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `data` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `ci_sessions`
+--
+
+INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
+('3d7c1ba1d1c44a410ede61dee5e4168c7b817a8a', '::1', 1652482036, 0x5f5f63695f6c6173745f726567656e65726174657c693a313635323438313830333b63757272656e745f6c616e67756167657c733a373a22656e676c697368223b61646d696e5f6c6f67696e7c733a313a2231223b61646d696e5f69647c733a313a2231223b6c6f67696e5f757365725f69647c733a313a2231223b6e616d657c733a353a2261646d696e223b6c6f67696e5f747970657c733a353a2261646d696e223b),
+('46a6e307801120799573e008c780273edde9df70', '::1', 1652483276, ''),
+('7c6ca3c5af66b6181083e0dbbb19179d40a6a3e7', '::1', 1652478672, 0x5f5f63695f6c6173745f726567656e65726174657c693a313635323437383630393b63757272656e745f6c616e67756167657c733a373a22656e676c697368223b61646d696e5f6c6f67696e7c733a313a2231223b61646d696e5f69647c733a313a2231223b6c6f67696e5f757365725f69647c733a313a2231223b6e616d657c733a353a2261646d696e223b6c6f67696e5f747970657c733a353a2261646d696e223b666c6173685f6d6573736167657c733a31323a224d6573736167652053656e74223b5f5f63695f766172737c613a313a7b733a31333a22666c6173685f6d657373616765223b733a333a226f6c64223b7d);
 
 -- --------------------------------------------------------
 
@@ -189,15 +205,6 @@ CREATE TABLE `exam` (
   `comment` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Volcado de datos para la tabla `exam`
---
-
-INSERT INTO `exam` (`exam_id`, `name`, `date`, `comment`) VALUES
-(1, 'Evalucación 1', '05/09/2022', 'This examen would be write'),
-(2, 'Evaluación 2', '05/12/2022', 'This exam is fatal'),
-(3, 'Evaluación 3', '05/12/2022', 'Good exam');
-
 -- --------------------------------------------------------
 
 --
@@ -233,6 +240,14 @@ CREATE TABLE `grade` (
   `comment` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `grade`
+--
+
+INSERT INTO `grade` (`grade_id`, `name`, `grade_point`, `mark_from`, `mark_upto`, `comment`) VALUES
+(1, 'A+', '5', 80, 100, 'Good job'),
+(2, 'Ao', '5', 0, 79, 'Debes de mejorar');
+
 -- --------------------------------------------------------
 
 --
@@ -240,7 +255,7 @@ CREATE TABLE `grade` (
 --
 
 CREATE TABLE `invoice` (
-  `invoice_id` int(11) NOT NULL,
+  `invoice_id` int(11) UNSIGNED ZEROFILL NOT NULL,
   `student_id` int(11) NOT NULL,
   `title` longtext COLLATE utf8_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8_unicode_ci NOT NULL,
@@ -253,7 +268,10 @@ CREATE TABLE `invoice` (
   `payment_details` longtext COLLATE utf8_unicode_ci NOT NULL,
   `status` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT 'paid or unpaid',
   `baucher` longtext COLLATE utf8_unicode_ci,
-  `metodopago` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL
+  `metodopago` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tipopago` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `num_factura` int(20) DEFAULT '1',
+  `corte` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -287,6 +305,36 @@ CREATE TABLE `language` (
   `japanese` longtext COLLATE utf8_unicode_ci NOT NULL,
   `korean` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `language`
+--
+
+INSERT INTO `language` (`phrase_id`, `phrase`, `english`, `bengali`, `spanish`, `arabic`, `dutch`, `russian`, `chinese`, `turkish`, `portuguese`, `hungarian`, `french`, `greek`, `german`, `italian`, `thai`, `urdu`, `hindi`, `latin`, `indonesian`, `japanese`, `korean`) VALUES
+(1, 'event_schedule', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(2, 'add_new_teacher', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(3, 'forgot_your_password', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(4, 'data_added_successfully', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(5, 'value_required', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(6, 'class', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(7, 'data_updated', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(8, 'manage_exam_marks', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(9, 'manage_invoice/payment', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(10, 'manage_teacher', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(11, 'manage_subject', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(12, 'manage_class_routine', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(13, 'study_material', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(14, 'manage_profile', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(15, 'account_updated', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(16, 'payment_successfull', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(17, 'on', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(18, 'manage_daily_attendance', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(19, 'add_student', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(20, 'student_information', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(21, 'student_marksheet', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(22, 'data_deleted', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(23, 'theme_selected', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(24, 'message_sent', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -346,6 +394,14 @@ CREATE TABLE `noticeboard` (
   `notice` longtext COLLATE utf8_unicode_ci NOT NULL,
   `create_timestamp` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `noticeboard`
+--
+
+INSERT INTO `noticeboard` (`notice_id`, `notice_title`, `notice`, `create_timestamp`) VALUES
+(1, 'Examinación CFR nivel A1-', 'Dear teachers, the CFR examination is coming.', 1652220000),
+(2, 'Fin de nivel', 'Se acaba el nivel muy pronto', 1652392800);
 
 -- --------------------------------------------------------
 
@@ -441,7 +497,8 @@ CREATE TABLE `payment` (
   `method` longtext COLLATE utf8_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8_unicode_ci NOT NULL,
   `amount` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `timestamp` longtext COLLATE utf8_unicode_ci NOT NULL
+  `timestamp` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `corte` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -488,7 +545,7 @@ INSERT INTO `settings` (`settings_id`, `type`, `description`) VALUES
 (13, 'clickatell_user', ''),
 (14, 'clickatell_password', ''),
 (15, 'clickatell_api_id', ''),
-(16, 'skin_colour', 'purple'),
+(16, 'skin_colour', 'red'),
 (17, 'twilio_account_sid', ''),
 (18, 'twilio_auth_token', ''),
 (19, 'twilio_sender_phone_number', '');
@@ -541,6 +598,16 @@ CREATE TABLE `subject` (
   `class_id` int(11) NOT NULL,
   `teacher_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `subject`
+--
+
+INSERT INTO `subject` (`subject_id`, `name`, `class_id`, `teacher_id`) VALUES
+(1, 'Unidad 1', 1, 1),
+(2, 'Simple past', 2, 1),
+(3, 'Did and dident', 2, 1),
+(4, 'Conditionals', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -760,7 +827,7 @@ ALTER TABLE `transport`
 -- AUTO_INCREMENT de la tabla `acd_session`
 --
 ALTER TABLE `acd_session`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `admin`
@@ -808,7 +875,7 @@ ALTER TABLE `dormitory`
 -- AUTO_INCREMENT de la tabla `exam`
 --
 ALTER TABLE `exam`
-  MODIFY `exam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `exam_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `expense_category`
@@ -820,19 +887,19 @@ ALTER TABLE `expense_category`
 -- AUTO_INCREMENT de la tabla `grade`
 --
 ALTER TABLE `grade`
-  MODIFY `grade_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `grade_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `invoice_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `invoice_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `language`
 --
 ALTER TABLE `language`
-  MODIFY `phrase_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `phrase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `mark`
@@ -856,7 +923,7 @@ ALTER TABLE `message_thread`
 -- AUTO_INCREMENT de la tabla `noticeboard`
 --
 ALTER TABLE `noticeboard`
-  MODIFY `notice_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `notice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `osad_acd_history`
@@ -904,7 +971,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT de la tabla `subject`
 --
 ALTER TABLE `subject`
-  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `teacher`

@@ -7,6 +7,7 @@
             <th><div><?php echo ('Title');?></div></th>
             <th><div><?php echo ('Description');?></div></th>
             <th><div><?php echo ('Method');?></div></th>
+			<th><div><?php echo ('Corte');?></div></th>
             <th><div><?php echo ('Amount');?></div></th>
             <th><div><?php echo ('Date');?></div></th>
         </tr>
@@ -23,6 +24,7 @@
             <td><?php echo $count++;?></td>
             <td><?php echo $row['title'];?></td>
             <td><?php echo $row['description'];?></td>
+			
             <td>
             	<?php 
             		if ($row['method'] == 1)
@@ -35,13 +37,36 @@
                     	echo 'Paypal';
             	?>
             </td>
+			<td><?php echo $row['corte'];?></td>
             <td><?php echo $row['amount'];?></td>
             <td><?php echo date('d M,Y', $row['timestamp']);?></td>
         </tr>
         <?php endforeach;?>
     </tbody>
 </table>
-<h2 style="color:red; font-weight:bold"> Total amount: $<?php $query = $this->db->query('SELECT SUM(amount)as total FROM payment WHERE payment_type = "income"')->row(); echo round(floatval($query->total),2);?></h2>
+
+
+
+
+<div class="tile-stats tile-green">
+<h3><?php echo ('Ganancias de hoy');?></h3>
+                    <?php 
+							$dia = '2022-05-15'; 
+							$check	=	array(	'timestamp' => time() , 'payment_type' => 'income' );
+							$query = $this->db->get_where('payment' , $check);
+							// $present_today = $query = $this->db->query('SELECT SUM(amount) as total FROM payment WHERE timestamp = '.$diahoy)->row();
+							$present_today	=	$row['amount'];
+						?>
+						<h2 style="color:white; font-weight:bold"> Total matutino: $<?php $query = $this->db->query('SELECT SUM(amount)as total FROM payment WHERE corte = "matutino"')->row(); echo round(floatval($query->total),2);?>
+<h2 style="color:white; font-weight:bold"> Total vespertino: $<?php $query = $this->db->query('SELECT SUM(amount)as total FROM payment WHERE corte = "vespertino"')->row(); echo round(floatval($query->total),2);?></h2>
+<h2 style="color:white; font-weight:bold"> Total: $<?php $query = $this->db->query('SELECT SUM(amount)as total FROM payment WHERE payment_type = "income"')->row(); echo round(floatval($query->total),2);?></h2>
+
+                    <div class="num" data-start="0" data-end="<?php echo $present_today;?>" 
+                    		data-postfix="" data-duration="500" data-delay="0">0</div>
+                    
+                    
+                   
+                </div>
 
 
 <!-----  DATA TABLE EXPORT CONFIGURATIONS ---->                      

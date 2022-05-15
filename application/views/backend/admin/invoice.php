@@ -276,7 +276,7 @@
         var certificacion = "<option value='0' selected>Selecciona un certificado...</option><option value='Certificado CEFR A1-'>Certificado CEFR A1-</option><option value='Certificado CEFR A1+'>Certificado CEFR A1+</option><option value='Certificado CEFR A2-'>Certificado CEFR A2-</option><option value='Certificado CEFR A2+'>Certificado CEFR A2+</option><option value='Certificado CEFR B1-'>Certificado CEFR B1-</option><option value='Certificado CEFR B1+'>Certificado CEFR B1+</option><option value='Certificado CEFR B2-'>Certificado CEFR B2-</option>"
 
         var libros = "<option value='0' selected>Selecciona un libro...</option><option value='American English File Starter A'>  American English File Starter A</option><option value='American English File Starter B'>  American English File Starter B</option><option value='  American English File Starter 1A'>  American English File Starter 1A</option><option value='  American English File Starter 1B'>  American English File Starter 1B</option><option value='  American English File Starter 2A'>  American EnglishFile Starter 2A</option><option value='  American English File Starter 2B'>  American English File Starter 2B</option><option value='  American English File Starter 3A'>  American English File Starter 3A</option><option value='  American English File Starter 3B'>  American English File Starter 3B</option><option value='  American English File Starter 4A'>  American English File Starter 4A</option><option value='  American English File Starter 4B'>  American English File Starter 4B</option><option value='  American English File Starter 5A'>  American English File Starter 5A</option><option value='  American English File Starter 5B'>  American English File Starter 5B</option><option disabled value='0'>Libros de niños</option><option value='  PACK Story Central 1 (SB WB, RB)'>  PACK Story Central 1 (SB WB, RB)</option><option value='  PACK Story Central 2 (SB, WB, RB)'>  PACK Story Central 2 (SB, WB, RB)</option><option value='  PACK Story Central 3 (SB, WB, RB)'>  PACK Story Central 3 (SB, WB, RB)</option><option value='  PACK Story Central 4 (SB, WB, RB)'>  PACK Story Central 4 (SB, WB, RB)</option><option value='  PACK Story Central 5 (SB, WB, RB)'>  PACK Story Central 5 (SB, WB, RB)</option><option value='  PACK Story Central 1 (SB, WB, RB)'>  PACK Story Central 1 (SB, WB, RB)</option><option disabled  value='0'>Libros de francés</option><option value='  Défi 1'>  Défi 1</option><option value='  Défi 2'>  Défi 2</option><option value='  Défi 3'>  Défi 3</option><option value='  Défi 4'>  Défi 4</option>"
-
+        var otros = "<option value='otro'>Otro</option>"
        
 
         var idMotel = $("#motel option:selected").val();
@@ -291,6 +291,8 @@
             $("#Habitacion").html(examinacion);
         else if(idMotel =="certificado")
             $("#Habitacion").html(certificacion);       
+            else if(idMotel =="otros")
+            $("#Habitacion").html(otros);  
         });
 
 
