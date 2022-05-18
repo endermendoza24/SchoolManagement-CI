@@ -21,6 +21,7 @@
                 <table  class="table table-bordered table-hover table-striped datatable" id="table_export">
                 	<thead>
                 		<tr>
+                            <th><div><?php echo ('N°');?></div></th>
                     		<th><div><?php echo ('Estudiante');?></div></th>
                     		<th><div><?php echo ('Title');?></div></th>
                             <th><div><?php echo ('Concepto');?></div></th>
@@ -35,7 +36,8 @@
                     <tbody>
                     	<?php foreach($invoices as $row):?>
                         <tr>
-							<td><?php echo $this->crud_model->get_type_name_by_id('student',$row['student_id']);?></td>
+                            <td><?php echo $row['invoice_id'];?></td>
+							<td style="text-transform:capitalize"><?php echo $this->crud_model->get_type_name_by_id('student',$row['student_id']);?></td>                            
 							<td><?php echo $row['title'];?></td>
                             <td><?php echo $row['description'];?></td>
 							<td><?php echo $row['amount'];?></td>
@@ -43,7 +45,7 @@
 							<td>
 								<span class="label label-<?php if($row['status']=='paid')echo 'success';else echo 'danger';?>"><?php echo $row['status'];?></span>
 							</td>
-                            <td><?php echo $row['corte']?></td>
+                            <td style="text-transform:capitalize"><?php echo $row['corte']?></td>
 							<td><?php echo date('d M Y, H:i', $row['creation_timestamp']);?></td>
 							<td>
                             <div class="btn-group">
@@ -176,7 +178,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Fecha de pago');?></label>
                                     <div class="col-sm-9">
-                                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="datetime-local"  class="form-control" name="date"/>
+                                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="date" value="<?php date('d M Y',time())?>" class="form-control" name="date"/>
                                     </div>
                                 </div>
                                 <div class="form-group">

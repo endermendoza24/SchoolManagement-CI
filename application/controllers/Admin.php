@@ -877,6 +877,7 @@ class Admin extends CI_Controller
 						$this->input->post('year').'/'.
 							$this->input->post('class_id') , 'refresh');
 	}
+   
     
     /******MANAGE BILLING / INVOICES WITH STATUS*****/
     function invoice($param1 = '', $param2 = '', $param3 = '')
@@ -914,7 +915,8 @@ class Admin extends CI_Controller
             $data2['corte']             = $this->input->post('corte');
             $data2['amount']            =   $this->input->post('amount_paid');   
             
-            $data2['timestamp']         =   strtotime($this->input->post('date'));   
+            // $data2['timestamp']         =   strtotime($this->input->post('date'));   
+            $data2['timestamp']         =   time();
             // $data2['corte']             = $this->input->post('corte');         
 
             $this->db->insert('payment' , $data2);
