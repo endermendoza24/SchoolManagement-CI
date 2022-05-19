@@ -902,7 +902,7 @@ class Admin extends CI_Controller
            
 
             
-            $data['creation_timestamp'] = strtotime($this->input->post('date'));                        
+            $data['creation_timestamp'] = strtotime($this->input->post('date'));                                    
             // lo que agregas aqui es lo que agregas en invoice y luego se pasa a la tabla payment
             $this->db->insert('invoice', $data);
             $invoice_id = $this->db->insert_id();
@@ -913,11 +913,10 @@ class Admin extends CI_Controller
             $data2['description']       =   $this->input->post('description');
             $data2['payment_type']      =  'income';
             $data2['corte']             = $this->input->post('corte');
-            $data2['amount']            =   $this->input->post('amount_paid');   
+            $data2['amount']            =   $this->input->post('amount_paid');               
+            $data2['timestamp']         =   strtotime($this->input->post('date'));   
+            // $data2['timestamp']         =   time();
             
-            // $data2['timestamp']         =   strtotime($this->input->post('date'));   
-            $data2['timestamp']         =   time();
-            // $data2['corte']             = $this->input->post('corte');         
 
             $this->db->insert('payment' , $data2);
 

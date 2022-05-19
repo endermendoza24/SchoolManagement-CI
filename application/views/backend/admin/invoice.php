@@ -46,7 +46,7 @@
 								<span class="label label-<?php if($row['status']=='paid')echo 'success';else echo 'danger';?>"><?php echo $row['status'];?></span>
 							</td>
                             <td style="text-transform:capitalize"><?php echo $row['corte']?></td>
-							<td><?php echo date('d M Y, H:i', $row['creation_timestamp']);?></td>
+							<td><?php echo date('d M Y, h:i',$row['creation_timestamp']);?></td>
 							<td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
@@ -178,7 +178,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Fecha de pago');?></label>
                                     <div class="col-sm-9">
-                                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="date" value="<?php date('d M Y',time())?>" class="form-control" name="date"/>
+                                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="datetime-local" value="<?php date('d M Y',time())?>" class="form-control" name="date"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
