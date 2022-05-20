@@ -21,13 +21,13 @@
 					<li>
 						<a href="<?php echo base_url();?>index.php?<?php echo $account_type;?>/manage_profile">
                         	<i class="entypo-info"></i>
-							<span><?php echo ('Edit Profile');?></span>
+							<span><?php echo ('Editar perfil');?></span>
 						</a>
 					</li>
 					<li>
 						<a href="<?php echo base_url();?>index.php?<?php echo $account_type;?>/manage_profile">
                         	<i class="entypo-key"></i>
-							<span><?php echo ('Change Password');?></span>
+							<span><?php echo ('Cambiar la contraseña');?></span>
 						</a>
 					</li>
 				</ul>
@@ -37,13 +37,13 @@
 					<li>
 						<a href="<?php echo base_url();?>index.php?parents/manage_profile">
                         	<i class="entypo-info"></i>
-							<span><?php echo ('Edit Profile');?></span>
+							<span><?php echo ('Editar perfil');?></span>
 						</a>
 					</li>
 					<li>
 						<a href="<?php echo base_url();?>index.php?parents/manage_profile">
                         	<i class="entypo-key"></i>
-							<span><?php echo ('Change Password');?></span>
+							<span><?php echo ('Cambiar contraseña');?></span>
 						</a>
 					</li>
 				</ul>
@@ -86,7 +86,7 @@
 			
 			<li>
 				<a href="<?php echo base_url();?>index.php?login/logout">
-					Logout <i class="entypo-logout right"></i>
+					Cerrar sesión <i class="entypo-logout right"></i>
 				</a>
 			</li>
 		</ul>

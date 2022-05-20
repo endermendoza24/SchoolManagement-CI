@@ -1,5 +1,5 @@
 **Welcome to Talk Management System**
-Jajajajajajaja
+Se han añadido enormes mejoras con respecto al sistema original
 
 <IfModule authz_core_module>
 	Require all denied

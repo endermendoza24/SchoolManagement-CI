@@ -21,18 +21,18 @@ foreach ($edit_data as $row):
             <tr>
                 <td style="color:red" align="center">
                 <img src="assets/images/talk.png" alt="Logo de Talk"  style="width:15%; filter:sepia(1,5,2);"/>
-                    <h4><b>Talk | academia de idiomas <br> ¡Una alternativa diferente!</b></h4>
+                    <h4><b>Talk | Academia de idiomas <br> ¡Una alternativa diferente!</b></h4>
                     <h4>Del Am/Pm 3 1/2 cuadras al oeste. Jinotepe, Carazo</h4>
                     <!-- <h4>Autorización DGI: <?php $d=rand(1000,9999); echo $d; ?> - 7</h4> -->
                     <!-- <h4> N° <?php $d=rand(1000,9999); echo $d; ?> </h4> -->
-                    <!-- <h4><?php echo ('N° de factura: ')?> <?php echo $row['invoice_id']?></h4> -->
-                    <h4><?php echo ('N° de factura: ')?> <?php echo '00'.$row['num_factura']?></h4>
+                    <h4><?php echo ('N° de factura: ')?> <?php echo $row['invoice_id']?></h4>
+                    <!-- <h4><?php echo ('N° de factura: ')?> <?php echo '00'.$row['num_factura']?></h4> -->
 
                     <h4>RUC: 0012305950022</h4>
                     <h4>Email: quierosaberdetalk@gmail.com</h4>
                     
                     <h5>Cualquier retraso en pago reportar dentro del <br> periodo de pago 10% de mora por cada 10 días de retraso</h5>
-                    <h5 ><?php echo ('Fecha de facturación'); ?> : <?php echo date('d M Y, H:i', $row['creation_timestamp']);?></h5>
+                    <h5 ><?php echo ('Fecha de recibo'); ?> : <?php echo date('d M Y, H:i', $row['creation_timestamp']);?></h5>
                     <!-- <h5 style="text-transform:capitalize;"><?php echo ('Titulo'); ?> : <?php echo $row['title'];?></h5>
                     <h5 style="text-transform:capitalize;"><?php echo ('Descripción'); ?> : <?php echo $row['description'];?></h5> -->
                     <!-- <h5 style="text-transform:capitalize;"><?php echo ('Estado'); ?> : <?php echo $row['status']; ?></h5> -->

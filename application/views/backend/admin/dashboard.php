@@ -13,7 +13,7 @@
                         <div class="num" data-start="0" data-end="<?php $query = $this->db->query('SELECT SUM(amount_paid)as total FROM invoice WHERE status = "paid"')->row(); echo floatval($query->total);?>" 
                                 data-postfix="" data-duration="500" data-delay="0">0</div>
                         
-                        <h3><?php echo ('Earns Collected');?></h3>
+                        <h3><?php echo ('Ganancias');?></h3>
                     
                     </div>
                     
@@ -27,7 +27,7 @@
                     <div class="num" data-start="0" data-end="<?php echo $this->db->count_all('student');?>" 
                     		data-postfix="" data-duration="1500" data-delay="0">0</div>
                     
-                    <h3><?php echo ('Students');?></h3>
+                    <h3><?php echo ('Estudiantes');?></h3>
                     
                 </div>
                 
@@ -40,7 +40,7 @@
                         <div class="num" data-start="0" data-end="<?php echo $this->db->count_all('teacher');?>" 
                                 data-postfix="" data-duration="800" data-delay="0">0</div>
                         
-                        <h3><?php echo ('Teacher');?></h3>
+                        <h3><?php echo ('Maestros');?></h3>
                     </div>
                 </a>
                 
@@ -58,7 +58,7 @@
                     <div class="num" data-start="0" data-end="<?php echo $present_today;?>" 
                     		data-postfix="" data-duration="500" data-delay="0">0</div>
                     
-                    <h3><?php echo ('Todays Attendance');?></h3>
+                    <h3><?php echo ('Asistencia de hoy');?></h3>
                    
                 </div>
                 
@@ -78,7 +78,7 @@
                 <div class="num" data-start="0" data-end="<?php echo $present_today;?>" 
                         data-postfix="" data-duration="500" data-delay="0">0</div>
                 
-                <h3><?php echo ('Todays unattedance');?></h3>
+                <h3><?php echo ('Inasistencia de hoy');?></h3>
                
             </div>
             
@@ -92,7 +92,7 @@
                     <div class="num" data-start="0" data-end="<?php echo $this->db->count_all('parent');?>" 
                     		data-postfix="" data-duration="500" data-delay="0">0</div>
                     
-                    <h3><?php echo ('Parent');?></h3>
+                    <h3><?php echo ('Padres');?></h3>
                    
                 </div>
                 
@@ -105,7 +105,7 @@
                     <div class="num" data-start="0" data-end="<?php echo $this->db->count_all('class');?>" 
                     		data-postfix="" data-duration="500" data-delay="0">0</div>
                     
-                    <h3><?php echo ('Available Classes');?></h3>
+                    <h3><?php echo ('Waves disponibles');?></h3>
                    
                 </div>
                 
@@ -118,7 +118,7 @@
                     <div class="num" data-start="0" data-end="<?php $query = $this->db->query('SELECT * FROM invoice WHERE status = "unpaid"'); echo $query->num_rows();?>" 
                     		data-postfix="" data-duration="500" data-delay="0">0</div>
                     
-                    <h3><?php echo ('Unpaid Fees');?></h3>
+                    <h3><?php echo ('Ganancias sin pagar');?></h3>
                    
                 </div>
                 
@@ -131,7 +131,7 @@
                         <div class="num" data-start="0" data-end="<?php $query = $this->db->query('SELECT SUM(amount)as total FROM payment WHERE payment_type = "expense"')->row(); echo floatval($query->total);?>" 
                                 data-postfix="" data-duration="500" data-delay="0">0</div>
                         
-                        <h3><?php echo ('Expenses ');?></h3>
+                        <h3><?php echo ('Gastos ');?></h3>
                     
                     </div>
                 

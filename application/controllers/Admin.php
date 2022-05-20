@@ -882,7 +882,7 @@ class Admin extends CI_Controller
     /******MANAGE BILLING / INVOICES WITH STATUS*****/
     function invoice($param1 = '', $param2 = '', $param3 = '')
     {
-       
+       $factu = 0;
         if ($this->session->userdata('admin_login') != 1)
             redirect(base_url(), 'refresh');
         
@@ -898,6 +898,8 @@ class Admin extends CI_Controller
             $data['metodopago']             = $this->input->post('metodo');
             $data['tipopago']             = $this->input->post('tipopago');
             $data['corte']             = $this->input->post('corte');
+
+            $data['num_factura'] +=1;
             //  se supone que este va a ser el numero de factura
            
 
