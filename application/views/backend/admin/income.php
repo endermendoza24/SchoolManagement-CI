@@ -47,13 +47,9 @@
             <td>
             	<?php 
             		if ($row['method'] == 1)
-            			echo ('Cash');
+            			echo ('Efectivo');
             		if ($row['method'] == 2)
-            			echo ('Cheque');
-            		if ($row['method'] == 3)
-            			echo ('Card');
-                    if ($row['method'] == 'paypal')
-                    	echo 'Paypal';
+            			echo ('Transferencia');            		
             	?>
             </td>
 			<td><?php echo $row['corte'];?></td>
@@ -68,7 +64,7 @@
 
 
 <div class="tile-stats tile-green">
-<h3><?php echo ('Ganancias de hoy');?></h3>
+<h3><?php echo ('Ganancias');?></h3>
                     <?php 
 							$dia = date('d'); 
 							$check	=	array(	'timestamp' => time() , 'payment_type' => 'income' );

@@ -1,4 +1,3 @@
-
 <div class="row">
 	<div class="col-md-12">
     
@@ -6,11 +5,11 @@
 		<ul class="nav nav-tabs bordered">
 			<li class="active">
             	<a href="#list" data-toggle="tab"><i class="entypo-menu"></i> 
-					<?php echo ('Invoice/Payment List');?>
+					<?php echo ('Lista de facturas');?>
                     	</a></li>
 			<li>
             	<a href="#add" data-toggle="tab"><i class="entypo-plus-circled"></i>
-					<?php echo ('Facturar / Pagar');?>
+					<?php echo ('Facturar / Pagar'); ?>
                     	</a></li>
 		</ul>
     	<!------CONTROL TABS END------>
@@ -18,25 +17,29 @@
             <!----TABLE LISTING STARTS-->
             <div class="tab-pane box active" id="list">
 				
-                <table  class="table table-bordered table-hover table-striped datatable" id="table_export">
+                <table  class="table table-bordered table-hover table-striped datatable"  id="table_export">
                 	<thead>
                 		<tr>
                             <th><div><?php echo ('N°');?></div></th>
-                    		<th><div><?php echo ('Estudiante');?></div></th>
-                    		<th><div><?php echo ('Title');?></div></th>
+                    		<th><div><?php echo ('Quien paga');?></div></th>
+                            <th><div><?php echo ('Estudiante');?></div></th>
+                    		<th><div><?php echo ('Título');?></div></th>
                             <th><div><?php echo ('Concepto');?></div></th>
                             <th><div><?php echo ('Total');?></div></th>
-                            <th><div><?php echo ('Paid');?></div></th>
+                            <th><div><?php echo ('Pagado');?></div></th>
                     		<th><div><?php echo ('Estado');?></div></th>
                             <th><div><?php echo ('Corte');?></div></th>
                     		<th><div><?php echo ('Fecha');?></div></th>
-                    		<th><div><?php echo ('Options');?></div></th>
+                    		<th><div><?php echo ('Opciones');?></div></th>
 						</tr>
 					</thead>
                     <tbody>
+                        
                     	<?php foreach($invoices as $row):?>
                         <tr>
+                       
                             <td><?php echo $row['invoice_id'];?></td>
+                            <td><?php echo $row['quienpaga'];?></td>
 							<td style="text-transform:capitalize"><?php echo $this->crud_model->get_type_name_by_id('student',$row['student_id']);?></td>                            
 							<td><?php echo $row['title'];?></td>
                             <td><?php echo $row['description'];?></td>
@@ -46,7 +49,7 @@
 								<span class="label label-<?php if($row['status']=='paid')echo 'success';else echo 'danger';?>"><?php echo $row['status'];?></span>
 							</td>
                             <td style="text-transform:capitalize"><?php echo $row['corte']?></td>
-							<td><?php echo date('d M Y, h:i',$row['creation_timestamp']);?></td>
+							<td><?php echo date('d M Y, h:i a',$row['creation_timestamp']);?></td>
 							<td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
@@ -111,27 +114,70 @@
                                 <div style="color:#000; text-transform:bold; font-size:20px" class="panel-title"><?php echo ('Información de factura');?></div>
                             </div>
                             <div class="panel-body">
-                                
+
+                            <!-- <div class="form-group">
+                            <label class="col-sm-3 control-label"><?php echo ('Mismo estudiante paga');?></label>
+                            <div class="col-sm-9">
+                                <input onclick="estudiante.disabled = !this.checked " type="checkbox" name="mismo" class="" id="">
+                            </div>
+                            </div> -->
+
+                            <div class="form-group">
+                                    <label class="col-sm-3 control-label"><?php echo ('Persona que paga');?></label>
+                                    <div class="col-sm-9">
+                                        <input list="pagan" id="quienpaga" type="text" name="quienPaga" class="form-control">
+                                    </div>
+                                </div>
+                                <!-- Datalist -->
+                                <datalist id="pagan">
+                                    <option value="El mismo estudiante paga"></option>
+                                    
+                                </datalist>
+
+
+
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Estudiante');?></label>
                                     <div class="col-sm-9">
-                                        <select name="student_id" class="form-control" style="" >
+                                        <!-- <select  id="estudiante" name="student_id"  class="form-control">
                                             <?php 
                                             date_default_timezone_set("America/El_Salvador");
                                             // echo date_default_timezone_get();
-                                            $this->db->order_by('class_id','asc');
+                                            $this->db->order_by('class_id','desc');
                                             $students = $this->db->get('student')->result_array();
                                             foreach($students as $row):
                                             ?>
                                                 <option value="<?php echo $row['student_id'];?>">
-                                                    class <?php echo $this->crud_model->get_class_name($row['class_id']);?> -
-                                                     <?php echo $row['wave'];?> -
-                                                    <?php echo $row['name'];?>
+                                                    Wave <?php echo $this->crud_model->get_class_name($row['class_id']);?> -
+                                                     
+                                                    <?php echo $row['name'];?> <?php echo $row['lastname'];?>
                                                 </option>
                                             <?php
                                             endforeach;
                                             ?>
+                                        </select> -->
+
+
+
+                                       
+                                        <!-- <label for="student_id"><?php echo ('Recipient'); ?>:</label> -->        
+                                        <select class="form-control select2" name="student_id" required>
+
+                                            <option value=""><?php echo ('Seleccione un estudiante'); ?></option>
+                                            <optgroup label="<?php echo ('Estudiante'); ?>">
+                                                <?php
+                                                $estudiante = $this->db->get('student')->result_array();
+                                                foreach ($estudiante as $row):
+                                                    ?>
+
+                                                    <option value="<?php echo $row['student_id'];?>">
+                                                        - <?php echo $row['name']; ?></option>
+
+                                                <?php endforeach; ?>
+                                            </optgroup>
+                                            
                                         </select>
+
                                     </div>
                                 </div>
 
@@ -175,19 +221,6 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label"><?php echo ('Fecha de pago');?></label>
-                                    <div class="col-sm-9">
-                                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="datetime-local" value="<?php date('d M Y',time())?>" class="form-control" name="date"/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label"><?php echo ('Corte de pago');?></label>
-                                    <div class="col-sm-9">
-                                        <input type="radio" name="corte" value="matutino" id="corte">Corte matutino
-                                        <input type="radio" name="corte" value="vespertino" id="corte">Corte vespertino
-                                    </div>
-                                </div>
                                 
                             </div>
                         </div>
@@ -244,6 +277,21 @@
                                        <input type="text" maxlength="20" disabled id="baucher" name="baucher" class="form-control">
                                     </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><?php echo ('Fecha de pago');?></label>
+                                    <div class="col-sm-9">
+                                        <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="datetime-local" value="<?php date('d M Y',time())?>" class="form-control" name="date"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><?php echo ('Corte de pago');?></label>
+                                    <div class="col-sm-9">
+                                        <input type="radio" name="corte" value="matutino" id="corte">Corte matutino
+                                        <input type="radio" name="corte" value="vespertino" id="corte">Corte vespertino
+                                    </div>
+                                </div>
+                                
                                 
                             </div>
                         </div>
@@ -263,8 +311,28 @@
 	</div>
 </div>
 
-<!-----  DATA TABLE EXPORT CONFIGURATIONS ---->                      
-<script type="text/javascript">
+
+  
+
+//<!-----  DATA TABLE EXPORT CONFIGURATIONS ---->                      
+
+
+
+
+
+
+
+
+
+<script text="javascript">
+
+
+
+
+
+
+
+
 
 
         $(document).on("change","#motel",function(){
@@ -309,6 +377,7 @@
 		var datatable = $("#table_export").dataTable({
 			"sPaginationType": "bootstrap",
 			"sDom": "<'row'<'col-xs-3 col-left'l><'col-xs-9 col-right'<'export-data'T>f>r>t<'row'<'col-xs-3 col-left'i><'col-xs-9 col-right'p>>",
+            "order":[0,'asc'],
 			"oTableTools": {
 				"aButtons": [
 					

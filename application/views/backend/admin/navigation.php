@@ -110,6 +110,7 @@ direccion -->
         <li class="<?php
         if ($page_name == 'income' ||
                 $page_name == 'expense' ||
+                $page_name == 'contabilidad' ||
                     $page_name == 'expense_category')
                         echo 'opened active';
         ?> ">
@@ -128,6 +129,13 @@ direccion -->
                         <span><i class="entypo-dot"></i> <?php echo ('Gastos'); ?></span>
                     </a>
                 </li>
+
+                <li class="<?php if ($page_name == 'contabilidad') echo 'active'; ?> ">
+                    <a href="<?php echo base_url(); ?>index.php?admin/contabilidad">
+                        <span><i class="entypo-dot"></i> <?php echo ('Contabilidad'); ?></span>
+                    </a>
+                </li>
+
                 <li class="<?php if ($page_name == 'expense_category') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/expense_category">
                         <span><i class="entypo-dot"></i> <?php echo ('Categorías de gastos'); ?></span>

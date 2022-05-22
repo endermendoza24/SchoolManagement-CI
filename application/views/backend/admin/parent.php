@@ -2,20 +2,20 @@
             <a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_parent_add/');" 
                 class="btn btn-primary pull-right">
                 <i class="entypo-plus-circled"></i>
-                <?php echo ('Add new parent');?>
+                <?php echo ('Agregar nuevo padre');?>
                 </a> 
                 <br><br>
                <table class="table table-bordered table-hover table-striped datatable" id="table_export">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th><div><?php echo ('Name');?></div></th>
-                            <th><div><?php echo ('lastname');?></div></th>
-                            <th><div><?php echo ('Cedula');?></div></th>
+                            <th><div><?php echo ('Nombre');?></div></th>
+                            <th><div><?php echo ('Apellidos');?></div></th>
+                            <th><div><?php echo ('Cédula');?></div></th>
                             <th><div><?php echo ('Email');?></div></th>
-                            <th><div><?php echo ('Phone');?></div></th>                            
-                            <th><div><?php echo ('Nationality');?></div></th>
-                            <th><div><?php echo ('Options');?></div></th>
+                            <th><div><?php echo ('Teléfono');?></div></th>                            
+                            <th><div><?php echo ('Nacionalidad');?></div></th>
+                            <th><div><?php echo ('Opciones');?></div></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -36,7 +36,7 @@
                                 
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
-                                        Action <span class="caret"></span>
+                                        Acción <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu dropdown-default pull-right" role="menu">
                                         
@@ -44,7 +44,7 @@
                                         <li>
                                             <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_parent_edit/<?php echo $row['parent_id'];?>');">
                                                 <i class="entypo-pencil"></i>
-                                                    <?php echo ('Edit');?>
+                                                    <?php echo ('Editar');?>
                                                 </a>
                                                         </li>
                                         <li class="divider"></li>
@@ -53,7 +53,7 @@
                                         <li>
                                             <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/parent/delete/<?php echo $row['parent_id'];?>');">
                                                 <i class="entypo-trash"></i>
-                                                    <?php echo ('Delete');?>
+                                                    <?php echo ('Borrar');?>
                                                 </a>
                                                         </li>
                                     </ul>

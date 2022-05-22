@@ -238,6 +238,60 @@
 				</div>
 					
 
+			<div class="form-group">
+			<h4 style="text-align:center; font-weight:bold; font-size:1.5rem; color:#000; padding:1.2rem">Contacto de emergencia</h4>
+			<div class="col-md-6 mb-3">
+						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label">Nombre </label>                        
+						<div class="col-sm-8 form-check">
+							<input data-message-required="Por favor llena este campo" required type="text" placeholder="Nombre" name="nombreEmergencia" id="nombreEmergencia" class="form-control">
+						</div>
+			</div>
+
+			<div class="col-md-6 mb-3">
+						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label">Apellidos </label>                        
+						<div class="col-sm-8 form-check">
+							<input type="text" placeholder="Apellidos" name="apellidoEmergencia" id="apellidoEmergencia" class="form-control">
+						</div>
+			</div>
+			
+
+			<div class="col-md-6 mb-3">
+						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label">Relación </label>                        
+						<div class="col-sm-8 form-check">
+							<select name="parentescoEmergencia" id="parentescoEmergencia" class="form-control">
+								<option value="1">Familiar</option>
+								<option value="2">Amigo</option>
+								<option value="3">Otro</option>
+							</select>
+						</div>
+			</div>
+
+			<div class="col-md-6 mb-3">
+						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label">N° teléfono </label>                        
+						<div class="col-sm-8 form-check">
+							<input type="tel" maxlength="30" placeholder="N° de teléfono" name="teleEmergencia" id="teleEmergencia" class="form-control">
+						</div>
+			</div>
+
+			<div class="col-md-6 mb-3">
+						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label">Dirección </label>                        
+						<div class="col-sm-8 form-check">
+							<input type="text" maxlength="50" placeholder="Dirección emergencia" name="direccionEmergencia" id="direccionEmergencia" class="form-control">
+						</div>
+			</div>
+
+			<div class="col-md-6 mb-3">
+						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label">Email emergencia </label>                        
+						<div class="col-sm-8 form-check">
+							<input type="text" maxlength="50" placeholder="Email emergencia" name="emailEmergencia" id="emailEmergencia" class="form-control">
+						</div>
+			</div>
+			
+			
+
+	</div>
+
+
 
 				<!-- emergency contact  -->
 				<div class="form-group">
@@ -285,13 +339,13 @@
 								foreach($parents as $row):
 									?>
                             		<option value="1">
-										Family
+										Familia
                                     </option>
 									<option value="2">
-										Friends
+										Amigos
                                     </option>
 									<option value="3">
-										Other
+										Otro
                                     </option>
                                 <?php
 								endforeach;
@@ -326,7 +380,7 @@
 					</div> -->
 	
 					<div class="form-group">
-						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label"><?php echo ('Photo');?></label>
+						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label"><?php echo ('Foto');?></label>
                         
 						<div class="col-sm-5">
 							<div class="fileinput fileinput-new" data-provides="fileinput">
@@ -336,16 +390,16 @@
 								<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px"></div>
 								<div>
 									<span class="btn btn-white btn-file">
-										<span class="fileinput-new">Select image</span>
-										<span class="fileinput-exists">Change</span>
+										<span class="fileinput-new">Seleccionar imagen</span>
+										<span class="fileinput-exists">Cambiar</span>
 										<input type="file" name="userfile" accept="image/*">
 									</span>
-									<a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Remove</a>
+									<a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Eliminar</a>
 								</div>
 							</div>
 						</div>
 					</div>
-                    
+
                     <div class="form-group">
 						<div class="col-sm-offset-3 col-sm-5">
 							<button type="submit" class="btn btn-info"><?php echo ('Add Student');?></button>

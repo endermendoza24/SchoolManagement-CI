@@ -40,9 +40,12 @@ class Admin extends CI_Controller
         if ($this->session->userdata('admin_login') != 1)
             redirect(base_url(), 'refresh');
         $page_data['page_name']  = 'dashboard';
-        $page_data['page_title'] = 'Admin Dashboard';
+        $page_data['page_title'] = 'Dashboard administrador';
         $this->load->view('backend/index', $page_data);
     }
+
+
+   
     
     
     /****MANAGE STUDENTS CLASSWISE*****/
@@ -52,7 +55,7 @@ class Admin extends CI_Controller
             redirect(base_url(), 'refresh');
 			
 		$page_data['page_name']  = 'student_add';
-		$page_data['page_title'] = 'Add Student';
+		$page_data['page_title'] = 'Agregar estudiante';
 		$this->load->view('backend/index', $page_data);
 	}
     function student_adddos()
@@ -327,6 +330,16 @@ class Admin extends CI_Controller
             $data['phone']       = $this->input->post('phone');
             $data['emergencyphone']     = $this->input->post('emergencyphone');                    
             $data['diamatricula']     = time() - 30000;
+            
+            //  contactos de emergencia
+            $data['nombreemergencia']       = $this->input->post('nombreEmergencia');
+            $data['apellidoemergencia']       = $this->input->post('apellidoEmergencia');
+            $data['direccionemergencia']       = $this->input->post('direccionEmergencia');
+            $data['telefonoemergencia']       = $this->input->post('teleEmergencia');
+            $data['relacionemergencia']       = $this->input->post('parentescoEmergencia');
+            $data['emailemergencia']       = $this->input->post('emailEmergencia');
+
+
             $data['email']       = $this->input->post('email');
             $data['class_id']    = $this->input->post('class_id');
             $data['section_id']  = $this->input->post('section_id');
@@ -424,7 +437,7 @@ class Admin extends CI_Controller
             $this->session->set_flashdata('flash_message' , get_phrase('data_deleted'));
             redirect(base_url() . 'index.php?admin/parent/', 'refresh');
         }
-        $page_data['page_title'] 	= 'All Parents';
+        $page_data['page_title'] 	= 'Todos los padres';
         $page_data['page_name']  = 'parent';
         $this->load->view('backend/index', $page_data);
     }
@@ -479,7 +492,7 @@ class Admin extends CI_Controller
         }
         $page_data['teachers']   = $this->db->get('teacher')->result_array();
         $page_data['page_name']  = 'teacher';
-        $page_data['page_title'] = 'Manage Teacher';
+        $page_data['page_title'] = 'Administrar profesores';
         $this->load->view('backend/index', $page_data);
     }
     
@@ -892,6 +905,8 @@ class Admin extends CI_Controller
             $data['description']        = $this->input->post('description');
             $data['amount']             = $this->input->post('amount');
             $data['amount_paid']        = $this->input->post('amount_paid');
+            $data['payment_method'] = $this->input->post('metodo');
+            $data['quienpaga'] = $this->input->post('quienPaga');
             $data['due']                = $data['amount'] - $data['amount_paid'];
             $data['status']             = $this->input->post('status');
             $data['baucher']             = $this->input->post('baucher');
@@ -915,7 +930,8 @@ class Admin extends CI_Controller
             $data2['description']       =   $this->input->post('description');
             $data2['payment_type']      =  'income';
             $data2['corte']             = $this->input->post('corte');
-            $data2['amount']            =   $this->input->post('amount_paid');               
+            $data2['amount']            =   $this->input->post('amount_paid'); 
+            $data2['method']  = $this->input->post('metodo');
             $data2['timestamp']         =   strtotime($this->input->post('date'));   
             // $data2['timestamp']         =   time();
             
@@ -971,7 +987,7 @@ class Admin extends CI_Controller
             redirect(base_url() . 'index.php?admin/invoice', 'refresh');
         }
         $page_data['page_name']  = 'invoice';
-        $page_data['page_title'] = 'Manage Invoice/Payment';
+        $page_data['page_title'] = 'Facturación';
         $this->db->order_by('creation_timestamp', 'desc');
         $page_data['invoices'] = $this->db->get('invoice')->result_array();
         $this->load->view('backend/index', $page_data);
@@ -1273,7 +1289,7 @@ class Admin extends CI_Controller
             redirect(base_url() . 'index.php?admin/noticeboard/', 'refresh');
         }
         $page_data['page_name']  = 'noticeboard';
-        $page_data['page_title'] = 'Manage Noticeboard';
+        $page_data['page_title'] = 'Administrar eventos';
         $page_data['notices']    = $this->db->get('noticeboard')->result_array();
         $this->load->view('backend/index', $page_data);
     }

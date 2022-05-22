@@ -43,6 +43,7 @@
                             <th><div><?php echo ('Name');?></div></th>
                             <th class="span3"><div><?php echo ('Address');?></div></th>
                             <th><div><?php echo ('Email');?></div></th>
+                            <th><div><?php echo ('Emergencia');?></div></th>
                             <th><div><?php echo ('Options');?></div></th>
                         </tr>
                     </thead>
@@ -56,6 +57,7 @@
                             <td><?php echo $row['name'];?></td>
                             <td><?php echo $row['address'];?></td>
                             <td><?php echo $row['email'];?></td>
+                            <td><?php echo  $row['nombreemergencia'] . ' ' . ' ' . $row['apellidoemergencia'] ;?></td>
                             <td>
                                 
                                 <div class="btn-group">
@@ -112,8 +114,9 @@
                             <th width="80"><div><?php echo ('Admit date');?></div></th>
                             <th width="80"><div><?php echo ('Photo');?></div></th>
                             <th><div><?php echo ('Name');?></div></th>
-                            <th class="span3"><div><?php echo ('Address');?></div></th>
+                            
                             <th><div><?php echo ('Email');?></div></th>
+                            <th><div><?php echo ('Emergencia');?></div></th>
                             <th><div><?php echo ('Options');?></div></th>
                         </tr>
                     </thead>
@@ -129,6 +132,8 @@
                             <td><?php echo $row['name'];?></td>
                             <td><?php echo $row['address'];?></td>
                             <td><?php echo $row['email'];?></td>
+                            
+                                
                             <td>
                                 
                                 <div class="btn-group">
@@ -208,7 +213,7 @@
 						"fnSetText"	   : "Press 'esc' to return",
 						"fnClick": function (nButton, oConfig) {
 							datatable.fnSetColumnVis(1, false);
-							datatable.fnSetColumnVis(5, false);
+							datatable.fnSetColumnVis(6, false);
 							
 							this.fnPrint( true, oConfig );
 							

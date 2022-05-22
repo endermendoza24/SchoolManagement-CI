@@ -47,7 +47,7 @@
             </div>
 
             <div class="col-md-4">
-            
+            <a href="index.php?admin/manage_attendance">
                 <div class="tile-stats tile-green">
                     <div class="icon"><i class="entypo-calendar"></i></div>
                     <?php 
@@ -61,13 +61,13 @@
                     <h3><?php echo ('Asistencia de hoy');?></h3>
                    
                 </div>
-                
+            </a>
             </div>
 
             <!-- ausentes -->
 
             <div class="col-md-4">
-            
+            <a href="index.php?admin/manage_attendance">
             <div class="tile-stats tile-pink">
                 <div class="icon"><i class="entypo-calendar"></i></div>
                 <?php 
@@ -81,12 +81,12 @@
                 <h3><?php echo ('Inasistencia de hoy');?></h3>
                
             </div>
-            
+            </a>
         </div>
 
 
             <div class="col-md-4">
-            
+            <a href="index.php?admin/parent">
                 <div class="tile-stats tile-purple">
                     <div class="icon"><i class="entypo-user"></i></div>
                     <div class="num" data-start="0" data-end="<?php echo $this->db->count_all('parent');?>" 
@@ -95,11 +95,11 @@
                     <h3><?php echo ('Padres');?></h3>
                    
                 </div>
-                
+            </a>
             </div>
 
             <div class="col-md-4">
-            
+            <a href="index.php?admin/section">
                 <div class="tile-stats tile-black">
                     <div class="icon"><i class="entypo-flow-tree"></i></div>
                     <div class="num" data-start="0" data-end="<?php echo $this->db->count_all('class');?>" 
@@ -108,7 +108,7 @@
                     <h3><?php echo ('Waves disponibles');?></h3>
                    
                 </div>
-                
+            </a> 
             </div>
 
             <div class="col-md-4">
@@ -125,7 +125,7 @@
             </div>
 
              <div class="col-md-4">
-            
+             <a href="index.php?admin/expense">
              <div class="tile-stats tile-yellow">
                         <div class="icon"><i class="entypo-credit-card"></i></div>
                         <div class="num" data-start="0" data-end="<?php $query = $this->db->query('SELECT SUM(amount)as total FROM payment WHERE payment_type = "expense"')->row(); echo floatval($query->total);?>" 
@@ -134,7 +134,7 @@
                         <h3><?php echo ('Gastos ');?></h3>
                     
                     </div>
-                
+             </a>
             </div>
 
 

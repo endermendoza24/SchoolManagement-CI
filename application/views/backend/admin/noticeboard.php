@@ -5,11 +5,11 @@
 		<ul class="nav nav-tabs bordered">
 			<li class="active">
             	<a href="#list" data-toggle="tab"><i class="entypo-menu"></i> 
-					<?php echo ('Noticeboard List');?>
+					<?php echo ('Lista de eventos');?>
                     	</a></li>
 			<li>
             	<a href="#add" data-toggle="tab"><i class="entypo-plus-circled"></i>
-					<?php echo ('Add Noticeboard');?>
+					<?php echo ('Agregar evento');?>
                     	</a></li>
 		</ul>
     	<!------CONTROL TABS END------>
@@ -22,10 +22,10 @@
                 	<thead>
                 		<tr>
                     		<th><div>#</div></th>
-                    		<th><div><?php echo ('Title');?></div></th>
-                    		<th><div><?php echo ('Notice');?></div></th>
-                    		<th><div><?php echo ('Date');?></div></th>
-                    		<th><div><?php echo ('Options');?></div></th>
+                    		<th><div><?php echo ('Titulo');?></div></th>
+                    		<th><div><?php echo ('Noticia');?></div></th>
+                    		<th><div><?php echo ('Fecha');?></div></th>
+                    		<th><div><?php echo ('Opciones');?></div></th>
 						</tr>
 					</thead>
                     <tbody>
@@ -74,31 +74,31 @@
                 <div class="box-content">
                 	<?php echo form_open(base_url() . 'index.php?admin/noticeboard/create' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Title');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Titulo de evento');?></label>
                                 <div class="col-sm-5">
                                     <input type="text" class="form-control" name="notice_title"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Notice');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Eventos');?></label>
                                 <div class="col-sm-5">
                                     <div class="box closable-chat-box">
                                         <div class="box-content padded">
                                                 <div class="chat-message-box">
-                                                <textarea name="notice" id="ttt" rows="5" placeholder="<?php echo ('Add Notice');?>" class="form-control"></textarea>
+                                                <textarea name="notice" id="ttt" rows="5" placeholder="<?php echo ('Agregar evento');?>" class="form-control"></textarea>
                                                 </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Date');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Fecha');?></label>
                                 <div class="col-sm-5">
                                     <input type="text" class="datepicker form-control" name="create_timestamp"/>
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo ('Send sms to all');?></label>
                                 <div class="col-sm-5">
                                     <select class="form-control" name="check_sms">
@@ -117,11 +117,11 @@
                                         ?>
                                     </span>
                                 </div>
-                            </div>
+                            </div> -->
 
                         <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-5">
-                                <button type="submit" class="btn btn-info"><?php echo ('Add Notice');?></button>
+                                <button type="submit" class="btn btn-info"><?php echo ('Agregar evento');?></button>
                             </div>
 						</div>
                     </form>                
