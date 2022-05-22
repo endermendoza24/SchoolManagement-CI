@@ -2,11 +2,11 @@
 	<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-hover table-striped">
     	<thead>
         	<tr>
-            	<th><?php echo ('Select Date');?></th>
-            	<th><?php echo ('Select Month');?></th>
-            	<th><?php echo ('Select Year');?></th>
-            	<th><?php echo ('Select Class');?></th>
-            	<th><?php echo ('Select Date');?></th>
+            	<th><?php echo ('Selecciona una fecha');?></th>
+            	<th><?php echo ('Selecciona mes');?></th>
+            	<th><?php echo ('Selecciona año');?></th>
+            	<th><?php echo ('Selecciona una Wave');?></th>
+            	<th><?php echo ('Marcar asistencia');?></th>
            </tr>
        </thead>
 		<tbody>
@@ -60,19 +60,19 @@
                     </td>
                     <td>
                     	<select name="class_id" class="form-control">
-                        	<option value="">Select a class</option>
+                        	<option value="">Selecciona una Wave</option>
                         	<?php 
 							$classes	=	$this->db->get('class')->result_array();
 							foreach($classes as $row):?>
                         	<option value="<?php echo $row['class_id'];?>"
                             	<?php if(isset($class_id) && $class_id==$row['class_id'])echo 'selected="selected"';?>>
-									<?php echo $row['name'];?>
+									<?php echo $row['name'];?>                                    
                               			</option>
                             <?php endforeach;?>
                         </select>
 
                     </td>
-                    <td align="center"><input type="submit" value="<?php echo ('Manage Attendance');?>" class="btn btn-info"/></td>
+                    <td align="center"><input type="submit" value="<?php echo ('Asistencia diaria');?>" class="btn btn-info"/></td>
                 </tr>
             </form>
 		</tbody>
@@ -126,7 +126,7 @@
                         foreach($students as $row):?>
                         <tr class="gradeA">
                             <td><? date_default_timezone_set("America/El_Salvador"); echo date("d M Y",time());?></td>
-                            <td><?php echo $row['name'];?></td>
+                            <td style="text-transform:capitalize;"><?php echo $row['name']; echo '  '; echo $row['lastname'];?></td>
                             <?php 
                                 //inserting blank data for students attendance if unavailable
                                 $verify_data    =   array(  'student_id' => $row['student_id'],
@@ -192,7 +192,7 @@
         				?>
         				<tr class="gradeA">
         					<td><?php echo $row['wave'];?></td>
-        					<td><?php echo $row['name'];?></td>
+        					<td style="text-transform:capitalize;"><?php echo $row['name']; echo ' ';  echo $row['lastname'];?></td>                            
         					<td align="center">
         						<?php 
         						//inserting blank data for students attendance if unavailable

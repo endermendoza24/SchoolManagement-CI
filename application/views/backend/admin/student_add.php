@@ -309,10 +309,10 @@
 
 
 						<div class="col-md-6 mb-3">
-						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Parent');?></label>
+						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Madre/Padre');?></label>
                         
 						<div class="col-sm-8">
-							<select onchange="if(this.value != '') document.getElementById('emergencyphone').disabled = false"  data-validate="required" data-message-required="<?php echo ('Value Required');?>" disabled name="parent_id" class="form-control">
+							<select onchange="if(this.value != '') document.getElementById('emergencyphone').disabled = false"  data-validate="required" data-message-required="<?php echo ('Value Required');?>" disabled name="parent_id" class="form-control select2">
                               <option value=""><?php echo ('Select');?></option>
                               <?php 
 								$parents = $this->db->get('parent')->result_array();
@@ -379,7 +379,7 @@
 						</div> 
 					</div> -->
 	
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label"><?php echo ('Foto');?></label>
                         
 						<div class="col-sm-5">
@@ -398,7 +398,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 
                     <div class="form-group">
 						<div class="col-sm-offset-3 col-sm-5">

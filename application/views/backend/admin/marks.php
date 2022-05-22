@@ -5,7 +5,7 @@
 		<ul class="nav nav-tabs bordered">
 			<li class="active">
             	<a href="#list" data-toggle="tab"><i class="entypo-menu"></i> 
-					<?php echo ('Manage Marks');?>
+					<?php echo ('Administrar calificaciones');?>
                     	</a></li>
 		</ul>
     	<!------CONTROL TABS END------>
@@ -17,15 +17,15 @@
                 <?php echo form_open(base_url() . 'index.php?admin/marks');?>
                 <table border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-hover table-striped">
                 	<tr>
-                        <td><?php echo ('Select Exam');?></td>
-                        <td><?php echo ('Select Class');?></td>
-                        <td><?php echo ('Select Subject');?></td>
+                        <td><?php echo ('Seleccionar evaluación');?></td>
+                        <td><?php echo ('Seleccionar Wave');?></td>
+                        <td><?php echo ('Seleccionar materia');?></td>
                         <td>&nbsp;</td>
                 	</tr>
                 	<tr>
                         <td>
                         	<select name="exam_id" class="form-control"  style="float:left;">
-                                <option value=""><?php echo ('Select an exam');?></option>
+                                <option value=""><?php echo ('Selecciona una evaluación');?></option>
                                 <?php 
                                 $exams = $this->db->get('exam')->result_array();
                                 foreach($exams as $row):
@@ -40,7 +40,7 @@
                         </td>
                         <td>
                         	<select name="class_id" class="form-control"  onchange="show_subjects(this.value)"  style="float:left;">
-                                <option value=""><?php echo ('Select a class');?></option>
+                                <option value=""><?php echo ('Seleccionar una Wave');?></option>
                                 <?php 
                                 $classes = $this->db->get('class')->result_array();
                                 foreach($classes as $row):
@@ -86,7 +86,7 @@
                         </td>
                         <td>
                         	<input type="hidden" name="operation" value="selection" />
-                    		<input type="submit" value="<?php echo ('Manage Marks');?>" class="btn btn-info" />
+                    		<input type="submit" value="<?php echo ('Administrar calificaciones');?>" class="btn btn-info" />
                         </td>
                 	</tr>
                 </table>
@@ -115,9 +115,9 @@
                 <table class="table table-bordered table-hover table-striped" >
                     <thead>
                         <tr>
-                            <td><?php echo ('Student');?></td>
-                            <td><?php echo ('Mark Obtained');?>(out of 100)</td>
-                            <td><?php echo ('Comment');?></td>
+                            <td><?php echo ('Estudiante');?></td>
+                            <td><?php echo ('Calificación obtenida');?></td>
+                            <td><?php echo ('Observación');?></td>
                             <td></td>
                         </tr>
                     </thead>
@@ -156,7 +156,7 @@
                                 	<input type="hidden" name="subject_id" value="<?php echo $subject_id;?>" />
                                     
                                 	<input type="hidden" name="operation" value="update" />
-                                	<button type="submit" class="btn btn-primary"> Update</button>
+                                	<button type="submit" class="btn btn-primary"> Actualizar</button>
                                 </td>
 							 </tr>
                              </form>

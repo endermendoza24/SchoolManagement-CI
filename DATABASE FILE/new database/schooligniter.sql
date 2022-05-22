@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 15-05-2022 a las 23:07:58
+-- Tiempo de generación: 22-05-2022 a las 18:22:21
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 5.6.40
 
@@ -55,13 +55,6 @@ CREATE TABLE `acd_session` (
   `end_dt` longtext COLLATE utf8_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Volcado de datos para la tabla `acd_session`
---
-
-INSERT INTO `acd_session` (`id`, `name`, `is_dt`, `is_open`, `strt_dt`, `end_dt`) VALUES
-(1, 'Endersson Mendoza', NULL, 1, '2022-05-13', '2022-05-13');
-
 -- --------------------------------------------------------
 
 --
@@ -95,6 +88,76 @@ CREATE TABLE `attendance` (
   `student_id` int(11) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `attendance`
+--
+
+INSERT INTO `attendance` (`attendance_id`, `status`, `student_id`, `date`) VALUES
+(1, 1, 2, '2022-05-09'),
+(2, 2, 3, '2022-05-09'),
+(3, 3, 4, '2022-05-09'),
+(4, 1, 2, '2022-05-11'),
+(5, 1, 3, '2022-05-11'),
+(6, 2, 4, '2022-05-11'),
+(7, 2, 5, '2022-05-11'),
+(8, 2, 6, '2022-05-11'),
+(9, 3, 7, '2022-05-11'),
+(10, 3, 9, '2022-05-12'),
+(11, 1, 2, '2022-05-12'),
+(12, 1, 3, '2022-05-12'),
+(13, 1, 4, '2022-05-12'),
+(14, 1, 5, '2022-05-12'),
+(15, 2, 6, '2022-05-12'),
+(16, 1, 7, '2022-05-12'),
+(17, 3, 8, '2022-05-12'),
+(18, 1, 9, '2022-05-13'),
+(19, 0, 2, '2022-05-13'),
+(20, 0, 3, '2022-05-13'),
+(21, 0, 4, '2022-05-13'),
+(22, 0, 5, '2022-05-13'),
+(23, 0, 6, '2022-05-13'),
+(24, 0, 7, '2022-05-13'),
+(25, 0, 8, '2022-05-13'),
+(26, 1, 2, '2022-05-20'),
+(27, 1, 3, '2022-05-20'),
+(28, 1, 4, '2022-05-20'),
+(29, 1, 5, '2022-05-20'),
+(30, 2, 6, '2022-05-20'),
+(31, 3, 7, '2022-05-20'),
+(32, 2, 8, '2022-05-20'),
+(33, 1, 1, '2022-05-21'),
+(34, 1, 2, '2022-05-21'),
+(35, 1, 3, '2022-05-21'),
+(36, 2, 4, '2022-05-21'),
+(37, 1, 1, '2022-05-22'),
+(38, 1, 2, '2022-05-22'),
+(39, 1, 3, '2022-05-22'),
+(40, 2, 245, '2022-05-22'),
+(41, 1, 246, '2022-05-22'),
+(42, 2, 247, '2022-05-22'),
+(43, 3, 248, '2022-05-22'),
+(44, 2, 249, '2022-05-22'),
+(45, 1, 250, '2022-05-22'),
+(46, 2, 1, '2022-05-12'),
+(47, 1, 245, '2022-05-12'),
+(48, 3, 246, '2022-05-12'),
+(49, 2, 247, '2022-05-12'),
+(50, 2, 248, '2022-05-12'),
+(51, 1, 249, '2022-05-12'),
+(52, 3, 250, '2022-05-12'),
+(53, 2, 243, '2022-05-12'),
+(54, 2, 244, '2022-05-12'),
+(55, 0, 1, '2025-01-01'),
+(56, 0, 2, '2025-01-01'),
+(57, 0, 3, '2025-01-01'),
+(58, 0, 245, '2025-01-01'),
+(59, 0, 246, '2025-01-01'),
+(60, 0, 247, '2025-01-01'),
+(61, 0, 248, '2025-01-01'),
+(62, 0, 249, '2025-01-01'),
+(63, 0, 250, '2025-01-01'),
+(64, 1, 251, '2022-05-22');
 
 -- --------------------------------------------------------
 
@@ -146,6 +209,14 @@ CREATE TABLE `class` (
   `name_numeric` longtext COLLATE utf8_unicode_ci NOT NULL,
   `teacher_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `class`
+--
+
+INSERT INTO `class` (`class_id`, `name`, `name_numeric`, `teacher_id`) VALUES
+(1, 'English A1-', 'A1-', 1),
+(2, 'English A2+', 'English A2+', 1);
 
 -- --------------------------------------------------------
 
@@ -205,6 +276,20 @@ CREATE TABLE `exam` (
   `comment` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `exam`
+--
+
+INSERT INTO `exam` (`exam_id`, `name`, `date`, `comment`) VALUES
+(1, 'Evalucación 1', '05/09/2022', 'This examen would be write'),
+(2, 'Evaluación 2', '05/12/2022', 'This exam is fatal'),
+(3, 'Evaluación 3', '05/12/2022', 'Good exam'),
+(4, 'Evaluación 4', '22-05-2022', 'Examen escrito'),
+(5, 'Evaluación 5', '22-05-2022', 'Examen escrito'),
+(6, 'Evaluación 6', '22-05-2022', 'Examen escrito'),
+(7, 'Evaluación 7', '22-05-2022', 'Examen escrito'),
+(8, 'Evaluación 9', '22-05-2022', 'Examen escrito');
+
 -- --------------------------------------------------------
 
 --
@@ -255,8 +340,9 @@ INSERT INTO `grade` (`grade_id`, `name`, `grade_point`, `mark_from`, `mark_upto`
 --
 
 CREATE TABLE `invoice` (
-  `invoice_id` int(11) UNSIGNED ZEROFILL NOT NULL,
+  `invoice_id` int(5) UNSIGNED ZEROFILL NOT NULL,
   `student_id` int(11) NOT NULL,
+  `quienpaga` varchar(100) COLLATE utf8_unicode_ci DEFAULT 'Mismo estudiante',
   `title` longtext COLLATE utf8_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8_unicode_ci NOT NULL,
   `amount` int(11) NOT NULL,
@@ -273,6 +359,13 @@ CREATE TABLE `invoice` (
   `num_factura` int(20) DEFAULT '1',
   `corte` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `invoice`
+--
+
+INSERT INTO `invoice` (`invoice_id`, `student_id`, `quienpaga`, `title`, `description`, `amount`, `amount_paid`, `due`, `creation_timestamp`, `payment_timestamp`, `payment_method`, `payment_details`, `status`, `baucher`, `metodopago`, `tipopago`, `num_factura`, `corte`) VALUES
+(00033, 243, '', 'Cancelacion', 'Julio', 750, '750', '0', 1653153420, '', '1', '', 'paid', NULL, '1', 'Mensualidad', 1, 'vespertino');
 
 -- --------------------------------------------------------
 
@@ -334,7 +427,10 @@ INSERT INTO `language` (`phrase_id`, `phrase`, `english`, `bengali`, `spanish`, 
 (21, 'student_marksheet', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 (22, 'data_deleted', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 (23, 'theme_selected', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(24, 'message_sent', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+(24, 'message_sent', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(25, 'password_mismatch', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(26, 'private_messaging', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(27, 'message_sent!', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -353,6 +449,55 @@ CREATE TABLE `mark` (
   `comment` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `mark`
+--
+
+INSERT INTO `mark` (`mark_id`, `student_id`, `subject_id`, `class_id`, `exam_id`, `mark_obtained`, `mark_total`, `comment`) VALUES
+(1, 2, 1, 1, 1, 100, 100, 'Tiene que mejorar'),
+(2, 3, 1, 1, 1, 90, 100, ''),
+(3, 4, 1, 1, 1, 78, 100, ''),
+(4, 2, 1, 1, 2, 90, 100, ''),
+(5, 3, 1, 1, 2, 90, 100, ''),
+(6, 4, 1, 1, 2, 0, 100, ''),
+(7, 5, 1, 1, 2, 0, 100, ''),
+(8, 6, 1, 1, 2, 0, 100, ''),
+(9, 7, 1, 1, 2, 0, 100, ''),
+(10, 8, 1, 1, 2, 0, 100, ''),
+(11, 2, 1, 1, 3, 0, 100, ''),
+(12, 3, 1, 1, 3, 0, 100, ''),
+(13, 4, 1, 1, 3, 0, 100, ''),
+(14, 5, 1, 1, 3, 0, 100, ''),
+(15, 6, 1, 1, 3, 0, 100, ''),
+(16, 7, 1, 1, 3, 0, 100, ''),
+(17, 8, 1, 1, 3, 0, 100, ''),
+(18, 9, 2, 2, 3, 89, 100, ''),
+(19, 9, 2, 2, 1, 87, 100, ''),
+(20, 5, 1, 1, 1, 50, 100, ''),
+(21, 6, 1, 1, 1, 0, 100, ''),
+(22, 7, 1, 1, 1, 0, 100, ''),
+(23, 8, 1, 1, 1, 0, 100, ''),
+(24, 1, 4, 2, 1, 0, 100, ''),
+(25, 2, 4, 2, 1, 0, 100, ''),
+(26, 3, 4, 2, 1, 0, 100, ''),
+(27, 245, 4, 2, 1, 0, 100, ''),
+(28, 246, 4, 2, 1, 0, 100, ''),
+(29, 247, 4, 2, 1, 0, 100, ''),
+(30, 248, 4, 2, 1, 0, 100, ''),
+(31, 249, 4, 2, 1, 0, 100, ''),
+(32, 250, 4, 2, 1, 0, 100, ''),
+(33, 251, 4, 2, 1, 0, 100, ''),
+(34, 1, 2, 2, 1, 89, 100, 'good'),
+(35, 2, 2, 2, 1, 0, 100, ''),
+(36, 3, 2, 2, 1, 0, 100, ''),
+(37, 245, 2, 2, 1, 0, 100, ''),
+(38, 246, 2, 2, 1, 0, 100, ''),
+(39, 247, 2, 2, 1, 0, 100, ''),
+(40, 248, 2, 2, 1, 0, 100, ''),
+(41, 249, 2, 2, 1, 0, 100, ''),
+(42, 250, 2, 2, 1, 0, 100, ''),
+(43, 251, 2, 2, 1, 0, 100, '');
+
 -- --------------------------------------------------------
 
 --
@@ -368,6 +513,13 @@ CREATE TABLE `message` (
   `read_status` int(11) NOT NULL DEFAULT '0' COMMENT '0 unread 1 read'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `message`
+--
+
+INSERT INTO `message` (`message_id`, `message_thread_code`, `message`, `sender`, `timestamp`, `read_status`) VALUES
+(1, 'dbe5b01a7d8c428', 'hi', 'student-1', '1653180664', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -381,6 +533,13 @@ CREATE TABLE `message_thread` (
   `reciever` longtext COLLATE utf8_unicode_ci NOT NULL,
   `last_message_timestamp` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `message_thread`
+--
+
+INSERT INTO `message_thread` (`message_thread_id`, `message_thread_code`, `sender`, `reciever`, `last_message_timestamp`) VALUES
+(1, 'dbe5b01a7d8c428', 'student-1', 'admin-1', '');
 
 -- --------------------------------------------------------
 
@@ -401,7 +560,8 @@ CREATE TABLE `noticeboard` (
 
 INSERT INTO `noticeboard` (`notice_id`, `notice_title`, `notice`, `create_timestamp`) VALUES
 (1, 'Examinación CFR nivel A1-', 'Dear teachers, the CFR examination is coming.', 1652220000),
-(2, 'Fin de nivel', 'Se acaba el nivel muy pronto', 1652392800);
+(2, 'Fin de nivel', 'Se acaba el nivel muy pronto', 1652392800),
+(3, 'Entrega de certificados A1-', 'Se entregaran los certificados a los estudiantes de la mañana', 1653343200);
 
 -- --------------------------------------------------------
 
@@ -481,6 +641,13 @@ CREATE TABLE `parent` (
   `identdocument` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `parent`
+--
+
+INSERT INTO `parent` (`parent_id`, `name`, `lastname`, `email`, `password`, `phone`, `address`, `nationality`, `identdocument`) VALUES
+(1, 'guevara hernandez', '', 'endermendoza12@gmail.com', NULL, '82072291', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', 'Nicaraguan', '041-240500-1004P');
+
 -- --------------------------------------------------------
 
 --
@@ -501,6 +668,42 @@ CREATE TABLE `payment` (
   `corte` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `payment`
+--
+
+INSERT INTO `payment` (`payment_id`, `expense_category_id`, `title`, `payment_type`, `invoice_id`, `student_id`, `method`, `description`, `amount`, `timestamp`, `corte`) VALUES
+(1, 0, 'Cancelacion', 'income', 1, 2, '', 'Mayo', '750', '1652619960', 'matutino'),
+(2, 0, 'Cancelacion', 'income', 2, 3, '', 'Mayo', '750', '1652640840', 'matutino'),
+(3, 0, 'Cancelacion', 'income', 3, 5, '', 'Mayo', '750', '16 May 2022', 'vespertino'),
+(4, 0, 'Cancelacion', 'income', 4, 8, '', 'Mayo', '750', '1652670580', 'matutino'),
+(5, 0, 'Cancelacion', 'income', 5, 6, '', 'Mayo', '750', '2022-05-18T13:43', 'vespertino'),
+(6, 0, 'Cancelacion', 'income', 6, 7, '', 'Junio', '750', '2022-05-18T13:45', 'vespertino'),
+(7, 0, 'Cancelacion', 'income', 7, 2, '', '  American English File Starter 1B', '300', '2022-05-18T13:50', 'vespertino'),
+(8, 0, 'Cancelacion', 'income', 8, 9, '', 'Mayo', '750', '1652876100', 'matutino'),
+(9, 0, 'Cancelacion', 'income', 9, 7, '', 'Julio', '750', '1652995680', 'vespertino'),
+(10, 0, 'Cancelacion', 'income', 10, 2, '', 'Mayo', '750', '1652995920', 'vespertino'),
+(11, 0, 'Cancelacion', 'income', 11, 9, '', 'Agosto', '750', '1652996100', 'vespertino'),
+(12, 0, 'Cancelacion', 'income', 12, 9, '', 'Septiembre', '750', '1652996160', 'vespertino'),
+(13, 0, 'Cancelacion', 'income', 13, 4, '', 'Mayo', '750', '1652996220', 'vespertino'),
+(14, 0, 'Cancelacion', 'income', 14, 4, '', 'Octubre', '750', '1652996280', 'vespertino'),
+(15, 0, 'Cancelacion', 'income', 18, 5, '', 'Septiembre', '750', '1653044520', 'vespertino'),
+(16, 0, 'Cancelacion', 'income', 19, 7, '', 'Certificado CEFR A1-', '750', '1653045300', 'vespertino'),
+(17, 0, 'Cancelacion', 'income', 20, 6, '1', 'Matricula nuevo ingreso', '750', '1653045480', 'vespertino'),
+(18, 0, 'Cancelacion', 'income', 21, 2, '2', 'Diciembre', '750', '1653045600', 'vespertino'),
+(19, 0, 'Cancelacion', 'income', 22, 1, '1', 'Junio', '750', '1653057840', 'vespertino'),
+(20, 0, 'Cancelacion', 'income', 23, 1, '1', 'Matricula continuidad', '200', '1653057900', 'vespertino'),
+(21, 0, 'Cancelacion', 'income', 24, 1, '1', '  American English File Starter 1B', '350', '1653058080', 'vespertino'),
+(22, 0, 'Cancelacion', 'income', 25, 1, '1', 'Octubre', '750', '1653147060', 'vespertino'),
+(23, 0, 'Abono', 'income', 26, 1, '1', 'Septiembre', '750', '1653147480', 'vespertino'),
+(24, 0, 'Cancelacion', 'income', 27, 1, '1', 'Agosto', '750', '1653148080', 'vespertino'),
+(25, 0, 'Cancelacion', 'income', 28, 2, '1', 'Matricula nuevo ingreso', '350', '1653149700', 'vespertino'),
+(26, 0, 'Cancelacion', 'income', 29, 0, '1', 'Matricula nuevo ingreso', '350', '1653152820', 'vespertino'),
+(27, 0, 'Cancelacion', 'income', 30, 0, '1', 'Abril', '350', '1653153000', 'vespertino'),
+(28, 0, 'Cancelacion', 'income', 31, 2, '1', 'Abril', '750', '1653153120', 'vespertino'),
+(29, 0, 'Cancelacion', 'income', 32, 243, '1', '  PACK Story Central 3 (SB, WB, RB)', '350', '1653153120', 'matutino'),
+(30, 0, 'Cancelacion', 'income', 33, 243, '1', 'Julio', '750', '1653153420', 'vespertino');
+
 -- --------------------------------------------------------
 
 --
@@ -514,6 +717,58 @@ CREATE TABLE `section` (
   `class_id` int(11) NOT NULL,
   `teacher_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `section`
+--
+
+INSERT INTO `section` (`section_id`, `name`, `nick_name`, `class_id`, `teacher_id`) VALUES
+(1, 'Wave 5', 'Sala grande', 1, 1),
+(2, 'Wave 4', 'Sala de en medio', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `seleccionadores`
+--
+
+CREATE TABLE `seleccionadores` (
+  `seleccion_id` int(11) NOT NULL,
+  `Mensualidad` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `Matricula` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `Libro` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `ExaminacionCEFR` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `CertificacionCEFR` longtext COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `seleccionadores`
+--
+
+INSERT INTO `seleccionadores` (`seleccion_id`, `Mensualidad`, `Matricula`, `Libro`, `ExaminacionCEFR`, `CertificacionCEFR`) VALUES
+(1, 'Enero', 'Matricula primer ingreso', 'American English File Starter A', 'Examen CEFR A1-', 'Certificado A1-'),
+(2, '', '', 'American English File Starter B', '', ''),
+(3, 'Febrero', 'Matricula de continuidad', 'American English File Starter 1A', 'Examen CEFR A1+', 'Certificado A1+'),
+(4, 'Marzo', '', 'American English File Starter 1B', 'Examen CEFR A2-', 'Certificado A2-'),
+(5, 'Abril', '', 'American English File Starter 2A', 'Examen CEFR A2+', 'Certificado A2+'),
+(6, 'Mayo', '', 'American English File Starter 2B', 'Examen CEFR B1-', 'Certificado B1-'),
+(7, 'Junio', '', 'American English File Starter 3A', 'Examen CEFR B1+', 'Certificado B1+'),
+(8, 'Julio', '', 'American English File Starter 3B', 'Examen CEFR B2-', 'Certificado B2-'),
+(9, 'Agosto', '', 'American English File Starter 4A', '', ''),
+(10, 'Septiembre', '', 'American English File Starter 4B', '', ''),
+(11, 'Octubre', '', 'American English File Starter 5A', '', ''),
+(12, 'Noviembre', '', 'American English File Starter 5B', '', ''),
+(13, 'Diciembre', '', 'PACK Story Central 1 (SB, WB, RB)', '', ''),
+(14, '', '', 'PACK Story Central 1 (SB, WB, RB)', '', ''),
+(15, '', '', 'PACK Story Central 2 (SB, WB, RB)', '', ''),
+(16, '', '', 'PACK Story Central 3 (SB, WB, RB)', '', ''),
+(17, '', '', 'PACK Story Central 4 (SB, WB, RB)', '', ''),
+(18, '', '', 'PACK Story Central 5 (SB, WB, RB)', '', ''),
+(19, '', '', 'PACK Story Central 6 (SB, WB, RB)', '', ''),
+(20, '', '', 'Défi 1', '', ''),
+(21, '', '', 'Défi 2', '', ''),
+(22, '', '', 'Défi 3', '', ''),
+(23, '', '', 'Défi 4', '', '');
 
 -- --------------------------------------------------------
 
@@ -545,7 +800,7 @@ INSERT INTO `settings` (`settings_id`, `type`, `description`) VALUES
 (13, 'clickatell_user', ''),
 (14, 'clickatell_password', ''),
 (15, 'clickatell_api_id', ''),
-(16, 'skin_colour', 'red'),
+(16, 'skin_colour', 'purple'),
 (17, 'twilio_account_sid', ''),
 (18, 'twilio_auth_token', ''),
 (19, 'twilio_sender_phone_number', '');
@@ -583,8 +838,33 @@ CREATE TABLE `student` (
   `transport_id` int(11) NOT NULL,
   `dormitory_id` int(11) NOT NULL,
   `dormitory_room_number` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `tipo_documento` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL
+  `tipo_documento` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nombreemergencia` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `apellidoemergencia` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `direccionemergencia` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `relacionemergencia` int(11) DEFAULT NULL,
+  `telefonoemergencia` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `emailemergencia` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `imagen` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `student`
+--
+
+INSERT INTO `student` (`student_id`, `name`, `birthday`, `lastname`, `identdocument`, `sex`, `nationality`, `blood_group`, `address`, `phone`, `emergencyphone`, `email`, `password`, `father_name`, `parentesco`, `mother_name`, `class_id`, `section_id`, `parent_id`, `diamatricula`, `wave`, `level`, `horario`, `transport_id`, `dormitory_id`, `dormitory_room_number`, `tipo_documento`, `nombreemergencia`, `apellidoemergencia`, `direccionemergencia`, `relacionemergencia`, `telefonoemergencia`, `emailemergencia`, `imagen`) VALUES
+(1, 'Endersson Alonso', '06/18/2024', 'Mendoza Muñoz', '041-240500-1004P', 'Male', 'Nicaragüense', '', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', '82072291', NULL, 'endermendoza12@gmail.com', 'carazo12', '', 0, '', '2', NULL, NULL, '1653056631', 'Wave 1', 'A1+', '1', 0, 0, '', 'Cedula', 'Janerys', 'Lezama', 'El Rosario', 1, '82072291', 'janylez@gmail.com', NULL),
+(2, 'Oswald Armando ', '04/29/2022', 'Balladares Ruiz', '457-875152-4584584', 'Male', 'Nicaraguan', '', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', '82072291', NULL, 'endermendoza12@gmail.com', '', '', 0, '', '2', NULL, NULL, '1653062342', 'Wave 1', 'A1+', '1', 0, 0, '', 'Cedula', 'Endersson', 'Mendoza', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', 1, '82072291', 'endermendoza12@gmail.com', NULL),
+(3, 'Oswald Armando ', '06/18/2024', 'Balladares Ruiz', '041-240500-1004P', 'Male', 'Nicaraguan', '', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', '82072291', NULL, 'endermendoza12@gmail.com', '', '', 0, '', '2', NULL, NULL, '1653062400', 'Wave 1', 'A1+', '1', 0, 0, '', 'Cedula', 'Endersson', 'Mendoza', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', 1, '82072291', 'endermendoza12@gmail.com', NULL),
+(243, 'Flavia Lucia', '04/29/2022', 'Almendarez García', '257-946351-7656', 'Female', 'Nicaraguan', '', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', '82072291', NULL, 'endermendoza12@gmail.com', '', '', 0, '', '1', NULL, NULL, '1653151636', 'Wave 1', 'A2+', '1', 0, 0, '', 'Cedula', 'Endersson', 'Mendoza', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', 1, '82072291', 'endermendoza12@gmail.com', NULL),
+(244, 'Gloroa Lucoa', '04/29/2022', 'Espinoza Perez', '457812596', 'Male', 'Nicaragua', '', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', '82072291', NULL, 'endermendoza12@gmail.com', '', '', 0, '', '1', NULL, NULL, '1653153245', 'Wave 1', 'A2-', '4', 0, 0, '', 'Cedula', 'Endersson', 'Mendoza', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', 1, '82072291', 'endermendoza12@gmail.com', NULL),
+(245, 'Gustavo jose ', '04/19/2022', 'guevara hernandez', '041-240500-1004P', 'Male', 'Nicaraguan', '', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', '82072291', NULL, 'endermendoza12@gmail.com', '', '', 0, '', '2', NULL, NULL, '1653153565', 'Wave 1', 'A2-', '1', 0, 0, '', 'Cedula', 'Endersson', 'Mendoza', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', 1, '82072291', 'endermendoza12@gmail.com', NULL),
+(246, 'Anielka petronila ', '04/29/2022', 'diaz', '777-777777-77', 'Male', 'Nicaraguan', '', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', '82072291', NULL, 'endermendoza12@gmail.com', '', '', 0, '', '2', NULL, NULL, '1653153940', 'Wave 1', 'A1+', '1', 0, 0, '', 'Cedula', 'Endersson', 'Mendoza', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', 1, '82072291', 'endermendoza12@gmail.com', NULL),
+(247, 'daniel', '06/18/2024', 'mendieta', '777-777777-77', 'Male', 'Nicaraguan', '', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', '82072291', NULL, 'endermendoza12@gmail.com', '', '', 0, '', '2', NULL, NULL, '1653154147', 'Wave 1', 'B2+', '1', 0, 0, '', 'Cedula', 'Endersson', 'Mendoza', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', 1, '82072291', 'endermendoza12@gmail.com', NULL),
+(248, 'Omar Rene', '11/26/2019', 'Rodriguez Vasquez', '041-240500-1004P', 'Male', 'nicaraguan', '', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', '82072291', NULL, 'endermendoza12@gmail.com', '', '', 0, '', '2', NULL, NULL, '1653155419', 'Wave 1', 'A1-', '1', 0, 0, '', 'Cedula', 'Endersson', 'Mendoza', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', 1, '82072291', 'endermendoza12@gmail.com', NULL),
+(249, 'Derek William', '11/26/2019', 'Palacios Cortez', '041-240500-1004P', 'Male', 'Nicaraguan', '', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', '82072291', NULL, 'endermendoza12@gmail.com', '', '', 0, '', '2', NULL, NULL, '1653155566', 'Wave 1', 'A2+', '2', 0, 0, '', 'Cedula', 'Endersson', 'Mendoza', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', 3, '82072291', 'endermendoza12@gmail.com', NULL),
+(250, 'Gerald Josue ', '06/18/2024', 'mendieta', '041-240500-1004P', 'Male', 'Nicaraguan', '', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', '82072291', NULL, 'endermendoza12@gmail.com', '', '', 0, '', '2', NULL, NULL, '1653155949', 'Wave 1', '0', '1', 0, 0, '', 'Cedula', 'Endersson', 'Mendoza', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', 1, '82072291', 'endermendoza12@gmail.com', NULL),
+(251, 'Alonso', '06/18/2024', 'Muñoz', '041-240500-1004P', 'Male', 'Nicaraguan', '', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', '82072291', NULL, 'endermendoza12@gmail.com', '', '', 0, '', '2', NULL, NULL, '1653204659', 'Wave 1', 'A2+', '1', 0, 0, '', 'Cedula', 'Endersson', 'Mendoza', 'ZONA CENTRAL SECTOR N°3 JUZGADO 1/2 CUADRA AL ESTE', 1, '82072291', 'endermendoza12@gmail.com', NULL);
 
 -- --------------------------------------------------------
 
@@ -630,6 +910,14 @@ CREATE TABLE `teacher` (
   `password` longtext COLLATE utf8_unicode_ci,
   `primerdia` longtext COLLATE utf8_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `teacher`
+--
+
+INSERT INTO `teacher` (`teacher_id`, `name`, `lastname`, `identdocument`, `birthday`, `sex`, `nationality`, `blood_group`, `address`, `phone`, `email`, `password`, `primerdia`) VALUES
+(1, 'Katherine Cruz', '', '', '06/03/1997', 'Female', '', '', 'Jinotepe, barrio San Juan', '4545454', 'kat@narvaez.com', 'password', NULL),
+(2, 'Lenin ', 'Olivas', '025-144789O', '28-05-1997', 'Male', 'Nicaraguan', 'O+', 'Managua', '5555555', 'lenin@olivas.com', 'password', NULL);
 
 -- --------------------------------------------------------
 
@@ -790,6 +1078,12 @@ ALTER TABLE `section`
   ADD PRIMARY KEY (`section_id`);
 
 --
+-- Indices de la tabla `seleccionadores`
+--
+ALTER TABLE `seleccionadores`
+  ADD PRIMARY KEY (`seleccion_id`);
+
+--
 -- Indices de la tabla `settings`
 --
 ALTER TABLE `settings`
@@ -827,7 +1121,7 @@ ALTER TABLE `transport`
 -- AUTO_INCREMENT de la tabla `acd_session`
 --
 ALTER TABLE `acd_session`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `admin`
@@ -839,7 +1133,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT de la tabla `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT de la tabla `book`
@@ -851,7 +1145,7 @@ ALTER TABLE `book`
 -- AUTO_INCREMENT de la tabla `class`
 --
 ALTER TABLE `class`
-  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `class_routine`
@@ -875,7 +1169,7 @@ ALTER TABLE `dormitory`
 -- AUTO_INCREMENT de la tabla `exam`
 --
 ALTER TABLE `exam`
-  MODIFY `exam_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `exam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `expense_category`
@@ -893,37 +1187,37 @@ ALTER TABLE `grade`
 -- AUTO_INCREMENT de la tabla `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `invoice_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+  MODIFY `invoice_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `language`
 --
 ALTER TABLE `language`
-  MODIFY `phrase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `phrase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `mark`
 --
 ALTER TABLE `mark`
-  MODIFY `mark_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `mark_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de la tabla `message`
 --
 ALTER TABLE `message`
-  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `message_thread`
 --
 ALTER TABLE `message_thread`
-  MODIFY `message_thread_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `message_thread_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `noticeboard`
 --
 ALTER TABLE `noticeboard`
-  MODIFY `notice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `notice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `osad_acd_history`
@@ -941,19 +1235,25 @@ ALTER TABLE `osad_student`
 -- AUTO_INCREMENT de la tabla `parent`
 --
 ALTER TABLE `parent`
-  MODIFY `parent_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `parent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `section`
 --
 ALTER TABLE `section`
-  MODIFY `section_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `section_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `seleccionadores`
+--
+ALTER TABLE `seleccionadores`
+  MODIFY `seleccion_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `settings`
@@ -965,7 +1265,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT de la tabla `student`
 --
 ALTER TABLE `student`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=252;
 
 --
 -- AUTO_INCREMENT de la tabla `subject`
@@ -977,7 +1277,7 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT de la tabla `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `transport`

@@ -283,7 +283,8 @@ class Admin extends CI_Controller
 		$page_data['page_title'] = 'Add Bulk Student';
 		$this->load->view('backend/index', $page_data);
 	}
-	
+    
+    
 	function student_information($class_id = '')
 	{
 		if ($this->session->userdata('admin_login') != 1)
@@ -345,6 +346,7 @@ class Admin extends CI_Controller
             $data['section_id']  = $this->input->post('section_id');
             $data['parent_id']   = $this->input->post('parent_id');
             $data['wave']        = $this->input->post('wave'); // es el antiguo roll
+            
             
             $data['tipo_documento']        = $this->input->post('tipodocumento'); // tipo de documnto de identidad
             $data['level']        = $this->input->post('level');
