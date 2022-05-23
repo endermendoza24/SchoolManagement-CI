@@ -930,7 +930,7 @@ class Admin extends CI_Controller
             $data2['student_id']        =   $this->input->post('student_id');
             $data2['title']             =   $this->input->post('title');
             $data2['description']       =   $this->input->post('description');
-            $data2['payment_type']      =  'income';
+            $data2['payment_type']      =  'Entrada';
             $data2['corte']             = $this->input->post('corte');
             $data2['amount']            =   $this->input->post('amount_paid'); 
             $data2['method']  = $this->input->post('metodo');
@@ -1001,11 +1001,13 @@ class Admin extends CI_Controller
        if ($this->session->userdata('admin_login') != 1)
             redirect('login', 'refresh');
         $page_data['page_name']  = 'income';
-        $page_data['page_title'] = 'Incomes';
-        $this->db->order_by('creation_timestamp', 'desc');
+        $page_data['page_title'] = 'Salidas';
+        $this->db->order_by('creation_timestamp', 'asc');
         $page_data['invoices'] = $this->db->get('invoice')->result_array();
         $this->load->view('backend/index', $page_data); 
     }
+
+    
 
     function expense($param1 = '' , $param2 = '')
     {
@@ -1015,9 +1017,10 @@ class Admin extends CI_Controller
             $data['title']               =   $this->input->post('title');
             $data['expense_category_id'] =   $this->input->post('expense_category_id');
             $data['description']         =   $this->input->post('description');
-            $data['payment_type']        =   'expense';
+            $data['payment_type']        =   'Salida';
             $data['method']              =   $this->input->post('method');
             $data['amount']              =   $this->input->post('amount');
+            $data['corte']              =   $this->input->post('corte');
             $data['timestamp']           =   strtotime($this->input->post('timestamp'));
             $this->db->insert('payment' , $data);
             $this->session->set_flashdata('flash_message' , get_phrase('data_added_successfully'));
@@ -1028,9 +1031,10 @@ class Admin extends CI_Controller
             $data['title']               =   $this->input->post('title');
             $data['expense_category_id'] =   $this->input->post('expense_category_id');
             $data['description']         =   $this->input->post('description');
-            $data['payment_type']        =   'expense';
+            $data['payment_type']        =   'Salida';
             $data['method']              =   $this->input->post('method');
             $data['amount']              =   $this->input->post('amount');
+            $data['corte']              =   $this->input->post('corte');
             $data['timestamp']           =   strtotime($this->input->post('timestamp'));
             $this->db->where('payment_id' , $param2);
             $this->db->update('payment' , $data);
@@ -1046,9 +1050,58 @@ class Admin extends CI_Controller
         }
 
         $page_data['page_name']  = 'expense';
-        $page_data['page_title'] = 'Expenses';
+        $page_data['page_title'] = 'Salidas';
         $this->load->view('backend/index', $page_data); 
     }
+
+    // añadiendo la funcion de contabilidad
+    // basicamente l0 que haraes mostrar la tabla de payment y a la vez mostrar si es entrada o salida
+
+    function contabilidad($param1 = '' , $param2 = '')
+    {
+        if ($this->session->userdata('admin_login') != 1)
+            redirect('login', 'refresh');
+        if ($param1 == 'create') {
+            $data['title']               =   $this->input->post('title');
+            $data['expense_category_id'] =   $this->input->post('expense_category_id');
+            $data['description']         =   $this->input->post('description');
+            $data['payment_type']        =   'Salida';
+            $data['method']              =   $this->input->post('method');
+            $data['amount']              =   $this->input->post('amount');
+            $data['corte']              =   $this->input->post('corte');
+            $data['timestamp']           =   strtotime($this->input->post('timestamp'));
+            $this->db->insert('payment' , $data);
+            $this->session->set_flashdata('flash_message' , get_phrase('data_added_successfully'));
+            redirect(base_url() . 'index.php?admin/expense', 'refresh');
+        }
+
+        if ($param1 == 'edit') {
+            $data['title']               =   $this->input->post('title');
+            $data['expense_category_id'] =   $this->input->post('expense_category_id');
+            $data['description']         =   $this->input->post('description');
+            $data['payment_type']        =   'Salida';
+            $data['method']              =   $this->input->post('method');
+            $data['amount']              =   $this->input->post('amount');
+            $data['corte']              =   $this->input->post('corte');
+            $data['timestamp']           =   strtotime($this->input->post('timestamp'));
+            $this->db->where('payment_id' , $param2);
+            $this->db->update('payment' , $data);
+            $this->session->set_flashdata('flash_message' , get_phrase('data_updated'));
+            redirect(base_url() . 'index.php?admin/expense', 'refresh');
+        }
+
+        if ($param1 == 'delete') {
+            $this->db->where('payment_id' , $param2);
+            $this->db->delete('payment');
+            $this->session->set_flashdata('flash_message' , get_phrase('data_deleted'));
+            redirect(base_url() . 'index.php?admin/expense', 'refresh');
+        }
+
+        $page_data['page_name']  = 'contabilidad';
+        $page_data['page_title'] = 'Contabilidad';
+        $this->load->view('backend/index', $page_data); 
+    }
+
 
     function expense_category($param1 = '' , $param2 = '')
     {
@@ -1075,7 +1128,7 @@ class Admin extends CI_Controller
         }
 
         $page_data['page_name']  = 'expense_category';
-        $page_data['page_title'] = 'Expense Category';
+        $page_data['page_title'] = 'Categorías de gastos';
         $this->load->view('backend/index', $page_data);
     }
 

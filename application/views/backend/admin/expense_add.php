@@ -4,7 +4,7 @@
         	<div class="panel-heading">
             	<div class="panel-title" >
             		<i class="entypo-plus-circled"></i>
-					<?php echo ('Add Expense');?>
+					<?php echo ('Agregar gasto');?>
             	</div>
             </div>
 			<div class="panel-body">
@@ -66,6 +66,14 @@
                         <label class="col-sm-3 control-label"><?php echo ('Fecha');?></label>
                         <div class="col-sm-6">
                             <input type="datetime-local" value="<?php echo date("m-d-Y h:i:s");?>" class="form-control" name="timestamp"/>
+                        </div>
+                    </div>
+
+					<div class="form-group">
+                        <label class="col-sm-3 control-label"><?php echo ('Corte');?></label>
+                        <div class="col-sm-6">
+                            <input type="radio" name="corte" value="Matutino" id="">Matutino
+							<input type="radio" name="corte" value="Vespertino" id="">Vespertino
                         </div>
                     </div>
                     

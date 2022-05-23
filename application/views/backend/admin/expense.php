@@ -1,8 +1,10 @@
 
-<a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/expense_add/');" 
+
+
+<a  href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/expense_add/');" 
 class="btn btn-primary pull-right">
 <i class="entypo-plus-circled"></i>
-<?php echo ('Add new expense');?>
+<?php echo ('Agregar nueva salida');?>
 </a> 
 <br><br>
 
@@ -11,18 +13,19 @@ class="btn btn-primary pull-right">
     <thead>
         <tr>
             <th><div>#</div></th>
-            <th><div><?php echo ('Title');?></div></th>
-            <th><div><?php echo ('Category');?></div></th>
-            <th><div><?php echo ('Method');?></div></th>
-            <th><div><?php echo ('Amount');?></div></th>
-            <th><div><?php echo ('Date');?></div></th>
-            <th><div><?php echo ('Options');?></div></th>
+            <th><div><?php echo ('Título');?></div></th>
+            <th><div><?php echo ('Categoría');?></div></th>
+            <th><div><?php echo ('Método');?></div></th>
+            <th><div><?php echo ('Monto');?></div></th>
+            <th><div><?php echo ('Fecha');?></div></th>
+			<th><div><?php echo ('Corte');?></div></th>
+            <th><div><?php echo ('Opciones');?></div></th>
         </tr>
     </thead>
     <tbody>
         <?php 
         	$count = 1;
-        	$this->db->where('payment_type' , 'expense');
+        	$this->db->where('payment_type' , 'Salida');
         	$this->db->order_by('timestamp' , 'desc');
         	$expenses = $this->db->get('payment')->result_array();
         	foreach ($expenses as $row):
@@ -48,11 +51,12 @@ class="btn btn-primary pull-right">
             </td>
             <td><?php echo $row['amount'];?></td>
             <td><?php echo date('d M,Y, H:i', $row['timestamp']);?></td>
+			<td><?php echo $row['corte'];?></td>
             <td>
                 
                 <div class="btn-group">
                     <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
-                        Action <span class="caret"></span>
+                        Acción <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu dropdown-default pull-right" role="menu">
                         
@@ -60,7 +64,7 @@ class="btn btn-primary pull-right">
                         <li>
                         	<a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/expense_edit/<?php echo $row['payment_id'];?>');">
                             	<i class="entypo-pencil"></i>
-									<?php echo ('Edit');?>
+									<?php echo ('Editar');?>
                                	</a>
                         				</li>
                         <li class="divider"></li>
@@ -69,7 +73,7 @@ class="btn btn-primary pull-right">
                         <li>
                         	<a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/expense/delete/<?php echo $row['payment_id'];?>');">
                             	<i class="entypo-trash"></i>
-									<?php echo ('Delete');?>
+									<?php echo ('Eliminar');?>
                                	</a>
                         				</li>
                     </ul>
@@ -84,9 +88,23 @@ class="btn btn-primary pull-right">
 	
 	</table>
 <!-- esto e spara mostrar el total de la sumatoria de la tabla de gastos -->
-	<h2 style="color:red; font-weight:bold"> Total amount: <?php $query = $this->db->query('SELECT SUM(amount)as total FROM payment WHERE payment_type = "expense"')->row(); echo round(floatval($query->total),2); ?> </h2>
-</div>|
-<!-----  DATA TABLE EXPORT CONFIGURATIONS ---->                      
+<div class="tile-stats tile-red">
+<h3><?php echo ('Salidas');?></h3>
+                    
+						
+            <h2 style="color:white; font-weight:bold"> Total salidas: C$ <?php $query = $this->db->query('SELECT SUM(amount)as total FROM payment WHERE payment_type = "Salida" ')->row(); echo round(floatval($query->total),2);?></h2>                   			                                       
+                </div>
+</div>
+<!-----  DATA TABLE EXPORT CONFIGURATIONS ---->            
+
+<!-- Nueva datatable -->
+
+
+<!-- excel', 'pdf', 'print', -->
+
+
+
+
 <script type="text/javascript">
 
 	jQuery(document).ready(function($)
