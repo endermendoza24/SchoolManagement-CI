@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<?php
 	$system_name	=	$this->db->get_where('settings' , array('type'=>'system_name'))->row()->description;
@@ -12,7 +12,7 @@
 	<meta name="description" content="Neon Admin Panel" />
 	<meta name="author" content="" />
 	
-	<title translate="false" ><?php echo ('Login');?> |  <?php echo $system_title;?></title>
+	<title translate="false" ><?php echo ('Iniciar Sesion');?> |  <?php echo $system_title;?></title>
 	
 
 	<link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
@@ -63,7 +63,7 @@ var baseurl = '<?php echo base_url();?>';
 			<!-- progress bar indicator -->
 			<div class="login-progressbar-indicator">
 				<h3>43%</h3>
-				<span>Logging you in....</span>
+				<span>Iniciando sesion en...</span>
 			</div>
 		</div>
 		
@@ -78,8 +78,8 @@ var baseurl = '<?php echo base_url();?>';
 		<div class="login-content">
 			
 			<div class="form-login-error">
-				<h3>Invalid login</h3>
-				<p>Please enter correct email and password!</p>
+				<h3>Inicio de sesión inválido</h3>
+				<p>¡Por favor, introduce el Email y la Contraseña correctamente!</p>
 			</div>
 			
 			<form method="post" role="form" id="form_login">
@@ -103,7 +103,7 @@ var baseurl = '<?php echo base_url();?>';
 							<i class="entypo-key"></i>
 						</div>
 						
-						<input type="password" class="form-control" name="password" id="password" placeholder="Password" autocomplete="on" />
+						<input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" autocomplete="on" />
 					</div>
 				
 				</div>
@@ -111,7 +111,7 @@ var baseurl = '<?php echo base_url();?>';
 				<div class="form-group">
 					<button type="submit" class="btn btn-success btn-block btn-login">
 						<i class="entypo-login"></i>
-						Login
+						Iniciar sesión
 					</button>
 				</div>
 				
@@ -123,7 +123,7 @@ var baseurl = '<?php echo base_url();?>';
 				<!-- <a href="<?php echo base_url();?>index.php?login/forgot_password" class="link">
 					<?php echo get_phrase('forgot_your_password');?> ?
 				</a> -->
-				<p>"Talk" Management System | <?php echo date('Y')?> "Talk" academia de idiomas - All rights reserved &copy;</p>
+				<p>"Talk" Management System | <?php echo date('Y')?> "Talk" | Academia de idiomas - All rights reserved &copy;</p>
 			</div>
 			
 

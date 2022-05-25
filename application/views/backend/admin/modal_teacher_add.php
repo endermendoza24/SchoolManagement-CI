@@ -4,7 +4,7 @@
         	<div class="panel-heading">
             	<div class="panel-title" >
             		<i class="entypo-plus-circled"></i>
-					<?php echo ('Add Teacher');?>
+					<?php echo ('Agregar Profesor');?>
             	</div>
             </div>
 			<div class="panel-body">
@@ -12,66 +12,66 @@
                 <?php echo form_open(base_url() . 'index.php?admin/teacher/create/' , array('class' => 'form-horizontal form-groups-bordered validate', 'enctype' => 'multipart/form-data'));?>
 	
 					<div class="form-group">
-						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Name');?></label>
+						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Nombre');?></label>
                         
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="" autofocus>
+							<input type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>" value="" autofocus>
 						</div>
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Birthday');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Fecha Nacimiento');?></label>
                         
 						<div class="col-sm-5">
-							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control datepicker" name="birthday" value="" data-start-view="2">
+							<input data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>" type="text" class="form-control datepicker" name="birthday" value="" data-start-view="2">
 						</div> 
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Gender');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Género');?></label>
                         
 						<div class="col-sm-5">
-							<select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="sex" class="form-control">
-                              <option value=""><?php echo ('Select');?></option>
-                              <option value="Male"><?php echo ('Male');?></option>
-                              <option value="Female"><?php echo ('Female');?></option>
+							<select data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>" name="sex" class="form-control">
+                              <option value=""><?php echo ('Seleccionar');?></option>
+                              <option value="Femenino"><?php echo ('Femenino');?></option>
+                              <option value="Masculino"><?php echo ('Masculino');?></option>
                           </select>
 						</div> 
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Address');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Dirección');?></label>
                         
 						<div class="col-sm-5">
-							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="address" value="" >
+							<input data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>" type="text" class="form-control" name="address" value="" >
 						</div> 
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Phone');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Número Teléfonico');?></label>
                         
 						<div class="col-sm-5">
-							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="phone" value="" >
+							<input data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>" type="text" class="form-control" name="phone" value="" >
 						</div> 
 					</div>
                     
 					<div class="form-group">
 						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Email');?></label>
 						<div class="col-sm-5">
-							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="email" value="">
+							<input data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>" type="text" class="form-control" name="email" value="">
 						</div>
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Password');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Contraseña');?></label>
                         
 						<div class="col-sm-5">
-							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="password" class="form-control" name="password" value="" >
+							<input data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>" type="password" class="form-control" name="password" value="" >
 						</div> 
 					</div>
 	
-					<div class="form-group">
-						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Photo');?></label>
+					<!-- <div class="form-group">
+						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Foto');?></label>
                         
 						<div class="col-sm-5">
 							<div class="fileinput fileinput-new" data-provides="fileinput">
@@ -81,19 +81,19 @@
 								<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px"></div>
 								<div>
 									<span class="btn btn-white btn-file">
-										<span class="fileinput-new">Select image</span>
-										<span class="fileinput-exists">Change</span>
+										<span class="fileinput-new">Selecionar Foto</span>
+										<span class="fileinput-exists">Cambiar</span>
 										<input type="file" name="userfile" accept="image/*">
 									</span>
-									<a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Remove</a>
+									<a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Remover</a>
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
                     
                     <div class="form-group">
 						<div class="col-sm-offset-3 col-sm-5">
-							<button type="submit" class="btn btn-info"><?php echo ('Add Teacher');?></button>
+							<button type="submit" class="btn btn-info"><?php echo ('Agregar Profesor');?></button>
 						</div>
 					</div>
                 <?php echo form_close();?>

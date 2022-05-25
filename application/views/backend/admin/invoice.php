@@ -53,7 +53,7 @@
 							<td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
-                                    Action <span class="caret"></span>
+                                    Acción <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-default pull-right" role="menu">
 
@@ -62,7 +62,7 @@
                                     <li>
                                         <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_take_payment/<?php echo $row['invoice_id'];?>');">
                                             <i class="entypo-bookmarks"></i>
-                                                <?php echo ('Take Payment');?>
+                                                <?php echo ('Tomar Pago');?>
                                         </a>
                                     </li>
                                     <li class="divider"></li>
@@ -72,7 +72,7 @@
                                     <li>
                                         <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_view_invoice/<?php echo $row['invoice_id'];?>');">
                                             <i class="entypo-credit-card"></i>
-                                                <?php echo ('View Invoice');?>
+                                                <?php echo ('Ver Factura');?>
                                             </a>
                                                     </li>
                                     <li class="divider"></li>
@@ -81,7 +81,7 @@
                                     <li>
                                         <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_edit_invoice/<?php echo $row['invoice_id'];?>');">
                                             <i class="entypo-pencil"></i>
-                                                <?php echo ('Edit');?>
+                                                <?php echo ('Editar');?>
                                         </a>
                                     </li>
                                     <li class="divider"></li>
@@ -90,7 +90,7 @@
                                     <li>
                                         <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/invoice/delete/<?php echo $row['invoice_id'];?>');">
                                             <i class="entypo-trash"></i>
-                                                <?php echo ('Delete');?>
+                                                <?php echo ('Eliminar');?>
                                             </a>
                                                     </li>
                                 </ul>
@@ -208,6 +208,7 @@
                                         <option value="Libro" >Libro</option> 
                                         <option value="examen" >Examinación CEFR</option> 
                                         <option value="certificado" >Certificación CEFR</option> 
+                                        <option value="certificacionReprogramacion" >Reprogramación CEFR</option> 
                                         <option value="otros" >Otros</option> 
                                         </select>
 
@@ -344,6 +345,7 @@
         var examinacion = "<option value='0' selected>Selecciona un examen...</option><option value='Examen CEFR A1-'>Examen CEFR A1-</option><option value='Examen CEFR A1+'>Examen CEFR A1+</option><option value='Examen CEFR A2-'>Examen CEFR A2-</option><option value='Examen CEFR A2+'>Examen CEFR A2+</option><option value='Examen CEFR B1-'>Examen CEFR B1-</option><option value='Examen CEFR B1+'>Examen CEFR B1+</option><option value='Examen CEFR B2-'>Examen CEFR B2-</option>"
 
         var certificacion = "<option value='0' selected>Selecciona un certificado...</option><option value='Certificado CEFR A1-'>Certificado CEFR A1-</option><option value='Certificado CEFR A1+'>Certificado CEFR A1+</option><option value='Certificado CEFR A2-'>Certificado CEFR A2-</option><option value='Certificado CEFR A2+'>Certificado CEFR A2+</option><option value='Certificado CEFR B1-'>Certificado CEFR B1-</option><option value='Certificado CEFR B1+'>Certificado CEFR B1+</option><option value='Certificado CEFR B2-'>Certificado CEFR B2-</option>"
+        var certificacionReprogramacion = "<option value='0' selected>Selecciona el certificado a reprogramar...</option><option value='Reprogramación certificado CEFR A1-'>Reprogramación certificado CEFR A1-</option><option value='Reprogramación certificado CEFR A1+'>Reprogramación certificado CEFR A1+</option><option value='Reprogramación certificado CEFR A2-'>Reprogramación certificado CEFR A2-</option><option value='Reprogramación certificado CEFR A2+'>Reprogramación certificado CEFR A2+</option><option value='Reprogramación certificado CEFR B1-'>Reprogramación certificado CEFR B1-</option><option value='Reprogramación certificado CEFR B1+'>Reprogramación certificado CEFR B1+</option><option value='Reprogramación certificado CEFR B2-'>Reprogramación certificado CEFR B2-</option>"
 
         var libros = "<option value='0' selected>Selecciona un libro...</option><option value='American English File Starter A'>  American English File Starter A</option><option value='American English File Starter B'>  American English File Starter B</option><option value='  American English File Starter 1A'>  American English File Starter 1A</option><option value='  American English File Starter 1B'>  American English File Starter 1B</option><option value='  American English File Starter 2A'>  American EnglishFile Starter 2A</option><option value='  American English File Starter 2B'>  American English File Starter 2B</option><option value='  American English File Starter 3A'>  American English File Starter 3A</option><option value='  American English File Starter 3B'>  American English File Starter 3B</option><option value='  American English File Starter 4A'>  American English File Starter 4A</option><option value='  American English File Starter 4B'>  American English File Starter 4B</option><option value='  American English File Starter 5A'>  American English File Starter 5A</option><option value='  American English File Starter 5B'>  American English File Starter 5B</option><option disabled value='0'>Libros de niños</option><option value='  PACK Story Central 1 (SB WB, RB)'>  PACK Story Central 1 (SB WB, RB)</option><option value='  PACK Story Central 2 (SB, WB, RB)'>  PACK Story Central 2 (SB, WB, RB)</option><option value='  PACK Story Central 3 (SB, WB, RB)'>  PACK Story Central 3 (SB, WB, RB)</option><option value='  PACK Story Central 4 (SB, WB, RB)'>  PACK Story Central 4 (SB, WB, RB)</option><option value='  PACK Story Central 5 (SB, WB, RB)'>  PACK Story Central 5 (SB, WB, RB)</option><option value='  PACK Story Central 1 (SB, WB, RB)'>  PACK Story Central 1 (SB, WB, RB)</option><option disabled  value='0'>Libros de francés</option><option value='  Défi 1'>  Défi 1</option><option value='  Défi 2'>  Défi 2</option><option value='  Défi 3'>  Défi 3</option><option value='  Défi 4'>  Défi 4</option>"
         var otros = "<option value='otro'>Otro</option>"
@@ -361,8 +363,10 @@
             $("#Habitacion").html(examinacion);
         else if(idMotel =="certificado")
             $("#Habitacion").html(certificacion);       
-            else if(idMotel =="otros")
+        else if(idMotel =="otros")
             $("#Habitacion").html(otros);  
+        else if(idMotel =="certificacionReprogramacion")
+            $("#Habitacion").html(certificacionReprogramacion);  
         });
 
 

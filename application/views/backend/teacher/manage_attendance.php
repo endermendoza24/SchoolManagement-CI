@@ -2,11 +2,11 @@
     <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-hover table-striped">
         <thead>
             <tr>                
-                <th><?php echo ('Select date');?></th>
-                <th><?php echo ('Select month');?></th>
-                <th><?php echo ('Select year');?></th>
-                <th><?php echo ('Select class');?></th>
-                <th><?php echo ('Select date');?></th>
+                <th><?php echo ('Selecciona una fecha');?></th>
+                <th><?php echo ('Selecciona mes');?></th>
+                <th><?php echo ('Selecciona año');?></th>
+                <th><?php echo ('Seleccionar una Wave');?></th>
+                <th><?php echo ('Seleccionar una fecha');?></th>
            </tr>
        </thead>
         <tbody>
@@ -60,7 +60,7 @@
                     </td>
                     <td>
                         <select name="class_id" class="form-control">
-                            <option value="">Select a class</option>
+                            <option value="">Seleccionar una Wave</option>
                             <?php 
                             $classes    =   $this->db->get('class')->result_array();
                             foreach($classes as $row):?>
@@ -72,7 +72,7 @@
                         </select>
 
                     </td>
-                    <td align="center"><input type="submit" value="<?php echo ('Manage Attendance');?>" class="btn btn-info"/></td>
+                    <td align="center"><input type="submit" value="<?php echo ('Asistencia Diaria');?>" class="btn btn-info"/></td>
                 </tr>
             </form>
         </tbody>
@@ -96,12 +96,12 @@
                  ?>
                 <h2><?php echo ucwords($day);?></h2>
                 
-                <h3>Attendance of class <?php echo ($class_id);?></h3>
+                <h3>Asistencia de la clase <?php echo ($class_id);?></h3>
                 <p><?php echo $date.'-'.$month.'-'.$year;?></p>
             </div>
             <a href="#" id="update_attendance_button" onclick="return update_attendance()" 
                 class="btn btn-info">
-                    Update Attendance
+                    Actualizar Asistencia
             </a>
         </div>
 
@@ -115,9 +115,8 @@
             <thead>
                 <tr>
                     <td><?php echo ('Wave');?></td>
-                    <td><?php echo ('Level');?></td>
-                    <td><?php echo ('Name');?></td>
-                    <td><?php echo ('Status');?></td>
+                    <td><?php echo ('Nombre');?></td>
+                    <td><?php echo ('Estado');?></td>
                 </tr>
             </thead>
             <tbody>
@@ -126,9 +125,9 @@
                     $students   =   $this->db->get_where('student' , array('class_id'=>$class_id))->result_array();
                         foreach($students as $row):?>
                         <tr class="gradeA">
-                            <td><?php echo $row['wave'];?></td>
-                            <td><?php echo $row['level'];?></td>
-                            <td><?php echo $row['name'];?></td>
+                            <!-- <td><? date_default_timezone_set("America/El_Salvador"); echo date("d M Y",time());?></td> -->
+                            <td style="text-transform:capitalize;"><?php echo $row['wave'];?></td>
+                            <td style="text-transform:capitalize;"><?php echo $row['name']; echo '  '; echo $row['lastname'];?></td>
                             <?php 
                                 //inserting blank data for students attendance if unavailable
                                 $verify_data    =   array(  'student_id' => $row['student_id'],
@@ -143,22 +142,19 @@
                             ?>
                         <?php if ($status == 1):?>
                             <td align="center">
-                              <span class="badge badge-success"><?php echo ('Present');?></span>  
+                              <span class="badge badge-success"><?php echo ('Presente');?></span>  
                             </td>
                         <?php endif;?>
                         <?php if ($status == 2):?>
                             <td align="center">
-                              <span class="badge badge-danger"><?php echo ('Absent');?></span>  
+                              <span class="badge badge-danger"><?php echo ('Ausente');?></span>  
                             </td>
                         <?php endif;?>
-
                         <?php if ($status == 3):?>
                             <td align="center">
-                              <span class="badge badge-warning"><?php echo ('Justify');?></span>  
+                              <span style="color: #000; font-weight:bold;" class="badge badge-warning"><?php echo ('Justificado');?></span>  
                             </td>
                         <?php endif;?>
-                            <!-- esto se añadio para los justificados -->
-
                         <?php if ($status == 0):?>
                             <td></td>
                         <?php endif;?>
@@ -181,9 +177,9 @@
             <table  class="table table-bordered table-hover table-striped">
                 <thead>
                     <tr class="gradeA">
-                        <th><?php echo ('Roll');?></th>
-                        <th><?php echo ('Name');?></th>
-                        <th><?php echo ('Status');?></th>
+                        <th><?php echo ('Wave');?></th>
+                        <th><?php echo ('Nombre');?></th>
+                        <th><?php echo ('Estado');?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -196,8 +192,8 @@
                     {
                         ?>
                         <tr class="gradeA">
-                            <td><?php echo $row['roll'];?></td>
-                            <td><?php echo $row['name'];?></td>
+                            <td><?php echo $row['wave'];?></td>
+                            <td style="text-transform:capitalize;"><?php echo $row['name'];  echo '  '; echo $row['lastname'];?></td>
                             <td align="center">
                                 <?php 
                                 //inserting blank data for students attendance if unavailable
@@ -229,7 +225,7 @@
             </table>
             <input type="hidden" name="date" value="<?php echo $full_date;?>" />
             <center>
-                <input type="submit" class="btn btn-info" value="save changes">
+                <input type="submit" class="btn btn-info" value="Guardar Cambios">
             </center>
         </div>
     

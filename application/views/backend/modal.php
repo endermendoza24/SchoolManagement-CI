@@ -59,13 +59,13 @@
                 
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" style="text-align:center;">Are you sure to delete this information ?</h4>
+                    <h4 class="modal-title" style="text-align:center;">¿Estás seguro que deseas eliminar esta información? ?</h4>
                 </div>
                 
                 
                 <div class="modal-footer" style="margin:0px; border-top:0px; text-align:center;">
-                    <a href="#" class="btn btn-danger" id="delete_link"><?php echo ('Delete');?></a>
-                    <button type="button" class="btn btn-info" data-dismiss="modal"><?php echo ('Cancel');?></button>
+                    <a href="#" class="btn btn-danger" id="delete_link"><?php echo ('Eliminar');?></a>
+                    <button type="button" class="btn btn-info" data-dismiss="modal"><?php echo ('Cancelar');?></button>
                 </div>
             </div>
         </div>

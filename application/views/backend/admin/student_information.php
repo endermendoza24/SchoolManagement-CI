@@ -2,7 +2,7 @@
 <a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/student_add/');" 
     class="btn btn-primary pull-right">
         <i class="entypo-plus-circled"></i>
-        <?php echo ('Add New Student');?>
+        <?php echo ('Agregar nuevo estudiante');?>
     </a> 
 <br>
 
@@ -13,7 +13,7 @@
             <li class="active">
                 <a href="#home" data-toggle="tab">
                     <span class="visible-xs"><i class="entypo-users"></i></span>
-                    <span class="hidden-xs"><?php echo ('All Students');?></span>
+                    <span class="hidden-xs"><?php echo ('Estudiantes');?></span>
                 </a>
             </li>
         <?php 
@@ -62,7 +62,7 @@
                                 
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
-                                        Action <span class="caret"></span>
+                                        Accion <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu dropdown-default pull-right" role="menu">
                                         
@@ -78,7 +78,7 @@
                                         <li>
                                             <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_student_edit/<?php echo $row['student_id'];?>');">
                                                 <i class="entypo-pencil"></i>
-                                                    <?php echo ('Edit');?>
+                                                    <?php echo ('Editar');?>
                                                 </a>
                                         </li>
                                         <li class="divider"></li>
@@ -87,7 +87,7 @@
                                         <li>
                                             <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/student/<?php echo $class_id;?>/delete/<?php echo $row['student_id'];?>');">
                                                 <i class="entypo-trash"></i>
-                                                    <?php echo ('Delete');?>
+                                                    <?php echo ('Elimiar');?>
                                                 </a>
                                         </li>
                                     </ul>

@@ -92,7 +92,7 @@
                     <div class="num" data-start="0" data-end="<?php echo $this->db->count_all('parent');?>" 
                     		data-postfix="" data-duration="500" data-delay="0">0</div>
                     
-                    <h3><?php echo ('Padres');?></h3>
+                    <h3><?php echo ('Madres/Padres');?></h3>
                    
                 </div>
             </a>
@@ -128,7 +128,7 @@
              <a href="index.php?admin/expense">
              <div class="tile-stats tile-yellow">
                         <div class="icon"><i class="entypo-credit-card"></i></div>
-                        <div class="num" data-start="0" data-end="<?php $query = $this->db->query('SELECT SUM(amount)as total FROM payment WHERE payment_type = "expense"')->row(); echo floatval($query->total);?>" 
+                        <div class="num" data-start="0" data-end="<?php $query = $this->db->query('SELECT SUM(amount)as total FROM payment WHERE payment_type = "Salida"')->row(); echo floatval($query->total);?>" 
                                 data-postfix="" data-duration="500" data-delay="0">0</div>
                         
                         <h3><?php echo ('Gastos ');?></h3>

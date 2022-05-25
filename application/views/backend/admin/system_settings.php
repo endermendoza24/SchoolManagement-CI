@@ -9,14 +9,14 @@
             
                 <div class="panel-heading">
                     <div class="panel-title">
-                        <?php echo ('System Settings');?>
+                        <?php echo ('Configuración');?>
                     </div>
                 </div>
                 
                 <div class="panel-body">
                     
                   <div class="form-group">
-                      <label  class="col-sm-3 control-label"><?php echo ('System Name');?></label>
+                      <label  class="col-sm-3 control-label"><?php echo ('Nombre del sistema');?></label>
                       <div class="col-sm-9">
                           <input type="text" class="form-control" name="system_name" 
                               value="<?php echo $this->db->get_where('settings' , array('type' =>'system_name'))->row()->description;?>">
@@ -24,7 +24,7 @@
                   </div>
                     
                   <div class="form-group">
-                      <label  class="col-sm-3 control-label"><?php echo ('System Title');?></label>
+                      <label  class="col-sm-3 control-label"><?php echo ('Título del sistema');?></label>
                       <div class="col-sm-9">
                           <input type="text" class="form-control" name="system_title" 
                               value="<?php echo $this->db->get_where('settings' , array('type' =>'system_title'))->row()->description;?>">
@@ -32,7 +32,7 @@
                   </div>
                     
                   <div class="form-group">
-                      <label  class="col-sm-3 control-label"><?php echo ('Address');?></label>
+                      <label  class="col-sm-3 control-label"><?php echo ('Dirección');?></label>
                       <div class="col-sm-9">
                           <input type="text" class="form-control" name="address" 
                               value="<?php echo $this->db->get_where('settings' , array('type' =>'address'))->row()->description;?>">
@@ -40,7 +40,7 @@
                   </div>
                     
                   <div class="form-group">
-                      <label  class="col-sm-3 control-label"><?php echo ('Phone');?></label>
+                      <label  class="col-sm-3 control-label"><?php echo ('Número Teléfonico');?></label>
                       <div class="col-sm-9">
                           <input type="text" class="form-control" name="phone" 
                               value="<?php echo $this->db->get_where('settings' , array('type' =>'phone'))->row()->description;?>">
@@ -56,7 +56,7 @@
                   </div> -->
                     
                   <!-- <div class="form-group">
-                      <label  class="col-sm-3 control-label"><?php echo ('Currency');?></label>
+                      <label  class="col-sm-3 control-label"><?php echo ('Moneda');?></label>
                       <div class="col-sm-9">
                           <input type="text" class="form-control" name="currency" 
                               value="<?php echo $this->db->get_where('settings' , array('type' =>'currency'))->row()->description;?>">
@@ -64,7 +64,7 @@
                   </div> -->
                     
                   <div class="form-group">
-                      <label  class="col-sm-3 control-label"><?php echo ('System Email');?></label>
+                      <label  class="col-sm-3 control-label"><?php echo ('Email');?></label>
                       <div class="col-sm-9">
                           <input type="text" class="form-control" name="system_email" 
                               value="<?php echo $this->db->get_where('settings' , array('type' =>'system_email'))->row()->description;?>">
@@ -92,20 +92,20 @@
                       </div>
                   </div> -->
                     
-                  <div class="form-group">
-                      <label  class="col-sm-3 control-label"><?php echo ('Text align');?></label>
+                  <!-- <div class="form-group">
+                      <label  class="col-sm-3 control-label"><?php echo ('Alineamiento de Texto');?></label>
                       <div class="col-sm-9">
                           <select name="text_align" class="form-control">
                           	  <?php $text_align	=	$this->db->get_where('settings' , array('type'=>'text_align'))->row()->description;?>
-                              <option value="left-to-right" <?php if ($text_align == 'left-to-right')echo 'selected';?>> left-to-right</option>
-                              <option value="right-to-left" <?php if ($text_align == 'right-to-left')echo 'selected';?>> right-to-left</option>
+                              <option value="left-to-right" <?php if ($text_align == 'left-to-right')echo 'selected';?>> Izquierda-a-Derecha</option>
+                              <option value="right-to-left" <?php if ($text_align == 'right-to-left')echo 'selected';?>> Derecha-a-Izquierda</option>
                           </select>
                       </div>
-                  </div>
+                  </div> -->
                   
                   <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-9">
-                        <button type="submit" class="btn btn-info"><?php echo ('Save');?></button>
+                        <button type="submit" class="btn btn-info"><?php echo ('Guardar configuración');?></button>
                     </div>
                   </div>
                     
@@ -128,7 +128,7 @@
             
                 <div class="panel-heading">
                     <div class="panel-title">
-                        <?php echo ('Theme Settings');?>
+                        <?php echo ('Configuracion del Tema');?>
                     </div>
                 </div>
                 
@@ -145,7 +145,7 @@
                                 </a>
                                 <a href="#" class="album-options" id="default">
                                     <i class="entypo-check"></i>
-                                    <?php echo ('Default');?>
+                                    <?php echo ('Predeterminado');?>
                                 </a>
                             </header>
                         </article>
@@ -160,7 +160,7 @@
                                 </a>
                                 <a href="#" class="album-options" id="black">
                                     <i class="entypo-check"></i>
-                                    <?php echo ('Select Theme');?>
+                                    <?php echo ('Selecciona un Tema');?>
                                 </a>
                             </header>
                         </article>
@@ -174,7 +174,7 @@
                                 </a>
                                 <a href="#" class="album-options" id="blue">
                                     <i class="entypo-check"></i>
-                                    <?php echo ('Select Theme');?>
+                                    <?php echo ('Selecciona un Tema');?>
                                 </a>
                             </header>
                         </article>
@@ -188,7 +188,7 @@
                                 </a>
                                 <a href="#" class="album-options" id="cafe">
                                     <i class="entypo-check"></i>
-                                    <?php echo ('Select Theme');?>
+                                    <?php echo ('Selecciona un Tema');?>
                                 </a>
                             </header>
                         </article>
@@ -202,7 +202,7 @@
                                 </a>
                                 <a href="#" class="album-options" id="green">
                                     <i class="entypo-check"></i>
-                                    <?php echo ('Select Theme');?>
+                                    <?php echo ('Selecciona un Tema');?>
                                 </a>
                             </header>
                         </article>
@@ -216,7 +216,7 @@
                                 </a>
                                 <a href="#" class="album-options" id="purple">
                                     <i class="entypo-check"></i>
-                                    <?php echo ('Select Theme');?>
+                                    <?php echo ('Selecciona un Tema');?>
                                 </a>
                             </header>
                         </article>
@@ -230,7 +230,7 @@
                                 </a>
                                 <a href="#" class="album-options" id="red">
                                     <i class="entypo-check"></i>
-                                    <?php echo ('Select Theme');?>
+                                    <?php echo ('Selecciona un Tema');?>
                                 </a>
                             </header>
                         </article>
@@ -244,7 +244,7 @@
                                 </a>
                                 <a href="#" class="album-options" id="white">
                                     <i class="entypo-check"></i>
-                                    <?php echo ('Select Theme');?>
+                                    <?php echo ('Selecciona un Tema');?>
                                 </a>
                             </header>
                         </article>
@@ -258,7 +258,7 @@
                                 </a>
                                 <a href="#" class="album-options" id="yellow">
                                     <i class="entypo-check"></i>
-                                    <?php echo ('Select Theme');?>
+                                    <?php echo ('Selecciona un Tema');?>
                                 </a>
                             </header>
                         </article>
@@ -267,7 +267,7 @@
                 </div>
                 <center>
                   <div class="label label-primary" style="font-size: 12px;">
-                    <i class="entypo-check"></i> <?php echo ('Select a theme to make changes');?>
+                    <i class="entypo-check"></i> <?php echo ('Selecciona un Tema para guardar la configuracion');?>
                   </div>
                 </center>
                 </div>
@@ -281,7 +281,7 @@
               
                   <div class="panel-heading">
                       <div class="panel-title">
-                          <?php echo ('Upload logo');?>
+                          <?php echo ('Subir logo');?>
                       </div>
                   </div>
                   
@@ -289,7 +289,7 @@
                       
                     
                       <div class="form-group">
-                          <label for="field-1" class="col-sm-3 control-label"><?php echo ('Photo');?></label>
+                          <label for="field-1" class="col-sm-3 control-label"><?php echo ('Foto');?></label>
                           
                           <div class="col-sm-9">
                               <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -299,11 +299,11 @@
                                   <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px"></div>
                                   <div>
                                       <span class="btn btn-white btn-file">
-                                          <span class="fileinput-new">Select image</span>
-                                          <span class="fileinput-exists">Change</span>
+                                          <span class="fileinput-new">Seleccionar una imagne</span>
+                                          <span class="fileinput-exists">Cambiar</span>
                                           <input type="file" name="userfile" accept="image/*">
                                       </span>
-                                      <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                      <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Remover</a>
                                   </div>
                               </div>
                           </div>
@@ -312,7 +312,7 @@
                     
                     <div class="form-group">
                       <div class="col-sm-offset-3 col-sm-9">
-                          <button type="submit" class="btn btn-info"><?php echo ('Upload');?></button>
+                          <button type="submit" class="btn btn-info"><?php echo ('Subir');?></button>
                       </div>
                     </div>
                       

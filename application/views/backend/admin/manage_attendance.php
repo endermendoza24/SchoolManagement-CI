@@ -114,7 +114,7 @@
         <table class="table table-bordered table-hover table-striped">
             <thead>
                 <tr>
-                    <td><?php echo ('Día de matricula');?></td>
+                    <td><?php echo ('Wave');?></td>
                     <td><?php echo ('Nombre');?></td>
                     <td><?php echo ('Estado');?></td>
                 </tr>
@@ -141,17 +141,17 @@
                             ?>
                         <?php if ($status == 1):?>
                             <td align="center">
-                              <span class="badge badge-success"><?php echo ('Present');?></span>  
+                              <span class="badge badge-success"><?php echo ('Presente');?></span>  
                             </td>
                         <?php endif;?>
                         <?php if ($status == 2):?>
                             <td align="center">
-                              <span class="badge badge-danger"><?php echo ('Absent');?></span>  
+                              <span class="badge badge-danger"><?php echo ('Aunsente');?></span>  
                             </td>
                         <?php endif;?>
                         <?php if ($status == 3):?>
                             <td align="center">
-                              <span style="color: #000; font-weight:bold;" class="badge badge-warning"><?php echo ('Justify');?></span>  
+                              <span style="color: #000; font-weight:bold;" class="badge badge-warning"><?php echo ('Justificado');?></span>  
                             </td>
                         <?php endif;?>
                         <?php if ($status == 0):?>
@@ -210,9 +210,9 @@
                                 
                                     <select name="status_<?php echo $row['student_id'];?>" class="form-control" style="width:100px; float:left;">
                                         <option value="0" <?php if($status == 0)echo 'selected="selected"';?>></option>
-                                        <option value="1" <?php if($status == 1)echo 'selected="selected"';?>>Present</option>
-                                        <option value="2" <?php if($status == 2)echo 'selected="selected"';?>>Absent</option>
-                                        <option value="3" <?php if($status == 3)echo 'selected="selected"';?>>Justify</option>
+                                        <option value="1" <?php if($status == 1)echo 'selected="selected"';?>>Presente</option>
+                                        <option value="2" <?php if($status == 2)echo 'selected="selected"';?>>Ausente</option>
+                                        <option value="3" <?php if($status == 3)echo 'selected="selected"';?>>Justificado</option>
                                     </select>
                                 
                             </td>

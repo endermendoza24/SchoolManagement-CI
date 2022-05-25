@@ -5,11 +5,11 @@
 		<ul class="nav nav-tabs bordered">
 			<li class="active">
             	<a href="#list" data-toggle="tab"><i class="entypo-menu"></i> 
-					<?php echo ('Evaluation List');?>
+					<?php echo ('Lista de Evaluaciones');?>
                     	</a></li>
 			<li>
             	<a href="#add" data-toggle="tab"><i class="entypo-plus-circled"></i>
-					<?php echo ('Add evaluation');?>
+					<?php echo ('Agregar Evaluacion');?>
                     	</a></li>
 		</ul>
     	<!------CONTROL TABS END------>
@@ -19,10 +19,10 @@
                 <table  class="table table-bordered table-hover table-striped datatable" id="table_export">
                 	<thead>
                 		<tr>
-                    		<th><div><?php echo ('Evaluation Name');?></div></th>
-                    		<th><div><?php echo ('Date');?></div></th>
-                    		<th><div><?php echo ('Comment');?></div></th>
-                    		<th><div><?php echo ('Options');?></div></th>
+                    		<th><div><?php echo ('Nombre de Evaluacion');?></div></th>
+                    		<th><div><?php echo ('Fecha');?></div></th>
+                    		<th><div><?php echo ('Comentario');?></div></th>
+                    		<th><div><?php echo ('Opciones');?></div></th>
 						</tr>
 					</thead>
                     <tbody>
@@ -42,7 +42,7 @@
                                     <li>
                                         <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_edit_exam/<?php echo $row['exam_id'];?>');">
                                             <i class="entypo-pencil"></i>
-                                                <?php echo ('Edit');?>
+                                                <?php echo ('Editar');?>
                                             </a>
                                                     </li>
                                     <li class="divider"></li>
@@ -51,7 +51,7 @@
                                     <li>
                                         <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/exam/delete/<?php echo $row['exam_id'];?>');">
                                             <i class="entypo-trash"></i>
-                                                <?php echo ('Delete');?>
+                                                <?php echo ('Elimiar');?>
                                             </a>
                                                     </li>
                                 </ul>
@@ -71,26 +71,26 @@
                 	<?php echo form_open(base_url() . 'index.php?admin/exam/create' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                         
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Name');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Nombre');?></label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Value Required');?>"/>
+                                    <input type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Date');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Fecha');?></label>
                                 <div class="col-sm-5">
                                     <input type="text" class="datepicker form-control" name="date"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Comment');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Comentario');?></label>
                                 <div class="col-sm-5">
                                     <input type="text" class="form-control" name="comment"/>
                                 </div>
                             </div>
                         		<div class="form-group">
                               	<div class="col-sm-offset-3 col-sm-5">
-                                  <button type="submit" class="btn btn-info"><?php echo ('Add Exam');?></button>
+                                  <button type="submit" class="btn btn-info"><?php echo ('Agregar Evaluacion');?></button>
                               	</div>
 								</div>
                     </form>                

@@ -94,7 +94,7 @@ direccion -->
         <li class="<?php if ($page_name == 'class_routine') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/class_routine">
                 <i class="entypo-calendar"></i>
-                <span><?php echo ('Class Routine'); ?></span>
+                <span><?php echo ('Rutina de clases'); ?></span>
             </a>
         </li>
 
@@ -115,8 +115,8 @@ direccion -->
                         echo 'opened active';
         ?> ">
             <a href="#">
-                <i class="entypo-suitcase"></i>
-                <span><?php echo ('Sección contabilidad'); ?></span>
+                <i class="entypo-cc-nc"></i>
+                <span><?php echo ('Sección manejo de cuentas'); ?></span>
             </a>
             <ul>
                 <li class="<?php if ($page_name == 'income') echo 'active'; ?> ">
@@ -126,13 +126,13 @@ direccion -->
                 </li>
                 <li class="<?php if ($page_name == 'expense') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/expense">
-                        <span><i class="entypo-dot"></i> <?php echo ('Gastos'); ?></span>
+                        <span><i class="entypo-dot"></i> <?php echo ('Salidas'); ?></span>
                     </a>
                 </li>
 
                 <li class="<?php if ($page_name == 'contabilidad') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/contabilidad">
-                        <span><i class="entypo-dot"></i> <?php echo ('Contabilidad'); ?></span>
+                        <span><i class="entypo-dot"></i> <?php echo ('Cuentas'); ?></span>
                     </a>
                 </li>
 
@@ -148,7 +148,7 @@ direccion -->
          <li class="<?php if ($page_name == 'parent') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/parent">
                 <i class="entypo-user"></i>
-                <span><?php echo ('Padres'); ?></span>                
+                <span><?php echo ('Madres/Padres'); ?></span>                
             </a>
         </li>
 
@@ -317,7 +317,7 @@ direccion -->
         <!-- NOTICEBOARD -->
         <li class="<?php if ($page_name == 'noticeboard') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/noticeboard">
-                <i class="entypo-doc-text-inv"></i>
+                <i class="entypo-clock"></i>
                 <span><?php echo ('Eventos'); ?></span>
             </a>
         </li>
@@ -334,7 +334,7 @@ direccion -->
         
         <li class="<?php if ($page_name == 'settings') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/system_settings">
-                <i class="entypo-lifebuoy"></i>
+                <i class="entypo-cog"></i>
                 <span><?php echo ('Ajustes'); ?></span>
             </a>
         </li>
@@ -342,7 +342,7 @@ direccion -->
         <!-- ACCOUNT -->
         <li class="<?php if ($page_name == 'manage_profile') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/manage_profile">
-                <i class="entypo-lock"></i>
+                <i class="entypo-users"></i>
                 <span><?php echo ('Cuenta'); ?></span>
             </a>
         </li>

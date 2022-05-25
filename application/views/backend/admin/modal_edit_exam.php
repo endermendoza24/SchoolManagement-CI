@@ -8,7 +8,7 @@ foreach ( $edit_data as $row):
         	<div class="panel-heading">
             	<div class="panel-title" >
             		<i class="entypo-plus-circled"></i>
-					<?php echo ('Edit Student');?>
+					<?php echo ('Editar Evaluacion');?>
             	</div>
             </div>
 			<div class="panel-body">
@@ -16,26 +16,26 @@ foreach ( $edit_data as $row):
                 <?php echo form_open(base_url() . 'index.php?admin/exam/edit/do_update/'.$row['exam_id'] , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
             <div class="padded">
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Name');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Nombre');?></label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="name" value="<?php echo $row['name'];?>" data-validate="required" data-message-required="<?php echo ('Value Required');?>"/>
+                        <input type="text" class="form-control" name="name" value="<?php echo $row['name'];?>" data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Date');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Fecha');?></label>
                     <div class="col-sm-5">
                         <input type="text" class="datepicker form-control" name="date" value="<?php echo $row['date'];?>"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Comment');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Comentario');?></label>
                     <div class="col-sm-5">
                         <input type="text" class="form-control" name="comment" value="<?php echo $row['comment'];?>"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-5">
-                      <button type="submit" class="btn btn-info"><?php echo ('Edit_exam');?></button>
+                      <button type="submit" class="btn btn-info"><?php echo ('Editar Examen');?></button>
                     </div>
                 </div>
             </form>

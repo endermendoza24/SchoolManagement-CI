@@ -5,11 +5,11 @@
 		<ul class="nav nav-tabs bordered">
 			<li class="active">
             	<a href="#list" data-toggle="tab"><i class="entypo-menu"></i> 
-					<?php echo ('Book List');?>
+					<?php echo ('Lista de Libros');?>
                     	</a></li>
 			<li>
             	<a href="#add" data-toggle="tab"><i class="entypo-plus-circled"></i>
-					<?php echo ('Add Book');?>
+					<?php echo ('Agregar Libro');?>
                     	</a></li>
 		</ul>
     	<!------CONTROL TABS END------>
@@ -23,13 +23,13 @@
                 	<thead>
                 		<tr>
                     		<th><div>#</div></th>
-                    		<th><div><?php echo ('Book Name');?></div></th>
-                    		<th><div><?php echo ('Author');?></div></th>
-                    		<th><div><?php echo ('Description');?></div></th>
-                    		<th><div><?php echo ('Price');?></div></th>
-                    		<th><div><?php echo ('Class');?></div></th>
-                    		<th><div><?php echo ('Status');?></div></th>
-                    		<th><div><?php echo ('Options');?></div></th>
+                    		<th><div><?php echo ('Nombre del Libro');?></div></th>
+                    		<th><div><?php echo ('Autor');?></div></th>
+                    		<th><div><?php echo ('Descripcion');?></div></th>
+                    		<th><div><?php echo ('Precio');?></div></th>
+                    		<th><div><?php echo ('Clase');?></div></th>
+                    		<th><div><?php echo ('Estado');?></div></th>
+                    		<th><div><?php echo ('Opciones');?></div></th>
 						</tr>
 					</thead>
                     <tbody>
@@ -45,7 +45,7 @@
 							<td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
-                                    Action <span class="caret"></span>
+                                    Accion <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-default pull-right" role="menu">
                                     
@@ -53,7 +53,7 @@
                                     <li>
                                         <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_edit_book/<?php echo $row['book_id'];?>');">
                                             <i class="entypo-pencil"></i>
-                                                <?php echo ('Edit');?>
+                                                <?php echo ('Editar');?>
                                             </a>
                                                     </li>
                                     <li class="divider"></li>
@@ -62,7 +62,7 @@
                                     <li>
                                         <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/book/delete/<?php echo $row['book_id'];?>');">
                                             <i class="entypo-trash"></i>
-                                                <?php echo ('Delete');?>
+                                                <?php echo ('Eliminar');?>
                                             </a>
                                                     </li>
                                 </ul>
@@ -82,38 +82,38 @@
                 <div class="box-content">
                 	<?php echo form_open(base_url() . 'index.php?admin/book/create' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Name');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Nombre');?></label>
                                 <div class="col-sm-5">
-                                    <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="name"/>
+                                    <input data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>" type="text" class="form-control" name="name"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Author');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Autor');?></label>
                                 <div class="col-sm-5">
-                                    <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="author"/>
+                                    <input data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>" type="text" class="form-control" name="author"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Description');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Descripción');?></label>
                                 <div class="col-sm-5">
-                                    <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="description"/>
+                                    <input data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>" type="text" class="form-control" name="description"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Price');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Precio');?></label>
                                 <div class="col-sm-5">
-                                    <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="price"/>
+                                    <input data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>" type="text" class="form-control" name="price"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Class');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Clase');?></label>
                                 <div class="col-sm-5">
-                                    <select name="class_id" class="form-control" style="width:100%;">
+                                    <select name="class_id" class="form-control select2" style="width:100%;">
                                     	<?php 
 										$classes = $this->db->get('class')->result_array();
 										foreach($classes as $row):
 										?>
-                                    		<option value="<?php echo $row['class_id'];?>"><?php echo $row['name'];?></option>
+                                    		<option value="<?php echo $row['class_id'];?>"><?php echo 'Wave ' . $row['name'];?></option>
                                         <?php
 										endforeach;
 										?>
@@ -121,17 +121,17 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Status');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Estado');?></label>
                                 <div class="col-sm-5">
                                     <select name="status" class="form-control" style="width:100%;">
-                                    	<option value="available"><?php echo ('Available');?></option>
-                                    	<option value="unavailable"><?php echo ('unavailable');?></option>
+                                    	<option value="disponible"><?php echo ('Disponible');?></option>
+                                    	<option value="no disponible"><?php echo ('No Disponible');?></option>
                                     </select>
                                 </div>
                             </div>
                         		<div class="form-group">
                               <div class="col-sm-offset-3 col-sm-5">
-                                  <button type="submit" class="btn btn-info"><?php echo ('Add Book');?></button>
+                                  <button type="submit" class="btn btn-info"><?php echo ('Agregar Libro');?></button>
                               </div>
 								</div>
                     </form>                

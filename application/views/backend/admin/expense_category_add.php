@@ -4,7 +4,7 @@
         	<div class="panel-heading">
             	<div class="panel-title" >
             		<i class="entypo-plus-circled"></i>
-					<?php echo ('Add Expense Category');?>
+					<?php echo ('Agregar Categoria de gastos');?>
             	</div>
             </div>
 			<div class="panel-body">
@@ -12,16 +12,16 @@
                 <?php echo form_open(base_url() . 'index.php?admin/expense_category/create/' , array('class' => 'form-horizontal form-groups-bordered validate', 'enctype' => 'multipart/form-data'));?>
 	
 					<div class="form-group">
-						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Name');?></label>
+						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Nombre');?></label>
                         
 						<div class="col-sm-6">
-							<input type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="" autofocus>
+							<input type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>" value="" autofocus>
 						</div>
 					</div>
                     
                     <div class="form-group">
 						<div class="col-sm-offset-3 col-sm-5">
-							<button type="submit" class="btn btn-info"><?php echo ('Add Expense Category');?></button>
+							<button type="submit" class="btn btn-info"><?php echo ('Agregar categoria de pago');?></button>
 						</div>
 					</div>
                 <?php echo form_close();?>

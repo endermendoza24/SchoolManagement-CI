@@ -5,11 +5,11 @@
 		<ul class="nav nav-tabs bordered">
 			<li class="active">
             	<a href="#list" data-toggle="tab"><i class="entypo-menu"></i> 
-					<?php echo ('Subject list');?>
+					<?php echo ('Lista de Temas');?>
                     	</a></li>
 			<li>
             	<a href="#add" data-toggle="tab"><i class="entypo-plus-circled"></i>
-					<?php echo ('Add Subject');?>
+					<?php echo ('Agregar Tema');?>
                     	</a></li>
 		</ul>
     	<!------CONTROL TABS END------>
@@ -20,10 +20,10 @@
                 <table class="table table-bordered table-hover table-striped datatable" id="table_export">
                 	<thead>
                 		<tr>
-                    		<th><div><?php echo ('Class');?></div></th>
-                    		<th><div><?php echo ('Subject Name');?></div></th>
-                    		<th><div><?php echo ('Teacher');?></div></th>
-                    		<th><div><?php echo ('Options');?></div></th>
+                    		<th><div><?php echo ('Wave');?></div></th>
+                    		<th><div><?php echo ('Nombre del Tema');?></div></th>
+                    		<th><div><?php echo ('Profesor');?></div></th>
+                    		<th><div><?php echo ('Opciones');?></div></th>
 						</tr>
 					</thead>
                     <tbody>
@@ -35,7 +35,7 @@
 							<td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
-                                    Action <span class="caret"></span>
+                                    Accion <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-default pull-right" role="menu">
                                     
@@ -43,7 +43,7 @@
                                     <li>
                                         <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_edit_subject/<?php echo $row['subject_id'];?>');">
                                             <i class="entypo-pencil"></i>
-                                                <?php echo ('Edit');?>
+                                                <?php echo ('Editar');?>
                                             </a>
                                                     </li>
                                     <li class="divider"></li>
@@ -52,7 +52,7 @@
                                     <li>
                                         <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/subject/delete/<?php echo $row['subject_id'];?>/<?php echo $class_id;?>');">
                                             <i class="entypo-trash"></i>
-                                                <?php echo ('Delete');?>
+                                                <?php echo ('Eliminar');?>
                                             </a>
                                                     </li>
                                 </ul>
@@ -72,13 +72,13 @@
                 	<?php echo form_open(base_url() . 'index.php?admin/subject/create' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                         <div class="padded">
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Name');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Nombre');?></label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Value Required');?>"/>
+                                    <input type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Class');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Clase');?></label>
                                 <div class="col-sm-5">
                                     <select name="class_id" class="form-control" style="width:100%;">
                                     	<?php 
@@ -93,7 +93,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Teacher');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Profesor');?></label>
                                 <div class="col-sm-5">
                                     <select name="teacher_id" class="form-control" style="width:100%;">
                                     	<?php 
@@ -110,7 +110,7 @@
                         </div>
                         <div class="form-group">
                               <div class="col-sm-offset-3 col-sm-5">
-                                  <button type="submit" class="btn btn-info"><?php echo ('Add Subject');?></button>
+                                  <button type="submit" class="btn btn-info"><?php echo ('Agegar Tema');?></button>
                               </div>
 						   </div>
                     </form>                

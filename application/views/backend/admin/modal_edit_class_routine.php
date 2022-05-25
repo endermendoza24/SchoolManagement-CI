@@ -6,7 +6,7 @@ $edit_data		=	$this->db->get_where('class_routine' , array('class_routine_id' =>
         <?php foreach($edit_data as $row):?>
         <?php echo form_open(base_url() . 'index.php?admin/class_routine/do_update/'.$row['class_routine_id'] , array('class' => 'form-horizontal validatable','target'=>'_top'));?>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Class');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Wave');?></label>
                     <div class="col-sm-5">
                         <select name="class_id" class="form-control">
                             <?php 
@@ -22,7 +22,7 @@ $edit_data		=	$this->db->get_where('class_routine' , array('class_routine_id' =>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Subject');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Tema');?></label>
                     <div class="col-sm-5">
                         <select name="subject_id" class="form-control">
                             <?php 
@@ -38,21 +38,21 @@ $edit_data		=	$this->db->get_where('class_routine' , array('class_routine_id' =>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Day');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Dia');?></label>
                     <div class="col-sm-5">
                         <select name="day" class="form-control">
-                            <option value="Saturday" 	<?php if($row['day']=='Saturday')echo 'selected="selected"';?>>Saturday</option>
-                            <option value="Sunday" 		<?php if($row['day']=='Sunday')echo 'selected="selected"';?>>Sunday</option>
-                            <option value="Monday" 		<?php if($row['day']=='Monday')echo 'selected="selected"';?>>Monday</option>
-                            <option value="Tuesday" 	<?php if($row['day']=='Tuesday')echo 'selected="selected"';?>>Tuesday</option>
-                            <option value="Wednesday" 	<?php if($row['day']=='Wednesday')echo 'selected="selected"';?>>Wednesday</option>
-                            <option value="Thursday" 	<?php if($row['day']=='Thursday')echo 'selected="selected"';?>>Thursday</option>
-                            <option value="Friday" 		<?php if($row['day']=='Friday')echo 'selected="selected"';?>>Friday</option>
+                            <option value="Sabado" 	<?php if($row['day']=='Sabado')echo 'selected="selected"';?>>Sabado</option>
+                            <option value="Domingo" 		<?php if($row['day']=='Domingo')echo 'selected="selected"';?>>Domingo</option>
+                            <option value="Lunes" 		<?php if($row['day']=='Lunes')echo 'selected="selected"';?>>Lunes</option>
+                            <option value="Martes" 	<?php if($row['day']=='Martes')echo 'selected="selected"';?>>Martes</option>
+                            <option value="Miercoles" 	<?php if($row['day']=='Miercoles')echo 'selected="selected"';?>>Miercoles</option>
+                            <option value="Jueves" 	<?php if($row['day']=='Jueves')echo 'selected="selected"';?>>Jueves</option>
+                            <option value="Viernes" 		<?php if($row['day']=='Viernes')echo 'selected="selected"';?>>Viernes</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Starting Time');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Hora Inicial');?></label>
                     <div class="col-sm-5">
                         <?php 
                             if($row['time_start'] < 13)
@@ -80,7 +80,7 @@ $edit_data		=	$this->db->get_where('class_routine' , array('class_routine_id' =>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Ending Time');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Hora Final');?></label>
                     <div class="col-sm-5">
                         
                         
@@ -111,7 +111,7 @@ $edit_data		=	$this->db->get_where('class_routine' , array('class_routine_id' =>
                 </div>
                 <div class="form-group">
                   <div class="col-sm-offset-3 col-sm-5">
-                      <button type="submit" class="btn btn-info"><?php echo ('Edit Class Routine');?></button>
+                      <button type="submit" class="btn btn-info"><?php echo ('Editar rutina de Clase');?></button>
                   </div>
                 </div>
         </form>

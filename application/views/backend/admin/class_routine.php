@@ -5,11 +5,11 @@
 		<ul class="nav nav-tabs bordered">
 			<li class="active">
             	<a href="#list" data-toggle="tab"><i class="entypo-menu"></i> 
-					<?php echo ('Class Routine List');?>
+					<?php echo ('Rutina de Clases');?>
                     	</a></li>
 			<li>
             	<a href="#add" data-toggle="tab"><i class="entypo-plus-circled"></i>
-					<?php echo ('Add Class Routine');?>
+					<?php echo ('Agregar rutina');?>
                     	</a></li>
 		</ul>
     	<!------CONTROL TABS END------>
@@ -42,13 +42,13 @@
                                                 <?php 
                                                 for($d=1;$d<=7;$d++):
                                                 
-                                                if($d==1)$day='sunday';
-                                                else if($d==2)$day='monday';
-                                                else if($d==3)$day='tuesday';
-                                                else if($d==4)$day='wednesday';
-                                                else if($d==5)$day='thursday';
-                                                else if($d==6)$day='friday';
-                                                else if($d==7)$day='saturday';
+                                                if($d==1)$day='Domingo';
+                                                else if($d==2)$day='Lunes';
+                                                else if($d==3)$day='Martes';
+                                                else if($d==4)$day='Miercoles';
+                                                else if($d==5)$day='Jueves';
+                                                else if($d==6)$day='Viernes';
+                                                else if($d==7)$day='Sabado';
                                                 ?>
                                                 <tr class="gradeA">
                                                     <td width="100"><?php echo strtoupper($day);?></td>
@@ -70,14 +70,14 @@
 																<li>
                                                                 <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_edit_class_routine/<?php echo $row2['class_routine_id'];?>');">
                                                                     <i class="entypo-pencil"></i>
-                                                                        <?php echo ('Edit');?>
+                                                                        <?php echo ('Editar');?>
                                                                     			</a>
                                                          </li>
                                                          
                                                          <li>
                                                             <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/class_routine/delete/<?php echo $row2['class_routine_id'];?>');">
                                                                 <i class="entypo-trash"></i>
-                                                                    <?php echo ('Delete');?>
+                                                                    <?php echo ('Eliminar');?>
                                                                 </a>
                                                     		</li>
 															</ul>
@@ -107,11 +107,11 @@
                 <div class="box-content">
                 	<?php echo form_open(base_url() . 'index.php?admin/class_routine/create' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Class');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Wave');?></label>
                                 <div class="col-sm-5">
                                     <select name="class_id" class="form-control" style="width:100%;"
                                         onchange="return get_class_subject(this.value)">
-                                        <option value=""><?php echo ('Select Class');?></option>
+                                        <option value=""><?php echo ('Seleccionar una Wave');?></option>
                                     	<?php 
 										$classes = $this->db->get('class')->result_array();
 										foreach($classes as $row):
@@ -124,30 +124,30 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Subject');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Tema');?></label>
                                 <div class="col-sm-5">
                                     <select name="subject_id" class="form-control" style="width:100%;" id="subject_selection_holder">
-                                        <option value=""><?php echo ('Select Class First');?></option>
+                                        <option value=""><?php echo ('Selecciona primero una Wave');?></option>
                                     	
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Day');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Dia');?></label>
                                 <div class="col-sm-5">
                                     <select name="day" class="form-control" style="width:100%;">
-                                        <option value="sunday">sunday</option>
-                                        <option value="monday">monday</option>
-                                        <option value="tuesday">tuesday</option>
-                                        <option value="wednesday">wednesday</option>
-                                        <option value="thursday">thursday</option>
-                                        <option value="friday">friday</option>
-                                        <option value="saturday">saturday</option>
+                                        <option value="domingo">domingo</option>
+                                        <option value="lunes">lunes</option>
+                                        <option value="martes">martes</option>
+                                        <option value="miercoles">miercoles</option>
+                                        <option value="jueves">jueves</option>
+                                        <option value="viernes">viernes</option>
+                                        <option value="sabado">sabado</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Starting Time');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Hora Inicial');?></label>
                                 <div class="col-sm-5">
                                     <select name="time_start" class="form-control" style="width:100%;">
 										<?php for($i = 0; $i <= 12 ; $i++):?>
@@ -161,7 +161,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Ending Time');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Hora Final');?></label>
                                 <div class="col-sm-5">
                                     <select name="time_end" class="form-control" style="width:100%;">
 										<?php for($i = 0; $i <= 12 ; $i++):?>
@@ -176,7 +176,7 @@
                             </div>
                         <div class="form-group">
                               <div class="col-sm-offset-3 col-sm-5">
-                                  <button type="submit" class="btn btn-info"><?php echo ('Add Class Routine');?></button>
+                                  <button type="submit" class="btn btn-info"><?php echo ('Agregar rutina de Clases');?></button>
                               </div>
 							</div>
                     </form>                

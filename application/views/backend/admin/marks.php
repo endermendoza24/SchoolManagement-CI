@@ -18,7 +18,7 @@
                 <table border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-hover table-striped">
                 	<tr>
                         <td><?php echo ('Seleccionar evaluación');?></td>
-                        <td><?php echo ('Seleccionar Wave');?></td>
+                        <td><?php echo ('Seleccionar clase');?></td>
                         <td><?php echo ('Seleccionar materia');?></td>
                         <td>&nbsp;</td>
                 	</tr>
@@ -81,7 +81,7 @@
                             
                             <select name="temp" id="subject_id_0" 
                               style="display:<?php if(isset($subject_id) && $subject_id >0)echo 'none';else echo 'block';?>;" class="form-control" style="float:left;">
-                                    <option value="">Select a class first</option>
+                                    <option value="">Select a wave first</option>
                             </select>
                         </td>
                         <td>

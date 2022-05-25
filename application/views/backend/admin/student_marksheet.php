@@ -8,7 +8,7 @@
             <li class="active">
                 <a href="#home" data-toggle="tab">
                     <span class="visible-xs"><i class="entypo-users"></i></span>
-                    <span class="hidden-xs"><?php echo ('All Students');?></span>
+                    <span class="hidden-xs"><?php echo ('Estudiantes');?></span>
                 </a>
             </li>
         <?php 
@@ -20,7 +20,7 @@
             <li>
                 <a href="#<?php echo $row['section_id'];?>" data-toggle="tab">
                     <span class="visible-xs"><i class="entypo-user"></i></span>
-                    <span class="hidden-xs"><?php echo ('Section');?> <?php echo $row['name'];?> ( <?php echo $row['nick_name'];?> )</span>
+                    <span class="hidden-xs"><?php echo ('Seccion');?> <?php echo $row['name'];?> ( <?php echo $row['nick_name'];?> )</span>
                 </a>
             </li>
         <?php endforeach;?>
@@ -33,10 +33,10 @@
                 <table class="table table-bordered table-hover table-striped datatable" id="table_export">
                     <thead>
                         <tr>
-                            <th><div><?php echo ('Admit date');?></div></th>
-                            <th><div><?php echo ('Photo');?></div></th>
-                            <th><div><?php echo ('Name');?></div></th>
-                            <th><div><?php echo ('Options');?></div></th>
+                            <th><div><?php echo ('Fecha de Admision');?></div></th>
+                            <th><div><?php echo ('Foto');?></div></th>
+                            <th><div><?php echo ('Nombre');?></div></th>
+                            <th><div><?php echo ('Opcciones');?></div></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,7 +50,7 @@
                             <td>
                                 <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_student_marksheet/<?php echo $row['student_id'];?>');" class="btn btn-default" >
                                       <i class="entypo-chart-bar"></i>
-                                          <?php echo ('View Marksheet');?>
+                                          <?php echo ('Vier Notas');?>
                                       </a>
                                 
                                 
@@ -72,10 +72,10 @@
                 <table class="table table-bordered table-hover table-striped">
                     <thead>
                         <tr>
-                            <th><div><?php echo ('Admit date');?></div></th>
-                            <th><div><?php echo ('Photo');?></div></th>
-                            <th><div><?php echo ('Name');?></div></th>
-                            <th><div><?php echo ('Options');?></div></th>
+                            <th><div><?php echo ('Fecha de Admision');?></div></th>
+                            <th><div><?php echo ('Foto');?></div></th>
+                            <th><div><?php echo ('Nombre');?></div></th>
+                            <th><div><?php echo ('Opciones');?></div></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -91,7 +91,7 @@
                             <td>
                                 <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_student_marksheet/<?php echo $row['student_id'];?>');" class="btn btn-default" >
                                       <i class="entypo-chart-bar"></i>
-                                          <?php echo ('View Marksheet');?>
+                                          <?php echo ('Vier Notas');?>
                                       </a>
                             </td>
                         </tr>

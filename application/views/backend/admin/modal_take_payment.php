@@ -15,9 +15,9 @@ foreach ($edit_data as $row):
                 	<thead>
                 		<tr>
                 			<td>#</td>
-                			<td><?php echo ('Amount');?></td>
-                			<td><?php echo ('Method');?></td>
-                			<td><?php echo ('Date');?></td>
+                			<td><?php echo ('Monto');?></td>
+                			<td><?php echo ('Metodo');?></td>
+                			<td><?php echo ('Fecha');?></td>
                 		</tr>
                 	</thead>
                 	<tbody>
@@ -58,43 +58,43 @@ foreach ($edit_data as $row):
 	<div class="col-md-12">
 		<div class="panel panel-default panel-shadow" data-collapsed="0">
 			<div class="panel-heading">
-                <div class="panel-title"><?php echo ('Take Payment');?></div>
+                <div class="panel-title"><?php echo ('Tomar Pago');?></div>
             </div>
             <div class="panel-body">
 				<?php echo form_open(base_url() . 'index.php?admin/invoice/take_payment/'.$row['invoice_id'], array(
 					'class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
 
 					<div class="form-group">
-		                <label class="col-sm-3 control-label"><?php echo ('Total Amount');?></label>
+		                <label class="col-sm-3 control-label"><?php echo ('Monto Total');?></label>
 		                <div class="col-sm-6">
 		                    <input type="text" class="form-control" value="<?php echo $row['amount'];?>" readonly/>
 		                </div>
 		            </div>
 
 		            <div class="form-group">
-		                <label class="col-sm-3 control-label"><?php echo ('Amount Paid');?></label>
+		                <label class="col-sm-3 control-label"><?php echo ('Monto Pagado');?></label>
 		                <div class="col-sm-6">
 		                    <input type="text" class="form-control" name="amount_paid" value="<?php echo $row['amount_paid'];?>" readonly/>
 		                </div>
 		            </div>
 
 		            <div class="form-group">
-		                <label class="col-sm-3 control-label"><?php echo ('Due');?></label>
+		                <label class="col-sm-3 control-label"><?php echo ('Deuda');?></label>
 		                <div class="col-sm-6">
 		                    <input type="text" class="form-control" value="<?php echo $row['due'];?>" readonly/>
 		                </div>
 		            </div>
 
 		            <div class="form-group">
-		                <label class="col-sm-3 control-label"><?php echo ('Payment');?></label>
+		                <label class="col-sm-3 control-label"><?php echo ('Pago');?></label>
 		                <div class="col-sm-6">
 		                    <input type="text" class="form-control" name="amount" value=""
-		                    	placeholder="<?php echo ('Enter Payment Amount');?>"/>
+		                    	placeholder="<?php echo ('Introduce el Pago');?>"/>
 		                </div>
 		            </div>
 
 		            <div class="form-group">
-                        <label class="col-sm-3 control-label"><?php echo ('Method');?></label>
+                        <label class="col-sm-3 control-label"><?php echo ('Metodo');?></label>
                         <div class="col-sm-6">
                             <select name="method" class="form-control">
                                 <option value="1"><?php echo ('Cash');?></option>
@@ -105,7 +105,7 @@ foreach ($edit_data as $row):
                     </div>
 
                     <div class="form-group">
-	                    <label class="col-sm-3 control-label"><?php echo ('Date');?></label>
+	                    <label class="col-sm-3 control-label"><?php echo ('Fecha');?></label>
 	                    <div class="col-sm-6">
 	                        <input type="text" class="datepicker form-control" name="timestamp" 
 	                            value=""/>
@@ -119,7 +119,7 @@ foreach ($edit_data as $row):
 
 		            <div class="form-group">
 		                <div class="col-sm-5">
-		                    <button type="submit" class="btn btn-info"><?php echo ('Take Payment');?></button>
+		                    <button type="submit" class="btn btn-info"><?php echo ('Tomar Pago');?></button>
 		                </div>
 		            </div>
 

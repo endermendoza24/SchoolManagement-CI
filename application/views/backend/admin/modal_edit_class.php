@@ -8,26 +8,26 @@ foreach ( $edit_data as $row):
         	<div class="panel-heading">
             	<div class="panel-title" >
             		<i class="entypo-plus-circled"></i>
-					<?php echo ('Edit Student');?>
+					<?php echo ('Editar Wave');?>
             	</div>
             </div>
 			<div class="panel-body">
 				
                 <?php echo form_open(base_url() . 'index.php?admin/classes/do_update/'.$row['class_id'] , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label"><?php echo ('Name');?></label>
+                        <label class="col-sm-3 control-label"><?php echo ('Nombre');?></label>
                         <div class="col-sm-5">
                             <input type="text" class="form-control" name="name" value="<?php echo $row['name'];?>"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label"><?php echo ('Numeric Name');?></label>
+                        <label class="col-sm-3 control-label"><?php echo ('Nombre Numerico');?></label>
                         <div class="col-sm-5">
                             <input type="text" class="form-control" name="name_numeric" value="<?php echo $row['name_numeric'];?>"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label"><?php echo ('Teacher');?></label>
+                        <label class="col-sm-3 control-label"><?php echo ('Profesor');?></label>
                         <div class="col-sm-5">
                             <select name="teacher_id" class="form-control">
                                 <option value=""></option>
@@ -47,7 +47,7 @@ foreach ( $edit_data as $row):
                     </div>
             		<div class="form-group">
 						<div class="col-sm-offset-3 col-sm-5">
-							<button type="submit" class="btn btn-info"><?php echo ('Edit Class');?></button>
+							<button type="submit" class="btn btn-info"><?php echo ('Editar Wave');?></button>
 						</div>
 					</div>
         		</form>

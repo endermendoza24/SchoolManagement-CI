@@ -77,7 +77,7 @@
                 <div class="box-content">
                 	<?php echo form_open(base_url() . 'index.php?admin/grade/create' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Name');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Nombre');?></label>
                                 <div class="col-sm-5 controls">
                                     <input type="text" class="form-control" name="name"/>
                                 </div>
@@ -108,7 +108,7 @@
                             </div>
                             <div class="form-group">
                               <div class="col-sm-offset-3 col-sm-5">
-                                  <button type="submit" class="btn btn-info"><?php echo ('Add Grade');?></button>
+                                  <button type="submit" class="btn btn-info"><?php echo ('Agregar Grade');?></button>
                               </div>
 								</div>
                     </form>                

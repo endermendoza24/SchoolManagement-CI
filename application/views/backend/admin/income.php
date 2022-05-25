@@ -23,12 +23,12 @@
     <thead>
         <tr>
             <th><div>#</div></th>
-            <th><div><?php echo ('Title');?></div></th>
-            <th><div><?php echo ('Description');?></div></th>
-            <th><div><?php echo ('Method');?></div></th>
+            <th><div><?php echo ('Titulo');?></div></th>
+            <th><div><?php echo ('Descripcion');?></div></th>
+            <th><div><?php echo ('Metodo');?></div></th>
 			<th><div><?php echo ('Corte');?></div></th>
-            <th><div><?php echo ('Amount');?></div></th>
-            <th><div><?php echo ('Date');?></div></th>
+            <th><div><?php echo ('Monto');?></div></th>
+            <th><div><?php echo ('Dia');?></div></th>
         </tr>
     </thead>
     <tbody>

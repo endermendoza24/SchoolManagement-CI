@@ -45,11 +45,11 @@ foreach ($student_info as $row1):
                                 <table class="table table-bordered table-hover table-striped " >
                                     <thead>
                                         <tr>
-                                            <th>Subject</th>
-                                            <th>Obtained marks</th>
-                                            <th>Highest mark</th>
+                                            <th>Tema</th>
+                                            <th>Puntaje Obtenido</th>
+                                            <th>Puntaje mas Alto</th>
                                             <th>Grade</th>
-                                            <th>Comment</th>
+                                            <th>Comentario</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -104,7 +104,7 @@ foreach ($student_info as $row1):
                                     </tbody>
                                 </table>
                                 <hr />
-                                Total Marks : <?php echo $total_marks; ?>
+                                Nota Total : <?php echo $total_marks; ?>
                                 <hr />
                                 GPA(grade point average) : <?php echo round($total_marks / $total_subjects, 2); ?>
                                 <div id="chartdiv"></div>

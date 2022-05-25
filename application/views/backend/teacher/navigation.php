@@ -47,18 +47,18 @@
         ?> ">
             <a href="#">
                 <i class="fa fa-group"></i>
-                <span><?php echo ('Student'); ?></span>
+                <span><?php echo ('Seccion de Estudiantes'); ?></span>
             </a>
             <ul>
                 <!-- STUDENT ADMISSION -->
-                <li class="<?php if ($page_name == 'student_add') echo 'active'; ?> ">
+                <!-- <li class="<?php if ($page_name == 'student_add') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/student_add">
                         <span><i class="entypo-dot"></i> <?php echo ('Admit Student'); ?></span>
                     </a>
-                </li>
+                </li> -->
 
                 <!-- STUDENT INFORMATION -->
-                <li class="<?php if ($page_name == 'student_information') echo 'opened active'; ?> ">
+                <!-- <li class="<?php if ($page_name == 'student_information') echo 'opened active'; ?> ">
                     <a href="#">
                         <span><i class="entypo-dot"></i> <?php echo ('Student Information'); ?></span>
                     </a>
@@ -73,12 +73,12 @@ foreach ($classes as $row):
                             </li>
 <?php endforeach; ?>
                     </ul>
-                </li>
+                </li> -->
 
                 <!-- STUDENT MARKSHEET -->
                 <li class="<?php if ($page_name == 'student_marksheet') echo 'opened active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/student_marksheet/<?php echo $row['class_id']; ?>">
-                        <span><i class="entypo-dot"></i> <?php echo ('Student Marksheet'); ?></span>
+                        <span><i class="entypo-dot"></i> <?php echo ('Calificaciones estudiantes'); ?></span>
                     </a>
                     <ul>
 <?php $classes = $this->db->get('class')->result_array();
@@ -96,12 +96,12 @@ foreach ($classes as $row):
         </li>
 
         <!-- TEACHER -->
-        <li class="<?php if ($page_name == 'teacher') echo 'active'; ?> ">
+        <!-- <li class="<?php if ($page_name == 'teacher') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/teacher_list">
                 <i class="entypo-users"></i>
                 <span><?php echo ('Teacher'); ?></span>
             </a>
-        </li>
+        </li> -->
 
 
 
@@ -109,7 +109,7 @@ foreach ($classes as $row):
         <li class="<?php if ($page_name == 'subject') echo 'opened active'; ?> ">
             <a href="#">
                 <i class="entypo-docs"></i>
-                <span><?php echo ('Subject'); ?></span>
+                <span><?php echo ('Unidades'); ?></span>
             </a>
             <ul>
             <?php $classes = $this->db->get('class')->result_array();
@@ -128,7 +128,7 @@ foreach ($classes as $row):
         <li class="<?php if ($page_name == 'class_routine') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/class_routine">
                 <i class="entypo-target"></i>
-                <span><?php echo ('Class Routine'); ?></span>
+                <span><?php echo ('Rutina de clase'); ?></span>
             </a>
         </li>
         
@@ -144,7 +144,7 @@ foreach ($classes as $row):
         <li class="<?php if ($page_name == 'manage_attendance') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/manage_attendance/<?php echo date("d/m/Y"); ?>">
                 <i class="entypo-chart-area"></i>
-                <span><?php echo ('Daily Attendance'); ?></span>
+                <span><?php echo ('Asistencia Diaria'); ?></span>
             </a>
 
         </li>
@@ -158,13 +158,13 @@ if ($page_name == 'exam' ||
 ?> ">
             <a href="#">
                 <i class="entypo-graduation-cap"></i>
-                <span><?php echo ('Exam'); ?></span>
+                <span><?php echo ('Seccion de calificaciones'); ?></span>
             </a>
             <ul>
 
                 <li class="<?php if ($page_name == 'marks') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/marks">
-                        <span><i class="entypo-dot"></i> <?php echo ('Manage Marks'); ?></span>
+                        <span><i class="entypo-dot"></i> <?php echo ('Administrar calificaciones'); ?></span>
                     </a>
                 </li>
             </ul>
@@ -172,12 +172,12 @@ if ($page_name == 'exam' ||
 
 
         <!-- LIBRARY -->
-        <li class="<?php if ($page_name == 'book') echo 'active'; ?> ">
+        <!-- <li class="<?php if ($page_name == 'book') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/book">
                 <i class="entypo-book"></i>
                 <span><?php echo ('Library'); ?></span>
             </a>
-        </li>
+        </li> -->
 
         <!-- TRANSPORT -->
         <!-- <li class="<?php if ($page_name == 'transport') echo 'active'; ?> ">
@@ -207,7 +207,7 @@ if ($page_name == 'exam' ||
         <li class="<?php if ($page_name == 'manage_profile') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/manage_profile">
                 <i class="entypo-lock"></i>
-                <span><?php echo ('Account'); ?></span>
+                <span><?php echo ('Cuenta'); ?></span>
             </a>
         </li>
 

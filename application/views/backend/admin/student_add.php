@@ -4,7 +4,7 @@
         	<div class="panel-heading">
             	<div class="panel-title" >
             		<i class="entypo-plus-circled"></i>
-					<?php echo ('Addmission Form');?>
+					<?php echo ('Formulario de matrícula');?>
             	</div>
             </div>
 			<div class="panel-body">
@@ -20,7 +20,7 @@
 						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label"><?php echo ('Nombres');?></label>
 							<div class="col-sm-8">
 							
-								<input placeholder="Eg. Juan" style="text-transform:capitalize;" type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="" autofocus>
+								<input placeholder="Ej. Juan" style="text-transform:capitalize;" type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="" autofocus>
 							</div>						
 							
 						</div>
@@ -30,7 +30,7 @@
 							
 							<div class="col-sm-8">
 								
-							<input placeholder="Eg. Diaz" style="text-transform:capitalize;" type="text" class="form-control" name="lastname" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="" autofocus>
+							<input placeholder="Ej. Diaz" style="text-transform:capitalize;" type="text" class="form-control" name="lastname" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="" autofocus>
 							</div>
 						</div>
 	
@@ -39,7 +39,7 @@
 						
 						<label style="color:#000; font-weight:bold;" for="identdocument" class="col-sm-3 control-label">Documento de identidad</label>							
 							<div class="col-sm-8">								
-							<input  placeholder="00-000000-0000A" style="text-transform:uppercase;" maxlength="20" id="identdocument" type="text" class="form-control" name="identdocument" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="" autofocus>		
+							<input  placeholder="000-000000-0000A" style="text-transform:uppercase;" maxlength="20" id="identdocument" type="text" class="form-control" name="identdocument" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="" autofocus>		
 							</div>						
 						</div>
 
@@ -69,7 +69,7 @@
 							
 							<div class="col-sm-8">
 								
-							<input placeholder="Nicaraguan" style="text-transform:capitalize;" maxlength="20" id="nationality" type="text" class="form-control" name="nationality" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="" autofocus>
+							<input placeholder="Nicaragüense" style="text-transform:capitalize;" maxlength="20" id="nationality" type="text" class="form-control" name="nationality" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="" autofocus>
 							<div class="valid-feedback">
 			
 							</div>
@@ -92,20 +92,20 @@
 						<h4 style="text-align:center; font-weight:bold; font-size:1.5rem; color:#000; padding:1.2rem">Sección acádemica</h4>
 					<div class="col-md-6 mb-3">
 						
-					<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Class');?></label>
+					<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Clase');?></label>
                         
 						<div class="col-sm-8">
-							<select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="class_id" class="form-control" data-validate="" id="class_id" 
-								data-message-required="<?php echo ('Value ');?>"
+							<select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="class_id" class="form-control select2" data-validate="" id="class_id" 
+								data-message-required="<?php echo ('Valor ');?>"
 									onchange="return get_class_sections(this.value)"> 
 									<!--en esta parte elimine la restricción de requerido en la parte de los parents-->
-                              <option value=""><?php echo ('Select');?></option>
+                              <option value=""><?php echo ('Seleccionar');?></option>
                               <?php 
 								$classes = $this->db->get('class')->result_array();
 								foreach($classes as $row):
 									?>
                             		<option value="<?php echo $row['class_id'];?>">
-											<?php echo $row['name'];?>
+											<?php echo 'Wave ' . $row['name'];?>
                                             </option>
                                 <?php
 								endforeach;
@@ -138,10 +138,10 @@
 
 								<!-- Nivel -->
 								<div class="col-md-6 mb-3">
-						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Level');?></label>
+						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Nivel');?></label>
 		                    <div class="col-sm-8">
 		                        <select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="level" class="form-control" id="">
-		                            <option readonly value="0"><?php echo ('Select level first');?></option>
+		                            <option readonly value="0"><?php echo ('Seleccione un nivel');?></option>
 									<option value="A1-"><?php echo ('A1-');?></option>
 									<option value="A1+"><?php echo ('A1+');?></option>
 									<option value="A2-"><?php echo ('A2-');?></option>
@@ -161,17 +161,27 @@
 						<!-- Rol -->
 						<div class="col-md-6 mb-3">
 						
-						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Wave');?></label>
+						<label translate="no" style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Wave');?></label>
                         						
 
 						<div class="col-sm-8">
-							<select name="wave" class="form-control" data-validate="" id="wave">
+							<select translate="no" name="wave" class="form-control select2" data-validate="" id="wave">
 								<option value="Wave 1">Wave 1</option>
 								<option value="Wave 2">Wave 2</option>
 								<option value="Wave 3">Wave 3</option>
 								<option value="Wave 4">Wave 4</option>
 								<option value="Wave 5">Wave 5</option>
 								<option value="Wave 6">Wave 6</option>
+								<option value="Wave 7">Wave 7</option>
+								<option value="Wave 8">Wave 8</option>
+								<option value="Wave 9">Wave 9</option>
+								<option value="Wave 10">Wave 10</option>
+								<option value="Wave 11">Wave 11</option>
+								<option value="Wave 12">Wave 12</option>
+								<option value="Wave 13">Wave 13</option>
+								<option value="Wave 14">Wave 14</option>
+								<option value="Wave 15">Wave 15</option>
+								<option value="Wave 16">Wave 16</option>
                           </select>
 						</div>	
 						
@@ -187,44 +197,44 @@
 					<!-- Birthday -->
 					<div class="form-group">
 
-					<h4 style="text-align:center; font-weight:bold; font-size:1.5rem; color:#000; padding:1.2rem">Other dates section</h4>
+					<h4 style="text-align:center; font-weight:bold; font-size:1.5rem; color:#000; padding:1.2rem">Otros datos</h4>
 						<div class="col-md-6 mb-3">
 							
-						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Birthday');?></label>
+						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Cumpleaños');?></label>
 							
 							<div class="col-sm-8">
-								<input onkeyup="this.value = mascara(this.value)" maxlength="10" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="birthday" placeholder="dd-mm-yyyy" value="" data-start-view="2">
+								<input onkeyup="this.value = mascara(this.value)" maxlength="10" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="birthday" placeholder="dd-mm-AAAA" value="" data-start-view="2">
 							</div> 
 						</div>
 
 						<div class="col-md-6 mb-3">
 							
-						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Gender');?></label>
+						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Sexo');?></label>
                         
 						<div class="col-sm-8">
 							<select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="sex" class="form-control">
-                              <option value=""><?php echo ('Select');?></option>
-                              <option value="Male"><?php echo ('Male');?></option>
-                              <option value="Female"><?php echo ('Female');?></option>
+                              <option value=""><?php echo ('Seleccionar');?></option>
+                              <option value="Femenino"><?php echo ('Femenino');?></option>
+                              <option value="Masculino"><?php echo ('Masculino');?></option>
                           </select>
 						</div> 
 						</div>
 
 						<div class="col-md-6 mb-3">
 							
-						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Address');?></label>
+						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Dirección');?></label>
                         
 						<div class="col-sm-8">
-							<input placeholder="Eg. Jinotepe, Carazo" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="address" value="" >
+							<input placeholder="Ej. Jinotepe, Carazo" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="address" value="" >
 						</div> 
 						</div>
 
 						<div class="col-md-6 mb-3">
 							
-						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Phone');?></label>
+						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('N° teléfono');?></label>
                         
 						<div class="col-sm-8">
-							<input placeholder="Eg. +505 22334455" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="phone" value="" >
+							<input placeholder="Ej. +505 8997 1090" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="tel" class="form-control" name="phone" value="" >
 						</div> 
 					</div>
 					<br>
@@ -232,7 +242,7 @@
 							
 					<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label"><?php echo ('Email');?></label>
 						<div class="col-sm-8">
-							<input placeholder="Eg. example@talk.com" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="email" class="form-control" name="email" value="">
+							<input placeholder="Ej. example@idiomastalk.com" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="email" class="form-control" name="email" value="">
 						</div>
 					</div>
 				</div>
@@ -243,14 +253,14 @@
 			<div class="col-md-6 mb-3">
 						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label">Nombre </label>                        
 						<div class="col-sm-8 form-check">
-							<input data-message-required="Por favor llena este campo" required type="text" placeholder="Nombre" name="nombreEmergencia" id="nombreEmergencia" class="form-control">
+							<input data-message-required="Por favor llena este campo" required type="text" placeholder="Nombre emergencia" name="nombreEmergencia" id="nombreEmergencia" class="form-control">
 						</div>
 			</div>
 
 			<div class="col-md-6 mb-3">
 						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label">Apellidos </label>                        
 						<div class="col-sm-8 form-check">
-							<input type="text" placeholder="Apellidos" name="apellidoEmergencia" id="apellidoEmergencia" class="form-control">
+							<input type="text" placeholder="Apellido emergencia" name="apellidoEmergencia" id="apellidoEmergencia" class="form-control">
 						</div>
 			</div>
 			
@@ -293,13 +303,13 @@
 
 
 
-				<!-- emergency contact  -->
+				<!-- familiar contact  -->
 				<div class="form-group">
 
 				<h4 style="text-align:center; font-weight:bold; font-size:1.5rem; color:#000; padding:1.2rem">Sección de contacto familiar</h4>
 
 						<div class="col-md-6 mb-3">
-						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label">¿Menor de edad?</label>
+						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label">¿Es menor de edad?</label>
                         
 						<div class="col-sm-8 form-check">
 							
@@ -312,13 +322,13 @@
 						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Madre/Padre');?></label>
                         
 						<div class="col-sm-8">
-							<select onchange="if(this.value != '') document.getElementById('emergencyphone').disabled = false"  data-validate="required" data-message-required="<?php echo ('Value Required');?>" disabled name="parent_id" class="form-control select2">
-                              <option value=""><?php echo ('Select');?></option>
+							<select  onchange="if(this.value != '') document.getElementById('emergencyphone').disabled = false"  data-validate="required" data-message-required="<?php echo ('Value Required');?>" disabled name="parent_id" class="form-control select2">
+                              <option  value=""><?php echo ('Seleccionar');?></option>
                               <?php 
 								$parents = $this->db->get('parent')->result_array();
 								foreach($parents as $row):
 									?>
-                            		<option value="<?php echo $row['parent_id'];?>">
+                            		<option id="opname" value="<?php echo $row['parent_id'];?>">
 										<?php echo $row['name'];?>
                                     </option>
                                 <?php
@@ -333,7 +343,7 @@
                         
 						<div class="col-sm-8">
 							<select   name="parentesco" class="form-control">
-                              <option value=""><?php echo ('Select');?></option>
+                              <option value=""><?php echo ('Seleccionar');?></option>
                               <?php 
 								$parents = $this->db->get('parent')->result_array();
 								foreach($parents as $row):
@@ -359,11 +369,11 @@
 					<!-- contact phone -->
 
 					<div class="col-md-6 mb-3">
-						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label">Contact phone</label>
+						<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label">Teléfono de contacto</label>
                         
 						<div class="col-sm-8">
 							
-						<input disabled placeholder="Eg. +505 22334455" type="tel" class="form-control" id="emergencyphone" name="emergencyphone" value="" >
+						<input disabled placeholder="Ej. +505 8965 3705" type="tel" class="form-control" id="emergencyphone" name="emergencyphone" value="" >
 						</div>
 						</div>
 				</div>
@@ -402,7 +412,7 @@
 
                     <div class="form-group">
 						<div class="col-sm-offset-3 col-sm-5">
-							<button type="submit" class="btn btn-info"><?php echo ('Add Student');?></button>
+							<button type="submit" class="btn btn-info"><?php echo ('Agregar estudiante');?></button>
 						</div>
 					</div>
                 <?php echo form_close();?>
@@ -414,6 +424,8 @@
 
 
 <script type="text/javascript">
+
+	
 
 	//  desactivas selects
 

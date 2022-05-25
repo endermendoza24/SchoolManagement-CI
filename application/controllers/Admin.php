@@ -410,7 +410,7 @@ class Admin extends CI_Controller
             $data['name']        			= $this->input->post('name');
             $data['lastname']        			= $this->input->post('lastname');
             $data['email']       			= $this->input->post('email');
-            $data['password']    			= $this->input->post('password');
+            
             $data['phone']       			= $this->input->post('phone');
             $data['address']     			= $this->input->post('address');
             $data['identdocument']     			= $this->input->post('identdocument');
@@ -421,11 +421,12 @@ class Admin extends CI_Controller
             redirect(base_url() . 'index.php?admin/parent/', 'refresh');
         }
         if ($param1 == 'edit') {
-            $data['name']                   = $this->input->post('name');
+            $data['name']        			= $this->input->post('name');
             $data['lastname']        			= $this->input->post('lastname');
-            $data['email']                  = $this->input->post('email');
-            $data['phone']                  = $this->input->post('phone');
-            $data['address']                = $this->input->post('address');
+            $data['email']       			= $this->input->post('email');
+            
+            $data['phone']       			= $this->input->post('phone');
+            $data['address']     			= $this->input->post('address');
             $data['identdocument']     			= $this->input->post('identdocument');
             $data['nationality']  			= $this->input->post('nationality');
             $this->db->where('parent_id' , $param2);
@@ -439,7 +440,7 @@ class Admin extends CI_Controller
             $this->session->set_flashdata('flash_message' , get_phrase('data_deleted'));
             redirect(base_url() . 'index.php?admin/parent/', 'refresh');
         }
-        $page_data['page_title'] 	= 'Todos los padres';
+        $page_data['page_title'] 	= 'Madres/Padres';
         $page_data['page_name']  = 'parent';
         $this->load->view('backend/index', $page_data);
     }
@@ -1001,7 +1002,7 @@ class Admin extends CI_Controller
        if ($this->session->userdata('admin_login') != 1)
             redirect('login', 'refresh');
         $page_data['page_name']  = 'income';
-        $page_data['page_title'] = 'Salidas';
+        $page_data['page_title'] = 'Entradas';
         $this->db->order_by('creation_timestamp', 'asc');
         $page_data['invoices'] = $this->db->get('invoice')->result_array();
         $this->load->view('backend/index', $page_data); 
@@ -1098,7 +1099,7 @@ class Admin extends CI_Controller
         }
 
         $page_data['page_name']  = 'contabilidad';
-        $page_data['page_title'] = 'Contabilidad';
+        $page_data['page_title'] = 'Manejo de cuentas';
         $this->load->view('backend/index', $page_data); 
     }
 
@@ -1173,7 +1174,7 @@ class Admin extends CI_Controller
         }
         $page_data['books']      = $this->db->get('book')->result_array();
         $page_data['page_name']  = 'book';
-        $page_data['page_title'] = 'Manage Library Books';
+        $page_data['page_title'] = 'Administrar libros';
         $this->load->view('backend/index', $page_data);
         
     }
@@ -1442,7 +1443,7 @@ class Admin extends CI_Controller
             redirect(base_url() . 'index.php?admin/system_settings/', 'refresh'); 
         }
         $page_data['page_name']  = 'system_settings';
-        $page_data['page_title'] = 'System Settings';
+        $page_data['page_title'] = 'Ajustes del sistema';
         $page_data['settings']   = $this->db->get('settings')->result_array();
         $this->load->view('backend/index', $page_data);
     }

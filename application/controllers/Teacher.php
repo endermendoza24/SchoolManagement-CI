@@ -305,7 +305,8 @@ class Teacher extends CI_Controller
         ))->result_array();
         $this->load->view('backend/index', $page_data);
     }
-    
+
+     
     /**********MANAGING CLASS ROUTINE******************/
     function class_routine($param1 = '', $param2 = '', $param3 = '')
     {
