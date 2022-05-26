@@ -22,7 +22,7 @@
                 	<thead>
                 		<tr>
                     		<th><div>#</div></th>
-                    		<th><div><?php echo ('Titulo');?></div></th>
+                    		<th><div><?php echo ('Título');?></div></th>
                     		<th><div><?php echo ('Noticia');?></div></th>
                     		<th><div><?php echo ('Fecha');?></div></th>
                     		<th><div><?php echo ('Opciones');?></div></th>
@@ -38,7 +38,7 @@
 							<td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
-                                    Accion <span class="caret"></span>
+                                    Acción <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-default pull-right" role="menu">
                                     
@@ -76,7 +76,7 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo ('Titulo de evento');?></label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" name="notice_title"/>
+                                    <input required type="text" class="form-control" name="notice_title"/>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -85,7 +85,7 @@
                                     <div class="box closable-chat-box">
                                         <div class="box-content padded">
                                                 <div class="chat-message-box">
-                                                <textarea name="notice" id="ttt" rows="5" placeholder="<?php echo ('Agregar evento');?>" class="form-control"></textarea>
+                                                <textarea required name="notice" id="ttt" rows="5" placeholder="<?php echo ('Agregar evento');?>" class="form-control"></textarea>
                                                 </div>
                                         </div>
                                     </div>
@@ -94,7 +94,7 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo ('Fecha');?></label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="datepicker form-control" name="create_timestamp"/>
+                                    <input required type="text" class="datepicker form-control" name="create_timestamp"/>
                                 </div>
                             </div>
 

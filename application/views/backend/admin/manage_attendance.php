@@ -26,18 +26,18 @@
                     	<select name="month" class="form-control">
                         	<?php 
 							for($i=1;$i<=12;$i++):
-								if($i==1)$m='January';
-								else if($i==2)$m='February';
-								else if($i==3)$m='March';
-								else if($i==4)$m='April';
-								else if($i==5)$m='May';
-								else if($i==6)$m='June';
-								else if($i==7)$m='July';
-								else if($i==8)$m='August';
-								else if($i==9)$m='September';
-								else if($i==10)$m='October';
-								else if($i==11)$m='November';
-								else if($i==12)$m='December';
+								if($i==1)$m='Enero';
+								else if($i==2)$m='Febrero';
+								else if($i==3)$m='Marzo';
+								else if($i==4)$m='Abril';
+								else if($i==5)$m='Mayo';
+								else if($i==6)$m='Junio';
+								else if($i==7)$m='Julio';
+								else if($i==8)$m='Agosto';
+								else if($i==9)$m='Septiembre';
+								else if($i==10)$m='Octubre';
+								else if($i==11)$m='Noviembre';
+								else if($i==12)$m='Diciembre';
 							?>
                             	<option value="<?php echo $i;?>"
                                 	<?php if($month==$i)echo 'selected="selected"';?>>

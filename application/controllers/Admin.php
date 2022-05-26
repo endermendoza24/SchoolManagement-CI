@@ -681,7 +681,7 @@ class Admin extends CI_Controller
         }
         $page_data['exams']      = $this->db->get('exam')->result_array();
         $page_data['page_name']  = 'exam';
-        $page_data['page_title'] = 'Manage Exam';
+        $page_data['page_title'] = 'Evaluaciones';
         $this->load->view('backend/index', $page_data);
     }
 
@@ -809,7 +809,7 @@ class Admin extends CI_Controller
         }
         $page_data['grades']     = $this->db->get('grade')->result_array();
         $page_data['page_name']  = 'grade';
-        $page_data['page_title'] = 'Manage Grade';
+        $page_data['page_title'] = 'Escala de calificaciones';
         $this->load->view('backend/index', $page_data);
     }
     
@@ -883,7 +883,7 @@ class Admin extends CI_Controller
         $page_data['class_id'] =	$class_id;
 		
         $page_data['page_name']  =	'manage_attendance';
-        $page_data['page_title'] =	'Manage Daily Attendance';
+        $page_data['page_title'] =	'Asistencia diaria';
 		$this->load->view('backend/index', $page_data);
 	}
 	function attendance_selector()

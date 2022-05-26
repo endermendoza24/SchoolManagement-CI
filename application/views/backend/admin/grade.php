@@ -5,11 +5,11 @@
 		<ul class="nav nav-tabs bordered">
 			<li class="active">
             	<a href="#list" data-toggle="tab"><i class="entypo-menu"></i> 
-					<?php echo ('Grade list');?>
+					<?php echo ('Lista escala calificación');?>
                     	</a></li>
 			<li>
             	<a href="#add" data-toggle="tab"><i class="entypo-plus-circled"></i>
-					<?php echo ('Add Grade');?>
+					<?php echo ('Agregar escala');?>
                     	</a></li>
 		</ul>
     	<!------CONTROL TABS END------>
@@ -21,12 +21,12 @@
                 	<thead>
                 		<tr>
                     		<th><div>#</div></th>
-                    		<th><div><?php echo ('Grade Name');?></div></th>
-                    		<th><div><?php echo ('Grade Point');?></div></th>
-                    		<th><div><?php echo ('Mark From');?></div></th>
-                    		<th><div><?php echo ('Mark Upto');?></div></th>
-                    		<th><div><?php echo ('Comment');?></div></th>
-                    		<th><div><?php echo ('Options');?></div></th>
+                    		<th><div><?php echo ('Nombre escala');?></div></th>
+                    		<th><div><?php echo ('Puntos de la escala');?></div></th>
+                    		<th><div><?php echo ('Escala - empieza');?></div></th>
+                    		<th><div><?php echo ('Escala - termina');?></div></th>
+                    		<th><div><?php echo ('Comentarios');?></div></th>
+                    		<th><div><?php echo ('Opciones');?></div></th>
 						</tr>
 					</thead>
                     <tbody>
@@ -41,7 +41,7 @@
 							<td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
-                                    Action <span class="caret"></span>
+                                    Acción <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-default pull-right" role="menu">
                                     
@@ -49,7 +49,7 @@
                                     <li>
                                         <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_edit_grade/<?php echo $row['grade_id'];?>');">
                                             <i class="entypo-pencil"></i>
-                                                <?php echo ('Edit');?>
+                                                <?php echo ('Editar');?>
                                             </a>
                                                     </li>
                                     <li class="divider"></li>
@@ -58,7 +58,7 @@
                                     <li>
                                         <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/grade/delete/<?php echo $row['grade_id'];?>');">
                                             <i class="entypo-trash"></i>
-                                                <?php echo ('Delete');?>
+                                                <?php echo ('Eliminar');?>
                                             </a>
                                                     </li>
                                 </ul>
@@ -77,38 +77,38 @@
                 <div class="box-content">
                 	<?php echo form_open(base_url() . 'index.php?admin/grade/create' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Nombre');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Nombre escala');?></label>
                                 <div class="col-sm-5 controls">
                                     <input type="text" class="form-control" name="name"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Grade Point');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Puntos escala');?></label>
                                 <div class="col-sm-5 controls">
                                     <input type="text" class="form-control" name="grade_point"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Mark From');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Escala - empieza');?></label>
                                 <div class="col-sm-5 controls">
                                     <input type="text" class="form-control" name="mark_from"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Mark Upto');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Escala - termina');?></label>
                                 <div class="col-sm-5 controls">
                                     <input type="text" class="form-control" name="mark_upto"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Comment');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Comentario');?></label>
                                 <div class="col-sm-5 controls">
                                     <input type="text" class="form-control" name="comment"/>
                                 </div>
                             </div>
                             <div class="form-group">
                               <div class="col-sm-offset-3 col-sm-5">
-                                  <button type="submit" class="btn btn-info"><?php echo ('Agregar Grade');?></button>
+                                  <button type="submit" class="btn btn-info"><?php echo ('Agregar escala calificación');?></button>
                               </div>
 								</div>
                     </form>                

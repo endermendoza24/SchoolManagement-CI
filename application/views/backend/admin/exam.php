@@ -9,7 +9,7 @@
                     	</a></li>
 			<li>
             	<a href="#add" data-toggle="tab"><i class="entypo-plus-circled"></i>
-					<?php echo ('Agregar Evaluacion');?>
+					<?php echo ('Agregar Evaluación');?>
                     	</a></li>
 		</ul>
     	<!------CONTROL TABS END------>
@@ -19,7 +19,7 @@
                 <table  class="table table-bordered table-hover table-striped datatable" id="table_export">
                 	<thead>
                 		<tr>
-                    		<th><div><?php echo ('Nombre de Evaluacion');?></div></th>
+                    		<th><div><?php echo ('Nombre de evalucación');?></div></th>
                     		<th><div><?php echo ('Fecha');?></div></th>
                     		<th><div><?php echo ('Comentario');?></div></th>
                     		<th><div><?php echo ('Opciones');?></div></th>
@@ -34,7 +34,7 @@
 							<td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
-                                    Action <span class="caret"></span>
+                                    Acción <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-default pull-right" role="menu">
                                     

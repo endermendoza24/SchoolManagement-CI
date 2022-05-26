@@ -49,9 +49,11 @@
             <td>
             <?php echo $row['payment_type'];?>
             </td>
+			<?php setlocale(LC_TIME, 'es_NI.UTF-8');
+			date_default_timezone_set ("America/Managua");?>
 			<td><?php echo $row['corte'];?></td>
             <td><?php echo $row['amount'];?></td>
-            <td><?php echo date('d M,Y', $row['timestamp']);?></td>
+            <td><?php echo strftime('%A, %d de %B de %Y', $row['timestamp']);?></td>
         </tr>
         <?php endforeach;?>
     </tbody>
