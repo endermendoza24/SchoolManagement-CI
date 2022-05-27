@@ -26,7 +26,7 @@ foreach ($edit_data as $row):
                     <!-- <h4>Autorización DGI: <?php $d=rand(1000,9999); echo $d; ?> - 7</h4> -->
                     <!-- <h4> N° <?php $d=rand(1000,9999); echo $d; ?> </h4> -->
                     <h4><?php echo ('N° de factura: ')?> <?php echo $row['invoice_id']?></h4>
-                    <h4><?php echo ('N° de factura: ')?> <?php echo '00'.$row['num_factura']?></h4>
+                    <!-- <h4><?php echo ('N° de factura: ')?> <?php echo '00'.$row['num_factura']?></h4> -->
 
                     <h4>RUC: 0012305950022</h4>
                     <h4>Email: quierosaberdetalk@gmail.com</h4>

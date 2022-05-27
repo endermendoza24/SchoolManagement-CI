@@ -12,7 +12,7 @@
 	<meta name="description" content="Neon Admin Panel" />
 	<meta name="author" content="" />
 	
-	<title translate="false" ><?php echo ('Iniciar Sesion');?> |  <?php echo $system_title;?></title>
+	<title translate="false" ><?php echo ('Iniciar sesión');?> |  <?php echo $system_title;?></title>
 	
 
 	<link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
@@ -63,7 +63,7 @@ var baseurl = '<?php echo base_url();?>';
 			<!-- progress bar indicator -->
 			<div class="login-progressbar-indicator">
 				<h3>43%</h3>
-				<span>Iniciando sesion en...</span>
+				<span>Iniciando sesión en...</span>
 			</div>
 		</div>
 		
