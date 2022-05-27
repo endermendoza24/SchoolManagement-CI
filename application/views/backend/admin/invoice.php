@@ -40,8 +40,8 @@
                        
                             <td><?php echo $row['invoice_id'];?></td>
                             <td><?php echo $row['quienpaga'];?></td>
-							<td style="text-transform:capitalize"><?php echo $this->crud_model->get_type_name_by_id('student',$row['student_id']);?></td>                            
-							<td><?php echo $row['title'];?></td>
+							<td style="text-transform:capitalize"><?php echo $this->crud_model->get_type_name_by_id('student',$row['student_id']) . ' ' . $this->crud_model->get_type_lastname_by_id('student',$row['student_id']);?></td>                                                        
+                            <td><?php echo $row['title'];?></td>
                             <td><?php echo $row['description'];?></td>
 							<td><?php echo $row['amount'];?></td>
                             <td><?php echo $row['amount_paid'];?></td>

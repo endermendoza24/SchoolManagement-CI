@@ -4,7 +4,7 @@ foreach($student_info as $row):?>
 
 <center>
     <a onClick="PrintElem('#printArea')" class="btn btn-default btn-icon icon-left hidden-print pull-right">
-        Print profile
+        Imprimir perfil
         <i class="entypo-print"></i>
     </a>
 </center>
@@ -15,10 +15,10 @@ foreach($student_info as $row):?>
 		
 		<div class="col-sm-3">
 			
-			<a href="#" class="profile-picture">
+			<!-- <a href="#" class="profile-picture">
 				<img src="<?php echo $this->crud_model->get_image_url('student' , $row['student_id']);?>" 
                 	class="img-responsive img-circle" />
-			</a>
+			</a> -->
 			
 		</div>
 		
@@ -27,7 +27,7 @@ foreach($student_info as $row):?>
 			<ul class="profile-info-sections">
 				<li style="padding:0px; margin:0px;">
 					<div class="profile-name">
-							<h3><?php echo $row['name'];?></h3>
+							<h3><?php echo $row['name'] . ' ' . $row['lastname'];?></h3>
 					</div>
 				</li>
 			</ul>
@@ -47,28 +47,28 @@ foreach($student_info as $row):?>
                 
                     <?php if($row['class_id'] != ''):?>
                     <tr>
-                        <td>Class</td>
+                        <td>Wave</td>
                         <td><b><?php echo $this->crud_model->get_class_name($row['class_id']);?></b></td>
                     </tr>
                     <?php endif;?>
 
-                    <?php if($row['section_id'] != '' && $row['section_id'] != 0):?>
+                    <!-- <?php if($row['section_id'] != '' && $row['section_id'] != 0):?>
                     <tr>
                         <td>Wave</td>
                         <td><b><?php echo $this->db->get_where('section' , array('section_id' => $row['section_id']))->row()->name;?></b></td>
                     </tr>
-                    <?php endif;?>
+                    <?php endif;?> -->
 
                     <?php if($row['level'] != ''):?>
                     <tr>
-                        <td>Level</td>
+                        <td>Nivel</td>
                         <td><b><?php echo $row['level'];?></b></td>
                     </tr>
                     <?php endif;?>
                 
                     <?php if($row['diamatricula'] != ''):?>
                     <tr>
-                        <td>Dia matricula</td>
+                        <td>Día matrícula</td>
                         <!-- <td><b><?php echo $row['diamatricula'];?></b></td> -->
                         <td><b><?php echo date('d M,Y', $row['diamatricula']);?></b></td>
                     </tr>
@@ -76,14 +76,14 @@ foreach($student_info as $row):?>
                 
                     <?php if($row['birthday'] != ''):?>
                     <tr>
-                        <td>Birthday</td>
+                        <td>Cumpleaños</td>
                         <td><b><?php echo $row['birthday'];?></b></td>
                     </tr>
                     <?php endif;?>
                 
                     <?php if($row['sex'] != ''):?>
                     <tr>
-                        <td>Gender</td>
+                        <td>Género</td>
                         <td><b><?php echo $row['sex'];?></b></td>
                     </tr>
                     <?php endif;?>
@@ -91,7 +91,7 @@ foreach($student_info as $row):?>
                 
                     <?php if($row['phone'] != ''):?>
                     <tr>
-                        <td>Phone</td>
+                        <td>Teléfono</td>
                         <td><b><?php echo $row['phone'];?></b></td>
                     </tr>
                     <?php endif;?>
@@ -105,19 +105,26 @@ foreach($student_info as $row):?>
                 
                     <?php if($row['address'] != ''):?>
                     <tr>
-                        <td>Address</td>
+                        <td>Dirección</td>
                         <td><b><?php echo $row['address'];?></b>
                         </td>
                     </tr>
                     <?php endif;?>
                     <?php if($row['parent_id'] != ''):?>
                     <tr>
-                        <td>Parent</td>
+                        <td>Madre/Padre</td>
                         <td><b><?php echo $this->db->get_where('parent' , array('parent_id' => $row['parent_id']))->row()->name;?></b></td>
                     </tr>
                     <tr>
-                        <td>Parent Phone</td>
+                        <td>Teléfono madre/Padre</td>
                         <td><b><?php echo $this->db->get_where('parent' , array('parent_id' => $row['parent_id']))->row()->phone;?></b></td>
+                    </tr>
+                    <?php endif;?>
+                    <?php if($row['telefonoemergencia'] != ''):?>
+                    <tr>
+                        <td>Contacto de emergencia</td>
+                        <td><b><?php echo $row['telefonoemergencia'];?></b>
+                        </td>
                     </tr>
                     <?php endif;?>
                     
@@ -133,7 +140,7 @@ foreach($student_info as $row):?>
 </div>
 
 
-<div class="printArea" id="printArea">
+<!-- <div class="printArea" id="printArea">
     <div class="containerarea">
     
     <table width="100%" border="0">
@@ -170,31 +177,6 @@ foreach($student_info as $row):?>
                     <div>Docente a cargo</div>
                     <div>Firma de quien recibe</div>
     </div> -->
-
-
-    <table class="demo" border="1px solid #000">
-	
-	
-	<tbody>
-	<tr>
-		<td>1</td>
-		<td></td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>2</td>
-		<td></td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>3</td>
-		<td></td>
-		<td></td>
-	</tr>
-	<tbody>
-</table>
-    
-    
 
     </div>
 </div>
