@@ -1,4 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+	<link href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css" rel="stylesheet" />
 
+	<title><?php echo strftime(' %A, %d de %B de %Y a las %H:%M ');?></title>
+</head>
+<body>
+	
 
 
 <a  href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/expense_add/');" 
@@ -42,11 +54,9 @@ class="btn btn-primary pull-right">
             <td>
             	<?php 
             		if ($row['method'] == 1)
-            			echo ('Cash');
+            			echo ('Efectivo');
             		if ($row['method'] == 2)
-            			echo ('Bank transfer');
-            		if ($row['method'] == 3)
-            			echo ('Card');
+            			echo ('Transferencia bancaria');            	
             	?>
             </td>
             <td><?php echo $row['amount'];?></td>
@@ -95,65 +105,73 @@ class="btn btn-primary pull-right">
             <h2 style="color:white; font-weight:bold"> Total salidas: C$ <?php $query = $this->db->query('SELECT SUM(amount)as total FROM payment WHERE payment_type = "Salida" ')->row(); echo round(floatval($query->total),2);?></h2>                   			                                       
                 </div>
 </div>
-<!-----  DATA TABLE EXPORT CONFIGURATIONS ---->            
 
-<!-- Nueva datatable -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.print.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/datatables-buttons-excel-styles@1.2.0/js/buttons.html5.styles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/datatables-buttons-excel-styles@1.2.0/js/buttons.html5.styles.templates.min.js"></script>
 
 
-<!-- excel', 'pdf', 'print', -->
-
-
-
-
+<!-----  DATA TABLE EXPORT CONFIGURATIONS ---->                      
 <script type="text/javascript">
 
-	jQuery(document).ready(function($)
-	{
-		
+$('#table_export').DataTable({
+  dom: 'Bfrtip',
+  buttons: [{
+    extend: 'copy',
+    text: 'Copiar al portapapeles',
+    filename: ' Talk | Salidas '
+  }, 
 
-		var datatable = $("#table_export").dataTable({
-			"sPaginationType": "bootstrap",
-			"sDom": "<'row'<'col-xs-3 col-left'l><'col-xs-9 col-right'<'export-data'T>f>r>t<'row'<'col-xs-3 col-left'i><'col-xs-9 col-right'p>>",
-			"oTableTools": {
-				"aButtons": [
-					
-					{
-						"sExtends": "xls",
-						"mColumns": [1,2,3,4,5]
-					},
-					{
-						"sExtends": "pdf",
-						"mColumns": [1,2,3,4,5]
-					},
-					{
-						"sExtends": "print",
-						"fnSetText"	   : "Press 'esc' to return",
-						"fnClick": function (nButton, oConfig) {
-							datatable.fnSetColumnVis(0, false);
-							datatable.fnSetColumnVis(6, false);
-							
-							this.fnPrint( true, oConfig );
-							
-							window.print();
-							
-							$(window).keyup(function(e) {
-								  if (e.which == 27) {
-									  datatable.fnSetColumnVis(0, true);
-									  datatable.fnSetColumnVis(6, true);
-								  }
-							});
-						},
-						
-					},
-				]
-			},
-			
-		});
-		
-		$(".dataTables_wrapper select").select2({
-			minimumResultsForSearch: -1
-		});
-	});
-		
+  
+  {
+    extend: 'excel',
+    text: 'Excel',
+    filename: ' Talk | Salidas ',
+    excelStyles: [                      // Add an excelStyles definition
+                {                 
+                    template: "green_medium",   // Apply the "green_medium" template
+                },
+                {
+                    cells: "sh",                // Use Smart References (s) to target the header row (h)
+                    style: {                    // The style definition
+                        font: {                 // Style the font
+                            size: 14,           // Size 14
+                            b: false,           // Turn off the default bolding of the header row
+                        },
+                        fill: {                 // Style the cell fill
+                            pattern: {          // Add a pattern (default is solid)
+                                color: "1C3144" // Define the fill color
+                            }
+                        }
+                    }
+                }
+            ],
+
+  }, 
+
+
+  {
+    extend: 'pdf',
+    text: 'PDF',
+    filename: ' Talk | Salidas '
+  }, {
+    extend: 'print',
+    text: 'Imprimir',
+    filename: ' Talk | Salidas '
+  }, ]
+});
+	
 </script>
 
+
+</body>
+</html>

@@ -3,11 +3,11 @@ $edit_data	=	$this->db->get_where('invoice' , array('invoice_id' => $param2) )->
 foreach ($edit_data as $row):
 ?>
 
-<div class="row">
+<!-- <div class="row">
 	<div class="col-md-12">
         <div class="panel panel-default panel-shadow" data-collapsed="0">
             <div class="panel-heading">
-                <div class="panel-title"><?php echo ('Payment History');?></div>
+                <div class="panel-title"><?php echo ('Historial de pagos');?></div>
             </div>
             <div class="panel-body">
                 
@@ -16,7 +16,7 @@ foreach ($edit_data as $row):
                 		<tr>
                 			<td>#</td>
                 			<td><?php echo ('Monto');?></td>
-                			<td><?php echo ('Metodo');?></td>
+                			<td><?php echo ('Método');?></td>
                 			<td><?php echo ('Fecha');?></td>
                 		</tr>
                 	</thead>
@@ -34,16 +34,13 @@ foreach ($edit_data as $row):
                 			<td>
                 				<?php 
                 					if ($row2['method'] == 1)
-                						echo ('Cash');
+                						echo ('Efectivo');
                 					if ($row2['method'] == 2)
-                						echo ('Cheque');
-                					if ($row2['method'] == 3)
-                						echo ('Card');
-                                    if ($row2['method'] == 'paypal')
-                                        echo 'Paypal';
+                						echo ('Transferencia');
+                				
                 				?>
                 			</td>
-                			<td><?php echo date('d M,Y', $row2['timestamp']);?></td>
+                			<td><?php echo date('d M,Y H:i', $row2['timestamp']);?></td>
                 		</tr>
                 	<?php endforeach;?>
                 	</tbody>
@@ -52,7 +49,7 @@ foreach ($edit_data as $row):
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="row">
 	<div class="col-md-12">
@@ -64,6 +61,12 @@ foreach ($edit_data as $row):
 				<?php echo form_open(base_url() . 'index.php?admin/invoice/take_payment/'.$row['invoice_id'], array(
 					'class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
 
+					<div class="form-group">
+		                <label class="col-sm-3 control-label"><?php echo ('Observaciones');?></label>
+		                <div class="col-sm-6">
+		                    <input type="text" class="form-control" value="<?php echo $row['payment_details'];?>" readonly/>
+		                </div>
+		            </div>
 					<div class="form-group">
 		                <label class="col-sm-3 control-label"><?php echo ('Monto Total');?></label>
 		                <div class="col-sm-6">
@@ -88,26 +91,33 @@ foreach ($edit_data as $row):
 		            <div class="form-group">
 		                <label class="col-sm-3 control-label"><?php echo ('Pago');?></label>
 		                <div class="col-sm-6">
-		                    <input type="text" class="form-control" name="amount" value=""
+		                    <input type="text" required class="form-control" name="amount" value=""
 		                    	placeholder="<?php echo ('Introduce el Pago');?>"/>
 		                </div>
 		            </div>
 
 		            <div class="form-group">
-                        <label class="col-sm-3 control-label"><?php echo ('Metodo');?></label>
+                        <label class="col-sm-3 control-label"><?php echo ('Método');?></label>
                         <div class="col-sm-6">
-                            <select name="method" class="form-control">
-                                <option value="1"><?php echo ('Cash');?></option>
-                                <option value="2"><?php echo ('Cheque');?></option>
-                                <option value="3"><?php echo ('Card');?></option>
+                            <select onchange="if(this.value == 2) document.getElementById('baucher2').disabled = false" name="method" class="form-control">
+                                <option value="1"><?php echo ('Efectivo');?></option>
+                                <option value="2"><?php echo ('Transferencia');?></option>
+                                
                             </select>
+                        </div>
+                    </div>
+
+					<div class="form-group">
+                        <label class="col-sm-3 control-label"><?php echo ('N° de baúcher');?></label>
+                        <div class="col-sm-6">
+                            <input disabled name="baucher" id="baucher2" type="text" maxlength="20" class="form-control">
                         </div>
                     </div>
 
                     <div class="form-group">
 	                    <label class="col-sm-3 control-label"><?php echo ('Fecha');?></label>
 	                    <div class="col-sm-6">
-	                        <input type="text" class="datepicker form-control" name="timestamp" 
+	                        <input type="datetime-local" required class="form-control" name="timestamp" 
 	                            value=""/>
 	                    </div>
 					</div>
@@ -116,6 +126,7 @@ foreach ($edit_data as $row):
                     <input type="hidden" name="student_id" value="<?php echo $row['student_id'];?>">
                     <input type="hidden" name="title" value="<?php echo $row['title'];?>">
                     <input type="hidden" name="description" value="<?php echo $row['description'];?>">
+					<input type="hidden" name="description" disabled readonly value="<?php echo $row['payment_details'];?>">
 
 		            <div class="form-group">
 		                <div class="col-sm-5">

@@ -51,12 +51,12 @@
             <ul>
                 <li class="<?php if ($page_name == 'class') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/classes">
-                        <span><i class="entypo-dot"></i> <?php echo ('Manage Waves'); ?></span>
+                        <span><i class="entypo-dot"></i> <?php echo ('Administrar Waves'); ?></span>
                     </a>
                 </li>
                 <li class="<?php if ($page_name == 'section') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/section">
-                        <span><i class="entypo-dot"></i> <?php echo ('Manage classroom'); ?></span>
+                        <span><i class="entypo-dot"></i> <?php echo ('Administrar salones'); ?></span>
                     </a>
                 </li>
             </ul>
@@ -130,11 +130,7 @@ direccion -->
                     </a>
                 </li>
 
-                <li class="<?php if ($page_name == 'contabilidad') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?admin/contabilidad">
-                        <span><i class="entypo-dot"></i> <?php echo ('Cuentas'); ?></span>
-                    </a>
-                </li>
+               
 
                 <li class="<?php if ($page_name == 'expense_category') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/expense_category">

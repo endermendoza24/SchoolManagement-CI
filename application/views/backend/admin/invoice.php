@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css'>
+    <title>Document</title>
+</head>
+<body>
 <div class="row">
 	<div class="col-md-12">
     
@@ -25,6 +35,7 @@
                             <th><div><?php echo ('Estudiante');?></div></th>
                     		<th><div><?php echo ('Título');?></div></th>
                             <th><div><?php echo ('Concepto');?></div></th>
+                            <th><div><?php echo ('Observaciones');?></div></th>
                             <th><div><?php echo ('Total');?></div></th>
                             <th><div><?php echo ('Pagado');?></div></th>
                     		<th><div><?php echo ('Estado');?></div></th>
@@ -40,9 +51,10 @@
                        
                             <td><?php echo $row['invoice_id'];?></td>
                             <td><?php echo $row['quienpaga'];?></td>
-							<td style="text-transform:capitalize"><?php echo $this->crud_model->get_type_name_by_id('student',$row['student_id']) . ' ' . $this->crud_model->get_type_lastname_by_id('student',$row['student_id']);?></td>                                                        
-                            <td><?php echo $row['title'];?></td>
+							<td style="text-transform:capitalize;"><?php echo $this->crud_model->get_type_name_by_id('student',$row['student_id']) .' ' . $this->crud_model->get_type_lastname_by_id('student',$row['student_id']);?></td>                            
+							<td><?php echo $row['title'];?></td>
                             <td><?php echo $row['description'];?></td>
+                            <td><?php echo $row['payment_details'];?></td>
 							<td><?php echo $row['amount'];?></td>
                             <td><?php echo $row['amount_paid'];?></td>
 							<td>
@@ -125,43 +137,23 @@
                             <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Persona que paga');?></label>
                                     <div class="col-sm-9">
-                                        <input list="pagan" id="quienpaga" type="text" name="quienPaga" class="form-control">
+                                        <input list="pagan" id="quienpaga" type="text" name="quienPaga" class="form-control"/>
                                     </div>
                                 </div>
                                 <!-- Datalist -->
-                                <datalist id="pagan">
+                                <!-- <datalist id="pagan">
                                     <option value="El mismo estudiante paga"></option>
                                     
-                                </datalist>
+                                </datalist> -->
 
 
 
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Estudiante');?></label>
                                     <div class="col-sm-9">
-                                        <!-- <select  id="estudiante" name="student_id"  class="form-control">
-                                            <?php 
-                                            date_default_timezone_set("America/El_Salvador");
-                                            // echo date_default_timezone_get();
-                                            $this->db->order_by('class_id','desc');
-                                            $students = $this->db->get('student')->result_array();
-                                            foreach($students as $row):
-                                            ?>
-                                                <option value="<?php echo $row['student_id'];?>">
-                                                    Wave <?php echo $this->crud_model->get_class_name($row['class_id']);?> -
-                                                     
-                                                    <?php echo $row['name'];?> <?php echo $row['lastname'];?>
-                                                </option>
-                                            <?php
-                                            endforeach;
-                                            ?>
-                                        </select> -->
-
-
-
-                                       
-                                        <!-- <label for="student_id"><?php echo ('Recipient'); ?>:</label> -->        
-                                        <select class="form-control select2" name="student_id" required>
+                                        
+                                                                                   
+                                        <select class="form-control selectpicker" data-show-subtext="true" data-live-search="true" name="student_id" required>
 
                                             <option value=""><?php echo ('Seleccione un estudiante'); ?></option>
                                             <optgroup label="<?php echo ('Estudiante'); ?>">
@@ -171,7 +163,7 @@
                                                     ?>
 
                                                     <option value="<?php echo $row['student_id'];?>">
-                                                        - <?php echo $row['name']; ?></option>
+                                                        - <?php echo $row['name'] . ' ' . $row['lastname']; ?></option>
 
                                                 <?php endforeach; ?>
                                             </optgroup>
@@ -183,8 +175,7 @@
 
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Tipo');?></label>
-                                    <div class="col-sm-9">
-                                        <!-- <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" require class="form-control" name="title"/> -->
+                                    <div class="col-sm-9">                                        
                                             
                                         <select name="title" id="title" class="form-control">
                                             <option value="Cancelacion">Cancelación</option>
@@ -197,10 +188,8 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label"><?php echo ('Descripcion');?></label>
-                                    <div class="col-sm-9">
-                                        <!-- <input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" require class="form-control" name="title"/> -->
-                                            
+                                    <label class="col-sm-3 control-label"><?php echo ('Descripción');?></label>
+                                <div class="col-sm-9">                                                                                    
                                         <select name="tipopago" id="motel" class="form-control">
                                         <option value="0" selected>Selecciona una opción...</option>
                                         <option value="Mensualidad">Mensualidad</option> 
@@ -219,6 +208,13 @@
                                     <label class="col-sm-3 control-label"><?php echo ('Concepto');?></label>
                                     <div class="col-sm-9">
                                         <select name="description" id="Habitacion" class="form-control"></select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><?php echo ('Observaciones');?></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="observaciones" maxlength="300" class="form-control">
                                     </div>
                                 </div>
 
@@ -264,8 +260,7 @@
                                     <div class="col-sm-9">
                                         <select onchange="if(this.value == 2) document.getElementById('baucher').disabled = false" name="metodo" id="metodo" class="form-control">
                                             <option value="1"><?php echo ('Efectivo');?></option>
-                                            <option value="2"><?php echo ('Transferencia');?></option>
-                                            <!-- <option value="3"><?php echo ('Card');?></option> -->
+                                            <option value="2"><?php echo ('Transferencia');?></option>                                            
                                         </select>
                                     </div>
                                 </div>
@@ -275,7 +270,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('N° de Baucher');?></label>
                                     <div class="col-sm-9">
-                                       <input type="text" maxlength="20" disabled id="baucher" name="baucher" class="form-control">
+                                       <input  id="baucher" name="baucher" disabled type="text" maxlength="20" class="form-control">
                                     </div>
                                 </div>
 
@@ -288,8 +283,8 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"><?php echo ('Corte de pago');?></label>
                                     <div class="col-sm-9">
-                                        <input type="radio" name="corte" value="matutino" id="corte">Corte matutino
-                                        <input type="radio" name="corte" value="vespertino" id="corte">Corte vespertino
+                                        <input type="radio" name="corte" value="Matutino" id="corte">Corte matutino
+                                        <input type="radio" name="corte"  value="Vespertino" id="corte">Corte vespertino
                                     </div>
                                 </div>
                                 
@@ -313,27 +308,12 @@
 </div>
 
 
-  
+  <!-- se añadio esta librería para permitir la busqueda en el select -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
 
-//<!-----  DATA TABLE EXPORT CONFIGURATIONS ---->                      
+<!-----  DATA TABLE EXPORT CONFIGURATIONS ---->                      
 
-
-
-
-
-
-
-
-
-<script text="javascript">
-
-
-
-
-
-
-
-
+<script type="text/javascript">
 
 
         $(document).on("change","#motel",function(){
@@ -342,12 +322,12 @@
 
         var matricula = "<option value='0' selected>Selecciona una opción...</option><option value='Matricula nuevo ingreso'>Matrícula de nuevo ingreso</option><option value='Matricula continuidad'>Matrícula de continuidad</option>"
 
-        var examinacion = "<option value='0' selected>Selecciona un examen...</option><option value='Examen CEFR A1-'>Examen CEFR A1-</option><option value='Examen CEFR A1+'>Examen CEFR A1+</option><option value='Examen CEFR A2-'>Examen CEFR A2-</option><option value='Examen CEFR A2+'>Examen CEFR A2+</option><option value='Examen CEFR B1-'>Examen CEFR B1-</option><option value='Examen CEFR B1+'>Examen CEFR B1+</option><option value='Examen CEFR B2-'>Examen CEFR B2-</option>"
+        var examinacion = "<option value='0' selected>Selecciona un examen...</option><option value='Examen CEFR A1-'>Examen CEFR A1-</option><option value='Examen CEFR A1+'>Examen CEFR A1+</option><option value='Examen CEFR A2-'>Examen CEFR A2-</option><option value='Examen CEFR A2+'>Examen CEFR A2+</option><option value='Examen CEFR B1-'>Examen CEFR B1-</option><option value='Examen CEFR B1+'>Examen CEFR B1+</option><option value='Examen CEFR B2-'>Examen CEFR B2-</option><option value='Examen CEFR B2-'>Examen CEFR B2+</option>"
 
         var certificacion = "<option value='0' selected>Selecciona un certificado...</option><option value='Certificado CEFR A1-'>Certificado CEFR A1-</option><option value='Certificado CEFR A1+'>Certificado CEFR A1+</option><option value='Certificado CEFR A2-'>Certificado CEFR A2-</option><option value='Certificado CEFR A2+'>Certificado CEFR A2+</option><option value='Certificado CEFR B1-'>Certificado CEFR B1-</option><option value='Certificado CEFR B1+'>Certificado CEFR B1+</option><option value='Certificado CEFR B2-'>Certificado CEFR B2-</option>"
         var certificacionReprogramacion = "<option value='0' selected>Selecciona el certificado a reprogramar...</option><option value='Reprogramación certificado CEFR A1-'>Reprogramación certificado CEFR A1-</option><option value='Reprogramación certificado CEFR A1+'>Reprogramación certificado CEFR A1+</option><option value='Reprogramación certificado CEFR A2-'>Reprogramación certificado CEFR A2-</option><option value='Reprogramación certificado CEFR A2+'>Reprogramación certificado CEFR A2+</option><option value='Reprogramación certificado CEFR B1-'>Reprogramación certificado CEFR B1-</option><option value='Reprogramación certificado CEFR B1+'>Reprogramación certificado CEFR B1+</option><option value='Reprogramación certificado CEFR B2-'>Reprogramación certificado CEFR B2-</option>"
 
-        var libros = "<option value='0' selected>Selecciona un libro...</option><option value='American English File Starter A'>  American English File Starter A</option><option value='American English File Starter B'>  American English File Starter B</option><option value='  American English File Starter 1A'>  American English File Starter 1A</option><option value='  American English File Starter 1B'>  American English File Starter 1B</option><option value='  American English File Starter 2A'>  American EnglishFile Starter 2A</option><option value='  American English File Starter 2B'>  American English File Starter 2B</option><option value='  American English File Starter 3A'>  American English File Starter 3A</option><option value='  American English File Starter 3B'>  American English File Starter 3B</option><option value='  American English File Starter 4A'>  American English File Starter 4A</option><option value='  American English File Starter 4B'>  American English File Starter 4B</option><option value='  American English File Starter 5A'>  American English File Starter 5A</option><option value='  American English File Starter 5B'>  American English File Starter 5B</option><option disabled value='0'>Libros de niños</option><option value='  PACK Story Central 1 (SB WB, RB)'>  PACK Story Central 1 (SB WB, RB)</option><option value='  PACK Story Central 2 (SB, WB, RB)'>  PACK Story Central 2 (SB, WB, RB)</option><option value='  PACK Story Central 3 (SB, WB, RB)'>  PACK Story Central 3 (SB, WB, RB)</option><option value='  PACK Story Central 4 (SB, WB, RB)'>  PACK Story Central 4 (SB, WB, RB)</option><option value='  PACK Story Central 5 (SB, WB, RB)'>  PACK Story Central 5 (SB, WB, RB)</option><option value='  PACK Story Central 1 (SB, WB, RB)'>  PACK Story Central 1 (SB, WB, RB)</option><option disabled  value='0'>Libros de francés</option><option value='  Défi 1'>  Défi 1</option><option value='  Défi 2'>  Défi 2</option><option value='  Défi 3'>  Défi 3</option><option value='  Défi 4'>  Défi 4</option>"
+        var libros = "<option value='0' selected>Selecciona un libro...</option><option value='American English File Starter A'>  American English File Starter A</option><option value='American English File Starter B'>  American English File Starter B</option><option value='  American English File Starter 1A'>  American English File Starter 1A</option><option value='  American English File Starter 1B'>  American English File Starter 1B</option><option value='  American English File Starter 2A'>  American English File Starter 2A</option><option value='  American English File Starter 2B'>  American English File Starter 2B</option><option value='  American English File Starter 3A'>  American English File Starter 3A</option><option value='  American English File Starter 3B'>  American English File Starter 3B</option><option value='  American English File Starter 4A'>  American English File Starter 4A</option><option value='  American English File Starter 4B'>  American English File Starter 4B</option><option value='  American English File Starter 5A'>  American English File Starter 5A</option><option value='  American English File Starter 5B'>  American English File Starter 5B</option><option disabled value='0'>Libros de niños</option><option value='  PACK Story Central 1 (SB WB, RB)'>  PACK Story Central 1 (SB WB, RB)</option><option value='  PACK Story Central 2 (SB, WB, RB)'>  PACK Story Central 2 (SB, WB, RB)</option><option value='  PACK Story Central 3 (SB, WB, RB)'>  PACK Story Central 3 (SB, WB, RB)</option><option value='  PACK Story Central 4 (SB, WB, RB)'>  PACK Story Central 4 (SB, WB, RB)</option><option value='  PACK Story Central 5 (SB, WB, RB)'>  PACK Story Central 5 (SB, WB, RB)</option><option value='  PACK Story Central 1 (SB, WB, RB)'>  PACK Story Central 1 (SB, WB, RB)</option><option disabled  value='0'>Libros de francés</option><option value='  Défi 1'>  Défi 1</option><option value='  Défi 2'>  Défi 2</option><option value='  Défi 3'>  Défi 3</option><option value='  Défi 4'>  Défi 4</option>"
         var otros = "<option value='otro'>Otro</option>"
        
 
@@ -368,11 +348,6 @@
         else if(idMotel =="certificacionReprogramacion")
             $("#Habitacion").html(certificacionReprogramacion);  
         });
-
-
-
-
-
 
 	jQuery(document).ready(function($)
 	{
@@ -426,66 +401,5 @@
 </script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>

@@ -2,25 +2,28 @@
 $edit_data = $this->db->get_where('invoice', array('invoice_id' => $param2))->result_array();
 foreach ($edit_data as $row):
 ?>
+
 <style>
   #invoice_print{
-      font-family:"Courier New";
+    font-family:"Courier New", "Consolas", "Ubuntu", sans-serif;
   }
+  
 </style>
 
-    <a onClick="PrintElem('#invoice_print')" class="btn btn-default btn-icon icon-left hidden-print pull-right">
+<a onClick="PrintElem('#invoice_print')" class="btn btn-default btn-icon icon-left hidden-print pull-right">
         Imprimir factura
         <i class="entypo-print"></i>
     </a>
+ 
 </center>
 
     <br><br>
 
     <div  id="invoice_print">        
-        <table class="tabla1" width="100%" border="0">
+        <table class="" width="100%" border="0">
             <tr>
-                <td style="color:red" align="center">
-                <img src="assets/images/talk.png" alt="Logo de Talk"  style="width:15%; filter:sepia(1,5,2);"/>
+                <td style="" align="center">
+                <img src="assets/images/logoTalk.png" alt="Logo de Talk"  style="width:20%;"/>
                     <h4><b>Talk | Academia de idiomas <br> ¡Una alternativa diferente!</b></h4>
                     <h4>Del Am/Pm 3 1/2 cuadras al oeste. Jinotepe, Carazo</h4>
                     <!-- <h4>Autorización DGI: <?php $d=rand(1000,9999); echo $d; ?> - 7</h4> -->
@@ -41,7 +44,7 @@ foreach ($edit_data as $row):
         </table>
         <hr style="border: 1px dashed grey;">
         
-        <table class="tabla1" width="100%" border="0">    
+        <table class="" width="100%" border="0">    
             <tr>
                 <td align="left"><h4><?php echo ('Paguese a:'); ?> </h4></td>
                 <!-- <td align="center"><h4><?php echo ('De parte de: '); ?> </h4></td> -->
@@ -49,7 +52,7 @@ foreach ($edit_data as $row):
 
             <tr>
                 <!-- Esto es la información de facturación del sistema -->
-                <td align="left" valign="top">
+                <td align="left" align="top">
                     <div style="text-transform:capitalize">
                     <?php echo $this->db->get_where('settings', array('type' => 'system_name'))->row()->description; ?><br>
                     <?php echo $this->db->get_where('settings', array('type' => 'address'))->row()->description; ?><br>
@@ -168,10 +171,7 @@ foreach ($edit_data as $row):
                                     echo ('Cash');
                                 if ($row2['method'] == 2)
                                     echo ('Cheque');
-                                if ($row2['method'] == 3)
-                                    echo ('Card');
-                                if ($row2['method'] == 'paypal')
-                                    echo 'Paypal';
+                                
                             ?>
                         </td>
                     </tr>
@@ -182,6 +182,8 @@ foreach ($edit_data as $row):
     </div>
 <?php endforeach; ?>
  -->
+ 
+
 
 <script type="text/javascript">
 

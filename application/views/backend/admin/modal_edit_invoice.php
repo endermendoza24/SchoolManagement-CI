@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title></title>
+</head>
+<body>
 <?php 
 $edit_data		=	$this->db->get_where('invoice' , array('invoice_id' => $param2) )->result_array();
 ?>
@@ -6,10 +16,11 @@ $edit_data		=	$this->db->get_where('invoice' , array('invoice_id' => $param2) )-
     <div class="box-content">
         <?php foreach($edit_data as $row):?>
         <?php echo form_open(base_url() . 'index.php?admin/invoice/do_update/'.$row['invoice_id'], array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
-                <div class="form-group">
+        
+        <div class="form-group">
                     <label class="col-sm-3 control-label"><?php echo ('Estudiante');?></label>
                     <div class="col-sm-5">
-                        <select name="student_id" class="form-control" style="width:400px;" >
+                        <select class="form-control" name="student_id" class="form-control" style="width:400px;" >
                             <?php 
                             $this->db->order_by('class_id','asc');
                             $students = $this->db->get('student')->result_array();
@@ -17,9 +28,10 @@ $edit_data		=	$this->db->get_where('invoice' , array('invoice_id' => $param2) )-
                             ?>
                                 <option value="<?php echo $row2['student_id'];?>"
                                     <?php if($row['student_id']==$row2['student_id'])echo 'selected';?>>
-                                    class <?php echo $this->crud_model->get_class_name($row2['class_id']);?> -
-                                    wave <?php echo $row2['section_id'];?> -
+                                    Wave <?php echo $this->crud_model->get_class_name($row2['class_id']);?> 
+                                    <?php echo $row2['section_id'];?> -
                                     <?php echo $row2['name'];?>
+                                    <?php echo $row2['lastname'];?>
                                 </option>
                             <?php
                             endforeach;
@@ -27,6 +39,7 @@ $edit_data		=	$this->db->get_where('invoice' , array('invoice_id' => $param2) )-
                         </select>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label class="col-sm-3 control-label"><?php echo ('Titulo');?></label>
                     <div class="col-sm-5">
@@ -37,6 +50,12 @@ $edit_data		=	$this->db->get_where('invoice' , array('invoice_id' => $param2) )-
                     <label class="col-sm-3 control-label"><?php echo ('Descripcion');?></label>
                     <div class="col-sm-5">
                         <input required type="text" class="form-control" name="description" value="<?php echo $row['description'];?>"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><?php echo ('Observaciones');?></label>
+                    <div class="col-sm-5">
+                        <input  type="text" class="form-control" name="observaciones" value="<?php echo $row['payment_details'];?>"/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -78,3 +97,5 @@ $edit_data		=	$this->db->get_where('invoice' , array('invoice_id' => $param2) )-
         <?php endforeach;?>
     </div>
 </div>
+</body>
+</html>

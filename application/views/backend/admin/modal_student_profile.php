@@ -19,7 +19,7 @@ foreach($student_info as $row):?>
 				<img src="<?php echo $this->crud_model->get_image_url('student' , $row['student_id']);?>" 
                 	class="img-responsive img-circle" />
 			</a> -->
-			
+			<!-- <img src="assets/images/logoTalk.png" width="80%" alt="logo talk"> -->
 		</div>
 		
 		<div class="col-sm-9">
@@ -27,7 +27,7 @@ foreach($student_info as $row):?>
 			<ul class="profile-info-sections">
 				<li style="padding:0px; margin:0px;">
 					<div class="profile-name">
-							<h3><?php echo $row['name'] . ' ' . $row['lastname'];?></h3>
+							<h3 style="text-transform:capitalize; font-weight:bold; font-size:25px"><?php echo $row['name'] . ' ' . $row['lastname'];?></h3>
 					</div>
 				</li>
 			</ul>
@@ -68,7 +68,7 @@ foreach($student_info as $row):?>
                 
                     <?php if($row['diamatricula'] != ''):?>
                     <tr>
-                        <td>Día matrícula</td>
+                        <td>Día de matrícula</td>
                         <!-- <td><b><?php echo $row['diamatricula'];?></b></td> -->
                         <td><b><?php echo date('d M,Y', $row['diamatricula']);?></b></td>
                     </tr>
@@ -118,6 +118,13 @@ foreach($student_info as $row):?>
                     <tr>
                         <td>Teléfono madre/Padre</td>
                         <td><b><?php echo $this->db->get_where('parent' , array('parent_id' => $row['parent_id']))->row()->phone;?></b></td>
+                    </tr>
+                    <?php endif;?>
+                    <?php if($row['nombreemergencia'] != ''):?>
+                    <tr>
+                        <td>Nombre de contacto de emergencia</td>
+                        <td><b><?php echo $row['nombreemergencia'];?>  <?php echo $row['apellidoemergencia'];?></b>
+                        </td>
                     </tr>
                     <?php endif;?>
                     <?php if($row['telefonoemergencia'] != ''):?>

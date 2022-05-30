@@ -38,13 +38,13 @@
                 <table class="table table-bordered datatable table-hover table-striped" id="table_export">
                     <thead>
                         <tr>
-                            <th width="80"><div><?php echo ('Admit date');?></div></th>
-                            <th width="80"><div><?php echo ('Photo');?></div></th>
-                            <th><div><?php echo ('Name');?></div></th>
-                            <th class="span3"><div><?php echo ('Address');?></div></th>
+                            <th width="80"><div><?php echo ('Fecha matrícula');?></div></th>
+                            <!-- <th width="80"><div><?php echo ('Photo');?></div></th> -->
+                            <th><div><?php echo ('Nombre');?></div></th>
+                            <th class="span3"><div><?php echo ('Dirección');?></div></th>
                             <th><div><?php echo ('Email');?></div></th>
                             <th><div><?php echo ('Emergencia');?></div></th>
-                            <th><div><?php echo ('Options');?></div></th>
+                            <th><div><?php echo ('Opciones');?></div></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,8 +53,8 @@
                                 foreach($students as $row):?>
                         <tr>
                             <td><?php  echo date('d M,Y', $row['diamatricula']);?></td>
-                            <td><img src="<?php echo $this->crud_model->get_image_url('student',$row['student_id']);?>" class="img-circle" width="30" /></td>
-                            <td><?php echo $row['name'];?></td>
+                            <!-- <td><img src="<?php echo $this->crud_model->get_image_url('student',$row['student_id']);?>" class="img-circle" width="30" /></td> -->
+                            <td><?php echo $row['name'];?>  <?php echo $row['lastname'];?></td>
                             <td><?php echo $row['address'];?></td>
                             <td><?php echo $row['email'];?></td>
                             <td><?php echo  $row['nombreemergencia'] . ' ' . ' ' . $row['apellidoemergencia'] ;?></td>
@@ -62,7 +62,7 @@
                                 
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
-                                        Accion <span class="caret"></span>
+                                        Acción <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu dropdown-default pull-right" role="menu">
                                         
@@ -111,13 +111,13 @@
                 <table class="table table-bordered table-hover table-striped">
                     <thead>
                         <tr>
-                            <th width="80"><div><?php echo ('Admit date');?></div></th>
-                            <th width="80"><div><?php echo ('Photo');?></div></th>
-                            <th><div><?php echo ('Name');?></div></th>
+                            <th width="80"><div><?php echo ('Fecha matrćiula');?></div></th>
+                            <!-- <th width="80"><div><?php echo ('Photo');?></div></th> -->
+                            <th><div><?php echo ('Nombre');?></div></th>
                             
                             <th><div><?php echo ('Email');?></div></th>
                             <th><div><?php echo ('Emergencia');?></div></th>
-                            <th><div><?php echo ('Options');?></div></th>
+                            <th><div><?php echo ('Opciones');?></div></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -128,8 +128,8 @@
                                 foreach($students as $row):?>
                         <tr>
                             <td><?php  echo date('d M,Y', $row['diamatricula']);?></td>
-                            <td><img src="<?php echo $this->crud_model->get_image_url('student',$row['student_id']);?>" class="img-circle" width="30" /></td>
-                            <td><?php echo $row['name'];?></td>
+                            <!-- <td><img src="<?php echo $this->crud_model->get_image_url('student',$row['student_id']);?>" class="img-circle" width="30" /></td> -->
+                            <td><?php echo $row['name'];?>  <?php echo $row['lastname'];?></td>
                             <td><?php echo $row['address'];?></td>
                             <td><?php echo $row['email'];?></td>
                             
