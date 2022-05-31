@@ -574,7 +574,7 @@ class Admin extends CI_Controller
         }
         $page_data['classes']    = $this->db->get('class')->result_array();
         $page_data['page_name']  = 'class';
-        $page_data['page_title'] = 'Manage Class';
+        $page_data['page_title'] = 'Administrar Waves';
         $this->load->view('backend/index', $page_data);
     }
 
@@ -588,7 +588,7 @@ class Admin extends CI_Controller
             $class_id           =   $this->db->get('class')->first_row()->class_id;
 
         $page_data['page_name']  = 'section';
-        $page_data['page_title'] = 'Manage Sections';
+        $page_data['page_title'] = 'Salones';
         $page_data['class_id']   = $class_id;
         $this->load->view('backend/index', $page_data);    
     }
@@ -851,7 +851,7 @@ class Admin extends CI_Controller
             redirect(base_url() . 'index.php?admin/class_routine/', 'refresh');
         }
         $page_data['page_name']  = 'class_routine';
-        $page_data['page_title'] = 'Manage Class Routine';
+        $page_data['page_title'] = 'Administrar rutina de clases';
         $this->load->view('backend/index', $page_data);
     }
 	
@@ -1099,6 +1099,15 @@ class Admin extends CI_Controller
         $page_data['page_title'] = 'Categorías de gastos';
         $this->load->view('backend/index', $page_data);
     }
+    //  página de soporte
+    function soporte($param1 = '' , $param2 = '')
+    {
+
+
+        $page_data['page_name']  = 'soporte';
+        $page_data['page_title'] = 'Soporte y contacto de ayuda';
+        $this->load->view('backend/index', $page_data);
+    }
 
     /**********MANAGE LIBRARY / BOOKS********************/
     function book($param1 = '', $param2 = '', $param3 = '')
@@ -1342,7 +1351,7 @@ class Admin extends CI_Controller
 
         $page_data['message_inner_page_name']   = $param1;
         $page_data['page_name']                 = 'message';
-        $page_data['page_title']                = 'Private Messaging';
+        $page_data['page_title']                = 'Mensajería privada';
         $this->load->view('backend/index', $page_data);
     }
     

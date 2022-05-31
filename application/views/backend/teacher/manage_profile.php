@@ -32,26 +32,26 @@
                                     <input type="text" class="form-control" name="email" value="<?php echo $row['email'];?>"/>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="field-1" class="col-sm-3 control-label"><?php echo ('Foto');?></label>
-                                
-                                <div class="col-sm-5">
-                                    <div class="fileinput fileinput-new" data-provides="fileinput">
-                                        <div class="fileinput-new thumbnail" style="width: 100px; height: 100px;" data-trigger="fileinput">
-                                            <img src="<?php echo $this->crud_model->get_image_url('teacher' , $row['teacher_id']);?>" alt="...">
-                                        </div>
-                                        <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px"></div>
-                                        <div>
-                                            <span class="btn btn-white btn-file">
-                                                <span class="fileinput-new">Seleccionar Imagen</span>
-                                                <span class="fileinput-exists">Cambiar</span>
-                                                <input type="file" name="userfile" accept="image/*">
-                                            </span>
-                                            <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Remover</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+<!--                            <div class="form-group">-->
+<!--                               <label for="field-1" class="col-sm-3 control-label">-->--><?php ////echo ('Foto');?><!--</label>-->-->
+<!--                                -->
+<!--                                <div class="col-sm-5">-->
+<!--                                    <div class="fileinput fileinput-new" data-provides="fileinput">-->
+<!--                                        <div class="fileinput-new thumbnail" style="width: 100px; height: 100px;" data-trigger="fileinput">-->
+<!--                                            <img src="--><?php //echo $this->crud_model->get_image_url('teacher' , $row['teacher_id']);?><!--" alt="...">-->
+<!--                                        </div>-->
+<!--                                        <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px"></div>-->
+<!--                                        <div>-->
+<!--                                            <span class="btn btn-white btn-file">-->
+<!--                                                <span class="fileinput-new">Seleccionar Imagen</span>-->
+<!--                                                <span class="fileinput-exists">Cambiar</span>-->
+<!--                                                <input type="file" name="userfile" accept="image/*">-->
+<!--                                            </span>-->
+<!--                                            <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Remover</a>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
                             <div class="form-group">
                               <div class="col-sm-offset-3 col-sm-5">
                                   <button type="submit" class="btn btn-info"><?php echo ('Actualizar cuenta');?></button>

@@ -7,7 +7,7 @@
 	<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
 	<link href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css" rel="stylesheet" />
 
-	<title><?php echo strftime(' %A, %d de %B de %Y a las %H:%M ');?></title>
+	<title><?php  echo '- Reporte generado por: '; echo $this->session->userdata('name') ;  ?> </title>
 </head>
 <body>
 	
@@ -56,7 +56,7 @@ class="btn btn-primary pull-right">
             		if ($row['method'] == 1)
             			echo ('Efectivo');
             		if ($row['method'] == 2)
-            			echo ('Transferencia bancaria');            	
+            			echo ('Transferencia');            	
             	?>
             </td>
             <td><?php echo $row['amount'];?></td>

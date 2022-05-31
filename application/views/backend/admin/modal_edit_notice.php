@@ -13,13 +13,13 @@ $edit_data		=	$this->db->get_where('noticeboard' , array('notice_id' => $param2)
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Noticia');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Evento');?></label>
                     <div class="col-sm-5">
                         <div class="box closable-chat-box">
                             <div class="box-content padded">
                                     <div class="chat-message-box">
                                     <textarea name="notice" id="ttt" rows="5" class="form-control"
-                                    	placeholder="<?php echo ('Agregar Noticia');?>"><?php echo $row['notice'];?></textarea>
+                                    	placeholder="<?php echo ('Agregar evento');?>"><?php echo $row['notice'];?></textarea>
                                     </div>
                             </div>
                         </div>
@@ -58,7 +58,7 @@ $edit_data		=	$this->db->get_where('noticeboard' , array('notice_id' => $param2)
             </div>
             <div class="form-group">
               <div class="col-sm-offset-3 col-sm-5">
-                  <button type="submit" class="btn btn-info"><?php echo ('Editar Noticia');?></button>
+                  <button type="submit" class="btn btn-info"><?php echo ('Editar evento');?></button>
               </div>
             </div>
         </form>

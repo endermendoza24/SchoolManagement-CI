@@ -10,7 +10,7 @@
 <link href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css" rel="stylesheet" />
 
 
-	<title><?php  echo '- Reporte hecho por: '; echo $this->session->userdata('name') ;  ?> </title>
+	<title><?php  echo '- Reporte generado por: '; echo $this->session->userdata('name') ;  ?> </title>
 </head>
 <body>
 

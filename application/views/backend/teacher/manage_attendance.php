@@ -26,18 +26,18 @@
                         <select name="month" class="form-control">
                             <?php 
                             for($i=1;$i<=12;$i++):
-                                if($i==1)$m='January';
-                                else if($i==2)$m='February';
-                                else if($i==3)$m='March';
-                                else if($i==4)$m='April';
-                                else if($i==5)$m='May';
-                                else if($i==6)$m='June';
-                                else if($i==7)$m='July';
-                                else if($i==8)$m='August';
-                                else if($i==9)$m='September';
-                                else if($i==10)$m='October';
-                                else if($i==11)$m='November';
-                                else if($i==12)$m='December';
+                                if($i==1)$m='Enero';
+                                else if($i==2)$m='Febrero';
+                                else if($i==3)$m='Marzo';
+                                else if($i==4)$m='Abril';
+                                else if($i==5)$m='Mayo';
+                                else if($i==6)$m='Junio';
+                                else if($i==7)$m='Julio';
+                                else if($i==8)$m='Agosto';
+                                else if($i==9)$m='Septiembre';
+                                else if($i==10)$m='Octubre';
+                                else if($i==11)$m='Noviee';
+                                else if($i==12)$m='Diciembre';
                             ?>
                                 <option value="<?php echo $i;?>"
                                     <?php if($month==$i)echo 'selected="selected"';?>>
@@ -50,7 +50,7 @@
                     </td>
                     <td>
                         <select name="year" class="form-control">
-                            <?php for($i=2030;$i>=2010;$i--):?>
+                            <?php for($i=2025;$i>=2020;$i--):?>
                                 <option value="<?php echo $i;?>"
                                     <?php if(isset($year) && $year==$i)echo 'selected="selected"';?>>
                                         <?php echo $i;?>
@@ -72,7 +72,7 @@
                         </select>
 
                     </td>
-                    <td align="center"><input type="submit" value="<?php echo ('Asistencia Diaria');?>" class="btn btn-info"/></td>
+                    <td align="center"><input type="submit" value="<?php echo ('Asistencia diaria');?>" class="btn btn-info"/></td>
                 </tr>
             </form>
         </tbody>
@@ -211,9 +211,9 @@
                                 
                                     <select name="status_<?php echo $row['student_id'];?>" class="form-control" style="width:100px; float:left;">
                                         <option value="0" <?php if($status == 0)echo 'selected="selected"';?>></option>
-                                        <option value="1" <?php if($status == 1)echo 'selected="selected"';?>>Present</option>
-                                        <option value="2" <?php if($status == 2)echo 'selected="selected"';?>>Absent</option>
-                                        <option value="3" <?php if($status == 3)echo 'selected="selected"';?>>Justify</option>
+                                        <option value="1" <?php if($status == 1)echo 'selected="selected"';?>>Presente</option>
+                                        <option value="2" <?php if($status == 2)echo 'selected="selected"';?>>Ausente</option>
+                                        <option value="3" <?php if($status == 3)echo 'selected="selected"';?>>Justificado</option>
                                     </select>
                                 
                             </td>

@@ -294,6 +294,8 @@ direccion -->
             </a>
         </li>
 
+
+
         <!-- TRANSPORT -->
         <!-- <li class="<?php if ($page_name == 'transport') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/transport">
@@ -325,7 +327,13 @@ direccion -->
                 <span><?php echo ('Message'); ?></span>
             </a>
         </li> -->
-
+        <!-- Soporte -->
+        <li class="<?php if ($page_name == 'book') echo 'active'; ?> ">
+            <a href="<?php echo base_url(); ?>index.php?admin/soporte">
+                <i class="entypo-help"></i>
+                <span><?php echo ('Ayuda'); ?></span>
+            </a>
+        </li>
         <!-- SETTINGS -->
         
         <li class="<?php if ($page_name == 'settings') echo 'active'; ?> ">

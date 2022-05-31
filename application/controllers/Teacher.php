@@ -40,7 +40,7 @@ class Teacher extends CI_Controller
         if ($this->session->userdata('teacher_login') != 1)
             redirect(base_url(), 'refresh');
         $page_data['page_name']  = 'dashboard';
-        $page_data['page_title'] = ('Teacher Dashboard');
+        $page_data['page_title'] = ('Dashboard de profesor');
         $this->load->view('backend/index', $page_data);
     }
     
@@ -231,8 +231,8 @@ class Teacher extends CI_Controller
         $page_data['class_id']   = $class_id;
         $page_data['subject_id'] = $subject_id;
         
-        $page_data['page_info'] = 'Exam marks';
-        
+        $page_data['page_info'] = 'Administrar calificaciones';
+
         $page_data['page_name']  = 'marks';
         $page_data['page_title'] = get_phrase('manage_exam_marks');
         $this->load->view('backend/index', $page_data);

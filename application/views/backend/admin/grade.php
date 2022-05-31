@@ -1,3 +1,4 @@
+<i class="entypo-info">Se recomienda configurar una única vez</i>
 <div class="row">
 	<div class="col-md-12">
     

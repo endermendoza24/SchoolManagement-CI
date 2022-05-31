@@ -24,6 +24,7 @@ foreach ($edit_data as $row):
             <tr>
                 <td style="" align="center">
                 <img src="assets/images/logoTalk.png" alt="Logo de Talk"  style="width:20%;"/>
+<!--                    <img src="https://drive.google.com/file/d/1UGqlUgcm4S8NhniMc1Hwryo6LocpBpar/view?usp=sharing" alt="Logo" style="width:20%;"/>-->
                     <h4><b>Talk | Academia de idiomas <br> ¡Una alternativa diferente!</b></h4>
                     <h4>Del Am/Pm 3 1/2 cuadras al oeste. Jinotepe, Carazo</h4>
                     <!-- <h4>Autorización DGI: <?php $d=rand(1000,9999); echo $d; ?> - 7</h4> -->

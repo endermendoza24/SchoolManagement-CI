@@ -25,7 +25,7 @@
             <li>
                 <a href="#<?php echo $row['section_id'];?>" data-toggle="tab">
                     <span class="visible-xs"><i class="entypo-user"></i></span>
-                    <span class="hidden-xs"><?php echo ('Section');?> <?php echo $row['name'];?> ( <?php echo $row['nick_name'];?> )</span>
+                    <span class="hidden-xs"><?php echo ('Salón: ');?> <?php echo $row['name'];?> ( <?php echo $row['nick_name'];?> )</span>
                 </a>
             </li>
         <?php endforeach;?>

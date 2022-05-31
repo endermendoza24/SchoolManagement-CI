@@ -2,7 +2,7 @@
 <a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/section_add/');" 
 	class="btn btn-primary pull-right">
     	<i class="entypo-plus-circled"></i>
-			<?php echo ('Add New Wave');?>
+			<?php echo ('Agregar nuevo salón de clases');?>
 </a> 
 <br><br><br>
 
@@ -19,7 +19,7 @@
 				<li class="<?php if ($row['class_id'] == $class_id) echo 'active';?>">
 					<a href="<?php echo base_url();?>index.php?admin/section/<?php echo $row['class_id'];?>">
 						<i class="entypo-dot"></i>
-						<?php echo ('Class');?> <?php echo $row['name'];?>
+						<?php echo ('Wave');?> <?php echo $row['name'];?>
 					</a>
 				</li>
 			<?php endforeach;?>
@@ -32,10 +32,10 @@
 						<thead>
 							<tr>
 								<th>#</th>
-								<th><?php echo ('Wave Name');?></th>
+								<th><?php echo ('Nombre de salón');?></th>
 								<th><?php echo ('Nick Name');?></th>
-								<th><?php echo ('Teacher');?></th>
-								<th><?php echo ('Options');?></th>
+								<th><?php echo ('Profesor');?></th>
+								<th><?php echo ('Opciones');?></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -67,7 +67,7 @@
 		                                    <li>
 		                                        <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/section_edit/<?php echo $row['section_id'];?>');">
 		                                            <i class="entypo-pencil"></i>
-		                                                <?php echo ('Edit');?>
+		                                                <?php echo ('Editar');?>
 		                                            </a>
 		                                                    </li>
 		                                    <li class="divider"></li>
@@ -76,7 +76,7 @@
 		                                    <li>
 		                                        <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/sections/delete/<?php echo $row['section_id'];?>');">
 		                                            <i class="entypo-trash"></i>
-		                                                <?php echo ('Delete');?>
+		                                                <?php echo ('Eliminar');?>
 		                                            </a>
 		                                    </li>
 		                                </ul>

@@ -92,7 +92,7 @@
 						<h4 style="text-align:center; font-weight:bold; font-size:1.5rem; color:#000; padding:1.2rem">Sección acádemica</h4>
 					<div class="col-md-6 mb-3">
 						
-					<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Clase');?></label>
+					<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Wave');?></label>
                         
 						<div class="col-sm-8">
 							<select data-validate="required" data-message-required="<?php echo ('Value Required');?>" name="class_id" class="form-control select2" data-validate="" id="class_id" 
@@ -158,39 +158,19 @@
 			                </div>
 						</div>
 	
-						<!-- Rol -->
-						<div class="col-md-6 mb-3">
-						
-						<label translate="no" style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Wave');?></label>
-                        						
+<!--						NEw new new new neww neew-->
 
-						<div class="col-sm-8">
-							<select translate="no" name="wave" class="form-control select2" data-validate="" id="wave">
-								<option value="Wave 1">Wave 1</option>
-								<option value="Wave 2">Wave 2</option>
-								<option value="Wave 3">Wave 3</option>
-								<option value="Wave 4">Wave 4</option>
-								<option value="Wave 5">Wave 5</option>
-								<option value="Wave 6">Wave 6</option>
-								<option value="Wave 7">Wave 7</option>
-								<option value="Wave 8">Wave 8</option>
-								<option value="Wave 9">Wave 9</option>
-								<option value="Wave 10">Wave 10</option>
-								<option value="Wave 11">Wave 11</option>
-								<option value="Wave 12">Wave 12</option>
-								<option value="Wave 13">Wave 13</option>
-								<option value="Wave 14">Wave 14</option>
-								<option value="Wave 15">Wave 15</option>
-								<option value="Wave 16">Wave 16</option>
-                          </select>
-						</div>	
-						
-						</div>
-	
-						<!-- natonality -->
-	
-						
-					</div>
+                        <div class="form-group">
+                            <div class="col-md-6 mb-3">
+                            <label for="field-2" class="col-sm-3 control-label"><?php echo ('Salón');?></label>
+                            <div class="col-sm-8">
+                                <select name="section_id" class="form-control" id="section_selector_holder">
+                                    <option value=""><?php echo ('Seleccionna Wave primero');?></option>
+
+                                </select>
+                            </div>
+                            </div>
+                        </div>
 
 				
 					

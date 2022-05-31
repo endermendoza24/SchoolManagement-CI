@@ -4,7 +4,7 @@
         	<div class="panel-heading">
             	<div class="panel-title" >
             		<i class="entypo-plus-circled"></i>
-					<?php echo ('Agregar una Seccion');?>
+					<?php echo ('Agregar un salón de clases');?>
             	</div>
             </div>
 			<div class="panel-body">
@@ -28,7 +28,7 @@
 					</div>
 
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Clase');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Wave');?></label>
                         
 						<div class="col-sm-5">
 							<select name="class_id" class="form-control" data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>">
@@ -69,7 +69,7 @@
                     
                     <div class="form-group">
 						<div class="col-sm-offset-3 col-sm-5">
-							<button type="submit" class="btn btn-info"><?php echo ('Agregar Seccion');?></button>
+							<button type="submit" class="btn btn-info"><?php echo ('Agregar sección');?></button>
 						</div>
 					</div>
                 <?php echo form_close();?>

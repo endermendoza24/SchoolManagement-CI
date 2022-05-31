@@ -37,7 +37,7 @@
 					</div>
 
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Clase');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Wave');?></label>
                         
 						<div class="col-sm-5">
 							<select name="class_id" class="form-control" data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>">
