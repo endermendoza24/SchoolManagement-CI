@@ -205,7 +205,7 @@
 						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Dirección');?></label>
                         
 						<div class="col-sm-8">
-							<input placeholder="Ej. Jinotepe, Carazo" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="address" value="" >
+							<input placeholder="Ej. Jinotepe, Carazo"  type="text" class="form-control" name="address" value="" >
 						</div> 
 						</div>
 
@@ -222,7 +222,7 @@
 							
 					<label style="color:#000; font-weight:bold;" for="field-1" class="col-sm-3 control-label"><?php echo ('Email');?></label>
 						<div class="col-sm-8">
-							<input placeholder="Ej. example@idiomastalk.com" data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="email" class="form-control" name="email" value="">
+							<input placeholder="Ej. example@idiomastalk.com" type="email" class="form-control" name="email" value="">
 						</div>
 					</div>
 				</div>

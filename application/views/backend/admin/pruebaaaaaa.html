@@ -1,0 +1,222 @@
+<div class="printarea" id="printarea">
+  <section class="headercontainer">
+    <div class="encabezados">
+      <h4 class="titulos">
+        Ficha | Información de estudiantes <br />
+        Talk | Academia de idiomas <br />
+        <i>"Una alternativa diferente"</i>
+      </h4>
+      <p class="informacion1">
+        El prresente documento compila información personal de toda persona
+        natural o jurídica que desea inscribirse a los cursos ofertados en Talk
+        | Academia de idiomas.
+      </p>
+    </div>
+    <div class="encabezadoimagen">
+      <img src "" alt="Imagen Talk | Academia de idiomas" />
+    </div>
+  </section>
+  <!-- cuadrito abajo de la imagen -->
+  <div class="cuadrito">
+    <p>
+      <strong>Importante: </strong>Lea las instrucciones que aparecen al reverso
+      de este documento antes de completar esta fórmula. Recuerde firmar en el
+      lugar correspondiente.
+    </p>
+  </div>
+
+  <section class="nombreestudiante">
+    <h4>Nombre completo del cursante</h4>
+
+    <div>
+      <div class="nombre">
+        <div class="rayanombre"></div>
+        <p>Nombres</p>
+      </div>
+
+      <div class="apellido primerapellido">
+        <div class="rayanombre"></div>
+        <p>Primer Apellido</p>
+      </div>
+
+      <div class="apellido segundoapellido">
+        <div class="rayanombre"></div>
+        <p>Segundo Apellido</p>
+      </div>
+
+      <div class="numerocarnet">
+        <div class="cuadritosnom">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="documentoidentidad">
+    <h4>Documento de identidad</h4>
+    <div></div>
+  </section>
+</div>
+
+<style>
+  .printarea {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .headercontainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+</style>
+
+<style>
+  .printarea {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .headercontainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* border: 2px solid #000; */
+    padding: 15px;
+  }
+  .encabezadoimagen {
+    /* border: 2px solid #000; */
+    display: flex;
+    justify-content: end;
+  }
+  .encabezadoimagen img {
+    width: 30%;
+  }
+
+  .cuadrito {
+    margin-top: 5px;
+    padding: 5px;
+    border: 2px solid #000;
+  }
+
+  .datos {
+    padding: 0 10px;
+  }
+  /*Nombre completo del cursante*/
+  div > span {
+    padding-left: 15px;
+  }
+
+  .nombreestudiante {
+    width: 100%;
+  }
+
+  .rayasnombre {
+    margin-top: 40px;
+    display: flex;
+  }
+  .rayasnombre div {
+    margin-left: 10px;
+  }
+  .rayasnombre h5 {
+    text-align: center;
+  }
+  .nombre,
+  .apellido {
+    width: 100%;
+  }
+  .rayanombre {
+    width: 100%;
+    border-bottom: 1px solid #000;
+  }
+  /*documento de identidad*/
+  .documentoidentidad {
+    width: 100%;
+  }
+  .rayascedula {
+    margin-top: 40px;
+    display: flex;
+  }
+  .rayascedula h5 {
+    text-align: center;
+  }
+  .raya {
+    width: 100%;
+    border-bottom: 1px solid #000;
+  }
+  .sexo,
+  .naci,
+  .cedula,
+  .nacionalidad {
+    width: 100%;
+    margin-left: 10px;
+  }
+  /**Contacto**/
+  .emergencias {
+    width: 100%;
+  }
+  .emergenciarayas {
+    margin-top: 40px;
+    display: flex;
+  }
+
+  .emergenciarayas h5 {
+    text-align: center;
+  }
+  .emergencias .emergenciarayas > div {
+    width: 100%;
+    margin-left: 10px;
+  }
+  /*direccion r*/
+  .direccionr {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+  }
+  .direccionr div {
+    border: #000 solid 1px;
+  }
+  .direccionr .espaciodir {
+    width: 100%;
+  }
+  .direccionr .textodir {
+    padding: 10px;
+    line-height: 30px;
+  }
+  /*Juaremtno*/
+  .juramento {
+    width: 100%;
+  }
+  .rayasjuramento {
+    margin-top: 40px;
+    display: flex;
+  }
+  .rayasjuramento h5 {
+    text-align: center;
+  }
+  .juramento .rayasjuramento > div {
+    width: 100%;
+    margin-left: 10px;
+  }
+
+  /*cuadro*/
+
+  .cuadro {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cuadro > div {
+    width: 100%;
+    height: 80px;
+    border: solid 1px #000;
+  }
+  .cuadro h5 {
+    padding-left: 5px;
+  }
+</style>
