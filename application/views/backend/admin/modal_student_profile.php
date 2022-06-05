@@ -21,6 +21,10 @@ foreach($student_info as $row):?>
         Imprimir perfil
         <i class="entypo-print"></i>
     </a>
+    <a class="btn btn-default btn-icon icon-left  pull-left" onclick="location.reload()">
+        Volver 
+        <i class="entypo-back"></i>
+    </a>
 
     <!-- <input type="button" value="Imprimir" onclick='printpage()'/> -->
 
@@ -158,389 +162,204 @@ foreach($student_info as $row):?>
 			</div>
 		</div>		
 	</section>
-	
-	
-	
 </div>
 
-
-
+<!-- perfil de impresion --> 
 <div class="printarea" id="printArea">
-  <section class="headercontainer">
-    <div class="encabezados">
-      <h4 class="titulos">
-        Ficha | Información de estudiantes <br />
-        Talk | Academia de idiomas <br />
-        <i>"Una alternativa diferente"</i>
-      </h4>
-      <p class="informacion1">
-        El prresente documento compila información personal de toda persona
-        natural o jurídica que desea inscribirse a los cursos ofertados en Talk
-        | Academia de idiomas.
-      </p>
-    </div>
-    <div class="encabezadoimagen">
-      <img src="assets/images/imagentalk.png" alt="Imagen Talk | Academia de idiomas" />
-    </div>
-  </section>
-  <!-- cuadrito abajo de la imagen -->
-  <div class="cuadrito">
-    <p>
-      <strong>Importante: </strong>Lea las instrucciones que aparecen al reverso
-      de este documento antes de completar esta fórmula. Recuerde firmar en el
-      lugar correspondiente.
-    </p>
-  </div>
+  <link rel="stylesheet" href="./assets/css/estilos.css">
+      <section class="headercontainer">
+        <div class="encabezadoimagen">
+          <img src="assets/images/imagentalk.png" alt="Imagen Talk | Academia de idiomas" />
+        </div>
 
- 
-<section class="datos">
-  <section class="nombreestudiante">
-    <h4>1.  Nombre completo del cursante</h4>
+        <div class="encabezados">
+          <h4 class="titulos">
+            <p translate="no">
+             <b> Talk | Academia de idiomas</b></p><br />
+              <i>"Una alternativa diferente"</i>
+            </p>
+            <p>Ficha de información de estudiantes.</p>
+          </h4>
+          <p translate="no" class="informacion1">
+            El presente documento compila información personal de toda persona
+            natural o jurídica <br>que está inscrita en alguno de los cursos
+            ofertados en Talk | Academia de idiomas.
+          </p>
+        </div>
+      </section>
 
-    <div class="rayasnombre">
-      <div class="nombre">
-        <span style="text-transform:capitalize ;"><?php echo $row['name']?></span>
-        <div class="rayanombre"></div>
-        <h5>Nombres</h5>
-      </div>
+      <section class="datos">
+          <h4>1. Datos del cursante</h4>
+         <div class="primerosdatos">
+            <div class="personales apellido">
+                <p>Apellidos: <div class="interno"><?php echo $row['lastname']?></div> </p>
+            </div>
+            <div class="personales nombres">
+              <p>Nombres: <div class="interno"><?php echo $row['name']?></div> </p>
+          </div>
+          
+         </div>
 
-      <div class="apellido primerapellido">
-        <span style="text-transform:capitalize ;"><?php echo $row['lastname']?></span>
-        <div class="rayanombre"></div>
-        <h5>Apellidos</h5>
-      </div>
+         <div class="primerosdatos">
+            <div class="personales carnet">
+                <p>N° de carné: <div><?php echo strftime('%y', $row['diamatricula']) . $row['student_id'];?></div></p>
+            </div>
+            <div class="personales direccion">
+                <p>Dirección: <div><?php echo $row['address']?></div> </p>
+            </div>
+         </div>
+      </section>
 
-      <div class="apellido segundoapellido">
-        <span><?php echo $row['address']?></span>
-        <div class="rayanombre"></div>        
-        <h5>Dirección</h5>
-      </div>     
-  </section>
-
-  <section class="documentoidentidad">
-    <h4>2.  Documento de identidad</h4>
-    <div class="rayascedula">
-      <div class="cedula">
-        <span style="text-transform:uppercase;"><?php echo $row['identdocument'] . ' - ' . $row['tipo_documento']?></span>
-        <div class="raya"></div>
-        <h5>Documento de identidad</h5>
-        <!-- <p>Cédula</p> -->
-      </div>
-
-      <!-- <div class="cedula">
-        <div class="raya"></div>
-        <p>041-240500-1004P</p>
-      </div> -->
-
-      <div class="naci">
-        <span><?php echo $row['birthday']?></span>
-        <div class="raya"></div>
-        <h5>Fecha de nacimiento</h5>
-        <!-- <p>24 / 05 / 2000</p> -->
-      </div>
-
-      <div class="sexo">
-        <span><?php echo $row['sex']?></span>
-        <div class="raya"></div>
-        <h5>Sexo</h5>
-        <!-- <p>Masculino</p> -->
-      </div>
-
-      <div class="nacionalidad">
-        <span style="text-transform:capitalize;"><?php echo $row['nationality']?></span>
-        <div class="raya"></div>
-        <h5>Nacionalidad</h5>
-        <!-- <p>Nicaragüense</p> -->
-      </div>
-    </div>
-
-
-
-
-  
-  </section>
-
-  <!-- emergencias -->
-  <section class="emergencias">
-    <h4>3. Contactos</h4>
-
-    <div class="emergenciarayas">
-      <div class="numerotel">
-        <span><?php echo $row['phone']?></span>
-        <div class="raya"></div>
-        <h5>Número personal / WhatsApp</h5>
+      <section class="identidad">
+        <h4>2. Datos de identidad</h4>
+       <div class="primerosdatos">
+          <div class="personales">
+              <p>N° de cédula: <div class="interno"><?php echo $row['identdocument'] . ' - ' . $row['tipo_documento']?></div> </p>
+          </div>
+          <div class="personales">
+            <p>Fecha de nacimiento: <div class="interno"><?php echo $row['birthday']?></div> </p>
+        </div>
         
-      </div>
+       </div>
 
-      <div class="direccion">
-        <span><?php echo $row['direccionemergencia']?></span>
-        <div class="raya"></div>
-        <h5>Dirección</h5>
-        <!-- <p>24 / 05 / 2000</p> -->
-      </div>
+       <div class="primerosdatos">
+          <div class="personales ">
+              <p>Sexo: <div class="interno"><?php echo $row['sex']?></div></p>
+          </div>
+          <div class="personales">
+              <p>Nacionalidad: <div class="interno"> <?php echo $row['nationality']?></div> </p>
+          </div>
+          <div class="personales">
+            <p>N° personal WhatsApp: <div class="interno"><?php echo $row['phone']?></div> </p>
+        </div>
+       </div>
+    </section>
 
-      <div class="emer">
-        <span><?php echo $row['nombremergencia'] .' ' . $row['apellidoemergencia'] ?></span>
-        <div class="raya"></div>
-        <h5>En caso de emergencias llamar a: </h5>
-        <!-- <p>Masculino</p> -->
-      </div>
+    <section class="contactos">
+        <h4>3. Contactos</h4>
+       <div class="primerosdatos">
+         
+          <div class="personales">
+            <p> Dirección contacto: <div class="interno"><?php echo $row['direccionemergencia']?></div> </p>
+        </div>
+        <div class="personales ">
+            <p>En caso de emergencias llamar a: <div class="interno"><?php echo $row['nombremergencia'] .' ' . $row['apellidoemergencia'] ?></div></p>
+        </div>
+        
+       </div>
 
-      <div class="parentesco">
-        <span style="text-transform:capitalize;"><?php if($row['relacionemergencia']==1) {echo 'Familiar';}else if($row['relacionemergencia']==2)
-        {echo 'Amigos';}else if($row['relacionemergencia'] == 3) {echo 'Otra';}else {echo '';}?></span>
-        <div class="raya"></div>
-        <h5>Parentesco:</h5>
-        <!-- <p>Nicaragüense</p> -->
-      </div>
+       <div class="primerosdatos">
+         
+          <div class="personales">
+              <p>Parentesco: <div class="interno"><?php if($row['relacionemergencia']==1) {echo 'Familiar';}else if($row['relacionemergencia']==2)
+        {echo 'Amigos';}else if($row['relacionemergencia'] == 3) {echo 'Otra';}else {echo '';}?></div> </p>
+          </div>
+          <div class="personales">
+            <p>Teléfono: <div class="interno"><?php echo $row['telefonoemergencia'];?></div> </p>
+        </div>
+       </div>
+    </section>
 
-      <div class="telefo">
-        <span><?php $row['telefonoemergencia']?></span>
-        <div class="raya"></div>
-        <h5>Teléfono/WhatsApp </h5>
-        <!-- <p>Nicaragüense</p> -->
-      </div>
-     
-    </div>
-    
-  </section>
+    <section class="academicos">
+        <h4>4. Datos académicos</h4>
+       <div class="primerosdatos">
+          <div class="personales">
+              <p>Wave: <div class="interno"><?php echo $this->crud_model->get_class_name($row['class_id']);?></div> </p>
+          </div>
+          <div class="personales">
+            <p>Nivel CEFR: <div class="interno">A1<?php $row['nivel']?></div> </p>
+        </div>
+        
+       </div>
 
-  <section class="direccionr">
-    <div class="textodir">
-      Dirección de residencia actual (Si vive en una residencia diferente a la cédula).
-    </div>
-    <div class="espaciodir">
+       <div class="primerosdatos">
+          <div class="personales ">
+              <p>Día de matrícula: <div class="interno"><?php echo date('d/m/Y', $row['diamatricula'])?></div></p>
+          </div>    
+       </div>
+    </section>
 
-    </div>
-  </section>
+   <style>
+     .printarea {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+}
+.headercontainer {
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 10pt;
+  font-family: Arial;
+  /* border: 1px solid #000; */
+}
+h4 {
+  font-size: 11pt;
+}
+.encabezadoimagen {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.encabezadoimagen img {
+  width: 16%;
+}
+.primerosdatos {
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  /* margin-top: 10px; */
+  grid-template-columns: 1fr 1fr;
+}
 
-  <h5>Declaro bajo juramento que la información proporcionada en este documento es verdadera.</h5>
+.primerosdatos > div {
+  /* border: 1px solid #000; */
+  margin: 6px 0;
+}
+.primerosdatos div > div {
+  display: inline;
+}
+.primerosdatos div p {
+  /*esos son los encabezados*/
+  display: inline;
+  font-weight: 700;
+}
+.interno {
+  text-transform: capitalize;
+}
 
-  <section class="juramento">
-    
-    <div class="rayasjuramento">
-      <div class="">
-        <span style="text-transform:capitalize;"><?php echo $row['name'] . ' ' . $row['lastname']?></span>
-        <div class="raya"></div>
-        <h5>Nombre y apellido</h5>
-      </div>
-
-      <div class=" ">
-        <span><?php echo date('d/m/Y', $row['diamatricula'])?></span>
-        <div class="raya"></div>
-        <h5>Fecha de inscripción</h5>
-      </div>
-
-      <div class=" ">
-        <span></span>
-        <div class="raya"></div>        
-        <h5>Firma</h5>
-      </div>     
-  </section>
-
-  <!-- cuadro -->
-
-  <section class="cuadro">
-    <div>
-      <h5>Wave</h5>
-    </div>
-    <div>
-      <h5>Horario</h5>
-    </div>
-    <div>
-      <h5>Nivel</h5>
-    </div>
-    <div>
-      <h5>Fecha de inicio</h5>
-    </div>
-    <div>
-      <h5>Docente a cargo</h5>
-    </div>
-    <div>
-      <h5>Firma de quien recibe</h5>
-    </div>
-  </section>
-  <h4 style="text-align:center;"><i>¡Gracias por participar de esta alternativa diferente!</i></h4>
-</section>
-
-<style>
-  .printarea {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  .headercontainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* border: 2px solid #000; */
-    padding: 15px;
-  }
-  .encabezadoimagen {
-    /* border: 2px solid #000; */
-    display: flex;
-    justify-content: end;
-  }
-  .encabezadoimagen img {
-    width: 35%;
-  }
-  
-  .cuadrito {
-    margin-top: 5px;
-    padding: 5px;
-    border: 2px solid #000;
-    display:none;
-  }
-  
-  .datos {
-    padding: 0 10px;
-  }
-  /*Nombre completo del cursante*/
-  div > span {
-    padding-left: 15px;
-  }
-  
-  .nombreestudiante {
-    width: 100%;
-  }
-  
-  .rayasnombre {
-    margin-top: 20px;
-    display: flex;
-  }
-  .rayasnombre div {
-    margin-left: 10px;
-  }
-  .rayasnombre h5 {
-    text-align: center;
-  }
-  .nombre,
-  .apellido {
-    width: 100%;
-  }
-  .rayanombre {
-    width: 100%;
-    border-bottom: 2px solid #000;
-  }
-  /*documento de identidad*/
-  .documentoidentidad {
-    width: 100%;
-  }
-  .rayascedula {
-    margin-top: 20px;
-    display: flex;
-  }
-  .rayascedula h5 {
-    text-align: center;
-  }
-  .raya {
-    width: 100%;
-    border-bottom: 2px solid #000;
-  }
-  .sexo,
-  .naci,
-  .cedula,
-  .nacionalidad {
-    width: 100%;
-    margin-left: 10px;
-  }
-  /**Contacto**/
-  .emergencias {
-    width: 100%;
-  }
-  .emergenciarayas {
-    margin-top: 20px;
-    display: flex;
-  }
-  
-  .emergenciarayas h5 {
-    text-align: center;
-  }
-  .emergencias .emergenciarayas > div {
-    width: 100%;
-    margin-left: 10px;
-  }
-  /*direccion r*/
-  .direccionr {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-  }
-  .direccionr div {
-    border: #000 solid 2px;
-  }
-  .direccionr .espaciodir {
-    width: 100%;
-  }
-  .direccionr .textodir {
-    padding: 10px;
-    
-  }
-  /*Juaremtno*/
-  .juramento {
-    width: 100%;
-  }
-  .rayasjuramento {
-    margin-top: 10px;
-    display: flex;
-  }
-  .rayasjuramento h5 {
-    text-align: center;
-  }
-  .juramento .rayasjuramento > div {
-    width: 100%;
-    margin-left: 10px;
-  }
-  
-  /*cuadro*/
-  
-  .cuadro {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .cuadro > div {
-    width: 100%;
-    height: 50px;
-    border: solid 2px #000;
-  }
-  .cuadro h5 {
-    padding-left: 5px;
-  }
-  .imagespublicidad{
-
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  .imagespublicidad div {
-    width: 70px;
-    height: 40px;
-    
-  }
+/* .identidad,
+.contactos,
+.academicos,
+.datos {
  
-  .imagespublicidad div img{
-    object-fit: contain;
-    width: 70px !important;
-    height: 40px !important;
-  }
-  .imagespublicidad .ultimasimagen{
-    object-fit: cover;
-  }
-/* 
-  @media print{
-    .printarea{
-      height: 100%;
-      margin: 0 !important;
-      padding: 0 !important;
-      overflow: hidden;
-    }
-  } */
-  
-  
-  </style>
+  border: 0.5px solid #000;
+ 
+} */
+.imagespublicidad {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 
+  margin-top: 180px;
+}
+.imagespublicidad div {
+  width: 100px;
+  height: 60px;
+}
+
+.imagespublicidad div img {
+  object-fit: contain;
+  width: 70px !important;
+  height: 40px !important;
+}
+.imagespublicidad .ultimasimagen {
+  object-fit: cover;
+}
+   </style>
   <section class="imagespublicidad">
     <div><img src="https://i.ibb.co/SBwXWMR/reporte1.png" alt="reporte1"></div>
     <div><img src="https://i.ibb.co/rvwq96C/imagentalk.png" alt="imagentalk"></div>
@@ -551,8 +370,13 @@ foreach($student_info as $row):?>
     <div class="ultimasimagen"><img src="https://i.ibb.co/7pF9dbb/report6.jpg" alt="report6"></div>
   
   </section>
-  
-</div>
+      
+    </div>
+<!-- fin del perfil de impresion -->
+
+
+
+
 
 
 <?php endforeach;?>

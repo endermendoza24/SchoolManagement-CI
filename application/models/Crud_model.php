@@ -21,6 +21,7 @@ class Crud_model extends CI_Model {
         return $this->db->get_where($type, array($type . '_id' => $type_id))->row()->$field;
     }
 
+
     ////////STUDENT/////////////
     function get_students($class_id) {
         $query = $this->db->get_where('student', array('class_id' => $class_id));
@@ -79,6 +80,7 @@ class Crud_model extends CI_Model {
         foreach ($res as $row)
             return $row['name'];
     }
+   
 
     function get_class_name_numeric($class_id) {
         $query = $this->db->get_where('class', array('class_id' => $class_id));
