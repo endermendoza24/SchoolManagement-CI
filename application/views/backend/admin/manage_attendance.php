@@ -114,7 +114,7 @@
         <table class="table table-bordered table-hover table-striped">
             <thead>
                 <tr>
-                    <td><?php echo ('Wave');?></td>
+                    <td><?php echo ('Nivel');?></td>
                     <td><?php echo ('Nombre');?></td>
                     <td><?php echo ('Estado');?></td>
                 </tr>
@@ -125,7 +125,7 @@
                     $students   =   $this->db->get_where('student' , array('class_id'=>$class_id))->result_array();
                         foreach($students as $row):?>
                         <tr class="gradeA">
-                            <td><? date_default_timezone_set("America/El_Salvador"); echo date("d M Y",time());?></td>
+                            <td><? echo $row['level'];?></td>
                             <td style="text-transform:capitalize;"><?php echo $row['name']; echo '  '; echo $row['lastname'];?></td>
                             <?php 
                                 //inserting blank data for students attendance if unavailable
@@ -146,7 +146,7 @@
                         <?php endif;?>
                         <?php if ($status == 2):?>
                             <td align="center">
-                              <span class="badge badge-danger"><?php echo ('Aunsente');?></span>  
+                              <span class="badge badge-danger"><?php echo ('Ausente');?></span>  
                             </td>
                         <?php endif;?>
                         <?php if ($status == 3):?>
@@ -176,7 +176,7 @@
             <table  class="table table-bordered table-hover table-striped">
         		<thead>
         			<tr class="gradeA">
-                    	<th><?php echo ('Wave');?></th>
+                    	<th><?php echo ('Nivel');?></th>
                     	<th><?php echo ('Nombre');?></th>
                     	<th><?php echo ('Estado');?></th>
         			</tr>
@@ -191,7 +191,7 @@
         			{
         				?>
         				<tr class="gradeA">
-        					<td><?php echo $row['wave'];?></td>
+        					<td><?php echo $row['level'];?></td>
         					<td style="text-transform:capitalize;"><?php echo $row['name']; echo ' ';  echo $row['lastname'];?></td>                            
         					<td align="center">
         						<?php 

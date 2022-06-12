@@ -51,7 +51,7 @@
                         <?php 
                                 $students   =   $this->db->get_where('student' , array('class_id'=>$class_id))->result_array();
                                 foreach($students as $row):?>
-                        <tr>
+                        <tr>                            
                             <td><?php  echo date('d M,Y', $row['diamatricula']);?></td>
                             <!-- <td><img src="<?php echo $this->crud_model->get_image_url('student',$row['student_id']);?>" class="img-circle" width="30" /></td> -->
                             <td><?php echo $row['name'];?>  <?php echo $row['lastname'];?></td>
@@ -70,7 +70,7 @@
                                         <li>
                                             <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_student_profile/<?php echo $row['student_id'];?>');">
                                                 <i class="entypo-user"></i>
-                                                    <?php echo ('Profile');?>
+                                                    <?php echo ('Perfil de estudiante');?>
                                                 </a>
                                         </li>
                                         
@@ -87,7 +87,7 @@
                                         <li>
                                             <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/student/<?php echo $class_id;?>/delete/<?php echo $row['student_id'];?>');">
                                                 <i class="entypo-trash"></i>
-                                                    <?php echo ('Elimiar');?>
+                                                    <?php echo ('Eliminar');?>
                                                 </a>
                                         </li>
                                     </ul>
@@ -146,7 +146,7 @@
                                         <li>
                                             <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_student_profile/<?php echo $row['student_id'];?>');">
                                                 <i class="entypo-user"></i>
-                                                    <?php echo ('Profile');?>
+                                                    <?php echo ('Perfil del estudiante');?>
                                                 </a>
                                         </li>
                                         
@@ -154,7 +154,7 @@
                                         <li>
                                             <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_student_edit/<?php echo $row['student_id'];?>');">
                                                 <i class="entypo-pencil"></i>
-                                                    <?php echo ('Edit');?>
+                                                    <?php echo ('Editar');?>
                                                 </a>
                                         </li>
                                         <li class="divider"></li>
@@ -163,7 +163,7 @@
                                         <li>
                                             <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/student/<?php echo $class_id;?>/delete/<?php echo $row['student_id'];?>');">
                                                 <i class="entypo-trash"></i>
-                                                    <?php echo ('Delete');?>
+                                                    <?php echo ('Eliminar');?>
                                                 </a>
                                         </li>
                                     </ul>

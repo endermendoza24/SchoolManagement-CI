@@ -34,192 +34,218 @@ foreach ($edit_data as $row):
 
     <br><br>
 
-    <div  id="invoice_print" class="invoice_print">
+    
+
+<div class="invoice_print" id="invoice_print">
+
     <style>
+      .invoice_print {
+  font-family: consolas !important;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
-            /* .invoice_print, h4, .table{
-                font-family:'Courier New', Consolas, ubuntu;
-                font-size: 20pt;
-            } */
-            @media print{
-                table{
-                    border: none;
-                    outline: none;
-                }
-                * { -webkit-print-color-adjust: exact; }
+.invoice_print span {
+  font-weight: 700;
+  padding-top: 5px;
+  text-transform: capitalize;
+}
+.invoice_print p {
+  text-transform: capitalize;
+}
 
+.encabezadorecibo {
+  display: grid;
+  place-items: center;
+  padding: 10px 5px;
+}
+.encabezadorecibo img {
+  width: 15%;
+  margin-bottom: 10px;
+}
+.cuerporecibo {
+  padding: 10px 5px;
+}
+.invoice_print hr {
+  border: dotted 2px #000;
+}
+.montos > div {
+  padding: 5px 0;
+}
 
-                    /* @page {size: A5} */
-                .invoice_print, h4, .table{
-                font-family:'Courier New', Consolas, ubuntu;
-                font-size: 20pt;
-            }
-            h4{
-                font-weight: bold;
-            }
-            }
-        </style>
-        <table class="table" width="100%" border="0">
-            <tr>
-                <td style="" align="center">
-                <img src="assets/images/logoTalk.png" alt="Logo de Talk"  style="width:20%;"/>
-                    <h4><b>Talk | Academia de idiomas <br> ¡Una alternativa diferente!</b></h4>
-                    <h4>Del Am/Pm 3 1/2 cuadras al oeste. Jinotepe, Carazo</h4>
-                    <!-- <h4>Autorización DGI: <?php $d=rand(1000,9999); echo $d; ?> - 7</h4> -->
-                    <!-- <h4> N° <?php $d=rand(1000,9999); echo $d; ?> </h4> -->
-                    <h4><?php echo ('N° de factura: ')?> <?php echo $row['invoice_id']?></h4>
-                    <!-- <h4><?php echo ('N° de factura: ')?> <?php echo '00'.$row['num_factura']?></h4> -->
+.firma {
+  padding: 10px 0;
+}
 
-                    <h4>RUC: 0012305950022</h4>
-                    <h4>Email: quierosaberdetalk@gmail.com</h4>
+/* estilos para la impresión de la factura */
+@media print {
+  .invoice_print {
+    font-family: consolas !important;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
-                    <h4>Cualquier retraso en pago reportar dentro del <br> periodo de pago 10% de mora por cada 10 días de retraso</h4>
-                    <h4 ><?php echo ('Fecha de recibo'); ?> : <?php echo date('d/m/Y, H:i', $row['creation_timestamp']);?></h4>
-                    <!-- <h5 style="text-transform:capitalize;"><?php echo ('Titulo'); ?> : <?php echo $row['title'];?></h5>
-                    <h5 style="text-transform:capitalize;"><?php echo ('Descripción'); ?> : <?php echo $row['description'];?></h5> -->
-                    <!-- <h5 style="text-transform:capitalize;"><?php echo ('Estado'); ?> : <?php echo $row['status']; ?></h5> -->
-                </td>
-            </tr>
-        </table>
-        <hr style="border: 1px dashed grey;">
+  .invoice_print span {
+    font-weight: 700;
+    padding-top: 5px;
+    
+  }
+  .invoice_print p {
+    text-transform: capitalize;
+  }
 
-        <table class="table" width="100%" border="0">
-            <tr>
-                <td align="left"><h4><?php echo ('Paguese a:'); ?> </h4></td>
-                <!-- <td align="center"><h4><?php echo ('De parte de: '); ?> </h4></td> -->
-            </tr>
+  .encabezadorecibo {
+    display: grid;
+    place-items: center;
+    padding: 10px 5px;
+  }
+  .encabezadorecibo span{    
+    text-align: center;
+    margin-bottom: 7px !important;
+  }
+  /* .encabezadorecibo img {
+    width: 80%;
+    margin-bottom: 10px;
+  } */
+  .cuerporecibo {
+    padding: 10px 5px;
+  }
+  .invoice_print hr {
+    border: dotted 30px #000 !important;
+  }
+  .montos > div {
+    padding: 5px 0;
+  }
 
-            <tr>
-                <!-- Esto es la información de facturación del sistema -->
-                <td align="left" align="top">
-                    <div style="text-transform:capitalize">
-                    <?php echo $this->db->get_where('settings', array('type' => 'system_name'))->row()->description; ?><br>
-                    <?php echo $this->db->get_where('settings', array('type' => 'address'))->row()->description; ?><br>
-                    <?php echo $this->db->get_where('settings', array('type' => 'phone'))->row()->description; ?><br>
+  .firma {
+    padding: 10px 0;
+  }
+ @page{
+   margin: 0;
+ }
+}
 
-                    </div>
+    </style>
+    
+  <div class="encabezadorecibo">
+<img src="assets/images/logoTalk.png" alt="Logo de Talk" style="width: 80%;;
+    margin-bottom: 10px;"/>
 
-                    <h4><?php echo ('De parte de: '); ?> </h4>
-                    <div style="text-transform:capitalize">
+    <span  class="titulo" translate="no">
+      Talk | Academia de idiomas <br /><i>¡Una alternativa diferente!</i>
+    </span>
+    <span  class="direccion">
+      Del Am/Pm 3 1/2 cuadras al oeste,<br> Jinotepe, Carazo.
+    </span>
+    <span  class="numfactura"><?php echo ('N° de recibo: ')?> <?php echo $row['invoice_id']?></span>
+    <!-- <span class="numfactura"><?php echo ('N° de recibo: ')?> <?php echo $row['num_factura']?></span> -->
+    <span  class="ruc">RUC: 0012305950022</span>
+    <span  class="email">Email: quierosaberdetalk@gmail.com</span>
+    <span  class="advertencia">
+      Cualquier retraso en pago reportar dentro del <br />
+      periodo de pago 10% de mora por cada 10 días de retraso.
+    </span>
+    <span  class="fecha"><?php echo ('Fecha de recibo'); ?> : <?php echo date('d/m/Y, H:i', $row['creation_timestamp']);?></span>
+  </div>
 
-                    <!-- DATOS PERSONALES -->
+  <hr style="border: dashed 1.2px #000 !important;" />
+  <div  class="cuerporecibo">
+    <div class="areapaguese">
+      <span style="font-weight:bold;">Paguese a:</span>
+      <p><?php echo $this->db->get_where('settings', array('type' => 'system_name'))->row()->description; ?></p>
+      <p><?php echo $this->db->get_where('settings', array('type' => 'address'))->row()->description; ?></p>
+      <p><?php echo $this->db->get_where('settings', array('type' => 'phone'))->row()->description; ?></p>
+    </div>
 
-                    <span class="table"><?php echo $this->db->get_where('invoice', array('invoice_id' => $row['invoice_id']))->row()->quienpaga; ?><br></span>
-                    <span class="table"><?php echo $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->name; ?><br></span>
-                    <span class="table"><?php echo '' .  $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->lastname; ?><br></span>
-                    <span class="table"><?php echo 'Nivel: ' .  $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->level; ?> <br></span>
-                    <span class="table"><?php $claseEstudiante = $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->class_id;?></span>
-                    <span class="table"><?php echo 'Wave: '  . $this->crud_model->get_class_name($claseEstudiante);?><br></span>
-                    <span class="table"><?php echo 'Direccion: ' .  $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->address; ?><br></span>
-                    </div>
+    <div class="departede">
+      <span style="font-weight:bold;">De parte de:</span>
+      <p class="quienpaga"><?php echo $this->db->get_where('invoice', array('invoice_id' => $row['invoice_id']))->row()->quienpaga; ?></p>
+      <p class="nombre"><?php echo $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->name; ?></p>
+      <p class="apellido"><?php echo '' .  $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->lastname; ?></p>
+      <p class="nivel"><?php echo '<span style:"font-weight:bold">Nivel: </style>' .  $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->level; ?></p>
+      <span class=""><?php $claseEstudiante = $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->class_id;?></span>
+      <p class="wave"><?php echo '<span style="font-weight:bold;">Wave: </span>'  . $this->crud_model->get_class_name($claseEstudiante);?></p>
+      <p class="direccion">
+<?php echo '<span style="font-weight:bold;">Dirección: </span>' .  $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->address; ?>
+      </p>
+    </div>
+    <hr style="border: dashed 1.2px #000 !important;" />
+    <div class="concepto">
+      <span style="font-weight:bold;">En concepto de:</span>
+      <div style="padding: 5px 0" class="conceptopago"><?php echo $row['title'];?> <?php echo $row['description'];?></div>
+    </div>
 
-                    <!-- FIN DE DATOS PERSONALES -->
-                    <hr style="border:1px dashed grey">
-
-                    <h4> <?php echo ('En concepto de: '); ?></h4>
-                    <h4 style=""><?php echo $row['title'];?> <?php echo $row['description'];?></h4>
-                </td>
-                <!-- Esto es la información de facturación del estudiante -->
-                <td align="center" valign="top">
-                    <!-- aqui estaba la informacion del estudiante antes de que la pasara a arriba -->
-                </td>
-            </tr>
-        </table>
-        <hr style="border: 1px dashed grey;">
-
-
-        <table class="table" width="100%" border="0">
-
-            <tr>
-                <td align="left" width="80%"><h4><?php echo ('Monto total en números: '); ?>: C$ <?php echo $row['amount']; ?></h4></td>
-            </tr>
-
-            <tr>
-                <td align="left" width="80%"><h4><?php echo ('Monto pagado '); ?>: C$ <?php echo $row['amount_paid']; ?></h4>
-         <h4>
-         <div style="text-transform:capitalize">
-        <?php
+    <div class="montos">
+      <span style="font-weight:bold;">Monto total en números: </span>
+      <div class="montototal">C$ <?php echo $row['amount']; ?></div>
+      <span style="font-weight:bold;">Monto pagado:</span>
+      <div class="montopagado">C$ <?php echo $row['amount_paid']; ?></div>
+      
+      <div class="montoletras">
+     	<?php
             $formatterES = new NumberFormatter("es-ES", NumberFormatter::SPELLOUT);
             $n =  $row['amount_paid'];
             $izquierda = intval(floor($n));
             $derecha = intval(($n - floor($n)) * 100);
-            echo 'Monto en letras: ' . $formatterES->format($izquierda) . " córdobas netos ";
+            echo '<span style="font-weight:bold;">Monto en letras: </span><div style="text-transform:capitalize">' . $formatterES->format($izquierda) . " córdobas netos </div>";
             //  esta seccion lo que hace es la de mostrar el monto pagado en numeros
 
 
-        ?>
-       <?php if ($row['baucher'] != 0):?> <!--solo si el baucher existe se mostrara-->
-            <tr>
-                <td align="left" width="80%"><h4><?php echo ('Baucher N°'); ?>: <?php echo $row['baucher']; ?></h4></td>
-            </tr>
+        ?> 
+      </div>
+      
+      <!-- baucher -->
+      <?php if ($row['baucher'] != 0):?> <!--solo si el baucher existe se mostrara-->
+            
+                <span style="font-weight:bold;"><?php echo ('Baucher N°'); ?>:</span> 
+                <div><?php echo $row['baucher']; ?></div>
+            
             <?php endif;?>
-    </h4>
-        </div>
-            </td>
-            </tr>
-            <h4>
-            <?php if ($row['due'] != 0):?>
-            <tr>
-                <td align="left" width="80%"><h4><?php echo ('Saldo pendiente'); ?>: C$ <?php echo $row['due']; ?></h4></td>
-            </tr>
+      <!-- baucherEnd-->
+      
+      <!-- deuda pendiente-->
+      <?php if ($row['due'] != 0):?>           
+                <span style="font-weight:bold;"><?php echo ('Saldo pendiente'); ?>:</span>
+                <div> C$ <?php echo $row['due']; ?></div>            
             <?php endif;?>
-            </h4>
-
-
-            <h4>
-            <?php if ($row['metodopago'] == 1):?>
-            <tr>
-                <td align="left" width="80%"><h4><?php echo ('Método pago: Efectivo'); ?></h4></td>
-            </tr>
+      <!-- deudaEnd-->
+      
+      <!-- area de metodo de pago -->
+      <?php if ($row['metodopago'] == 1):?>            
+                <span style="font-weight:bold;"><?php echo ('Método pago:'); ?></span>           
+                <div><?php echo ('Efectivo'); ?></div>           
             <?php endif;?>
-            </h4>
-            <h4>
-            <?php if ($row['metodopago'] == 2):?>
-            <tr>
-                <td align="left" width="80%"><h4><?php echo ('Método pago: Transferencia bancaria'); ?></h4></td>
-            </tr>
+           
+            <?php if ($row['metodopago'] == 2):?>            
+                <span style="font-weight:bold;"><?php echo ('Método pago:'); ?></span>     
+                <div><?php echo ('Transferencia'); ?></div>                  
             <?php endif;?>
-            </h4>
+      <!-- areaEnd -->
 
-
-
-        </table>
-
-        <hr style="border: 1px dashed grey;">
-
-        <!-- payment history -->
-        <!-- <h4><?php echo ('Payment History'); ?></h4> -->
-      <!-- <table class="table table-bordered table-hover" width="100%" border="1" style="border-collapse:collapse;">
-            <thead>
-                <tr>
-                    <th><?php echo ('Date'); ?></th>
-                    <th><?php echo ('Amount'); ?></th>
-                    <th><?php echo ('Method'); ?></th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $payment_history = $this->db->get_where('payment', array('invoice_id' => $row['invoice_id']))->result_array();
-                foreach ($payment_history as $row2):
-                    ?>
-                    <tr>
-                        <td><?php echo date("d M, Y", $row2['timestamp']); ?></td>
-                        <td>$<?php echo $row2['amount']; ?></td>
-                        <td>
-                            <?php
-                                if ($row2['method'] == 1)
-                                    echo ('Cash');
-                                if ($row2['method'] == 2)
-                                    echo ('Cheque');
-
-                            ?>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-            <tbody>
-        </table>-->
+       <!-- observaciones-->
+       <?php if ($row['payment_details']!= '') :?>           
+                <br><span style="font-weight:bold;"><?php echo ('Observaciones'); ?>:</span>
+                <div style="text-transform: uppercase;"><?php echo $row['payment_details']; ?></div>            
+            <?php endif;?>
+      <!-- observacionesEND-->          
     </div>
+    <hr style="border: dashed 1.2px #000 !important;" />
+    <div class="firma">
+      <span style="font-weight:bold;">Firma:</span>
+      <div class="firmaraya">______________________</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
 <?php endforeach; ?>
 <script type="text/javascript">
 function printpage(){
@@ -232,33 +258,5 @@ function printpage(){
 }
 
 </script>
-
-
-<!-- 
-<script type="text/javascript">
-
-    // print invoice function
-    function PrintElem(elem)
-    {
-        Popup($(elem).html());
-    }
-
-    function Popup(data)
-    {
-        var mywindow = window.open('', 'Factura', 'height=400,width=600');
-        mywindow.document.write('<html><head><title>Factura</title>');
-        mywindow.document.write('<link rel="stylesheet" href="assets/css/neon-theme.css" type="text/css" />');
-        mywindow.document.write('<link rel="stylesheet" href="assets/js/datatables/responsive/css/datatables.responsive.css" type="text/css" />');
-        mywindow.document.write('</head><body >');
-        mywindow.document.write(data);
-        mywindow.document.write('</body></html>');
-
-        mywindow.print();
-        mywindow.close();
-
-        return true;
-    }
-
-</script> -->
 </body>
 </html>

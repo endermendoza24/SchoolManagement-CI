@@ -291,7 +291,7 @@ class Admin extends CI_Controller
             redirect('login', 'refresh');
 			
 		$page_data['page_name']  	= 'student_information';
-		$page_data['page_title'] 	= 'Student Information'. " - ".get_phrase('class')." : ".
+		$page_data['page_title'] 	= 'Información de estudiantes '. " - ".get_phrase('Wave')." : ".
 											$this->crud_model->get_class_name($class_id);
 		$page_data['class_id'] 	= $class_id;
 		$this->load->view('backend/index', $page_data);
@@ -375,13 +375,26 @@ class Admin extends CI_Controller
             $data['address']     = $this->input->post('address');
             $data['parentesco']     = $this->input->post('parentesco');
             $data['phone']       = $this->input->post('phone');
-            $data['emergencyphone']     = $this->input->post('emergencyphone');
+            $data['emergencyphone']     = $this->input->post('emergencyphone');                                         
+            //  contactos de emergencia
+            $data['nombreemergencia']       = $this->input->post('nombreEmergencia');
+            $data['apellidoemergencia']       = $this->input->post('apellidoEmergencia');
+            $data['direccionemergencia']       = $this->input->post('direccionEmergencia');
+            $data['telefonoemergencia']       = $this->input->post('telefonoEmergencia');
+            $data['relacionemergencia']       = $this->input->post('parentescoEmergencia');
+            $data['emailemergencia']       = $this->input->post('email');
+
+
             $data['email']       = $this->input->post('email');
             $data['class_id']    = $this->input->post('class_id');
             $data['section_id']  = $this->input->post('section_id');
             $data['parent_id']   = $this->input->post('parent_id');
-            $data['wave']        = $this->input->post('wave');
+            $data['wave']        = $this->input->post('wave'); // es el antiguo roll
+            
+            
             $data['tipo_documento']        = $this->input->post('tipodocumento'); // tipo de documnto de identidad
+            $data['level']        = $this->input->post('level');
+            $data['horario']        = $this->input->post('horario');
             
             $this->db->where('student_id', $param3);
             $this->db->update('student', $data);
@@ -535,7 +548,7 @@ class Admin extends CI_Controller
 		 $page_data['class_id']   = $param1;
         $page_data['subjects']   = $this->db->get_where('subject' , array('class_id' => $param1))->result_array();
         $page_data['page_name']  = 'subject';
-        $page_data['page_title'] = 'Manage Subject';
+        $page_data['page_title'] = 'Administrar unidades de clases';
         $this->load->view('backend/index', $page_data);
     }
     
@@ -911,6 +924,8 @@ class Admin extends CI_Controller
             $data['amount']             = $this->input->post('amount');
             $data['amount_paid']        = $this->input->post('amount_paid');
             $data['payment_method'] = $this->input->post('metodo');
+
+
             // validación para imprimir quien paga 
             if (($this->input->post('quienPaga')) == '') {
                 $data['quienpaga'] =  '';
@@ -925,7 +940,7 @@ class Admin extends CI_Controller
             $data['corte']             = $this->input->post('corte');
             $data['payment_details']             = $this->input->post('observaciones');
 
-            $data['num_factura'] +=1;
+            
             //  se supone que este va a ser el numero de factura
            
 
@@ -1001,7 +1016,7 @@ class Admin extends CI_Controller
         }
         $page_data['page_name']  = 'invoice';
         $page_data['page_title'] = 'Facturación';
-        $this->db->order_by('creation_timestamp', 'desc');
+        $this->db->order_by('creation_timestamp', 'asc');
         $page_data['invoices'] = $this->db->get('invoice')->result_array();
         $this->load->view('backend/index', $page_data);
     }

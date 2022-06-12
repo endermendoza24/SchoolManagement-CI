@@ -174,9 +174,9 @@ foreach($student_info as $row):?>
 
         <div class="encabezados">
           <h4 class="titulos">
-            <p translate="no">
-             <b> Talk | Academia de idiomas</b></p><br />
-              <i>"Una alternativa diferente"</i>
+            <p class="talka" translate="no">
+             <b> Talk | Academia de idiomas</b><br /> 
+             <i>"Una alternativa diferente"</i></p>             
             </p>
             <p>Ficha de información de estudiantes.</p>
           </h4>
@@ -209,7 +209,7 @@ foreach($student_info as $row):?>
             </div>
          </div>
       </section>
-
+      <hr style="border:dotted 1px #000">
       <section class="identidad">
         <h4>2. Datos de identidad</h4>
        <div class="primerosdatos">
@@ -234,16 +234,16 @@ foreach($student_info as $row):?>
         </div>
        </div>
     </section>
-
+    <hr style="border:dotted 1px #000">
     <section class="contactos">
-        <h4>3. Contactos</h4>
+        <h4>3. Contactos de emergencia</h4>
        <div class="primerosdatos">
          
           <div class="personales">
             <p> Dirección contacto: <div class="interno"><?php echo $row['direccionemergencia']?></div> </p>
         </div>
         <div class="personales ">
-            <p>En caso de emergencias llamar a: <div class="interno"><?php echo $row['nombremergencia'] .' ' . $row['apellidoemergencia'] ?></div></p>
+            <p>En caso de emergencias llamar a: <div class="interno"><?php echo $row['nombreemergencia'] .' ' . $row['apellidoemergencia'] ?></div></p>
         </div>
         
        </div>
@@ -259,7 +259,7 @@ foreach($student_info as $row):?>
         </div>
        </div>
     </section>
-
+    <hr style="border:dotted 1px #000">
     <section class="academicos">
         <h4>4. Datos académicos</h4>
        <div class="primerosdatos">
@@ -280,11 +280,9 @@ foreach($student_info as $row):?>
     </section>
 
    <style>
-     .printarea {
-  margin: 0;
-  padding: 0;
+.printarea { 
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 10pt;
 }
 .headercontainer {
@@ -358,6 +356,103 @@ h4 {
 }
 .imagespublicidad .ultimasimagen {
   object-fit: cover;
+}
+
+@media print{
+  .printarea {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+}
+.headercontainer {
+  width: 95%;
+  margin: 15px auto 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 10pt;
+  font-family: Arial;
+  /* border: 1px solid red; */
+}
+h4 {
+  font-size: 11pt;
+}
+.encabezadoimagen {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.encabezadoimagen img {
+  width: 10%;
+}
+.primerosdatos {
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  /* margin-top: 10px; */
+  grid-template-columns: 1fr 1fr;
+}
+.titulos .talka{
+  font-size: 10pt;
+  text-align: center;
+  font-family: Arial;
+}
+.titulos p{
+  font-size: 10pt;
+  font-family: Arial;
+}
+/* .primerosdatos > div {
+  /* border: 1px solid #000; */
+  /*margin: 6px 0;
+} */
+.primerosdatos div > div {
+  display: inline;
+}
+.primerosdatos div p {
+  /*esos son los encabezados*/
+  display: inline;
+  font-weight: 700;
+}
+.interno {
+  text-transform: capitalize;
+}
+
+.identidad,
+.contactos,
+.academicos,
+.datos {
+ text-align: justify;
+  /* border: 0.5px solid #000; */
+  width: 95%;
+  margin: 0 auto;
+ padding: 5px;
+}
+.imagespublicidad {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 0;
+  width: 95%;
+  /* border:1px solid red; */
+}
+.imagespublicidad div {
+  width: 90px;
+  height: 50px;
+  
+}
+
+.imagespublicidad div img {
+  object-fit: contain;
+  width: 90px !important;
+  height: 50px !important;
+  
+  /* border: solid blue 1px; */
+  
+}
+.imagespublicidad .ultimasimagen {
+  object-fit: cover;
+}
+
 }
    </style>
   <section class="imagespublicidad">

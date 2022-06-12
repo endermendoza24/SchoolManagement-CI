@@ -186,15 +186,15 @@ foreach ( $edit_data as $row):
 					</div>
                     
                    
-					<div class="form-group">
-						<div class="col-sm-offset-3 col-sm-5"><h3>Contacto de emergencia</h3></div>
+					<div class="form-group bg-success">
+						<div class="col-sm-offset-3 col-sm-5 "><h3>Contacto de emergencia</h3></div>
 
 					</div>
 					<div class="form-group">
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Nombre contacto de emergencia');?></label>
                         
 						<div class="col-sm-8">
-							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="nombremergencia" value="<?php echo $row['nombreemergencia'];?>" >
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="nombreEmergencia" value="<?php echo $row['nombreemergencia'];?>" >
 						</div> 
 					</div>
 
@@ -202,7 +202,7 @@ foreach ( $edit_data as $row):
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Apellido contacto de emergencia');?></label>
                         
 						<div class="col-sm-8">
-							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="apellidoemergencia" value="<?php echo $row['apellidoemergencia'];?>" >
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="apellidoEmergencia" value="<?php echo $row['apellidoemergencia'];?>" >
 						</div> 
 					</div>
 
@@ -210,7 +210,7 @@ foreach ( $edit_data as $row):
 						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Teléfono contacto de emergencia');?></label>
                         
 						<div class="col-sm-8">
-							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="telefonoemergencia" value="<?php echo $row['telefonoemergencia'];?>" >
+							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="telefonoEmergencia" value="<?php echo $row['telefonoemergencia'];?>" >
 						</div> 
 					</div>
 					<div class="form-group">

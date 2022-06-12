@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css'>   
+	<title></title>
+</head>
+<body>
 <div class="row">
 	<div class="col-md-12">
 		<div class="panel panel-primary" data-collapsed="0">
@@ -302,7 +312,7 @@
 						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Madre/Padre');?></label>
                         
 						<div class="col-sm-8">
-							<select  onchange="if(this.value != '') document.getElementById('emergencyphone').disabled = false"  data-validate="required" data-message-required="<?php echo ('Value Required');?>" disabled name="parent_id" class="form-control select2">
+							<select  onchange="if(this.value != '') document.getElementById('emergencyphone').disabled = false"  data-validate="required" data-message-required="<?php echo ('Value Required');?>"  name="parent_id" class="form-control selectpicker" data-show-subtext="true" data-live-search="true">
                               <option  value=""><?php echo ('Seleccionar');?></option>
                               <?php 
 								$parents = $this->db->get('parent')->result_array();
@@ -402,7 +412,7 @@
 </div>
 
 
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
 <script type="text/javascript">
 
 	
@@ -468,3 +478,5 @@ $(document).ready(Principal);
 
 
 </script>
+</body>
+</html>
