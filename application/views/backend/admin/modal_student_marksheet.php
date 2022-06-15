@@ -106,7 +106,7 @@ foreach ($student_info as $row1):
                                 <hr />
                                 Nota Total : <?php echo $total_marks; ?>
                                 <hr />
-                                GPA(grade point average) : <?php echo round($total_marks / $total_subjects, 2); ?>
+                                <!-- Promedio : <?php echo round($total_marks / $total_subjects, 2); ?> -->
                                 <div id="chartdiv"></div>
                                 <script>
                                     setTimeout(function() {

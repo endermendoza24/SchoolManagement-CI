@@ -138,7 +138,7 @@ $('#table_export').DataTable({
     filename: ' Talk | Salidas ',
     excelStyles: [                      // Add an excelStyles definition
                 {                 
-                    template: "green_medium",   // Apply the "green_medium" template
+                    template: "red",   // Apply the "green_medium" template
                 },
                 {
                     cells: "sh",                // Use Smart References (s) to target the header row (h)

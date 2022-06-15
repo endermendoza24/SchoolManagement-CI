@@ -303,7 +303,7 @@ class Admin extends CI_Controller
             redirect('login', 'refresh');
 			
 		$page_data['page_name']  = 'student_marksheet';
-		$page_data['page_title'] 	= 'Student Marksheet'. " - ".get_phrase('class')." : ".
+		$page_data['page_title'] 	= 'Calificaciones estudiantes'. " - ".get_phrase('Wave')." : ".
 											$this->crud_model->get_class_name($class_id);
 		$page_data['class_id'] 	= $class_id;
 		$this->load->view('backend/index', $page_data);
@@ -1031,6 +1031,15 @@ class Admin extends CI_Controller
         $this->db->order_by('creation_timestamp', 'asc');
         $page_data['invoices'] = $this->db->get('invoice')->result_array();
         $this->load->view('backend/index', $page_data); 
+
+       
+        // eliminar
+        if ($param1 == 'delete') {
+            $this->db->where('payment_id' , $param2);
+            $this->db->delete('payment');
+            $this->session->set_flashdata('flash_message' , get_phrase('data_deleted'));
+            redirect(base_url() . 'index.php?admin/income', 'refresh');
+        }
     }
 
     
@@ -1618,7 +1627,7 @@ class Admin extends CI_Controller
             redirect(base_url() . 'index.php?admin/manage_profile/', 'refresh');
         }
         $page_data['page_name']  = 'manage_profile';
-        $page_data['page_title'] = 'Manage Profile';
+        $page_data['page_title'] = 'Administrar perfil propio';
         $page_data['edit_data']  = $this->db->get_where('admin', array(
             'admin_id' => $this->session->userdata('admin_id')
         ))->result_array();

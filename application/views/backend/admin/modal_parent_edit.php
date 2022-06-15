@@ -46,13 +46,13 @@
 					<div class="form-group">
 						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Email');?></label>
 						<div class="col-sm-5">
-							<input data-validate="required" data-message-required="<?php echo ('Value Required');?>" type="text" class="form-control" name="email" 
+							<input type="text" class="form-control" name="email" 
                             	value="<?php echo $row['email'];?>">
 						</div>
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Numero Telefonico');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Número Telefónico');?></label>
                         
 						<div class="col-sm-5">
 							<input data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>" type="text" class="form-control" name="phone" value="<?php echo $row['phone'];?>">
@@ -60,7 +60,7 @@
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Direccion');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Dirección');?></label>
                         
 						<div class="col-sm-5">
 							<input data-validate="required" data-message-required="<?php echo ('Valor Requerido');?>" type="text" class="form-control" name="address" value="<?php echo $row['address'];?>">

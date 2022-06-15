@@ -319,7 +319,7 @@
 								foreach($parents as $row):
 									?>
                             		<option id="opname" value="<?php echo $row['parent_id'];?>">
-										<?php echo $row['name'];?>
+										<?php echo $row['name'] .' ' . $row['lastname'];?>
                                     </option>
                                 <?php
 								endforeach;

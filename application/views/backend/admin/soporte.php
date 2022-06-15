@@ -48,6 +48,10 @@
     .container div a{
         margin: 10px 0;
     }
+    .notas{
+        box-shadow: 10px 10px 10px #00000033;
+        margin-top: 50px;
+    }
     @media screen and (max-width: 700px){
         .container{
             flex-direction: column;
@@ -86,6 +90,21 @@
             <a class="btn btn-primary" target="_blank" href="https://api.whatsapp.com/send?phone=50582072291&text=Sistema%20Talk%20%7C%20Ayudame%20con%20esto..."><i class="fab fa-whatsapp">  Enviar</i></a>
         </div>
 
+    </div>
+
+    <div class="notas">
+        <h3>Notas de la version</h3>
+
+        <div class="cuadrocambios">
+            <h4>Versión 1.4</h4>
+            <ol>
+                <li>Se puede eliminar desde entradas</li>
+                <li>Cambios ligeros en asistencia</li>
+                <li>Cambios de diseño en facturación</li>
+                <li>Cambios ligeros en la traducción y la nomenclatura de algunas cosas</li>
+                
+            </ol>
+        </div>
     </div>
 </body>
 </html>

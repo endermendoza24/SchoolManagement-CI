@@ -35,7 +35,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="field-1" class="col-sm-3 control-label"><?php echo ('Foto');?></label>
                                 
                                 <div class="col-sm-5">
@@ -54,7 +54,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="form-group">
                               <div class="col-sm-offset-3 col-sm-5">
@@ -117,7 +117,7 @@
                             </div>
                             <div class="form-group">
                               <div class="col-sm-offset-3 col-sm-5">
-                                  <button type="submit" class="btn btn-info"><?php echo ('Actualizar Perfil');?></button>
+                                  <button type="submit" class="btn btn-danger"><?php echo ('Actualizar Perfil');?></button>
                               </div>
 								</div>
                         </form>

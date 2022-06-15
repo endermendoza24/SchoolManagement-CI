@@ -34,9 +34,9 @@
                     <thead>
                         <tr>
                             <th><div><?php echo ('Fecha de Admision');?></div></th>
-                            <th><div><?php echo ('Foto');?></div></th>
+                            <!-- <th><div><?php echo ('Foto');?></div></th> -->
                             <th><div><?php echo ('Nombre');?></div></th>
-                            <th><div><?php echo ('Opcciones');?></div></th>
+                            <th><div><?php echo ('Opciones');?></div></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,9 +44,9 @@
                                 $students   =   $this->db->get_where('student' , array('class_id'=>$class_id))->result_array();
                                 foreach($students as $row):?>
                         <tr>
-                            <td><?php echo date('d M,Y', $row['diamatricula']);?></td>
-                            <td align="center"><img src="<?php echo $this->crud_model->get_image_url('student',$row['student_id']);?>" class="img-circle" width="30" /></td>
-                            <td><?php echo $row['name'];?></td>
+                            <td><?php echo strftime('%A, %d de %B de %Y', $row['diamatricula']);?></td>
+                            <!-- <td align="center"><img src="<?php echo $this->crud_model->get_image_url('student',$row['student_id']);?>" class="img-circle" width="30" /></td> -->
+                            <td style="text-transform:capitalize"><?php echo $row['name'] . ' ' . $row['lastname'];?></td>
                             <td>
                                 <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_student_marksheet/<?php echo $row['student_id'];?>');" class="btn btn-default" >
                                       <i class="entypo-chart-bar"></i>
@@ -73,7 +73,7 @@
                     <thead>
                         <tr>
                             <th><div><?php echo ('Fecha de Admision');?></div></th>
-                            <th><div><?php echo ('Foto');?></div></th>
+                            <!-- <th><div><?php echo ('Foto');?></div></th> -->
                             <th><div><?php echo ('Nombre');?></div></th>
                             <th><div><?php echo ('Opciones');?></div></th>
                         </tr>
@@ -85,13 +85,13 @@
                                 ))->result_array();
                                 foreach($students as $row):?>
                         <tr>
-                            <td><?php echo $row['diamatricula'];?></td>
-                            <td align="center"><img src="<?php echo $this->crud_model->get_image_url('student',$row['student_id']);?>" class="img-circle" width="30" /></td>
-                            <td><?php echo $row['name'];?></td>
+                        <td style="text-transform:capitalize"><?php echo strftime('%A, %d de %B de %Y', $row['diamatricula']);?></td>
+                            <!-- <td align="center"><img src="<?php echo $this->crud_model->get_image_url('student',$row['student_id']);?>" class="img-circle" width="30" /></td> -->
+                            <td><?php echo $row['name'] . ' ' . $row['lastname'];?></td>
                             <td>
                                 <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_student_marksheet/<?php echo $row['student_id'];?>');" class="btn btn-default" >
                                       <i class="entypo-chart-bar"></i>
-                                          <?php echo ('Vier Notas');?>
+                                          <?php echo ('Ver Notas');?>
                                       </a>
                             </td>
                         </tr>
