@@ -49,7 +49,7 @@
 						
 						<label style="color:#000; font-weight:bold;" for="identdocument" class="col-sm-3 control-label">Documento de identidad</label>							
 							<div class="col-sm-8">								
-							<input  placeholder="000-000000-0000A" style="text-transform:uppercase;" maxlength="20" id="identdocument" type="text" class="form-control" name="identdocument" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="" autofocus>		
+							<input  placeholder="000-000000-0000A" style="text-transform:uppercase;" maxlength="20" id="identdocument" type="text" class="form-control" name="identdocument"  value="" autofocus>		
 							</div>						
 						</div>
 
@@ -172,7 +172,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 mb-3">
-                            <label for="field-2" class="col-sm-3 control-label"><?php echo ('Salón');?></label>
+                            <label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Salón');?></label>
                             <div class="col-sm-8">
                                 <select name="section_id" class="form-control" id="section_selector_holder">
                                     <option value=""><?php echo ('Seleccionna Wave primero');?></option>
@@ -327,7 +327,6 @@
                           </select>
 						</div> 
 					</div>	
-
 					<div class="col-md-6 mb-3">
 						<label style="color:#000; font-weight:bold;" for="field-2" class="col-sm-3 control-label"><?php echo ('Parentesco');?></label>
                         
