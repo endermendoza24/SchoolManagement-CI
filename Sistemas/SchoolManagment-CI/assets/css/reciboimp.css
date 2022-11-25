@@ -1,0 +1,80 @@
+.invoice_print {
+  font-family: "Courier New", consolas, ubuntu, monospace;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.invoice_print span {
+  font-weight: 700;
+  padding-top: 5px;
+  text-transform: capitalize;
+}
+.invoice_print p {
+  text-transform: capitalize;
+}
+
+.encabezadorecibo {
+  display: grid;
+  place-items: center;
+  padding: 10px 5px;
+}
+.encabezadorecibo img {
+  width: 15%;
+  margin-bottom: 10px;
+}
+.cuerporecibo {
+  padding: 10px 5px;
+}
+.invoice_print hr {
+  border: dotted 2px #000;
+}
+.montos > div {
+  padding: 5px 0;
+}
+
+.firma {
+  padding: 10px 0;
+}
+
+/* estilos para la impresión de la factura */
+@media print {
+  .invoice_print {
+    font-family: "Courier New", consolas, ubuntu, monospace;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .invoice_print span {
+    font-weight: 700;
+    padding-top: 5px;
+    text-transform: capitalize;
+  }
+  .invoice_print p {
+    text-transform: capitalize;
+  }
+
+  .encabezadorecibo {
+    display: grid;
+    place-items: center;
+    padding: 10px 5px;
+  }
+  .encabezadorecibo img {
+    width: 15%;
+    margin-bottom: 10px;
+  }
+  .cuerporecibo {
+    padding: 10px 5px;
+  }
+  .invoice_print hr {
+    border: dotted 2px #000;
+  }
+  .montos > div {
+    padding: 5px 0;
+  }
+
+  .firma {
+    padding: 10px 0;
+  }
+}
