@@ -150,29 +150,33 @@
 
 
                                 <div class="form-group">
-                                    <label style="color:#000; font-weight:bold" class="col-sm-3 control-label"><?php echo ('*Estudiante');?></label>
-                                    <div class="col-sm-9">
-                                        
-                                                                                   
-                                        <select class="form-control selectpicker" data-show-subtext="true" data-live-search="true" name="student_id" required>
+    <label style="color:#000; font-weight:bold" class="col-sm-3 control-label"><?php echo ('*Estudiante');?></label>
+    <div class="col-sm-9">
+        <select style="text-transform:uppercase;" class="form-control selectpicker" data-show-subtext="true" data-live-search="true" name="student_id" required>
+            <option value=""><?php echo ('Seleccione un estudiante'); ?></option>
+            <optgroup label="<?php echo ('Estudiante'); ?>">
+                <?php
+                $estudiante = $this->db->get('student')->result_array();
+                foreach ($estudiante as $row):
+                    // Obtener el año y el id del estudiante
+                    $year = strftime('%y', strtotime($row['diamatricula']));
+                    $studentId = $row['student_id'];
 
-                                            <option value=""><?php echo ('Seleccione un estudiante'); ?></option>
-                                            <optgroup label="<?php echo ('Estudiante'); ?>">
-                                                <?php
-                                                $estudiante = $this->db->get('student')->result_array();
-                                                foreach ($estudiante as $row):
-                                                    ?>
+                    // Realizar la concatenación y formatear según tu preferencia
+                    $formattedValue = $year . $studentId;
 
-                                                    <option value="<?php echo $row['student_id'];?>">
-                                                        - <?php echo $row['name'] . ' ' . $row['lastname']; ?></option>
-
-                                                <?php endforeach; ?>
-                                            </optgroup>
-                                            
-                                        </select>
-
-                                    </div>
-                                </div>
+                    // Depuración: Imprimir valores para verificar
+                    echo "Year: $year, Student ID: $studentId, Concatenated Value: $formattedValue <br>";
+                ?>
+                    <option style="text-transform:uppercase;" value="<?php echo $formattedValue; ?>">
+                        - <?php echo $row['name'] . ' ' . $row['lastname'] . ' (' . $formattedValue . ')'; ?></option>
+                <?php
+                endforeach;
+                ?>
+            </optgroup>
+        </select>
+    </div>
+</div>
 
                                 <div class="form-group">
                                     <label style="color:#000; font-weight:bold" class="col-sm-3 control-label"><?php echo ('*Tipo');?></label>
