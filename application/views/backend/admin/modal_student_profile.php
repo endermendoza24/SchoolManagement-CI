@@ -202,7 +202,7 @@ foreach($student_info as $row):?>
 
          <div class="primerosdatos">
             <div class="personales carnet">
-            <p>N° de carné: <div><?php echo strftime('%y', strtotime($row['diamatricula'])) . $row['student_id'];?></div></p>
+            <p>N° de carné: <div><?php echo $row['student_id'];?></div></p>
             </div>
             <div class="personales direccion">
                 <p>Dirección: <div><?php echo $row['address']?></div> </p>

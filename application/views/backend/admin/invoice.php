@@ -158,18 +158,9 @@
                 <?php
                 $estudiante = $this->db->get('student')->result_array();
                 foreach ($estudiante as $row):
-                    // Obtener el año y el id del estudiante
-                    $year = strftime('%y', strtotime($row['diamatricula']));
-                    $studentId = $row['student_id'];
-
-                    // Realizar la concatenación y formatear según tu preferencia
-                    $formattedValue = $year . $studentId;
-
-                    // Depuración: Imprimir valores para verificar
-                    echo "Year: $year, Student ID: $studentId, Concatenated Value: $formattedValue <br>";
                 ?>
-                    <option style="text-transform:uppercase;" value="<?php echo $formattedValue; ?>">
-                        - <?php echo $row['name'] . ' ' . $row['lastname'] . ' (' . $formattedValue . ')'; ?></option>
+                    <option style="text-transform:uppercase;" value="<?php echo $row['student_id']; ?>">
+                        - <?php echo $row['name'] . ' ' . $row['lastname'] . ' (' . $row['student_id'] . ')'; ?></option>
                 <?php
                 endforeach;
                 ?>
